@@ -31,7 +31,8 @@
 // // // // 	int ret, f = 1;
 // // // // 	char ch;
 // // // // 	while(!isdigit(ch = getchar())) (ch == '-') && (f = -1);
-// // // // 	for(ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0');
+// // // // 	for(ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret +=
+// ch - '0');
 // // // // 	return ret * f;
 // // // // }
 
@@ -53,7 +54,8 @@
 
 // // // // void dfs(Node *fa) {
 // // // //     if(fa->e.empty()) fa->end = 1, le.push_back(fa);
-// // // //     for(vector<Edge >::iterator i = fa->e.begin(); i !=fa->e.end(); ++i) {
+// // // //     for(vector<Edge >::iterator i = fa->e.begin(); i !=fa->e.end();
+// ++i) {
 // // // //         i->to->dep = fa->dep + 1;
 // // // //         dfs(i->to);
 // // // //     }
@@ -61,20 +63,21 @@
 
 // // // // void init(Node *fa) {
 // // // //     dfs(fa);
-    
+
 // // // // }
 
 // // // // int main() {
 // // // //     n = read();
 // // // //     for(int i = 2; i <= n; ++i) addedge(read(), i);
-    
+
 // // // //     // priority_queue<Node , vector<Node > , cmp> h1;
 // // // //     int now = 1;
 // // // //     while(233) {
 // // // //         make_heap(le.begin(), le.end(), cmp);
 // // // //         nodes[now].dep = 0, init(&nodes[now]);
 // // // //     }
-// // // //     // for(int i = 1; i <= n; ++i) printf("%d %d\n", nodes[i].dep, nodes[i].end);
+// // // //     // for(int i = 1; i <= n; ++i) printf("%d %d\n", nodes[i].dep,
+// nodes[i].end);
 // // // //     return 0;
 // // // // }
 
@@ -97,7 +100,9 @@
 // // // 	int ret, f = 1;
 // // // 	char ch;
 // // // 	while(!isdigit(ch = getchar())) (ch == '-') && (f = -1);
-// // // 	for(ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0');
+// // // 	for(ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret +=
+// ch
+// - '0');
 // // // 	return ret * f;
 // // // }
 
@@ -112,7 +117,8 @@
 // // // }
 
 // // // double calc_s(Node a, Node b, Node c) {
-// // //     double da = calc_dis(c, b), db = calc_dis(a, c), dc = calc_dis(b, a);
+// // //     double da = calc_dis(c, b), db = calc_dis(a, c), dc = calc_dis(b,
+// a);
 // // //     double p = (da + db + dc) / 2.0;
 // // //     return (sqrt(p * (p - da) * (p - db) * (p - dc)));
 // // // }
@@ -123,9 +129,11 @@
 
 // // // int main() {
 // // //     n = read(), k = read();
-// // //     for(int i = 1; i <= n; ++i) scanf("%lf%lf", &nodes[i].x, &nodes[i].y);
+// // //     for(int i = 1; i <= n; ++i) scanf("%lf%lf", &nodes[i].x,
+// &nodes[i].y);
 // // //     double S = 0;
-// // //     for(int i = 2; i <= n - 1; ++i) S += calc_s(nodes[1], nodes[i], nodes[i + 1]);
+// // //     for(int i = 2; i <= n - 1; ++i) S += calc_s(nodes[1], nodes[i],
+// nodes[i + 1]);
 
 // // // }
 
@@ -208,39 +216,45 @@
 // }
 #include <cstdio>
 
-bool pd(int a){
-    if(a == 1) return 0;
-    if(a == 2 || a == 3) return 1;
-    if(a % 6 != 1 && a % 6 != 5) return 0;
-    for(int i = 5; i * i <= a; i += 6)
-        if(a % i == 0 || a % (i + 2) == 0) return 0;
+bool pd(int a) {
+  if (a == 1)
+    return 0;
+  if (a == 2 || a == 3)
     return 1;
+  if (a % 6 != 1 && a % 6 != 5)
+    return 0;
+  for (int i = 5; i * i <= a; i += 6)
+    if (a % i == 0 || a % (i + 2) == 0)
+      return 0;
+  return 1;
 }
 
 int main() {
-    int n;
-    while(233) {
-        scanf("%d", &n);
-        if(!n) return 0;
-        if(pd(n)) puts("0");
-        else {
-            int nex, last, i = n;
-            while(i < 1299709)
-                if(pd(i)) {
-                    nex = i;
-                    break;
-                }
-                else ++i;
-            i = n;
-            while(i > 2) {
-                if(pd(i)) {
-                    last = i;
-                    break;
-                }
-                else --i;
-            }
-            printf("%d\n", nex - last);
-        }
+  int n;
+  while (233) {
+    scanf("%d", &n);
+    if (!n)
+      return 0;
+    if (pd(n))
+      puts("0");
+    else {
+      int nex, last, i = n;
+      while (i < 1299709)
+        if (pd(i)) {
+          nex = i;
+          break;
+        } else
+          ++i;
+      i = n;
+      while (i > 2) {
+        if (pd(i)) {
+          last = i;
+          break;
+        } else
+          --i;
+      }
+      printf("%d\n", nex - last);
     }
-    return 0;
+  }
+  return 0;
 }

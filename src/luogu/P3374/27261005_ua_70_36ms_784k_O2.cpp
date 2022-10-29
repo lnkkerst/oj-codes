@@ -1,8 +1,8 @@
 #include <cstdio>
 using namespace std;
 const int MAXN = 1e5 + 5;
-int q,a[MAXN], n;
-#define foreach(i, a, b) for(int i = (a);i <= (b);++i)
+int q, a[MAXN], n;
+#define foreach(i, a, b) for (int i = (a); i <= (b); ++i)
 int lowbit(int x) { return x & (-x); }
 void add(int x, int val) {
   for (; x <= n; x += lowbit(x)) {
@@ -18,8 +18,8 @@ int query(int x) {
 }
 int query(int l, int r) { return query(r) - query(l - 1); }
 int main() {
-  scanf("%d%d", &n,&q);
-  foreach(i, 1, n) {
+  scanf("%d%d", &n, &q);
+  foreach (i, 1, n) {
     int x;
     scanf("%d", &x);
     add(i, x);

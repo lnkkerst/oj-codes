@@ -8,21 +8,26 @@ int k = 131;
 int a[10010];
 
 int bkdrhs(string s) {
-    int l = s.length();
-    int ret = 0;
-    for(int i = 0; i < l; ++i) ret = (1ll * ret * k + s[i]) % MOD;
-    return ret;
+  int l = s.length();
+  int ret = 0;
+  for (int i = 0; i < l; ++i)
+    ret = (1ll * ret * k + s[i]) % MOD;
+  return ret;
 }
 
 int main() {
-    int n;
-    cin >> n;
-    string s;
-    for(int i = 1; i <= n; ++i) {cin >> s; a[i] = bkdrhs(s); }
-    sort(a + 1, a + n + 1);
-    int ans = 1;
-    for(int i = 2; i <= n; ++i)
-        if(a[i] != a[i - 1]) ans ++;
-    cout << ans << endl;
-    return 0;
+  int n;
+  cin >> n;
+  string s;
+  for (int i = 1; i <= n; ++i) {
+    cin >> s;
+    a[i] = bkdrhs(s);
+  }
+  sort(a + 1, a + n + 1);
+  int ans = 1;
+  for (int i = 2; i <= n; ++i)
+    if (a[i] != a[i - 1])
+      ans++;
+  cout << ans << endl;
+  return 0;
 }

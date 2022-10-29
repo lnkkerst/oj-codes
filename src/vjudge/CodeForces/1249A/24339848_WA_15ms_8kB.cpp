@@ -46,28 +46,29 @@
 //     return 0;
 // }
 
-#include <iostream>
 #include <cstring>
+#include <iostream>
 using namespace std;
 
 bool b[101][101];
 int n, t;
 
 int main() {
-    cin >> t;
-    while(t--) {
-        cin >> n;
-        memset(b, 0, sizeof(b));
-        int ans = 0;
-        for(int i = 1; i <= n; ++i) {
-            int x;
-            cin >> x;
-            int pos = 1;
-            while(b[pos][x] || b[pos][x + 1] || b[pos][x - 1]) ++pos;
-            b[pos][x] = 1;
-            ans = max(ans, pos);
-        }
-        cout << ans << endl;
+  cin >> t;
+  while (t--) {
+    cin >> n;
+    memset(b, 0, sizeof(b));
+    int ans = 0;
+    for (int i = 1; i <= n; ++i) {
+      int x;
+      cin >> x;
+      int pos = 1;
+      while (b[pos][x] || b[pos][x + 1] || b[pos][x - 1])
+        ++pos;
+      b[pos][x] = 1;
+      ans = max(ans, pos);
     }
-    return 0;
+    cout << ans << endl;
+  }
+  return 0;
 }

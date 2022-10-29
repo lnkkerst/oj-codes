@@ -17,19 +17,22 @@
 using namespace std;
 
 int main() {
-    int t;
-    cin >> t;
-    while(t--) {
-        int x;
-        cin >> x;
-        int ans = 0;
-        while(x != 1) {
-            if(x % 3 == 0) x /= 3;
-            else if(x % 2 == 0) x /= 2;
-            else --x;
-            ++ans;
-        }
-        cout << ans << endl;
+  int t;
+  cin >> t;
+  while (t--) {
+    int x;
+    cin >> x;
+    int ans = 0;
+    while (x != 1) {
+      if (x % 3 == 0)
+        x /= 3;
+      else if (x % 2 == 0)
+        x /= 2;
+      else
+        --x;
+      ++ans;
     }
-    return 0;
+    cout << ans << endl;
+  }
+  return 0;
 }

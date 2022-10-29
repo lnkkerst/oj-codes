@@ -1,36 +1,37 @@
 class RandomizedCollection {
 public:
-    /** Initialize your data structure here. */
-    unordered_multiset<int> b;
-    RandomizedCollection() {
-        b.clear();
-    }
-    
-    /** Inserts a value to the collection. Returns true if the collection did not already contain the specified element. */
-    bool insert(int val) {
-        auto t = b.find(val);
-        bool ret = (t == b.end());
-        b.insert(val);
-        return ret;
-    }
-    
-    /** Removes a value from the collection. Returns true if the collection contained the specified element. */
-    bool remove(int val) {
-        auto t = b.find(val);
-        bool ret = (t != b.end());
-        if(ret) b.erase(t);
-        return ret;
-    }
-    
-    /** Get a random element from the collection. */
-    int getRandom() {
-        // srand(time(NULL));
-        int rk = rand() % b.size();
-        auto t = b.begin();
-        for(int i = 0; i < rk - 1; ++i)
-            ++t;
-        return *t;
-    }
+  /** Initialize your data structure here. */
+  unordered_multiset<int> b;
+  RandomizedCollection() { b.clear(); }
+
+  /** Inserts a value to the collection. Returns true if the collection did
+   * not already contain the specified element. */
+  bool insert(int val) {
+    auto t = b.find(val);
+    bool ret = (t == b.end());
+    b.insert(val);
+    return ret;
+  }
+
+  /** Removes a value from the collection. Returns true if the collection
+   * contained the specified element. */
+  bool remove(int val) {
+    auto t = b.find(val);
+    bool ret = (t != b.end());
+    if (ret)
+      b.erase(t);
+    return ret;
+  }
+
+  /** Get a random element from the collection. */
+  int getRandom() {
+    // srand(time(NULL));
+    int rk = rand() % b.size();
+    auto t = b.begin();
+    for (int i = 0; i < rk - 1; ++i)
+      ++t;
+    return *t;
+  }
 };
 
 /**

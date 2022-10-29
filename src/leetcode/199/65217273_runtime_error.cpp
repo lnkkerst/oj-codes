@@ -9,21 +9,23 @@
  */
 class Solution {
 public:
-    vector<int> rightSideView(TreeNode* root) {
-        auto tmp = root;
-        vector<int> ret;
-        queue<TreeNode*> q;
-        q.push(root);
-        while(!q.empty()) {
-            int sz = q.size();
-            ret.push_back(q.front()->val);
-            for(int i = 1; i <= sz; ++i) {
-            auto u = q.front();
-            q.pop();
-            if(u->right) q.push(u->right);
-            if(u->left) q.push(u->left);
-            }
-        }
-        return ret;
+  vector<int> rightSideView(TreeNode *root) {
+    auto tmp = root;
+    vector<int> ret;
+    queue<TreeNode *> q;
+    q.push(root);
+    while (!q.empty()) {
+      int sz = q.size();
+      ret.push_back(q.front()->val);
+      for (int i = 1; i <= sz; ++i) {
+        auto u = q.front();
+        q.pop();
+        if (u->right)
+          q.push(u->right);
+        if (u->left)
+          q.push(u->left);
+      }
     }
+    return ret;
+  }
 };

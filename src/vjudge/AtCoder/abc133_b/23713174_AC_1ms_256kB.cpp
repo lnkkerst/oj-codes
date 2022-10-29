@@ -34,7 +34,7 @@
 // 		++pos;
 // 	}
 // 	cout << ans << endl << a[maxp].name << ' ' << maxx << endl;
-// } 
+// }
 
 // signed main() {
 // 	ios::sync_with_stdio(0);
@@ -44,8 +44,8 @@
 // 	return 0;
 // }
 
-#include <iostream>
 #include <cmath>
+#include <iostream>
 using namespace std;
 
 double dis[23][23];
@@ -53,25 +53,26 @@ int n, x, ans = 0;
 double eps = 1e-7;
 
 double calc(int a, int b) {
-	double ret = 0;
-	for(int i = 1; i <= x; ++i)
-		ret += (dis[a][i] - dis[b][i]) * (dis[a][i] - dis[b][i]);
-	return sqrt(ret);
+  double ret = 0;
+  for (int i = 1; i <= x; ++i)
+    ret += (dis[a][i] - dis[b][i]) * (dis[a][i] - dis[b][i]);
+  return sqrt(ret);
 }
 
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(NULL);
-	cin >> n >> x;
-	for(int i = 1; i <= n; ++i)
-		for(int j = 1; j <= x; ++j)
-			cin >> dis[i][j];
-	for(int i = 1; i <= n; ++i)
-		for(int j = i + 1; j <= n; ++j) {
-			double dist = calc(i, j);
-			// cout << i << ' ' << j << ' ' << dist << endl;
-			if(fabs(dist) - floor(dist) <= eps) ++ans;
-		}
-	cout << ans;
-	return 0;
+  ios::sync_with_stdio(0);
+  cin.tie(NULL);
+  cin >> n >> x;
+  for (int i = 1; i <= n; ++i)
+    for (int j = 1; j <= x; ++j)
+      cin >> dis[i][j];
+  for (int i = 1; i <= n; ++i)
+    for (int j = i + 1; j <= n; ++j) {
+      double dist = calc(i, j);
+      // cout << i << ' ' << j << ' ' << dist << endl;
+      if (fabs(dist) - floor(dist) <= eps)
+        ++ans;
+    }
+  cout << ans;
+  return 0;
 }

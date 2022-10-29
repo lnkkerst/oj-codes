@@ -1,55 +1,68 @@
 // luogu-judger-enable-o2
-#include<iostream>
-#include<cmath>
-#define MAXN 100000+100
+#include <cmath>
+#include <iostream>
+#define MAXN 100000 + 100
 using namespace std;
-int a[MAXN],t=0;
-inline void opt1(){
-	int n,m;
-	cin>>n>>m;
-	for (int i=1;i<=n;i++){
-		t++;a[t]=m;
-	}
+int a[MAXN], t = 0;
+inline void opt1() {
+  int n, m;
+  cin >> n >> m;
+  for (int i = 1; i <= n; i++) {
+    t++;
+    a[t] = m;
+  }
 }
-inline void opt2(){
-	int n;
-	cin>>n;
-	for (int i=1;i<=t;i++) a[i]=a[i+n];
-	t=t-n;
+inline void opt2() {
+  int n;
+  cin >> n;
+  for (int i = 1; i <= t; i++)
+    a[i] = a[i + n];
+  t = t - n;
 }
-inline void opt3(){
-	int l,r,x,c,m;
-	cin>>l>>r>>x>>m;
-	m=pow((r-l+1),x);
-	if(c!=0)
-	m=m%c;
-	for (int i=l;i<=r;i++) a[i]=m;
+inline void opt3() {
+  int l, r, x, c, m;
+  cin >> l >> r >> x >> m;
+  m = pow((r - l + 1), x);
+  if (c != 0)
+    m = m % c;
+  for (int i = l; i <= r; i++)
+    a[i] = m;
 }
-inline void opt4(){
-	int l,r,max=0;
-	cin>>l>>r;
-	for (int i=l;i<=r;i++) if (a[i]>max) max=a[i];
-	a[l]=max;
-	for (int i=l+1;i<=t;i++) a[i]=a[i+r-l];
-	t=t-r+l;
-	cout<<max<<endl;
+inline void opt4() {
+  int l, r, max = 0;
+  cin >> l >> r;
+  for (int i = l; i <= r; i++)
+    if (a[i] > max)
+      max = a[i];
+  a[l] = max;
+  for (int i = l + 1; i <= t; i++)
+    a[i] = a[i + r - l];
+  t = t - r + l;
+  cout << max << endl;
 }
-inline void opt5(){
-	int l,r;
-	cin>>l>>r;
-	for (int i=l;i<=r;i++) a[i]=sqrt(a[i]);
+inline void opt5() {
+  int l, r;
+  cin >> l >> r;
+  for (int i = l; i <= r; i++)
+    a[i] = sqrt(a[i]);
 }
-int main(){
-	int m,n;
-	cin>>m;
-	for (int i=1;i<=m;i++){
-		cin>>n;
-		if (n==1) opt1();
-		if (n==2) opt2();
-		if (n==3) opt3();
-		if (n==4) opt4();
-		if (n==5) opt5();
-	}
-	for (int i=1;i<=t;i++) cout<<a[i]<<" ";
-	return 0;
+int main() {
+  int m, n;
+  cin >> m;
+  for (int i = 1; i <= m; i++) {
+    cin >> n;
+    if (n == 1)
+      opt1();
+    if (n == 2)
+      opt2();
+    if (n == 3)
+      opt3();
+    if (n == 4)
+      opt4();
+    if (n == 5)
+      opt5();
+  }
+  for (int i = 1; i <= t; i++)
+    cout << a[i] << " ";
+  return 0;
 }

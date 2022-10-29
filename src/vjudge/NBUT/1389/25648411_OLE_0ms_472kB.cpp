@@ -2,7 +2,8 @@
 using namespace std;
 
 int main() {
-    unsigned long long n;
-    while(cin >> n) cout << (1ull << n) << endl;
-    return 0;
+  unsigned long long n;
+  while (cin >> n)
+    cout << (1ull << n) << endl;
+  return 0;
 }
