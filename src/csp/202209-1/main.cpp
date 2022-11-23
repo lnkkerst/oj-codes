@@ -11,9 +11,8 @@ int main() {
     cin >> a[i];
   }
   c[0] = 1;
-  for(int i = 1; i <= n; ++i) {
+  for (int i = 1; i <= n; ++i) {
     c[i] = c[i - 1] * a[i];
   }
   vector<int> ans;
-
 }
