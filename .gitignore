@@ -1,6 +1,9 @@
 # Custom
+*
+
+!*.*
+!*/
 
 tmp/
 *.o
-
 .ccls-cache/
