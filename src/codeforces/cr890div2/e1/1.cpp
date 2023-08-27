@@ -1,82 +1,66 @@
-#include <bits/stdc++.h>
+#pragma GCC optimize(2)
+#include <algorithm>
+#include <array>
+#include <functional>
+#include <iostream>
+#include <map>
+#include <numeric>
+#include <set>
+#include <unordered_map>
+#include <unordered_set>
+#include <vector>
 using namespace std;
 
-struct Edge {
-  int v, nex;
-} edges[1000020];
+#define int long long
 
-struct Node {
-  int head, fa[20], deep;
-} nodes[500010];
-
-int n, m, s;
-int cnt = 0;
-int lg[500010];
-
-int read() {
-  int ret;
-  bool f = 0;
-  char ch;
-  while (!isdigit(ch = getchar()))
-    (ch == '-') && (f = 1);
-  for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
-    ;
-  return f ? -ret : ret;
-}
-
-void print(int x) {
-  if (x < 0) {
-    putchar('-');
-    x = -x;
+void solve() {
+  int n;
+  cin >> n;
+  vector<vector<int>> e(n + 1);
+  vector<int> sz(n + 1), vis(n + 1), fa(n + 1);
+  for (int i = 2; i <= n; ++i) {
+    int x;
+    cin >> x;
+    e[i].emplace_back(x);
+    e[x].emplace_back(i);
   }
-  if (x > 9)
-    print(x / 10);
-  putchar(x % 10 + '0');
+  int ans = 0;
+  function<void(int, int)> dfs = [&](int u, int p) {
+    if (vis[u]) {
+      return;
+    }
+    vector<int> a;
+    vis[u] = true;
+    sz[u] = 1;
+    for (auto v : e[u]) {
+      if (!vis[v] && v != p) {
+        dfs(v, u);
+        sz[u] += sz[v];
+        a.emplace_back(sz[v]);
+      }
+    }
+    int su = accumulate(a.begin(), a.end(), 0);
+    int tar = su / 2;
+    vector<int> dp(tar + 1);
+    for (int i = 1; i <= a.size(); ++i) {
+      for (int j = tar; j >= a[i - 1]; --j) {
+        dp[j] = max(dp[j], dp[j - a[i - 1]] + a[i - 1]);
+      }
+    }
+    ans += dp[tar] * (su - dp[tar]);
+  };
+  dfs(1, -1);
+  cout << ans << endl;
 }
 
-void addedge(int u, int v) {
-  edges[++cnt].v = v;
-  edges[cnt].nex = nodes[u].head;
-  nodes[u].head = cnt;
-}
-
-void dfs_lca(int f, int fa) {
-  nodes[f].deep = nodes[fa].deep + 1;
-  nodes[f].fa[0] = fa;
-  for (int i = 1; (1 << i) <= nodes[f].deep; ++i)
-    nodes[f].fa[i] = nodes[nodes[f].fa[i - 1]].fa[i - 1];
-  for (int i = nodes[f].head; i; i = edges[i].nex)
-    if (edges[i].v != fa)
-      dfs_lca(edges[i].v, f);
-}
-
-int calc_lca(int x, int y) {
-  if (nodes[x].deep < nodes[y].deep)
-    swap(x, y);
-  while (nodes[x].deep > nodes[y].deep)
-    x = nodes[x].fa[lg[nodes[x].deep - nodes[y].deep] - 1];
-  if (x == y)
-    return x;
-  for (int k = lg[nodes[x].deep] - 1; k >= 0; --k)
-    if (nodes[x].fa[k] != nodes[y].fa[k])
-      x = nodes[x].fa[k], y = nodes[y].fa[k];
-  return nodes[x].fa[0];
-}
-
-int main() {
-  n = read();
-  for (int i = 1; i < n; ++i) {
-    int t1 = read(), t2 = read();
-    addedge(t1, t2);
-    addedge(t2, t1);
+signed main() {
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
+  cout.tie(nullptr);
+  int t;
+  // cin >> t;
+  t = 1;
+  while (t--) {
+    solve();
   }
-  for (int i = 1; i <= n; ++i)
-    lg[i] = lg[i - 1] + (1 << lg[i - 1] == i);
-  dfs_lca(s, 0);
-  for (int i = 1; i <= m; ++i) {
-    int t1 = read(), t2 = read();
-    print(calc_lca(t1, t2));
-    putchar('\n');
-  }
-  return 0;
 }
