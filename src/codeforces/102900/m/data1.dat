@@ -1,0 +1,10 @@
+2
+3 0
+data/train
+data/test
+model
+3 1
+data/train
+data/test
+model
+data/sample
