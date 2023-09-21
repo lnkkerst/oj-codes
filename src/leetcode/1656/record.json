@@ -1,1 +1,45 @@
-{"simple": {"id": 93780861, "lang": "C++", "time": "1\u00a0\u5e74\uff0c7\u00a0\u6708", "status_display": "Accepted", "runtime": "60 ms", "url": "/submissions/detail/93780861/", "is_pending": "Not Pending", "title": "\u7edf\u8ba1\u597d\u4e09\u5143\u7ec4", "timestamp": 1596335689, "memory": "8.2 MB"}, "full": {"id": "93780861", "code": "class Solution {\npublic:\n    int countGoodTriplets(vector<int>& arr, int a, int b, int c) {\n        int ret = 0;\n        for(int i = 0; i < arr.size(); ++i) {\n            for(int j = i + 1; j < arr.size(); ++j) {\n                for(int k = j + 1; k < arr.size(); ++k) {\n                    if(abs(arr[i] - arr[j]) <= a && abs(arr[j] - arr[k]) <= b && abs(arr[k] - arr[i]) <= c) ++ret;\n                }\n            }\n        }\n        return ret;\n    }\n};", "runtime": "60 ms", "memory": "8.2 MB", "rawMemory": "8372000", "statusDisplay": "Accepted", "timestamp": 1596335689, "lang": "cpp", "passedTestCaseCnt": 92, "totalTestCaseCnt": 92, "sourceUrl": "/problems/count-good-triplets/", "question": {"titleSlug": "count-good-triplets", "title": "Count Good Triplets", "translatedTitle": "\u7edf\u8ba1\u597d\u4e09\u5143\u7ec4", "questionId": "1656", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 93780861,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c7\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "60 ms",
+    "url": "/submissions/detail/93780861/",
+    "is_pending": "Not Pending",
+    "title": "\u7edf\u8ba1\u597d\u4e09\u5143\u7ec4",
+    "timestamp": 1596335689,
+    "memory": "8.2 MB"
+  },
+  "full": {
+    "id": "93780861",
+    "code": "class Solution {\npublic:\n    int countGoodTriplets(vector<int>& arr, int a, int b, int c) {\n        int ret = 0;\n        for(int i = 0; i < arr.size(); ++i) {\n            for(int j = i + 1; j < arr.size(); ++j) {\n                for(int k = j + 1; k < arr.size(); ++k) {\n                    if(abs(arr[i] - arr[j]) <= a && abs(arr[j] - arr[k]) <= b && abs(arr[k] - arr[i]) <= c) ++ret;\n                }\n            }\n        }\n        return ret;\n    }\n};",
+    "runtime": "60 ms",
+    "memory": "8.2 MB",
+    "rawMemory": "8372000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1596335689,
+    "lang": "cpp",
+    "passedTestCaseCnt": 92,
+    "totalTestCaseCnt": 92,
+    "sourceUrl": "/problems/count-good-triplets/",
+    "question": {
+      "titleSlug": "count-good-triplets",
+      "title": "Count Good Triplets",
+      "translatedTitle": "\u7edf\u8ba1\u597d\u4e09\u5143\u7ec4",
+      "questionId": "1656",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

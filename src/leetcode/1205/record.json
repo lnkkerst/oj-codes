@@ -1,1 +1,45 @@
-{"simple": {"id": 62327697, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Accepted", "runtime": "4 ms", "url": "/submissions/detail/62327697/", "is_pending": "Not Pending", "title": "IP \u5730\u5740\u65e0\u6548\u5316", "timestamp": 1586759099, "memory": "6 MB"}, "full": {"id": "62327697", "code": "class Solution {\npublic:\n    string defangIPaddr(string address) {\n        int pos = address.find(\".\");\n        while(pos != string::npos) {\n            address.erase(pos, 1);\n            address.insert(pos, \"[.]\");\n            pos = address.find(\".\", pos + 3);\n        }\n        return address;\n    }\n};", "runtime": "4 ms", "memory": "6 MB", "rawMemory": "6100000", "statusDisplay": "Accepted", "timestamp": 1586759099, "lang": "cpp", "passedTestCaseCnt": 62, "totalTestCaseCnt": 62, "sourceUrl": "/problems/defanging-an-ip-address/", "question": {"titleSlug": "defanging-an-ip-address", "title": "Defanging an IP Address", "translatedTitle": "IP \u5730\u5740\u65e0\u6548\u5316", "questionId": "1205", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 62327697,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "4 ms",
+    "url": "/submissions/detail/62327697/",
+    "is_pending": "Not Pending",
+    "title": "IP \u5730\u5740\u65e0\u6548\u5316",
+    "timestamp": 1586759099,
+    "memory": "6 MB"
+  },
+  "full": {
+    "id": "62327697",
+    "code": "class Solution {\npublic:\n    string defangIPaddr(string address) {\n        int pos = address.find(\".\");\n        while(pos != string::npos) {\n            address.erase(pos, 1);\n            address.insert(pos, \"[.]\");\n            pos = address.find(\".\", pos + 3);\n        }\n        return address;\n    }\n};",
+    "runtime": "4 ms",
+    "memory": "6 MB",
+    "rawMemory": "6100000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1586759099,
+    "lang": "cpp",
+    "passedTestCaseCnt": 62,
+    "totalTestCaseCnt": 62,
+    "sourceUrl": "/problems/defanging-an-ip-address/",
+    "question": {
+      "titleSlug": "defanging-an-ip-address",
+      "title": "Defanging an IP Address",
+      "translatedTitle": "IP \u5730\u5740\u65e0\u6548\u5316",
+      "questionId": "1205",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

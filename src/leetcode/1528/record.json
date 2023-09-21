@@ -1,1 +1,45 @@
-{"simple": {"id": 67686557, "lang": "C++", "time": "1\u00a0\u5e74\uff0c10\u00a0\u6708", "status_display": "Accepted", "runtime": "8 ms", "url": "/submissions/detail/67686557/", "is_pending": "Not Pending", "title": "\u62e5\u6709\u6700\u591a\u7cd6\u679c\u7684\u5b69\u5b50", "timestamp": 1588432039, "memory": "8.8 MB"}, "full": {"id": "67686557", "code": "class Solution {\npublic:\n    vector<bool> kidsWithCandies(vector<int>& a, int n) {\n        vector<int> b(a);\n        sort(b.begin(), b.end());\n        vector<bool> ret(a.size());\n        for(int i = 0; i < (int)a.size(); ++i) {\n            ret[i] = upper_bound(b.begin(), b.end(), a[i] + n) == b.end();\n        }\n        return ret;\n    }\n};", "runtime": "8 ms", "memory": "8.8 MB", "rawMemory": "9024000", "statusDisplay": "Accepted", "timestamp": 1588432039, "lang": "cpp", "passedTestCaseCnt": 103, "totalTestCaseCnt": 103, "sourceUrl": "/problems/kids-with-the-greatest-number-of-candies/", "question": {"titleSlug": "kids-with-the-greatest-number-of-candies", "title": "Kids With the Greatest Number of Candies", "translatedTitle": "\u62e5\u6709\u6700\u591a\u7cd6\u679c\u7684\u5b69\u5b50", "questionId": "1528", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 67686557,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c10\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "8 ms",
+    "url": "/submissions/detail/67686557/",
+    "is_pending": "Not Pending",
+    "title": "\u62e5\u6709\u6700\u591a\u7cd6\u679c\u7684\u5b69\u5b50",
+    "timestamp": 1588432039,
+    "memory": "8.8 MB"
+  },
+  "full": {
+    "id": "67686557",
+    "code": "class Solution {\npublic:\n    vector<bool> kidsWithCandies(vector<int>& a, int n) {\n        vector<int> b(a);\n        sort(b.begin(), b.end());\n        vector<bool> ret(a.size());\n        for(int i = 0; i < (int)a.size(); ++i) {\n            ret[i] = upper_bound(b.begin(), b.end(), a[i] + n) == b.end();\n        }\n        return ret;\n    }\n};",
+    "runtime": "8 ms",
+    "memory": "8.8 MB",
+    "rawMemory": "9024000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1588432039,
+    "lang": "cpp",
+    "passedTestCaseCnt": 103,
+    "totalTestCaseCnt": 103,
+    "sourceUrl": "/problems/kids-with-the-greatest-number-of-candies/",
+    "question": {
+      "titleSlug": "kids-with-the-greatest-number-of-candies",
+      "title": "Kids With the Greatest Number of Candies",
+      "translatedTitle": "\u62e5\u6709\u6700\u591a\u7cd6\u679c\u7684\u5b69\u5b50",
+      "questionId": "1528",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

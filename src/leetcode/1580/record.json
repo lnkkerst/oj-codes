@@ -1,1 +1,45 @@
-{"simple": {"id": 76906426, "lang": "C++", "time": "1\u00a0\u5e74\uff0c9\u00a0\u6708", "status_display": "Accepted", "runtime": "8 ms", "url": "/submissions/detail/76906426/", "is_pending": "Not Pending", "title": "\u91cd\u65b0\u6392\u5217\u6570\u7ec4", "timestamp": 1591497126, "memory": "9.7 MB"}, "full": {"id": "76906426", "code": "class Solution {\npublic:\n    vector<int> shuffle(vector<int>& nums, int n) {\n        vector<int> ret;\n        for(int i = 0; i < n; ++i) {\n            ret.push_back(nums[i]);\n            ret.push_back(nums[i + n]);\n        }\n        return ret;\n    }\n};", "runtime": "8 ms", "memory": "9.7 MB", "rawMemory": "9940000", "statusDisplay": "Accepted", "timestamp": 1591497126, "lang": "cpp", "passedTestCaseCnt": 53, "totalTestCaseCnt": 53, "sourceUrl": "/problems/shuffle-the-array/", "question": {"titleSlug": "shuffle-the-array", "title": "Shuffle the Array", "translatedTitle": "\u91cd\u65b0\u6392\u5217\u6570\u7ec4", "questionId": "1580", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 76906426,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c9\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "8 ms",
+    "url": "/submissions/detail/76906426/",
+    "is_pending": "Not Pending",
+    "title": "\u91cd\u65b0\u6392\u5217\u6570\u7ec4",
+    "timestamp": 1591497126,
+    "memory": "9.7 MB"
+  },
+  "full": {
+    "id": "76906426",
+    "code": "class Solution {\npublic:\n    vector<int> shuffle(vector<int>& nums, int n) {\n        vector<int> ret;\n        for(int i = 0; i < n; ++i) {\n            ret.push_back(nums[i]);\n            ret.push_back(nums[i + n]);\n        }\n        return ret;\n    }\n};",
+    "runtime": "8 ms",
+    "memory": "9.7 MB",
+    "rawMemory": "9940000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1591497126,
+    "lang": "cpp",
+    "passedTestCaseCnt": 53,
+    "totalTestCaseCnt": 53,
+    "sourceUrl": "/problems/shuffle-the-array/",
+    "question": {
+      "titleSlug": "shuffle-the-array",
+      "title": "Shuffle the Array",
+      "translatedTitle": "\u91cd\u65b0\u6392\u5217\u6570\u7ec4",
+      "questionId": "1580",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

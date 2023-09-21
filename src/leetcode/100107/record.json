@@ -1,1 +1,45 @@
-{"simple": {"id": 62298251, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Accepted", "runtime": "4 ms", "url": "/submissions/detail/62298251/", "is_pending": "Not Pending", "title": "\u731c\u6570\u5b57", "timestamp": 1586750417, "memory": "6.1 MB"}, "full": {"id": "62298251", "code": "class Solution {\npublic:\n    int game(vector<int>& guess, vector<int>& answer) {\n        int ret = 0;\n        for(int i = 0; i < 3; ++i)\n            ret += guess[i] == answer[i];\n        return ret;\n    }\n};", "runtime": "4 ms", "memory": "6.1 MB", "rawMemory": "6212000", "statusDisplay": "Accepted", "timestamp": 1586750417, "lang": "cpp", "passedTestCaseCnt": 4, "totalTestCaseCnt": 4, "sourceUrl": "/problems/guess-numbers/", "question": {"titleSlug": "guess-numbers", "title": "Guess Numbers", "translatedTitle": "\u731c\u6570\u5b57", "questionId": "100107", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 62298251,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "4 ms",
+    "url": "/submissions/detail/62298251/",
+    "is_pending": "Not Pending",
+    "title": "\u731c\u6570\u5b57",
+    "timestamp": 1586750417,
+    "memory": "6.1 MB"
+  },
+  "full": {
+    "id": "62298251",
+    "code": "class Solution {\npublic:\n    int game(vector<int>& guess, vector<int>& answer) {\n        int ret = 0;\n        for(int i = 0; i < 3; ++i)\n            ret += guess[i] == answer[i];\n        return ret;\n    }\n};",
+    "runtime": "4 ms",
+    "memory": "6.1 MB",
+    "rawMemory": "6212000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1586750417,
+    "lang": "cpp",
+    "passedTestCaseCnt": 4,
+    "totalTestCaseCnt": 4,
+    "sourceUrl": "/problems/guess-numbers/",
+    "question": {
+      "titleSlug": "guess-numbers",
+      "title": "Guess Numbers",
+      "translatedTitle": "\u731c\u6570\u5b57",
+      "questionId": "100107",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

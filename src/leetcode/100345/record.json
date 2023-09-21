@@ -1,1 +1,45 @@
-{"simple": {"id": 61701164, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Accepted", "runtime": "4 ms", "url": "/submissions/detail/61701164/", "is_pending": "Not Pending", "title": "\u6c421+2+\u2026+n", "timestamp": 1586567673, "memory": "6 MB"}, "full": {"id": "61701164", "code": "class Solution {\npublic:\n    int ans = 0;\n    int dfs(int x) {\n        ans += x;\n        (x == 1) || (dfs(x - 1));\n        return ans;\n    }\n    int sumNums(int n) {\n        return dfs(n);\n    }\n};", "runtime": "4 ms", "memory": "6 MB", "rawMemory": "6164000", "statusDisplay": "Accepted", "timestamp": 1586567673, "lang": "cpp", "passedTestCaseCnt": 35, "totalTestCaseCnt": 35, "sourceUrl": "/problems/qiu-12n-lcof/", "question": {"titleSlug": "qiu-12n-lcof", "title": "\u6c421+2+\u2026+n LCOF", "translatedTitle": "\u6c421+2+\u2026+n", "questionId": "100345", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 61701164,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "4 ms",
+    "url": "/submissions/detail/61701164/",
+    "is_pending": "Not Pending",
+    "title": "\u6c421+2+\u2026+n",
+    "timestamp": 1586567673,
+    "memory": "6 MB"
+  },
+  "full": {
+    "id": "61701164",
+    "code": "class Solution {\npublic:\n    int ans = 0;\n    int dfs(int x) {\n        ans += x;\n        (x == 1) || (dfs(x - 1));\n        return ans;\n    }\n    int sumNums(int n) {\n        return dfs(n);\n    }\n};",
+    "runtime": "4 ms",
+    "memory": "6 MB",
+    "rawMemory": "6164000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1586567673,
+    "lang": "cpp",
+    "passedTestCaseCnt": 35,
+    "totalTestCaseCnt": 35,
+    "sourceUrl": "/problems/qiu-12n-lcof/",
+    "question": {
+      "titleSlug": "qiu-12n-lcof",
+      "title": "\u6c421+2+\u2026+n LCOF",
+      "translatedTitle": "\u6c421+2+\u2026+n",
+      "questionId": "100345",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

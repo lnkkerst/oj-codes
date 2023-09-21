@@ -1,1 +1,45 @@
-{"simple": {"id": 61261243, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Accepted", "runtime": "8 ms", "url": "/submissions/detail/61261243/", "is_pending": "Not Pending", "title": "\u6700\u957f\u56de\u6587\u5b50\u4e32", "timestamp": 1586421149, "memory": "6.6 MB"}, "full": {"id": "61261243", "code": "class Solution {\npublic:\n    string longestPalindrome(string str) {\n        const int MAXN = 2333;\n        char ch, s[MAXN << 1] = {'~', '#'};\n        int p[MAXN << 1] = {0}, cnt = 1;\n        for(auto i : str) s[++cnt] = i, s[++cnt] = '#';\n        int id, mx = 0;\n        for(int i = 1; i < cnt; ++i) {\n            if(mx > 1) p[i] = min(p[2 * id - i], mx - i);\n            else p[i] = 1;\n            while(s[i + p[i]] == s[i - p[i]]) ++p[i];\n            if(i + p[i] > mx) mx = i + p[i], id = i;\n        }\n        int maxn = -1, maxa;\n        for(int i = 1; i <= cnt; ++i)\n            if(p[i] > maxn)\n                maxn = p[i], maxa = i;\n        string ret;\n        for(int i = maxa - maxn + 2; i <= maxa + maxn - 2; i += 2) ret.push_back(s[i]);\n        return ret;\n    }\n};", "runtime": "8 ms", "memory": "6.6 MB", "rawMemory": "6792000", "statusDisplay": "Accepted", "timestamp": 1586421149, "lang": "cpp", "passedTestCaseCnt": 103, "totalTestCaseCnt": 180, "sourceUrl": "/problems/longest-palindromic-substring/", "question": {"titleSlug": "longest-palindromic-substring", "title": "Longest Palindromic Substring", "translatedTitle": "\u6700\u957f\u56de\u6587\u5b50\u4e32", "questionId": "5", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 61261243,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "8 ms",
+    "url": "/submissions/detail/61261243/",
+    "is_pending": "Not Pending",
+    "title": "\u6700\u957f\u56de\u6587\u5b50\u4e32",
+    "timestamp": 1586421149,
+    "memory": "6.6 MB"
+  },
+  "full": {
+    "id": "61261243",
+    "code": "class Solution {\npublic:\n    string longestPalindrome(string str) {\n        const int MAXN = 2333;\n        char ch, s[MAXN << 1] = {'~', '#'};\n        int p[MAXN << 1] = {0}, cnt = 1;\n        for(auto i : str) s[++cnt] = i, s[++cnt] = '#';\n        int id, mx = 0;\n        for(int i = 1; i < cnt; ++i) {\n            if(mx > 1) p[i] = min(p[2 * id - i], mx - i);\n            else p[i] = 1;\n            while(s[i + p[i]] == s[i - p[i]]) ++p[i];\n            if(i + p[i] > mx) mx = i + p[i], id = i;\n        }\n        int maxn = -1, maxa;\n        for(int i = 1; i <= cnt; ++i)\n            if(p[i] > maxn)\n                maxn = p[i], maxa = i;\n        string ret;\n        for(int i = maxa - maxn + 2; i <= maxa + maxn - 2; i += 2) ret.push_back(s[i]);\n        return ret;\n    }\n};",
+    "runtime": "8 ms",
+    "memory": "6.6 MB",
+    "rawMemory": "6792000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1586421149,
+    "lang": "cpp",
+    "passedTestCaseCnt": 103,
+    "totalTestCaseCnt": 180,
+    "sourceUrl": "/problems/longest-palindromic-substring/",
+    "question": {
+      "titleSlug": "longest-palindromic-substring",
+      "title": "Longest Palindromic Substring",
+      "translatedTitle": "\u6700\u957f\u56de\u6587\u5b50\u4e32",
+      "questionId": "5",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

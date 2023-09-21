@@ -1,1 +1,45 @@
-{"simple": {"id": 96069917, "lang": "C++", "time": "1\u00a0\u5e74\uff0c7\u00a0\u6708", "status_display": "Wrong Answer", "runtime": "N/A", "url": "/submissions/detail/96069917/", "is_pending": "Not Pending", "title": "\u5e73\u8861\u62ec\u53f7\u5b57\u7b26\u4e32\u7684\u6700\u5c11\u63d2\u5165\u6b21\u6570", "timestamp": 1596898930, "memory": "N/A"}, "full": {"id": "96069917", "code": "class Solution {\npublic:\n    int minInsertions(string s) {\n        int cnt = 0, ans = 0;\n        for(int i = s.size() - 1; i >= 0; --i) {\n            if(s[i] == '(') cnt -= 2;\n            else ++cnt;\n            if(cnt < 0) ans += -cnt, cnt = 0;\n        }\n        if(cnt & 1) ans += cnt / 2 + 2;\n        else ans += cnt / 2;\n        return ans;\n    }\n};", "runtime": "N/A", "memory": "N/A", "rawMemory": "N/A", "statusDisplay": "Wrong Answer", "timestamp": 1596898930, "lang": "cpp", "passedTestCaseCnt": 54, "totalTestCaseCnt": 102, "sourceUrl": "/problems/minimum-insertions-to-balance-a-parentheses-string/", "question": {"titleSlug": "minimum-insertions-to-balance-a-parentheses-string", "title": "Minimum Insertions to Balance a Parentheses String", "translatedTitle": "\u5e73\u8861\u62ec\u53f7\u5b57\u7b26\u4e32\u7684\u6700\u5c11\u63d2\u5165\u6b21\u6570", "questionId": "1648", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "1", "expectedOutput": "4", "input": "\"(()))(()))()())))\"", "compileError": "", "runtimeError": "", "lastTestcase": "\"(()))(()))()())))\"", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 96069917,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c7\u00a0\u6708",
+    "status_display": "Wrong Answer",
+    "runtime": "N/A",
+    "url": "/submissions/detail/96069917/",
+    "is_pending": "Not Pending",
+    "title": "\u5e73\u8861\u62ec\u53f7\u5b57\u7b26\u4e32\u7684\u6700\u5c11\u63d2\u5165\u6b21\u6570",
+    "timestamp": 1596898930,
+    "memory": "N/A"
+  },
+  "full": {
+    "id": "96069917",
+    "code": "class Solution {\npublic:\n    int minInsertions(string s) {\n        int cnt = 0, ans = 0;\n        for(int i = s.size() - 1; i >= 0; --i) {\n            if(s[i] == '(') cnt -= 2;\n            else ++cnt;\n            if(cnt < 0) ans += -cnt, cnt = 0;\n        }\n        if(cnt & 1) ans += cnt / 2 + 2;\n        else ans += cnt / 2;\n        return ans;\n    }\n};",
+    "runtime": "N/A",
+    "memory": "N/A",
+    "rawMemory": "N/A",
+    "statusDisplay": "Wrong Answer",
+    "timestamp": 1596898930,
+    "lang": "cpp",
+    "passedTestCaseCnt": 54,
+    "totalTestCaseCnt": 102,
+    "sourceUrl": "/problems/minimum-insertions-to-balance-a-parentheses-string/",
+    "question": {
+      "titleSlug": "minimum-insertions-to-balance-a-parentheses-string",
+      "title": "Minimum Insertions to Balance a Parentheses String",
+      "translatedTitle": "\u5e73\u8861\u62ec\u53f7\u5b57\u7b26\u4e32\u7684\u6700\u5c11\u63d2\u5165\u6b21\u6570",
+      "questionId": "1648",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "1",
+      "expectedOutput": "4",
+      "input": "\"(()))(()))()())))\"",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "\"(()))(()))()())))\"",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

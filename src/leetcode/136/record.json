@@ -1,1 +1,45 @@
-{"simple": {"id": 70633041, "lang": "C++", "time": "1\u00a0\u5e74\uff0c10\u00a0\u6708", "status_display": "Accepted", "runtime": "20 ms", "url": "/submissions/detail/70633041/", "is_pending": "Not Pending", "title": "\u53ea\u51fa\u73b0\u4e00\u6b21\u7684\u6570\u5b57", "timestamp": 1589421674, "memory": "11.3 MB"}, "full": {"id": "70633041", "code": "class Solution {\npublic:\n    int singleNumber(vector<int>& nums) {\n        int ret = 0;\n        for(const auto &i : nums) ret ^= i;\n        return ret;\n    }\n};", "runtime": "20 ms", "memory": "11.3 MB", "rawMemory": "11620000", "statusDisplay": "Accepted", "timestamp": 1589421674, "lang": "cpp", "passedTestCaseCnt": 16, "totalTestCaseCnt": 61, "sourceUrl": "/problems/single-number/", "question": {"titleSlug": "single-number", "title": "Single Number", "translatedTitle": "\u53ea\u51fa\u73b0\u4e00\u6b21\u7684\u6570\u5b57", "questionId": "136", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 70633041,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c10\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "20 ms",
+    "url": "/submissions/detail/70633041/",
+    "is_pending": "Not Pending",
+    "title": "\u53ea\u51fa\u73b0\u4e00\u6b21\u7684\u6570\u5b57",
+    "timestamp": 1589421674,
+    "memory": "11.3 MB"
+  },
+  "full": {
+    "id": "70633041",
+    "code": "class Solution {\npublic:\n    int singleNumber(vector<int>& nums) {\n        int ret = 0;\n        for(const auto &i : nums) ret ^= i;\n        return ret;\n    }\n};",
+    "runtime": "20 ms",
+    "memory": "11.3 MB",
+    "rawMemory": "11620000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1589421674,
+    "lang": "cpp",
+    "passedTestCaseCnt": 16,
+    "totalTestCaseCnt": 61,
+    "sourceUrl": "/problems/single-number/",
+    "question": {
+      "titleSlug": "single-number",
+      "title": "Single Number",
+      "translatedTitle": "\u53ea\u51fa\u73b0\u4e00\u6b21\u7684\u6570\u5b57",
+      "questionId": "136",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

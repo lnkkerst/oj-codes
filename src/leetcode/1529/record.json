@@ -1,1 +1,45 @@
-{"simple": {"id": 67689711, "lang": "C++", "time": "1\u00a0\u5e74\uff0c10\u00a0\u6708", "status_display": "Wrong Answer", "runtime": "N/A", "url": "/submissions/detail/67689711/", "is_pending": "Not Pending", "title": "\u6539\u53d8\u4e00\u4e2a\u6574\u6570\u80fd\u5f97\u5230\u7684\u6700\u5927\u5dee\u503c", "timestamp": 1588432571, "memory": "N/A"}, "full": {"id": "67689711", "code": "class Solution {\npublic:\n    int toInt(string &s) {\n        int ret = 0;\n        for(auto i = s.rbegin(); i != s.rend(); ++i)\n            ret *= 10, ret += *i - '0';\n        return ret;\n    }\n    void cvt(string &s, char x, char y) {\n        x += '0', y += '0';\n        for(auto &i : s)\n            if(i == x) i = y;\n    }\n    int maxDiff(int num) {\n        int ans = 0;\n        string s  = to_string(num);\n        int l = s.size();\n        for(int i = 0; i <= 9; ++i) {\n            for(int j = 0; j <= 9; ++j) {\n                for(int k = 0; k <= 9; ++k) {\n                    for(int t = 0; t <= 9; ++t) {\n                        string ss = s;\n                        cvt(ss, i, j);\n                        cvt(ss, k, t);\n                        if(ss[0] != 0 && ss != \"0\") {\n                            ans = max(abs(toInt(ss) - num), ans);\n                        }\n                    }\n                }\n            }\n        }\n        return ans;\n    }\n};", "runtime": "N/A", "memory": "N/A", "rawMemory": "N/A", "statusDisplay": "Wrong Answer", "timestamp": 1588432571, "lang": "cpp", "passedTestCaseCnt": 1, "totalTestCaseCnt": 211, "sourceUrl": "/problems/max-difference-you-can-get-from-changing-an-integer/", "question": {"titleSlug": "max-difference-you-can-get-from-changing-an-integer", "title": "Max Difference You Can Get From Changing an Integer", "translatedTitle": "\u6539\u53d8\u4e00\u4e2a\u6574\u6570\u80fd\u5f97\u5230\u7684\u6700\u5927\u5dee\u503c", "questionId": "1529", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "555", "expectedOutput": "888", "input": "555", "compileError": "", "runtimeError": "", "lastTestcase": "555", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 67689711,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c10\u00a0\u6708",
+    "status_display": "Wrong Answer",
+    "runtime": "N/A",
+    "url": "/submissions/detail/67689711/",
+    "is_pending": "Not Pending",
+    "title": "\u6539\u53d8\u4e00\u4e2a\u6574\u6570\u80fd\u5f97\u5230\u7684\u6700\u5927\u5dee\u503c",
+    "timestamp": 1588432571,
+    "memory": "N/A"
+  },
+  "full": {
+    "id": "67689711",
+    "code": "class Solution {\npublic:\n    int toInt(string &s) {\n        int ret = 0;\n        for(auto i = s.rbegin(); i != s.rend(); ++i)\n            ret *= 10, ret += *i - '0';\n        return ret;\n    }\n    void cvt(string &s, char x, char y) {\n        x += '0', y += '0';\n        for(auto &i : s)\n            if(i == x) i = y;\n    }\n    int maxDiff(int num) {\n        int ans = 0;\n        string s  = to_string(num);\n        int l = s.size();\n        for(int i = 0; i <= 9; ++i) {\n            for(int j = 0; j <= 9; ++j) {\n                for(int k = 0; k <= 9; ++k) {\n                    for(int t = 0; t <= 9; ++t) {\n                        string ss = s;\n                        cvt(ss, i, j);\n                        cvt(ss, k, t);\n                        if(ss[0] != 0 && ss != \"0\") {\n                            ans = max(abs(toInt(ss) - num), ans);\n                        }\n                    }\n                }\n            }\n        }\n        return ans;\n    }\n};",
+    "runtime": "N/A",
+    "memory": "N/A",
+    "rawMemory": "N/A",
+    "statusDisplay": "Wrong Answer",
+    "timestamp": 1588432571,
+    "lang": "cpp",
+    "passedTestCaseCnt": 1,
+    "totalTestCaseCnt": 211,
+    "sourceUrl": "/problems/max-difference-you-can-get-from-changing-an-integer/",
+    "question": {
+      "titleSlug": "max-difference-you-can-get-from-changing-an-integer",
+      "title": "Max Difference You Can Get From Changing an Integer",
+      "translatedTitle": "\u6539\u53d8\u4e00\u4e2a\u6574\u6570\u80fd\u5f97\u5230\u7684\u6700\u5927\u5dee\u503c",
+      "questionId": "1529",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "555",
+      "expectedOutput": "888",
+      "input": "555",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "555",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

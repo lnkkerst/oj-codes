@@ -1,1 +1,45 @@
-{"simple": {"id": 62300451, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Accepted", "runtime": "0 ms", "url": "/submissions/detail/62300451/", "is_pending": "Not Pending", "title": "\u89e3\u538b\u7f29\u7f16\u7801\u5217\u8868", "timestamp": 1586751065, "memory": "9.8 MB"}, "full": {"id": "62300451", "code": "class Solution {\npublic:\n    vector<int> decompressRLElist(vector<int>& nums) {\n        vector<int> ret;\n        for(int i = 0; i < (int)nums.size(); i += 2)\n            for(int j = 1; j <= nums[i]; ++j)\n                ret.push_back(nums[i + 1]);\n        return ret;\n    }\n};", "runtime": "0 ms", "memory": "9.8 MB", "rawMemory": "10072000", "statusDisplay": "Accepted", "timestamp": 1586751065, "lang": "cpp", "passedTestCaseCnt": 53, "totalTestCaseCnt": 53, "sourceUrl": "/problems/decompress-run-length-encoded-list/", "question": {"titleSlug": "decompress-run-length-encoded-list", "title": "Decompress Run-Length Encoded List", "translatedTitle": "\u89e3\u538b\u7f29\u7f16\u7801\u5217\u8868", "questionId": "1241", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 62300451,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "0 ms",
+    "url": "/submissions/detail/62300451/",
+    "is_pending": "Not Pending",
+    "title": "\u89e3\u538b\u7f29\u7f16\u7801\u5217\u8868",
+    "timestamp": 1586751065,
+    "memory": "9.8 MB"
+  },
+  "full": {
+    "id": "62300451",
+    "code": "class Solution {\npublic:\n    vector<int> decompressRLElist(vector<int>& nums) {\n        vector<int> ret;\n        for(int i = 0; i < (int)nums.size(); i += 2)\n            for(int j = 1; j <= nums[i]; ++j)\n                ret.push_back(nums[i + 1]);\n        return ret;\n    }\n};",
+    "runtime": "0 ms",
+    "memory": "9.8 MB",
+    "rawMemory": "10072000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1586751065,
+    "lang": "cpp",
+    "passedTestCaseCnt": 53,
+    "totalTestCaseCnt": 53,
+    "sourceUrl": "/problems/decompress-run-length-encoded-list/",
+    "question": {
+      "titleSlug": "decompress-run-length-encoded-list",
+      "title": "Decompress Run-Length Encoded List",
+      "translatedTitle": "\u89e3\u538b\u7f29\u7f16\u7801\u5217\u8868",
+      "questionId": "1241",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

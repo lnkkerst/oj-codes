@@ -1,1 +1,45 @@
-{"simple": {"id": 44697604, "lang": "C++", "time": "2\u00a0\u5e74\uff0c1\u00a0\u6708", "status_display": "Wrong Answer", "runtime": "N/A", "url": "/submissions/detail/44697604/", "is_pending": "Not Pending", "title": "\u6574\u6570\u53cd\u8f6c", "timestamp": 1580187222, "memory": "N/A"}, "full": {"id": "44697604", "code": "class Solution {\npublic:\n    int reverse(int x) {\n        bool fl = x >= 0;\n        if(!fl) x = -x;\n        int ret = 0;\n        while(x) {\n            ret *= 10;\n            ret += x % 10;\n            x /= 10;\n        }\n        return ret * fl;\n    }\n};", "runtime": "N/A", "memory": "N/A", "rawMemory": "N/A", "statusDisplay": "Wrong Answer", "timestamp": 1580187222, "lang": "cpp", "passedTestCaseCnt": 8, "totalTestCaseCnt": 1032, "sourceUrl": "/problems/reverse-integer/", "question": {"titleSlug": "reverse-integer", "title": "Reverse Integer", "translatedTitle": "\u6574\u6570\u53cd\u8f6c", "questionId": "7", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "-321", "input": "-123", "compileError": "", "runtimeError": "", "lastTestcase": "-123", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 44697604,
+    "lang": "C++",
+    "time": "2\u00a0\u5e74\uff0c1\u00a0\u6708",
+    "status_display": "Wrong Answer",
+    "runtime": "N/A",
+    "url": "/submissions/detail/44697604/",
+    "is_pending": "Not Pending",
+    "title": "\u6574\u6570\u53cd\u8f6c",
+    "timestamp": 1580187222,
+    "memory": "N/A"
+  },
+  "full": {
+    "id": "44697604",
+    "code": "class Solution {\npublic:\n    int reverse(int x) {\n        bool fl = x >= 0;\n        if(!fl) x = -x;\n        int ret = 0;\n        while(x) {\n            ret *= 10;\n            ret += x % 10;\n            x /= 10;\n        }\n        return ret * fl;\n    }\n};",
+    "runtime": "N/A",
+    "memory": "N/A",
+    "rawMemory": "N/A",
+    "statusDisplay": "Wrong Answer",
+    "timestamp": 1580187222,
+    "lang": "cpp",
+    "passedTestCaseCnt": 8,
+    "totalTestCaseCnt": 1032,
+    "sourceUrl": "/problems/reverse-integer/",
+    "question": {
+      "titleSlug": "reverse-integer",
+      "title": "Reverse Integer",
+      "translatedTitle": "\u6574\u6570\u53cd\u8f6c",
+      "questionId": "7",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "-321",
+      "input": "-123",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "-123",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

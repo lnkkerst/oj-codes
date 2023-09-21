@@ -1,1 +1,45 @@
-{"simple": {"id": 62247866, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Accepted", "runtime": "440 ms", "url": "/submissions/detail/62247866/", "is_pending": "Not Pending", "title": "\u8bbe\u8ba1\u63a8\u7279", "timestamp": 1586739525, "memory": "35.6 MB"}, "full": {"id": "62247866", "code": "class Twitter {\npublic:\n    unordered_map<int, unordered_map<int, bool> > a;\n    vector<pair<int, int> > pt;\n    /** Initialize your data structure here. */\n    Twitter() {\n        a.clear();\n        pt.clear();\n    }\n    \n    /** Compose a new tweet. */\n    void postTweet(int userId, int tweetId) {\n        pt.push_back(make_pair(userId, tweetId));\n    }\n    \n    /** Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user herself. Tweets must be ordered from most recent to least recent. */\n    vector<int> getNewsFeed(int userId) {\n        vector<int> ret;\n        int cnt = 0;\n        for(auto i = pt.rbegin(); i != pt.rend(); ++i) {\n            if(cnt >= 10) break;\n            if(i->first == userId || a[userId][i->first]) {\n                ++cnt;\n                ret.push_back(i->second);\n            }\n        }\n        return ret;\n    }\n    \n    /** Follower follows a followee. If the operation is invalid, it should be a no-op. */\n    void follow(int followerId, int followeeId) {\n        a[followerId][followeeId] = 1;\n    }\n    \n    /** Follower unfollows a followee. If the operation is invalid, it should be a no-op. */\n    void unfollow(int followerId, int followeeId) {\n        a[followerId][followeeId] = 0;\n    }\n};\n\n/**\n * Your Twitter object will be instantiated and called as such:\n * Twitter* obj = new Twitter();\n * obj->postTweet(userId,tweetId);\n * vector<int> param_2 = obj->getNewsFeed(userId);\n * obj->follow(followerId,followeeId);\n * obj->unfollow(followerId,followeeId);\n */", "runtime": "440 ms", "memory": "35.6 MB", "rawMemory": "36444000", "statusDisplay": "Accepted", "timestamp": 1586739525, "lang": "cpp", "passedTestCaseCnt": 23, "totalTestCaseCnt": 16, "sourceUrl": "/problems/design-twitter/", "question": {"titleSlug": "design-twitter", "title": "Design Twitter", "translatedTitle": "\u8bbe\u8ba1\u63a8\u7279", "questionId": "355", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 62247866,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "440 ms",
+    "url": "/submissions/detail/62247866/",
+    "is_pending": "Not Pending",
+    "title": "\u8bbe\u8ba1\u63a8\u7279",
+    "timestamp": 1586739525,
+    "memory": "35.6 MB"
+  },
+  "full": {
+    "id": "62247866",
+    "code": "class Twitter {\npublic:\n    unordered_map<int, unordered_map<int, bool> > a;\n    vector<pair<int, int> > pt;\n    /** Initialize your data structure here. */\n    Twitter() {\n        a.clear();\n        pt.clear();\n    }\n    \n    /** Compose a new tweet. */\n    void postTweet(int userId, int tweetId) {\n        pt.push_back(make_pair(userId, tweetId));\n    }\n    \n    /** Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user herself. Tweets must be ordered from most recent to least recent. */\n    vector<int> getNewsFeed(int userId) {\n        vector<int> ret;\n        int cnt = 0;\n        for(auto i = pt.rbegin(); i != pt.rend(); ++i) {\n            if(cnt >= 10) break;\n            if(i->first == userId || a[userId][i->first]) {\n                ++cnt;\n                ret.push_back(i->second);\n            }\n        }\n        return ret;\n    }\n    \n    /** Follower follows a followee. If the operation is invalid, it should be a no-op. */\n    void follow(int followerId, int followeeId) {\n        a[followerId][followeeId] = 1;\n    }\n    \n    /** Follower unfollows a followee. If the operation is invalid, it should be a no-op. */\n    void unfollow(int followerId, int followeeId) {\n        a[followerId][followeeId] = 0;\n    }\n};\n\n/**\n * Your Twitter object will be instantiated and called as such:\n * Twitter* obj = new Twitter();\n * obj->postTweet(userId,tweetId);\n * vector<int> param_2 = obj->getNewsFeed(userId);\n * obj->follow(followerId,followeeId);\n * obj->unfollow(followerId,followeeId);\n */",
+    "runtime": "440 ms",
+    "memory": "35.6 MB",
+    "rawMemory": "36444000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1586739525,
+    "lang": "cpp",
+    "passedTestCaseCnt": 23,
+    "totalTestCaseCnt": 16,
+    "sourceUrl": "/problems/design-twitter/",
+    "question": {
+      "titleSlug": "design-twitter",
+      "title": "Design Twitter",
+      "translatedTitle": "\u8bbe\u8ba1\u63a8\u7279",
+      "questionId": "355",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

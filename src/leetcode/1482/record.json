@@ -1,1 +1,45 @@
-{"simple": {"id": 62298826, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Accepted", "runtime": "56 ms", "url": "/submissions/detail/62298826/", "is_pending": "Not Pending", "title": "\u6709\u591a\u5c11\u5c0f\u4e8e\u5f53\u524d\u6570\u5b57\u7684\u6570\u5b57", "timestamp": 1586750575, "memory": "6.9 MB"}, "full": {"id": "62298826", "code": "class Solution {\npublic:\n    vector<int> smallerNumbersThanCurrent(vector<int>& nums) {\n        vector<int> ret;\n        for(auto i : nums) {\n            int t = 0;\n            for(auto j : nums)\n                t += i > j;\n            ret.push_back(t);\n        }\n        return ret;\n    }\n};", "runtime": "56 ms", "memory": "6.9 MB", "rawMemory": "7064000", "statusDisplay": "Accepted", "timestamp": 1586750575, "lang": "cpp", "passedTestCaseCnt": 103, "totalTestCaseCnt": 103, "sourceUrl": "/problems/how-many-numbers-are-smaller-than-the-current-number/", "question": {"titleSlug": "how-many-numbers-are-smaller-than-the-current-number", "title": "How Many Numbers Are Smaller Than the Current Number", "translatedTitle": "\u6709\u591a\u5c11\u5c0f\u4e8e\u5f53\u524d\u6570\u5b57\u7684\u6570\u5b57", "questionId": "1482", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 62298826,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "56 ms",
+    "url": "/submissions/detail/62298826/",
+    "is_pending": "Not Pending",
+    "title": "\u6709\u591a\u5c11\u5c0f\u4e8e\u5f53\u524d\u6570\u5b57\u7684\u6570\u5b57",
+    "timestamp": 1586750575,
+    "memory": "6.9 MB"
+  },
+  "full": {
+    "id": "62298826",
+    "code": "class Solution {\npublic:\n    vector<int> smallerNumbersThanCurrent(vector<int>& nums) {\n        vector<int> ret;\n        for(auto i : nums) {\n            int t = 0;\n            for(auto j : nums)\n                t += i > j;\n            ret.push_back(t);\n        }\n        return ret;\n    }\n};",
+    "runtime": "56 ms",
+    "memory": "6.9 MB",
+    "rawMemory": "7064000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1586750575,
+    "lang": "cpp",
+    "passedTestCaseCnt": 103,
+    "totalTestCaseCnt": 103,
+    "sourceUrl": "/problems/how-many-numbers-are-smaller-than-the-current-number/",
+    "question": {
+      "titleSlug": "how-many-numbers-are-smaller-than-the-current-number",
+      "title": "How Many Numbers Are Smaller Than the Current Number",
+      "translatedTitle": "\u6709\u591a\u5c11\u5c0f\u4e8e\u5f53\u524d\u6570\u5b57\u7684\u6570\u5b57",
+      "questionId": "1482",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

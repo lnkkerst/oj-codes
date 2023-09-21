@@ -1,1 +1,45 @@
-{"simple": {"id": 61701713, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Accepted", "runtime": "0 ms", "url": "/submissions/detail/61701713/", "is_pending": "Not Pending", "title": "\u5c06\u6570\u5b57\u53d8\u6210 0 \u7684\u64cd\u4f5c\u6b21\u6570", "timestamp": 1586568056, "memory": "5.9 MB"}, "full": {"id": "61701713", "code": "class Solution {\npublic:\n    int numberOfSteps (int num) {\n        int ret = 0;\n        while(num) num = num & 1 ? num - 1 : num >> 1, ++ret;\n        return ret;\n    }\n};", "runtime": "0 ms", "memory": "5.9 MB", "rawMemory": "5992000", "statusDisplay": "Accepted", "timestamp": 1586568056, "lang": "cpp", "passedTestCaseCnt": 203, "totalTestCaseCnt": 204, "sourceUrl": "/problems/number-of-steps-to-reduce-a-number-to-zero/", "question": {"titleSlug": "number-of-steps-to-reduce-a-number-to-zero", "title": "Number of Steps to Reduce a Number to Zero", "translatedTitle": "\u5c06\u6570\u5b57\u53d8\u6210 0 \u7684\u64cd\u4f5c\u6b21\u6570", "questionId": "1444", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 61701713,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "0 ms",
+    "url": "/submissions/detail/61701713/",
+    "is_pending": "Not Pending",
+    "title": "\u5c06\u6570\u5b57\u53d8\u6210 0 \u7684\u64cd\u4f5c\u6b21\u6570",
+    "timestamp": 1586568056,
+    "memory": "5.9 MB"
+  },
+  "full": {
+    "id": "61701713",
+    "code": "class Solution {\npublic:\n    int numberOfSteps (int num) {\n        int ret = 0;\n        while(num) num = num & 1 ? num - 1 : num >> 1, ++ret;\n        return ret;\n    }\n};",
+    "runtime": "0 ms",
+    "memory": "5.9 MB",
+    "rawMemory": "5992000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1586568056,
+    "lang": "cpp",
+    "passedTestCaseCnt": 203,
+    "totalTestCaseCnt": 204,
+    "sourceUrl": "/problems/number-of-steps-to-reduce-a-number-to-zero/",
+    "question": {
+      "titleSlug": "number-of-steps-to-reduce-a-number-to-zero",
+      "title": "Number of Steps to Reduce a Number to Zero",
+      "translatedTitle": "\u5c06\u6570\u5b57\u53d8\u6210 0 \u7684\u64cd\u4f5c\u6b21\u6570",
+      "questionId": "1444",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

@@ -5,4 +5,4 @@ for i in a:
     b.add(int(i))
 print(len(b))
 for i in b:
-    print(i, end = ' ')
+    print(i, end=" ")

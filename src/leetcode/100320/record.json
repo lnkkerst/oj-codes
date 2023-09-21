@@ -1,1 +1,45 @@
-{"simple": {"id": 66556703, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Accepted", "runtime": "84 ms", "url": "/submissions/detail/66556703/", "is_pending": "Not Pending", "title": "\u6570\u7ec4\u4e2d\u6570\u5b57\u51fa\u73b0\u7684\u6b21\u6570", "timestamp": 1588040303, "memory": "18.8 MB"}, "full": {"id": "66556703", "code": "class Solution {\npublic:\n    vector<int> singleNumbers(vector<int>& nums) {\n        unordered_set<int> a;\n        for(auto &i : nums) {\n\t\t\tauto t = a.find(i);\n\t\t\tif(t == a.end()) a.insert(i);\n\t\t\telse a.erase(t);\n\t\t}\n        return vector<int>(a.begin(), a.end());\n    }\n};", "runtime": "84 ms", "memory": "18.8 MB", "rawMemory": "19232000", "statusDisplay": "Accepted", "timestamp": 1588040303, "lang": "cpp", "passedTestCaseCnt": 35, "totalTestCaseCnt": 35, "sourceUrl": "/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof/", "question": {"titleSlug": "shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof", "title": "\u6570\u7ec4\u4e2d\u6570\u5b57\u51fa\u73b0\u7684\u6b21\u6570 LCOF", "translatedTitle": "\u6570\u7ec4\u4e2d\u6570\u5b57\u51fa\u73b0\u7684\u6b21\u6570", "questionId": "100320", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 66556703,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "84 ms",
+    "url": "/submissions/detail/66556703/",
+    "is_pending": "Not Pending",
+    "title": "\u6570\u7ec4\u4e2d\u6570\u5b57\u51fa\u73b0\u7684\u6b21\u6570",
+    "timestamp": 1588040303,
+    "memory": "18.8 MB"
+  },
+  "full": {
+    "id": "66556703",
+    "code": "class Solution {\npublic:\n    vector<int> singleNumbers(vector<int>& nums) {\n        unordered_set<int> a;\n        for(auto &i : nums) {\n\t\t\tauto t = a.find(i);\n\t\t\tif(t == a.end()) a.insert(i);\n\t\t\telse a.erase(t);\n\t\t}\n        return vector<int>(a.begin(), a.end());\n    }\n};",
+    "runtime": "84 ms",
+    "memory": "18.8 MB",
+    "rawMemory": "19232000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1588040303,
+    "lang": "cpp",
+    "passedTestCaseCnt": 35,
+    "totalTestCaseCnt": 35,
+    "sourceUrl": "/problems/shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof/",
+    "question": {
+      "titleSlug": "shu-zu-zhong-shu-zi-chu-xian-de-ci-shu-lcof",
+      "title": "\u6570\u7ec4\u4e2d\u6570\u5b57\u51fa\u73b0\u7684\u6b21\u6570 LCOF",
+      "translatedTitle": "\u6570\u7ec4\u4e2d\u6570\u5b57\u51fa\u73b0\u7684\u6b21\u6570",
+      "questionId": "100320",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

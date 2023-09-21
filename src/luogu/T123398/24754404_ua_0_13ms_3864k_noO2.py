@@ -1,1 +1,1 @@
-print ("""HeLl0，WOrID!""")
+print("""HeLl0，WOrID!""")

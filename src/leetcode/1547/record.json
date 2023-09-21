@@ -1,1 +1,45 @@
-{"simple": {"id": 67777012, "lang": "C++", "time": "1\u00a0\u5e74\uff0c10\u00a0\u6708", "status_display": "Accepted", "runtime": "24 ms", "url": "/submissions/detail/67777012/", "is_pending": "Not Pending", "title": "\u65c5\u884c\u7ec8\u70b9\u7ad9", "timestamp": 1588475847, "memory": "10.7 MB"}, "full": {"id": "67777012", "code": "class Solution {\npublic:\n    string destCity(vector<vector<string>>& paths) {\n        unordered_map<string, string> b;\n        for(auto &i : paths) {\n            b[i[0]] = i[1];\n        }\n        string ret = paths[0][0];\n        while(1) {\n            if(b.find(ret) == b.end()) {\n                return ret;\n            }\n            ret = b[ret];\n        }\n    }\n};", "runtime": "24 ms", "memory": "10.7 MB", "rawMemory": "10988000", "statusDisplay": "Accepted", "timestamp": 1588475847, "lang": "cpp", "passedTestCaseCnt": 103, "totalTestCaseCnt": 103, "sourceUrl": "/problems/destination-city/", "question": {"titleSlug": "destination-city", "title": "Destination City", "translatedTitle": "\u65c5\u884c\u7ec8\u70b9\u7ad9", "questionId": "1547", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 67777012,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c10\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "24 ms",
+    "url": "/submissions/detail/67777012/",
+    "is_pending": "Not Pending",
+    "title": "\u65c5\u884c\u7ec8\u70b9\u7ad9",
+    "timestamp": 1588475847,
+    "memory": "10.7 MB"
+  },
+  "full": {
+    "id": "67777012",
+    "code": "class Solution {\npublic:\n    string destCity(vector<vector<string>>& paths) {\n        unordered_map<string, string> b;\n        for(auto &i : paths) {\n            b[i[0]] = i[1];\n        }\n        string ret = paths[0][0];\n        while(1) {\n            if(b.find(ret) == b.end()) {\n                return ret;\n            }\n            ret = b[ret];\n        }\n    }\n};",
+    "runtime": "24 ms",
+    "memory": "10.7 MB",
+    "rawMemory": "10988000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1588475847,
+    "lang": "cpp",
+    "passedTestCaseCnt": 103,
+    "totalTestCaseCnt": 103,
+    "sourceUrl": "/problems/destination-city/",
+    "question": {
+      "titleSlug": "destination-city",
+      "title": "Destination City",
+      "translatedTitle": "\u65c5\u884c\u7ec8\u70b9\u7ad9",
+      "questionId": "1547",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

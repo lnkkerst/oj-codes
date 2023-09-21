@@ -1,1 +1,45 @@
-{"simple": {"id": 62328533, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Accepted", "runtime": "112 ms", "url": "/submissions/detail/62328533/", "is_pending": "Not Pending", "title": "\u53cd\u8f6c\u5b57\u7b26\u4e32", "timestamp": 1586759319, "memory": "12.4 MB"}, "full": {"id": "62328533", "code": "class Solution {\npublic:\n    void reverseString(vector<char>& s) {\n        reverse(s.begin(), s.end());\n    }\n};", "runtime": "112 ms", "memory": "12.4 MB", "rawMemory": "12672000", "statusDisplay": "Accepted", "timestamp": 1586759319, "lang": "cpp", "passedTestCaseCnt": 478, "totalTestCaseCnt": 477, "sourceUrl": "/problems/reverse-string/", "question": {"titleSlug": "reverse-string", "title": "Reverse String", "translatedTitle": "\u53cd\u8f6c\u5b57\u7b26\u4e32", "questionId": "344", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 62328533,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "112 ms",
+    "url": "/submissions/detail/62328533/",
+    "is_pending": "Not Pending",
+    "title": "\u53cd\u8f6c\u5b57\u7b26\u4e32",
+    "timestamp": 1586759319,
+    "memory": "12.4 MB"
+  },
+  "full": {
+    "id": "62328533",
+    "code": "class Solution {\npublic:\n    void reverseString(vector<char>& s) {\n        reverse(s.begin(), s.end());\n    }\n};",
+    "runtime": "112 ms",
+    "memory": "12.4 MB",
+    "rawMemory": "12672000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1586759319,
+    "lang": "cpp",
+    "passedTestCaseCnt": 478,
+    "totalTestCaseCnt": 477,
+    "sourceUrl": "/problems/reverse-string/",
+    "question": {
+      "titleSlug": "reverse-string",
+      "title": "Reverse String",
+      "translatedTitle": "\u53cd\u8f6c\u5b57\u7b26\u4e32",
+      "questionId": "344",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

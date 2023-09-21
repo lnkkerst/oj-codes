@@ -1,1 +1,45 @@
-{"simple": {"id": 61502405, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Accepted", "runtime": "12 ms", "url": "/submissions/detail/61502405/", "is_pending": "Not Pending", "title": "\u6700\u5927\u95f4\u8ddd", "timestamp": 1586499719, "memory": "8.8 MB"}, "full": {"id": "61502405", "code": "class Solution {\npublic:\n    int maximumGap(vector<int>& nums) {\n        if(nums.size() < 2) return 0;\n        int ma = *max_element(nums.begin(), nums.end());\n        int mi = *min_element(nums.begin(), nums.end());\n        int blk = max(1, (ma - mi) / (int)(nums.size() - 1));\n        vector<pair<int, int> > b((ma - mi) / blk + 1);\n        for(auto i : nums) {\n            int pos = (i - mi) / blk;\n            if(!b[pos].first) b[pos].first = b[pos].second = i;\n            else {\n                b[pos].first = max(b[pos].first, i);\n                b[pos].second = min(b[pos].second, i);\n            }\n        }\n        int ans = INT_MIN, last = INT_MAX;\n        for(auto i : b) {\n            if(!i.first) continue;\n            if(last != INT_MAX) ans = max(ans, i.second - last);\n            last = i.first;\n            ans = max(ans, i.first - i.second);\n        }\n        return ans;\n    }\n};", "runtime": "12 ms", "memory": "8.8 MB", "rawMemory": "9048000", "statusDisplay": "Accepted", "timestamp": 1586499719, "lang": "cpp", "passedTestCaseCnt": 18, "totalTestCaseCnt": 40, "sourceUrl": "/problems/maximum-gap/", "question": {"titleSlug": "maximum-gap", "title": "Maximum Gap", "translatedTitle": "\u6700\u5927\u95f4\u8ddd", "questionId": "164", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 61502405,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "12 ms",
+    "url": "/submissions/detail/61502405/",
+    "is_pending": "Not Pending",
+    "title": "\u6700\u5927\u95f4\u8ddd",
+    "timestamp": 1586499719,
+    "memory": "8.8 MB"
+  },
+  "full": {
+    "id": "61502405",
+    "code": "class Solution {\npublic:\n    int maximumGap(vector<int>& nums) {\n        if(nums.size() < 2) return 0;\n        int ma = *max_element(nums.begin(), nums.end());\n        int mi = *min_element(nums.begin(), nums.end());\n        int blk = max(1, (ma - mi) / (int)(nums.size() - 1));\n        vector<pair<int, int> > b((ma - mi) / blk + 1);\n        for(auto i : nums) {\n            int pos = (i - mi) / blk;\n            if(!b[pos].first) b[pos].first = b[pos].second = i;\n            else {\n                b[pos].first = max(b[pos].first, i);\n                b[pos].second = min(b[pos].second, i);\n            }\n        }\n        int ans = INT_MIN, last = INT_MAX;\n        for(auto i : b) {\n            if(!i.first) continue;\n            if(last != INT_MAX) ans = max(ans, i.second - last);\n            last = i.first;\n            ans = max(ans, i.first - i.second);\n        }\n        return ans;\n    }\n};",
+    "runtime": "12 ms",
+    "memory": "8.8 MB",
+    "rawMemory": "9048000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1586499719,
+    "lang": "cpp",
+    "passedTestCaseCnt": 18,
+    "totalTestCaseCnt": 40,
+    "sourceUrl": "/problems/maximum-gap/",
+    "question": {
+      "titleSlug": "maximum-gap",
+      "title": "Maximum Gap",
+      "translatedTitle": "\u6700\u5927\u95f4\u8ddd",
+      "questionId": "164",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

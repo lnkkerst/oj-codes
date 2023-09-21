@@ -1,1 +1,45 @@
-{"simple": {"id": 96061868, "lang": "C++", "time": "1\u00a0\u5e74\uff0c7\u00a0\u6708", "status_display": "Runtime Error", "runtime": "N/A", "url": "/submissions/detail/96061868/", "is_pending": "Not Pending", "title": "K \u6b21\u64cd\u4f5c\u8f6c\u53d8\u5b57\u7b26\u4e32", "timestamp": 1596897982, "memory": "N/A"}, "full": {"id": "96061868", "code": "class Solution {\npublic:\n    bool canConvertString(string s, string t, int k) {\n        vector<long long> a(s.size());\n        map<long long, bool> b;\n        for(int i = 0; i < s.size(); ++i) {\n            a[i] = t[i] - s[i];\n            while(a[i] < 0) a[i] += 26;\n            if(!a[i]) continue;\n            // cout << a[i] << endl;\n            while(b[a[i]]) {\n                a[i] += 26;\n            }\n            b[a[i]] = 1;\n            // cout << a[i] << endl;\n        }\n        // cout << b.rbegin()->first;\n        return (b.rbegin()->first <= k);\n    }\n};", "runtime": "N/A", "memory": "N/A", "rawMemory": "N/A", "statusDisplay": "Runtime Error", "timestamp": 1596897982, "lang": "cpp", "passedTestCaseCnt": 3, "totalTestCaseCnt": 155, "sourceUrl": "/problems/can-convert-string-in-k-moves/", "question": {"titleSlug": "can-convert-string-in-k-moves", "title": "Can Convert String in K Moves", "translatedTitle": "K \u6b21\u64cd\u4f5c\u8f6c\u53d8\u5b57\u7b26\u4e32", "questionId": "1647", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "true", "input": "\"leetcode\"\n\"leetcode\"\n0", "compileError": "", "runtimeError": "AddressSanitizer: SEGV on unknown address 0x000000000008 (pc 0x7f205df4030a bp 0x7ffc7b4cb430 sp 0x7ffc7b4cb418 T0)", "lastTestcase": "\"leetcode\"\n\"leetcode\"\n0", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 96061868,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c7\u00a0\u6708",
+    "status_display": "Runtime Error",
+    "runtime": "N/A",
+    "url": "/submissions/detail/96061868/",
+    "is_pending": "Not Pending",
+    "title": "K \u6b21\u64cd\u4f5c\u8f6c\u53d8\u5b57\u7b26\u4e32",
+    "timestamp": 1596897982,
+    "memory": "N/A"
+  },
+  "full": {
+    "id": "96061868",
+    "code": "class Solution {\npublic:\n    bool canConvertString(string s, string t, int k) {\n        vector<long long> a(s.size());\n        map<long long, bool> b;\n        for(int i = 0; i < s.size(); ++i) {\n            a[i] = t[i] - s[i];\n            while(a[i] < 0) a[i] += 26;\n            if(!a[i]) continue;\n            // cout << a[i] << endl;\n            while(b[a[i]]) {\n                a[i] += 26;\n            }\n            b[a[i]] = 1;\n            // cout << a[i] << endl;\n        }\n        // cout << b.rbegin()->first;\n        return (b.rbegin()->first <= k);\n    }\n};",
+    "runtime": "N/A",
+    "memory": "N/A",
+    "rawMemory": "N/A",
+    "statusDisplay": "Runtime Error",
+    "timestamp": 1596897982,
+    "lang": "cpp",
+    "passedTestCaseCnt": 3,
+    "totalTestCaseCnt": 155,
+    "sourceUrl": "/problems/can-convert-string-in-k-moves/",
+    "question": {
+      "titleSlug": "can-convert-string-in-k-moves",
+      "title": "Can Convert String in K Moves",
+      "translatedTitle": "K \u6b21\u64cd\u4f5c\u8f6c\u53d8\u5b57\u7b26\u4e32",
+      "questionId": "1647",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "true",
+      "input": "\"leetcode\"\n\"leetcode\"\n0",
+      "compileError": "",
+      "runtimeError": "AddressSanitizer: SEGV on unknown address 0x000000000008 (pc 0x7f205df4030a bp 0x7ffc7b4cb430 sp 0x7ffc7b4cb418 T0)",
+      "lastTestcase": "\"leetcode\"\n\"leetcode\"\n0",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

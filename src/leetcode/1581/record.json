@@ -1,1 +1,45 @@
-{"simple": {"id": 76916670, "lang": "C++", "time": "1\u00a0\u5e74\uff0c9\u00a0\u6708", "status_display": "Accepted", "runtime": "1148 ms", "url": "/submissions/detail/76916670/", "is_pending": "Not Pending", "title": "\u6570\u7ec4\u4e2d\u7684 k \u4e2a\u6700\u5f3a\u503c", "timestamp": 1591498485, "memory": "78.8 MB"}, "full": {"id": "76916670", "code": "int mid;\n\nclass Solution {\npublic:\n    vector<int> getStrongest(vector<int>& arr, int k) {\n        sort(arr.begin(), arr.end());\n        // vector<int> ret;\n        int n = arr.size();\n        mid = arr[(n - 1) / 2];\n        // cout << mid << endl;\n        sort(arr.begin(), arr.end(), [](const int a, const int b) -> bool {\n            if(abs(a - mid) == abs(b - mid)) return a > b;\n            return (abs(a - mid) > abs(b - mid));\n        });\n        return vector<int>(arr.begin(), arr.begin() + k);\n    }\n};", "runtime": "1148 ms", "memory": "78.8 MB", "rawMemory": "80668000", "statusDisplay": "Accepted", "timestamp": 1591498485, "lang": "cpp", "passedTestCaseCnt": 71, "totalTestCaseCnt": 71, "sourceUrl": "/problems/the-k-strongest-values-in-an-array/", "question": {"titleSlug": "the-k-strongest-values-in-an-array", "title": "The k Strongest Values in an Array", "translatedTitle": "\u6570\u7ec4\u4e2d\u7684 k \u4e2a\u6700\u5f3a\u503c", "questionId": "1581", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 76916670,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c9\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "1148 ms",
+    "url": "/submissions/detail/76916670/",
+    "is_pending": "Not Pending",
+    "title": "\u6570\u7ec4\u4e2d\u7684 k \u4e2a\u6700\u5f3a\u503c",
+    "timestamp": 1591498485,
+    "memory": "78.8 MB"
+  },
+  "full": {
+    "id": "76916670",
+    "code": "int mid;\n\nclass Solution {\npublic:\n    vector<int> getStrongest(vector<int>& arr, int k) {\n        sort(arr.begin(), arr.end());\n        // vector<int> ret;\n        int n = arr.size();\n        mid = arr[(n - 1) / 2];\n        // cout << mid << endl;\n        sort(arr.begin(), arr.end(), [](const int a, const int b) -> bool {\n            if(abs(a - mid) == abs(b - mid)) return a > b;\n            return (abs(a - mid) > abs(b - mid));\n        });\n        return vector<int>(arr.begin(), arr.begin() + k);\n    }\n};",
+    "runtime": "1148 ms",
+    "memory": "78.8 MB",
+    "rawMemory": "80668000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1591498485,
+    "lang": "cpp",
+    "passedTestCaseCnt": 71,
+    "totalTestCaseCnt": 71,
+    "sourceUrl": "/problems/the-k-strongest-values-in-an-array/",
+    "question": {
+      "titleSlug": "the-k-strongest-values-in-an-array",
+      "title": "The k Strongest Values in an Array",
+      "translatedTitle": "\u6570\u7ec4\u4e2d\u7684 k \u4e2a\u6700\u5f3a\u503c",
+      "questionId": "1581",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

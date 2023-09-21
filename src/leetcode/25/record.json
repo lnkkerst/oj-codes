@@ -1,1 +1,45 @@
-{"simple": {"id": 71270735, "lang": "C++", "time": "1\u00a0\u5e74\uff0c10\u00a0\u6708", "status_display": "Wrong Answer", "runtime": "N/A", "url": "/submissions/detail/71270735/", "is_pending": "Not Pending", "title": "K \u4e2a\u4e00\u7ec4\u7ffb\u8f6c\u94fe\u8868", "timestamp": 1589628233, "memory": "N/A"}, "full": {"id": "71270735", "code": "/**\n * Definition for singly-linked list.\n * struct ListNode {\n *     int val;\n *     ListNode *next;\n *     ListNode(int x) : val(x), next(NULL) {}\n * };\n */\nclass Solution {\npublic:\n    ListNode* reverseKGroup(ListNode* head, int k) {\n        ListNode *ret = new ListNode(-1), *tail = ret;\n        vector<int> q;\n        while(head) {\n            for(int i = 1; head && i <= k; ++i) {\n                q.push_back(head->val);\n                head = head->next;\n            }\n            for(auto i = q.rbegin(); i != q.rend(); ++i) {\n                tail->next = new ListNode(*i);\n                tail = tail->next;\n            }\n            q.clear();\n        }\n        return ret->next;\n    }\n};", "runtime": "N/A", "memory": "N/A", "rawMemory": "N/A", "statusDisplay": "Wrong Answer", "timestamp": 1589628233, "lang": "cpp", "passedTestCaseCnt": 41, "totalTestCaseCnt": 62, "sourceUrl": "/problems/reverse-nodes-in-k-group/", "question": {"titleSlug": "reverse-nodes-in-k-group", "title": "Reverse Nodes in k-Group", "translatedTitle": "K \u4e2a\u4e00\u7ec4\u7ffb\u8f6c\u94fe\u8868", "questionId": "25", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "[3,2,1,5,4]", "expectedOutput": "[3,2,1,4,5]", "input": "[1,2,3,4,5]\n3", "compileError": "", "runtimeError": "", "lastTestcase": "[1,2,3,4,5]\n3", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 71270735,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c10\u00a0\u6708",
+    "status_display": "Wrong Answer",
+    "runtime": "N/A",
+    "url": "/submissions/detail/71270735/",
+    "is_pending": "Not Pending",
+    "title": "K \u4e2a\u4e00\u7ec4\u7ffb\u8f6c\u94fe\u8868",
+    "timestamp": 1589628233,
+    "memory": "N/A"
+  },
+  "full": {
+    "id": "71270735",
+    "code": "/**\n * Definition for singly-linked list.\n * struct ListNode {\n *     int val;\n *     ListNode *next;\n *     ListNode(int x) : val(x), next(NULL) {}\n * };\n */\nclass Solution {\npublic:\n    ListNode* reverseKGroup(ListNode* head, int k) {\n        ListNode *ret = new ListNode(-1), *tail = ret;\n        vector<int> q;\n        while(head) {\n            for(int i = 1; head && i <= k; ++i) {\n                q.push_back(head->val);\n                head = head->next;\n            }\n            for(auto i = q.rbegin(); i != q.rend(); ++i) {\n                tail->next = new ListNode(*i);\n                tail = tail->next;\n            }\n            q.clear();\n        }\n        return ret->next;\n    }\n};",
+    "runtime": "N/A",
+    "memory": "N/A",
+    "rawMemory": "N/A",
+    "statusDisplay": "Wrong Answer",
+    "timestamp": 1589628233,
+    "lang": "cpp",
+    "passedTestCaseCnt": 41,
+    "totalTestCaseCnt": 62,
+    "sourceUrl": "/problems/reverse-nodes-in-k-group/",
+    "question": {
+      "titleSlug": "reverse-nodes-in-k-group",
+      "title": "Reverse Nodes in k-Group",
+      "translatedTitle": "K \u4e2a\u4e00\u7ec4\u7ffb\u8f6c\u94fe\u8868",
+      "questionId": "25",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "[3,2,1,5,4]",
+      "expectedOutput": "[3,2,1,4,5]",
+      "input": "[1,2,3,4,5]\n3",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "[1,2,3,4,5]\n3",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

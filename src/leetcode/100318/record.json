@@ -1,1 +1,45 @@
-{"simple": {"id": 65543712, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Runtime Error", "runtime": "N/A", "url": "/submissions/detail/65543712/", "is_pending": "Not Pending", "title": "\u6570\u7ec4\u4e2d\u7684\u9006\u5e8f\u5bf9", "timestamp": 1587699334, "memory": "N/A"}, "full": {"id": "65543712", "code": "class Solution {\npublic:\n\tint cnt;\n\tSolution() : cnt(0) {}\n\tvoid msort(int l, int r, vector<int> &a, vector<int> &b) {\n\t\tif(l == r) return ;\n\t\tint mid = (l + r) >> 1;\n\t\tmsort(l, mid, a, b);\n\t\tmsort(mid + 1, r, a, b);\n\t\tint i = l, j = mid + 1, t = l;\n\t\twhile(i <= mid && j <= r)\n\t\t\tif(a[i] <= a[j]) b[t++] = a[i++];\n\t\t\telse b[t++] = a[j++], cnt += mid - i + 1;\n\t\twhile(i <= mid) b[t++] = a[i++];\n\t\twhile(j <= r) b[t++] = a[j++];\n\t\tfor(int i = l; i <= r; ++i) a[i] = b[i];\n\t}\n    int reversePairs(vector<int>& nums) {\n        vector<int> b(nums.size());\n\t\tmsort(0, nums.size() - 1, nums, b);\n\t\treturn cnt;\n    }\n};", "runtime": "N/A", "memory": "N/A", "rawMemory": "N/A", "statusDisplay": "Runtime Error", "timestamp": 1587699334, "lang": "cpp", "passedTestCaseCnt": 10, "totalTestCaseCnt": 139, "sourceUrl": "/problems/shu-zu-zhong-de-ni-xu-dui-lcof/", "question": {"titleSlug": "shu-zu-zhong-de-ni-xu-dui-lcof", "title": "\u6570\u7ec4\u4e2d\u7684\u9006\u5e8f\u5bf9  LCOF", "translatedTitle": "\u6570\u7ec4\u4e2d\u7684\u9006\u5e8f\u5bf9", "questionId": "100318", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "0", "input": "[]", "compileError": "", "runtimeError": "AddressSanitizer: stack-overflow on address 0x7ffd9910fff8 (pc 0x00000038ed0c bp 0x7ffd99110020 sp 0x7ffd99110000 T0)", "lastTestcase": "[]", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 65543712,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Runtime Error",
+    "runtime": "N/A",
+    "url": "/submissions/detail/65543712/",
+    "is_pending": "Not Pending",
+    "title": "\u6570\u7ec4\u4e2d\u7684\u9006\u5e8f\u5bf9",
+    "timestamp": 1587699334,
+    "memory": "N/A"
+  },
+  "full": {
+    "id": "65543712",
+    "code": "class Solution {\npublic:\n\tint cnt;\n\tSolution() : cnt(0) {}\n\tvoid msort(int l, int r, vector<int> &a, vector<int> &b) {\n\t\tif(l == r) return ;\n\t\tint mid = (l + r) >> 1;\n\t\tmsort(l, mid, a, b);\n\t\tmsort(mid + 1, r, a, b);\n\t\tint i = l, j = mid + 1, t = l;\n\t\twhile(i <= mid && j <= r)\n\t\t\tif(a[i] <= a[j]) b[t++] = a[i++];\n\t\t\telse b[t++] = a[j++], cnt += mid - i + 1;\n\t\twhile(i <= mid) b[t++] = a[i++];\n\t\twhile(j <= r) b[t++] = a[j++];\n\t\tfor(int i = l; i <= r; ++i) a[i] = b[i];\n\t}\n    int reversePairs(vector<int>& nums) {\n        vector<int> b(nums.size());\n\t\tmsort(0, nums.size() - 1, nums, b);\n\t\treturn cnt;\n    }\n};",
+    "runtime": "N/A",
+    "memory": "N/A",
+    "rawMemory": "N/A",
+    "statusDisplay": "Runtime Error",
+    "timestamp": 1587699334,
+    "lang": "cpp",
+    "passedTestCaseCnt": 10,
+    "totalTestCaseCnt": 139,
+    "sourceUrl": "/problems/shu-zu-zhong-de-ni-xu-dui-lcof/",
+    "question": {
+      "titleSlug": "shu-zu-zhong-de-ni-xu-dui-lcof",
+      "title": "\u6570\u7ec4\u4e2d\u7684\u9006\u5e8f\u5bf9  LCOF",
+      "translatedTitle": "\u6570\u7ec4\u4e2d\u7684\u9006\u5e8f\u5bf9",
+      "questionId": "100318",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "0",
+      "input": "[]",
+      "compileError": "",
+      "runtimeError": "AddressSanitizer: stack-overflow on address 0x7ffd9910fff8 (pc 0x00000038ed0c bp 0x7ffd99110020 sp 0x7ffd99110000 T0)",
+      "lastTestcase": "[]",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

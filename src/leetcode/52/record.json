@@ -1,1 +1,45 @@
-{"simple": {"id": 61453071, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Accepted", "runtime": "4 ms", "url": "/submissions/detail/61453071/", "is_pending": "Not Pending", "title": "N\u7687\u540e II", "timestamp": 1586488058, "memory": "5.7 MB"}, "full": {"id": "61453071", "code": "class Solution {\npublic:\n    int x[233], n, ans;\n    bool y[233], dx[233], dy[233];\nvoid dfs(int step) {\n\tif (step > n) ans++;\n\tfor(int i = 1; i <= n; i++) {\n\t\tif(!y[i] && !dx[i + step] && !dy[step - i + n]) {\n\t\t\tx[step] = i;\n\t\t\ty[i] = 1;\n\t\t\tdx[i + step] = 1;\n\t\t\tdy[step - i + n] = 1;\n\t\t\tdfs(step + 1);\n\t\t\ty[i] = 0;\n\t\t\tdx[i + step] = 0;\n\t\t\tdy[step - i + n] = 0;\n\t\t}\n\t}\n}\n    int totalNQueens(int nn) {\n        n = nn;\n        ans = 0;\n        dfs(1);\n        return ans;\n    }\n};", "runtime": "4 ms", "memory": "5.7 MB", "rawMemory": "5864000", "statusDisplay": "Accepted", "timestamp": 1586488058, "lang": "cpp", "passedTestCaseCnt": 9, "totalTestCaseCnt": 9, "sourceUrl": "/problems/n-queens-ii/", "question": {"titleSlug": "n-queens-ii", "title": "N-Queens II", "translatedTitle": "N\u7687\u540e II", "questionId": "52", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 61453071,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "4 ms",
+    "url": "/submissions/detail/61453071/",
+    "is_pending": "Not Pending",
+    "title": "N\u7687\u540e II",
+    "timestamp": 1586488058,
+    "memory": "5.7 MB"
+  },
+  "full": {
+    "id": "61453071",
+    "code": "class Solution {\npublic:\n    int x[233], n, ans;\n    bool y[233], dx[233], dy[233];\nvoid dfs(int step) {\n\tif (step > n) ans++;\n\tfor(int i = 1; i <= n; i++) {\n\t\tif(!y[i] && !dx[i + step] && !dy[step - i + n]) {\n\t\t\tx[step] = i;\n\t\t\ty[i] = 1;\n\t\t\tdx[i + step] = 1;\n\t\t\tdy[step - i + n] = 1;\n\t\t\tdfs(step + 1);\n\t\t\ty[i] = 0;\n\t\t\tdx[i + step] = 0;\n\t\t\tdy[step - i + n] = 0;\n\t\t}\n\t}\n}\n    int totalNQueens(int nn) {\n        n = nn;\n        ans = 0;\n        dfs(1);\n        return ans;\n    }\n};",
+    "runtime": "4 ms",
+    "memory": "5.7 MB",
+    "rawMemory": "5864000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1586488058,
+    "lang": "cpp",
+    "passedTestCaseCnt": 9,
+    "totalTestCaseCnt": 9,
+    "sourceUrl": "/problems/n-queens-ii/",
+    "question": {
+      "titleSlug": "n-queens-ii",
+      "title": "N-Queens II",
+      "translatedTitle": "N\u7687\u540e II",
+      "questionId": "52",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

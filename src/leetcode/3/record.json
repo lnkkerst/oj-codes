@@ -1,1 +1,45 @@
-{"simple": {"id": 61279226, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Time Limit Exceeded", "runtime": "N/A", "url": "/submissions/detail/61279226/", "is_pending": "Not Pending", "title": "\u65e0\u91cd\u590d\u5b57\u7b26\u7684\u6700\u957f\u5b50\u4e32", "timestamp": 1586424279, "memory": "N/A"}, "full": {"id": "61279226", "code": "class Solution {\npublic:\n    bool pd(string s) {\n        unordered_map<char, bool> b;\n        for(auto i : s) {\n            if(b[i]) return 0;\n            b[i] = 1;\n        }\n        return 1;\n    }\n    int lengthOfLongestSubstring(string s) {\n        int ans = 0;\n        for(int i = 0; i < (int)s.length(); ++i) {\n            for(int j = ans + 1; i + j <= (int)s.length(); ++j) {\n                string t = s.substr(i, j);\n                if(pd(t)) ans = max(ans, (int)t.length());\n            }\n        }\n        return ans;\n    }\n};", "runtime": "N/A", "memory": "N/A", "rawMemory": "N/A", "statusDisplay": "Time Limit Exceeded", "timestamp": 1586424279, "lang": "cpp", "passedTestCaseCnt": 750, "totalTestCaseCnt": 987, "sourceUrl": "/problems/longest-substring-without-repeating-characters/", "question": {"titleSlug": "longest-substring-without-repeating-characters", "title": "Longest Substring Without Repeating Characters", "translatedTitle": "\u65e0\u91cd\u590d\u5b57\u7b26\u7684\u6700\u957f\u5b50\u4e32", "questionId": "3", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "11", "input": "\"auglspegesmkxyctbnmfofkinhrujhnjdvuvnbbrtobrmgmqtyxhfjrurkpcrelwzhroiuicilvxr\"", "compileError": "", "runtimeError": "", "lastTestcase": "\"auglspegesmkxyctbnmfofkinhrujhnjdvuvnbbrtobrmgmqtyxhfjrurkpcrelwzhroiuicilvxr\"", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 61279226,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Time Limit Exceeded",
+    "runtime": "N/A",
+    "url": "/submissions/detail/61279226/",
+    "is_pending": "Not Pending",
+    "title": "\u65e0\u91cd\u590d\u5b57\u7b26\u7684\u6700\u957f\u5b50\u4e32",
+    "timestamp": 1586424279,
+    "memory": "N/A"
+  },
+  "full": {
+    "id": "61279226",
+    "code": "class Solution {\npublic:\n    bool pd(string s) {\n        unordered_map<char, bool> b;\n        for(auto i : s) {\n            if(b[i]) return 0;\n            b[i] = 1;\n        }\n        return 1;\n    }\n    int lengthOfLongestSubstring(string s) {\n        int ans = 0;\n        for(int i = 0; i < (int)s.length(); ++i) {\n            for(int j = ans + 1; i + j <= (int)s.length(); ++j) {\n                string t = s.substr(i, j);\n                if(pd(t)) ans = max(ans, (int)t.length());\n            }\n        }\n        return ans;\n    }\n};",
+    "runtime": "N/A",
+    "memory": "N/A",
+    "rawMemory": "N/A",
+    "statusDisplay": "Time Limit Exceeded",
+    "timestamp": 1586424279,
+    "lang": "cpp",
+    "passedTestCaseCnt": 750,
+    "totalTestCaseCnt": 987,
+    "sourceUrl": "/problems/longest-substring-without-repeating-characters/",
+    "question": {
+      "titleSlug": "longest-substring-without-repeating-characters",
+      "title": "Longest Substring Without Repeating Characters",
+      "translatedTitle": "\u65e0\u91cd\u590d\u5b57\u7b26\u7684\u6700\u957f\u5b50\u4e32",
+      "questionId": "3",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "11",
+      "input": "\"auglspegesmkxyctbnmfofkinhrujhnjdvuvnbbrtobrmgmqtyxhfjrurkpcrelwzhroiuicilvxr\"",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "\"auglspegesmkxyctbnmfofkinhrujhnjdvuvnbbrtobrmgmqtyxhfjrurkpcrelwzhroiuicilvxr\"",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

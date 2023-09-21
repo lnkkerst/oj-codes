@@ -1,1 +1,45 @@
-{"simple": {"id": 71336957, "lang": "C++", "time": "1\u00a0\u5e74\uff0c10\u00a0\u6708", "status_display": "Wrong Answer", "runtime": "N/A", "url": "/submissions/detail/71336957/", "is_pending": "Not Pending", "title": "\u6570\u4f4d\u6210\u672c\u548c\u4e3a\u76ee\u6807\u503c\u7684\u6700\u5927\u6570\u5b57", "timestamp": 1589645533, "memory": "N/A"}, "full": {"id": "71336957", "code": "class Solution {\npublic:\n    string largestNumber(vector<int>& cost, int target) {\n        string dp[5010];\n        // fill(begin(dp), end(dp), \"0\");\n        // string ans[5010];\n        unordered_map<int, int> b;\n        for(int i = 0; i < 9; ++i) b[cost[i]] = i + 1;\n        for(int i = 1; i <= target; ++i) {\n            // cout << i << endl;\n            for(auto j : b) {\n                if(i >= j.first) {\n                    string nex = dp[i - j.first] + string(1, j.second + '0');\n                    // cout << nex << ' ' << i - j.first << ' ' << j.first << ' ' << j.second << endl;\n                    int tot = 0;\n                    for(auto k : nex) tot += cost[k - '0' - 1];\n                    if(tot == i) {\n                    if(nex.length() > dp[i].length()) dp[i] = nex;\n                    else if(nex.length() == dp[i].length()) {\n                        if(nex > dp[i]) dp[i] = nex;\n                    }\n                    }\n                }\n            }\n            // cout << dp[i] << endl;\n        }\n        // string ret;\n        // vector<pair<int, int> > a;\n        // unordered_map<int, int> b, br;\n        // for(int i = 0; i < 9; ++i) b[cost[i]] = i + 1;\n        // // for(int i = 0; i < 9; ++i) a.push_back(make_pair(i + 1, cost[i])\n        // for(const auto &i : b) a.push_back(make_pair(i.second, i.first));\n        // sort(a.begin(), a.end(), [](const pair<int, int> &aa, const pair<int, int> &bb)->bool{\n        //     if(aa.second == bb.second) return aa.first > bb.first;\n        //     return aa.second < bb.second;\n        // });\n        // int now = 0;\n        // while(now + a.front().second < target) now += a.front().second, ret.push_back(a.front().first + '0');\n        // while(now != target) {\n        //     if(ret.empty()) return \"0\";\n        //     now -= ret.back() - '0';\n        //     ret.pop_back();\n        //     if(b[target - now]) ret.push_back(b[target - now] + '0'), now += target;\n        //     else {\n        //         for(auto i = cost.rbegin(), i != cost.rend(); ++i) {\n        //             if(*i)\n        //         }\n        //         if(k == a.end() || k == a.begin()) return \"0\";\n        //         else ret.push_back((k - 1)->first + '0'), now += (k - 1)->second;\n        //     }\n        // }\n        // return ret;\n        return dp[target];\n    }\n};", "runtime": "N/A", "memory": "N/A", "rawMemory": "N/A", "statusDisplay": "Wrong Answer", "timestamp": 1589645533, "lang": "cpp", "passedTestCaseCnt": 93, "totalTestCaseCnt": 96, "sourceUrl": "/problems/form-largest-integer-with-digits-that-add-up-to-target/", "question": {"titleSlug": "form-largest-integer-with-digits-that-add-up-to-target", "title": "Form Largest Integer With Digits That Add up to Target", "translatedTitle": "\u6570\u4f4d\u6210\u672c\u548c\u4e3a\u76ee\u6807\u503c\u7684\u6700\u5927\u6570\u5b57", "questionId": "1545", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "\"\"", "expectedOutput": "\"0\"", "input": "[2,4,6,2,4,6,4,4,4]\n5", "compileError": "", "runtimeError": "", "lastTestcase": "[2,4,6,2,4,6,4,4,4]\n5", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 71336957,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c10\u00a0\u6708",
+    "status_display": "Wrong Answer",
+    "runtime": "N/A",
+    "url": "/submissions/detail/71336957/",
+    "is_pending": "Not Pending",
+    "title": "\u6570\u4f4d\u6210\u672c\u548c\u4e3a\u76ee\u6807\u503c\u7684\u6700\u5927\u6570\u5b57",
+    "timestamp": 1589645533,
+    "memory": "N/A"
+  },
+  "full": {
+    "id": "71336957",
+    "code": "class Solution {\npublic:\n    string largestNumber(vector<int>& cost, int target) {\n        string dp[5010];\n        // fill(begin(dp), end(dp), \"0\");\n        // string ans[5010];\n        unordered_map<int, int> b;\n        for(int i = 0; i < 9; ++i) b[cost[i]] = i + 1;\n        for(int i = 1; i <= target; ++i) {\n            // cout << i << endl;\n            for(auto j : b) {\n                if(i >= j.first) {\n                    string nex = dp[i - j.first] + string(1, j.second + '0');\n                    // cout << nex << ' ' << i - j.first << ' ' << j.first << ' ' << j.second << endl;\n                    int tot = 0;\n                    for(auto k : nex) tot += cost[k - '0' - 1];\n                    if(tot == i) {\n                    if(nex.length() > dp[i].length()) dp[i] = nex;\n                    else if(nex.length() == dp[i].length()) {\n                        if(nex > dp[i]) dp[i] = nex;\n                    }\n                    }\n                }\n            }\n            // cout << dp[i] << endl;\n        }\n        // string ret;\n        // vector<pair<int, int> > a;\n        // unordered_map<int, int> b, br;\n        // for(int i = 0; i < 9; ++i) b[cost[i]] = i + 1;\n        // // for(int i = 0; i < 9; ++i) a.push_back(make_pair(i + 1, cost[i])\n        // for(const auto &i : b) a.push_back(make_pair(i.second, i.first));\n        // sort(a.begin(), a.end(), [](const pair<int, int> &aa, const pair<int, int> &bb)->bool{\n        //     if(aa.second == bb.second) return aa.first > bb.first;\n        //     return aa.second < bb.second;\n        // });\n        // int now = 0;\n        // while(now + a.front().second < target) now += a.front().second, ret.push_back(a.front().first + '0');\n        // while(now != target) {\n        //     if(ret.empty()) return \"0\";\n        //     now -= ret.back() - '0';\n        //     ret.pop_back();\n        //     if(b[target - now]) ret.push_back(b[target - now] + '0'), now += target;\n        //     else {\n        //         for(auto i = cost.rbegin(), i != cost.rend(); ++i) {\n        //             if(*i)\n        //         }\n        //         if(k == a.end() || k == a.begin()) return \"0\";\n        //         else ret.push_back((k - 1)->first + '0'), now += (k - 1)->second;\n        //     }\n        // }\n        // return ret;\n        return dp[target];\n    }\n};",
+    "runtime": "N/A",
+    "memory": "N/A",
+    "rawMemory": "N/A",
+    "statusDisplay": "Wrong Answer",
+    "timestamp": 1589645533,
+    "lang": "cpp",
+    "passedTestCaseCnt": 93,
+    "totalTestCaseCnt": 96,
+    "sourceUrl": "/problems/form-largest-integer-with-digits-that-add-up-to-target/",
+    "question": {
+      "titleSlug": "form-largest-integer-with-digits-that-add-up-to-target",
+      "title": "Form Largest Integer With Digits That Add up to Target",
+      "translatedTitle": "\u6570\u4f4d\u6210\u672c\u548c\u4e3a\u76ee\u6807\u503c\u7684\u6700\u5927\u6570\u5b57",
+      "questionId": "1545",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "\"\"",
+      "expectedOutput": "\"0\"",
+      "input": "[2,4,6,2,4,6,4,4,4]\n5",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "[2,4,6,2,4,6,4,4,4]\n5",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

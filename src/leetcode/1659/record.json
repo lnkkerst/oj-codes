@@ -1,1 +1,45 @@
-{"simple": {"id": 93825065, "lang": "C++", "time": "1\u00a0\u5e74\uff0c7\u00a0\u6708", "status_display": "Wrong Answer", "runtime": "N/A", "url": "/submissions/detail/93825065/", "is_pending": "Not Pending", "title": "\u6700\u5927\u5f97\u5206", "timestamp": 1596340827, "memory": "N/A"}, "full": {"id": "93825065", "code": "class Solution {\npublic:\n    struct Node {\n        int dis, h;\n        bool inq;\n        Node() : dis(0), inq(0), h(0) {}\n    } nodes[201000];\n    struct Edge {\n        int to, nex, w;\n        Edge() : to(0), nex(0), w(0) {}\n    } edges[501000];\n    int n, m, cnt;\n    Solution() : cnt(0) {}\nvoid addEdge(int u, int v, int w) {\n    edges[++cnt].nex = nodes[u].h;\n    edges[cnt].to = v;\n    edges[cnt].w = w;\n    nodes[u].h = cnt;\n}\n    // void spfa(int s) {\n    //     queue<int> q;\n    //     for(int i = 0; i <= n; ++i) nodes[i].dis = 2147483647;\n    //     nodes[s].dis = 0;\n    //     nodes[s].inq = 1;\n    //     q.push(s);\n    //     while(!q.empty()) {\n    //         int u = q.front();\n    //         nodes[u].inq = 0;\n    //         q.pop();\n    //         for(int i = nodes[u].h; i; i = edges[i].nex) {\n    //             int v = edges[i].to;\n    //             if(nodes[v].dis < nodes[u].dis + edges[i].w) {\n    //                 nodes[v].dis = nodes[u].dis + edges[i].w;\n    //                 if(!nodes[v].inq) {\n    //                     nodes[v].inq = 1;\n    //                     q.push(v);\n    //                 }\n    //             }\n    //         }\n    //     }\n    // }\n    void spfa(int start) {\n    queue<int > q;\n    for(int i = 1; i <= n; ++i) nodes[i].dis = -1;\n    nodes[start].dis = 0, nodes[start].inq = 1;\n    q.push(start);\n    while(!q.empty()) {\n        int u = q.front();\n        nodes[u].inq = 0;\n        q.pop();\n        for(int i = nodes[u].h; i; i = edges[i].nex) {\n            int v = edges[i].to;\n            if(nodes[v].dis < nodes[u].dis + edges[i].w) {\n                nodes[v].dis = nodes[u].dis + edges[i].w;\n                if(!nodes[v].inq) {\n                    nodes[v].inq = 1;\n                    q.push(v);\n                }\n            }\n        }\n    }\n    // for(int i = 0; i <= n; ++i) cout << nodes[i].dis << ' ';\n}\n    int maxSum(vector<int>& a1, vector<int>& a2) {\n        unordered_map<int, int> b1, b2;\n        for(int i = 0; i < a1.size(); ++i) {\n            b1[a1[i]] = i + 1;\n        }\n        \n        for(int i = 0; i < a2.size(); ++i) {\n            b2[a2[i]] = i + 1;\n        }\n        n = a1.size() + a2.size();\n        for(int i = 0; i < a1.size() - 1; ++i) {\n            addEdge(i + 1, i + 2, a1[i + 1]);\n            if(b2.find(a1[i]) != b2.end()) {\n                addEdge(i + 1, a1.size() + b2[a1[i]], 0);\n            }\n        }\n        for(int i = 0; i < a2.size() - 1; ++i) {\n            addEdge(i + a1.size() + 1, i + a1.size() + 2, a2[i + 1]);\n            if(b1.find(a2[i]) != b1.end()) {\n                addEdge(i + a1.size() + 1, b1[a2[i]], 0);\n            }\n        }\n        addEdge(0, 1, a1[0]);\n        addEdge(0, a1.size() + 1, a2[0]);\n        spfa(0);\n        return max(nodes[a1.size()].dis, nodes[n].dis);\n    }\n};", "runtime": "N/A", "memory": "N/A", "rawMemory": "N/A", "statusDisplay": "Wrong Answer", "timestamp": 1596340827, "lang": "cpp", "passedTestCaseCnt": 67, "totalTestCaseCnt": 82, "sourceUrl": "/problems/get-the-maximum-score/", "question": {"titleSlug": "get-the-maximum-score", "title": "Get the Maximum Score", "translatedTitle": "\u6700\u5927\u5f97\u5206", "questionId": "1659", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "89", "expectedOutput": "93", "input": "[6,7,12,13,14,17,20]\n[1,4,5,7]", "compileError": "", "runtimeError": "", "lastTestcase": "[6,7,12,13,14,17,20]\n[1,4,5,7]", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 93825065,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c7\u00a0\u6708",
+    "status_display": "Wrong Answer",
+    "runtime": "N/A",
+    "url": "/submissions/detail/93825065/",
+    "is_pending": "Not Pending",
+    "title": "\u6700\u5927\u5f97\u5206",
+    "timestamp": 1596340827,
+    "memory": "N/A"
+  },
+  "full": {
+    "id": "93825065",
+    "code": "class Solution {\npublic:\n    struct Node {\n        int dis, h;\n        bool inq;\n        Node() : dis(0), inq(0), h(0) {}\n    } nodes[201000];\n    struct Edge {\n        int to, nex, w;\n        Edge() : to(0), nex(0), w(0) {}\n    } edges[501000];\n    int n, m, cnt;\n    Solution() : cnt(0) {}\nvoid addEdge(int u, int v, int w) {\n    edges[++cnt].nex = nodes[u].h;\n    edges[cnt].to = v;\n    edges[cnt].w = w;\n    nodes[u].h = cnt;\n}\n    // void spfa(int s) {\n    //     queue<int> q;\n    //     for(int i = 0; i <= n; ++i) nodes[i].dis = 2147483647;\n    //     nodes[s].dis = 0;\n    //     nodes[s].inq = 1;\n    //     q.push(s);\n    //     while(!q.empty()) {\n    //         int u = q.front();\n    //         nodes[u].inq = 0;\n    //         q.pop();\n    //         for(int i = nodes[u].h; i; i = edges[i].nex) {\n    //             int v = edges[i].to;\n    //             if(nodes[v].dis < nodes[u].dis + edges[i].w) {\n    //                 nodes[v].dis = nodes[u].dis + edges[i].w;\n    //                 if(!nodes[v].inq) {\n    //                     nodes[v].inq = 1;\n    //                     q.push(v);\n    //                 }\n    //             }\n    //         }\n    //     }\n    // }\n    void spfa(int start) {\n    queue<int > q;\n    for(int i = 1; i <= n; ++i) nodes[i].dis = -1;\n    nodes[start].dis = 0, nodes[start].inq = 1;\n    q.push(start);\n    while(!q.empty()) {\n        int u = q.front();\n        nodes[u].inq = 0;\n        q.pop();\n        for(int i = nodes[u].h; i; i = edges[i].nex) {\n            int v = edges[i].to;\n            if(nodes[v].dis < nodes[u].dis + edges[i].w) {\n                nodes[v].dis = nodes[u].dis + edges[i].w;\n                if(!nodes[v].inq) {\n                    nodes[v].inq = 1;\n                    q.push(v);\n                }\n            }\n        }\n    }\n    // for(int i = 0; i <= n; ++i) cout << nodes[i].dis << ' ';\n}\n    int maxSum(vector<int>& a1, vector<int>& a2) {\n        unordered_map<int, int> b1, b2;\n        for(int i = 0; i < a1.size(); ++i) {\n            b1[a1[i]] = i + 1;\n        }\n        \n        for(int i = 0; i < a2.size(); ++i) {\n            b2[a2[i]] = i + 1;\n        }\n        n = a1.size() + a2.size();\n        for(int i = 0; i < a1.size() - 1; ++i) {\n            addEdge(i + 1, i + 2, a1[i + 1]);\n            if(b2.find(a1[i]) != b2.end()) {\n                addEdge(i + 1, a1.size() + b2[a1[i]], 0);\n            }\n        }\n        for(int i = 0; i < a2.size() - 1; ++i) {\n            addEdge(i + a1.size() + 1, i + a1.size() + 2, a2[i + 1]);\n            if(b1.find(a2[i]) != b1.end()) {\n                addEdge(i + a1.size() + 1, b1[a2[i]], 0);\n            }\n        }\n        addEdge(0, 1, a1[0]);\n        addEdge(0, a1.size() + 1, a2[0]);\n        spfa(0);\n        return max(nodes[a1.size()].dis, nodes[n].dis);\n    }\n};",
+    "runtime": "N/A",
+    "memory": "N/A",
+    "rawMemory": "N/A",
+    "statusDisplay": "Wrong Answer",
+    "timestamp": 1596340827,
+    "lang": "cpp",
+    "passedTestCaseCnt": 67,
+    "totalTestCaseCnt": 82,
+    "sourceUrl": "/problems/get-the-maximum-score/",
+    "question": {
+      "titleSlug": "get-the-maximum-score",
+      "title": "Get the Maximum Score",
+      "translatedTitle": "\u6700\u5927\u5f97\u5206",
+      "questionId": "1659",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "89",
+      "expectedOutput": "93",
+      "input": "[6,7,12,13,14,17,20]\n[1,4,5,7]",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "[6,7,12,13,14,17,20]\n[1,4,5,7]",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

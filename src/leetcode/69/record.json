@@ -1,1 +1,45 @@
-{"simple": {"id": 61447378, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Accepted", "runtime": "0 ms", "url": "/submissions/detail/61447378/", "is_pending": "Not Pending", "title": "x \u7684\u5e73\u65b9\u6839 ", "timestamp": 1586487148, "memory": "5.7 MB"}, "full": {"id": "61447378", "code": "class Solution {\npublic:\n    int mySqrt(int x) {\n        return (int)sqrt(x);\n    }\n};", "runtime": "0 ms", "memory": "5.7 MB", "rawMemory": "5868000", "statusDisplay": "Accepted", "timestamp": 1586487148, "lang": "cpp", "passedTestCaseCnt": 1017, "totalTestCaseCnt": 1017, "sourceUrl": "/problems/sqrtx/", "question": {"titleSlug": "sqrtx", "title": "Sqrt(x)", "translatedTitle": "x \u7684\u5e73\u65b9\u6839 ", "questionId": "69", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 61447378,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "0 ms",
+    "url": "/submissions/detail/61447378/",
+    "is_pending": "Not Pending",
+    "title": "x \u7684\u5e73\u65b9\u6839 ",
+    "timestamp": 1586487148,
+    "memory": "5.7 MB"
+  },
+  "full": {
+    "id": "61447378",
+    "code": "class Solution {\npublic:\n    int mySqrt(int x) {\n        return (int)sqrt(x);\n    }\n};",
+    "runtime": "0 ms",
+    "memory": "5.7 MB",
+    "rawMemory": "5868000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1586487148,
+    "lang": "cpp",
+    "passedTestCaseCnt": 1017,
+    "totalTestCaseCnt": 1017,
+    "sourceUrl": "/problems/sqrtx/",
+    "question": {
+      "titleSlug": "sqrtx",
+      "title": "Sqrt(x)",
+      "translatedTitle": "x \u7684\u5e73\u65b9\u6839 ",
+      "questionId": "69",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

@@ -1,1 +1,45 @@
-{"simple": {"id": 62808856, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Runtime Error", "runtime": "N/A", "url": "/submissions/detail/62808856/", "is_pending": "Not Pending", "title": "\u4e24\u6570\u76f8\u52a0 II", "timestamp": 1586872720, "memory": "N/A"}, "full": {"id": "62808856", "code": "/**\n * Definition for singly-linked list.\n * struct ListNode {\n *     int val;\n *     ListNode *next;\n *     ListNode(int x) : val(x), next(NULL) {}\n * };\n */\nclass Solution {\npublic:\n    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {\n        int a = 0, b = 0;\n        ListNode* p = l1;\n        while(p != NULL) {\n            a *= 10;\n            a += p->val;\n            p = p->next;\n        }\n        p = l2;\n        while(p != NULL) {\n            b *= 10;\n            b += p->val;\n            p = p->next;\n        }\n        string s = to_string(a + b);\n        p = new ListNode;\n        ListNode *ret = p;\n        for(auto i : s) {\n            p->next = new ListNode(i - '0');\n            p = p->next;\n        }\n        return ret->next;\n    }\n};", "runtime": "N/A", "memory": "N/A", "rawMemory": "N/A", "statusDisplay": "Runtime Error", "timestamp": 1586872720, "lang": "cpp", "passedTestCaseCnt": 29, "totalTestCaseCnt": 1563, "sourceUrl": "/problems/add-two-numbers-ii/", "question": {"titleSlug": "add-two-numbers-ii", "title": "Add Two Numbers II", "translatedTitle": "\u4e24\u6570\u76f8\u52a0 II", "questionId": "445", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "[4,0,0,0,0,0,0,0,0,6]", "input": "[3,9,9,9,9,9,9,9,9,9]\n[7]", "compileError": "", "runtimeError": "Line 15: Char 15: runtime error: signed integer overflow: 399999999 * 10 cannot be represented in type 'int' (solution.cpp)", "lastTestcase": "[3,9,9,9,9,9,9,9,9,9]\n[7]", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 62808856,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Runtime Error",
+    "runtime": "N/A",
+    "url": "/submissions/detail/62808856/",
+    "is_pending": "Not Pending",
+    "title": "\u4e24\u6570\u76f8\u52a0 II",
+    "timestamp": 1586872720,
+    "memory": "N/A"
+  },
+  "full": {
+    "id": "62808856",
+    "code": "/**\n * Definition for singly-linked list.\n * struct ListNode {\n *     int val;\n *     ListNode *next;\n *     ListNode(int x) : val(x), next(NULL) {}\n * };\n */\nclass Solution {\npublic:\n    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {\n        int a = 0, b = 0;\n        ListNode* p = l1;\n        while(p != NULL) {\n            a *= 10;\n            a += p->val;\n            p = p->next;\n        }\n        p = l2;\n        while(p != NULL) {\n            b *= 10;\n            b += p->val;\n            p = p->next;\n        }\n        string s = to_string(a + b);\n        p = new ListNode;\n        ListNode *ret = p;\n        for(auto i : s) {\n            p->next = new ListNode(i - '0');\n            p = p->next;\n        }\n        return ret->next;\n    }\n};",
+    "runtime": "N/A",
+    "memory": "N/A",
+    "rawMemory": "N/A",
+    "statusDisplay": "Runtime Error",
+    "timestamp": 1586872720,
+    "lang": "cpp",
+    "passedTestCaseCnt": 29,
+    "totalTestCaseCnt": 1563,
+    "sourceUrl": "/problems/add-two-numbers-ii/",
+    "question": {
+      "titleSlug": "add-two-numbers-ii",
+      "title": "Add Two Numbers II",
+      "translatedTitle": "\u4e24\u6570\u76f8\u52a0 II",
+      "questionId": "445",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "[4,0,0,0,0,0,0,0,0,6]",
+      "input": "[3,9,9,9,9,9,9,9,9,9]\n[7]",
+      "compileError": "",
+      "runtimeError": "Line 15: Char 15: runtime error: signed integer overflow: 399999999 * 10 cannot be represented in type 'int' (solution.cpp)",
+      "lastTestcase": "[3,9,9,9,9,9,9,9,9,9]\n[7]",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

@@ -1,1 +1,45 @@
-{"simple": {"id": 61937995, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Runtime Error", "runtime": "N/A", "url": "/submissions/detail/61937995/", "is_pending": "Not Pending", "title": "\u9664\u81ea\u8eab\u4ee5\u5916\u6570\u7ec4\u7684\u4e58\u79ef", "timestamp": 1586619704, "memory": "N/A"}, "full": {"id": "61937995", "code": "class Solution {\npublic:\n    int div(int x, int y) {\n        int ret = 0, base = y, ab = 1;\n        while(base * 10 <= x) base *= 10, ab *= 10;\n        while(base) {\n            while(x - base >= 0) x -= base, ret += ab;\n            while(base > x) base /= 10, ab /= 10;\n        }\n        return ret;\n    }\n    vector<int> productExceptSelf(vector<int> &nums) {\n        int mu = 1;\n        for(auto i : nums) mu *= i;\n        vector<int> ret;\n        for(auto i : nums) ret.push_back(div(mu, i));\n        return ret;\n    }\n} ;", "runtime": "N/A", "memory": "N/A", "rawMemory": "N/A", "statusDisplay": "Runtime Error", "timestamp": 1586619704, "lang": "cpp", "passedTestCaseCnt": 1, "totalTestCaseCnt": 20, "sourceUrl": "/problems/product-of-array-except-self/", "question": {"titleSlug": "product-of-array-except-self", "title": "Product of Array Except Self", "translatedTitle": "\u9664\u81ea\u8eab\u4ee5\u5916\u6570\u7ec4\u7684\u4e58\u79ef", "questionId": "238", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "[0,0,9,0,0]", "input": "[-1,1,0,-3,3]", "compileError": "", "runtimeError": "Line 5: Char 46: runtime error: signed integer overflow: 1000000000 * 10 cannot be represented in type 'int' (solution.cpp)", "lastTestcase": "[-1,1,0,-3,3]", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 61937995,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Runtime Error",
+    "runtime": "N/A",
+    "url": "/submissions/detail/61937995/",
+    "is_pending": "Not Pending",
+    "title": "\u9664\u81ea\u8eab\u4ee5\u5916\u6570\u7ec4\u7684\u4e58\u79ef",
+    "timestamp": 1586619704,
+    "memory": "N/A"
+  },
+  "full": {
+    "id": "61937995",
+    "code": "class Solution {\npublic:\n    int div(int x, int y) {\n        int ret = 0, base = y, ab = 1;\n        while(base * 10 <= x) base *= 10, ab *= 10;\n        while(base) {\n            while(x - base >= 0) x -= base, ret += ab;\n            while(base > x) base /= 10, ab /= 10;\n        }\n        return ret;\n    }\n    vector<int> productExceptSelf(vector<int> &nums) {\n        int mu = 1;\n        for(auto i : nums) mu *= i;\n        vector<int> ret;\n        for(auto i : nums) ret.push_back(div(mu, i));\n        return ret;\n    }\n} ;",
+    "runtime": "N/A",
+    "memory": "N/A",
+    "rawMemory": "N/A",
+    "statusDisplay": "Runtime Error",
+    "timestamp": 1586619704,
+    "lang": "cpp",
+    "passedTestCaseCnt": 1,
+    "totalTestCaseCnt": 20,
+    "sourceUrl": "/problems/product-of-array-except-self/",
+    "question": {
+      "titleSlug": "product-of-array-except-self",
+      "title": "Product of Array Except Self",
+      "translatedTitle": "\u9664\u81ea\u8eab\u4ee5\u5916\u6570\u7ec4\u7684\u4e58\u79ef",
+      "questionId": "238",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "[0,0,9,0,0]",
+      "input": "[-1,1,0,-3,3]",
+      "compileError": "",
+      "runtimeError": "Line 5: Char 46: runtime error: signed integer overflow: 1000000000 * 10 cannot be represented in type 'int' (solution.cpp)",
+      "lastTestcase": "[-1,1,0,-3,3]",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

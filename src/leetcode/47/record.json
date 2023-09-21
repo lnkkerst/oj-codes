@@ -1,1 +1,45 @@
-{"simple": {"id": 61708346, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Accepted", "runtime": "500 ms", "url": "/submissions/detail/61708346/", "is_pending": "Not Pending", "title": "\u5168\u6392\u5217 II", "timestamp": 1586570632, "memory": "41.6 MB"}, "full": {"id": "61708346", "code": "class Solution {\npublic:\n    vector<vector<int>> permuteUnique(vector<int>& nums) {\n        vector<vector<int> > ret;\n        vector<int> tmp;\n        unordered_map<string, bool> b;\n        for(int i = 0; i < (int)nums.size(); ++i)\n            tmp.push_back(i);\n        do {\n            vector<int> t;\n            string tt;\n            for(auto i : tmp) t.push_back(nums[i]), tt += nums[i] + ' ';\n            if(b[tt]) continue;\n            ret.push_back(t);\n            b[tt] = 1;\n        }\n        while(next_permutation(tmp.begin(), tmp.end()));\n        return ret;\n    }\n};", "runtime": "500 ms", "memory": "41.6 MB", "rawMemory": "42640000", "statusDisplay": "Accepted", "timestamp": 1586570632, "lang": "cpp", "passedTestCaseCnt": 30, "totalTestCaseCnt": 33, "sourceUrl": "/problems/permutations-ii/", "question": {"titleSlug": "permutations-ii", "title": "Permutations II", "translatedTitle": "\u5168\u6392\u5217 II", "questionId": "47", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 61708346,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "500 ms",
+    "url": "/submissions/detail/61708346/",
+    "is_pending": "Not Pending",
+    "title": "\u5168\u6392\u5217 II",
+    "timestamp": 1586570632,
+    "memory": "41.6 MB"
+  },
+  "full": {
+    "id": "61708346",
+    "code": "class Solution {\npublic:\n    vector<vector<int>> permuteUnique(vector<int>& nums) {\n        vector<vector<int> > ret;\n        vector<int> tmp;\n        unordered_map<string, bool> b;\n        for(int i = 0; i < (int)nums.size(); ++i)\n            tmp.push_back(i);\n        do {\n            vector<int> t;\n            string tt;\n            for(auto i : tmp) t.push_back(nums[i]), tt += nums[i] + ' ';\n            if(b[tt]) continue;\n            ret.push_back(t);\n            b[tt] = 1;\n        }\n        while(next_permutation(tmp.begin(), tmp.end()));\n        return ret;\n    }\n};",
+    "runtime": "500 ms",
+    "memory": "41.6 MB",
+    "rawMemory": "42640000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1586570632,
+    "lang": "cpp",
+    "passedTestCaseCnt": 30,
+    "totalTestCaseCnt": 33,
+    "sourceUrl": "/problems/permutations-ii/",
+    "question": {
+      "titleSlug": "permutations-ii",
+      "title": "Permutations II",
+      "translatedTitle": "\u5168\u6392\u5217 II",
+      "questionId": "47",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

@@ -1,1 +1,45 @@
-{"simple": {"id": 96187497, "lang": "C++", "time": "1\u00a0\u5e74\uff0c7\u00a0\u6708", "status_display": "Accepted", "runtime": "932 ms", "url": "/submissions/detail/96187497/", "is_pending": "Not Pending", "title": "\u548c\u4e3a\u76ee\u6807\u503c\u4e14\u4e0d\u91cd\u53e0\u7684\u975e\u7a7a\u5b50\u6570\u7ec4\u7684\u6700\u5927\u6570\u76ee", "timestamp": 1596944460, "memory": "100.6 MB"}, "full": {"id": "96187497", "code": "class Solution {\npublic:\n    int maxNonOverlapping(vector<int>& nums, int target) {\n        int sum = 0, ans = 0;\n        unordered_map<int, int> b;\n        unordered_map<int, bool> bk;\n        for(int i = 0; i < nums.size(); ++i) {\n            sum += nums[i];\n            if(sum == target && !bk.size()) {\n                for(int j = 0; j <= i; ++j) {\n                    bk[j] = 1;\n                }\n                ++ans;\n            }\n            if(b.find(sum - target) != b.end()) {\n                int pos = b[sum - target] + 1;\n                cout << pos << ' ' << i << endl;\n                bool fl = 1;\n                for(int j = pos; j <= i; ++j) {\n                    if(bk.find(j) != bk.end()) {\n                        fl = 0;\n                        break;\n                    }\n                }\n                if(fl) {\n                    puts(\"ok\");\n                    for(int j = pos; j <= i; ++j) bk[j] = 1;\n                    ++ans;\n                }\n            }\n                b[sum] = i;\n        }\n        cout << endl;\n        return ans;\n    }\n};", "runtime": "932 ms", "memory": "100.6 MB", "rawMemory": "102976000", "statusDisplay": "Accepted", "timestamp": 1596944460, "lang": "cpp", "passedTestCaseCnt": 69, "totalTestCaseCnt": 69, "sourceUrl": "/problems/maximum-number-of-non-overlapping-subarrays-with-sum-equals-target/", "question": {"titleSlug": "maximum-number-of-non-overlapping-subarrays-with-sum-equals-target", "title": "Maximum Number of Non-Overlapping Subarrays With Sum Equals Target", "translatedTitle": "\u548c\u4e3a\u76ee\u6807\u503c\u4e14\u4e0d\u91cd\u53e0\u7684\u975e\u7a7a\u5b50\u6570\u7ec4\u7684\u6700\u5927\u6570\u76ee", "questionId": "1649", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 96187497,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c7\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "932 ms",
+    "url": "/submissions/detail/96187497/",
+    "is_pending": "Not Pending",
+    "title": "\u548c\u4e3a\u76ee\u6807\u503c\u4e14\u4e0d\u91cd\u53e0\u7684\u975e\u7a7a\u5b50\u6570\u7ec4\u7684\u6700\u5927\u6570\u76ee",
+    "timestamp": 1596944460,
+    "memory": "100.6 MB"
+  },
+  "full": {
+    "id": "96187497",
+    "code": "class Solution {\npublic:\n    int maxNonOverlapping(vector<int>& nums, int target) {\n        int sum = 0, ans = 0;\n        unordered_map<int, int> b;\n        unordered_map<int, bool> bk;\n        for(int i = 0; i < nums.size(); ++i) {\n            sum += nums[i];\n            if(sum == target && !bk.size()) {\n                for(int j = 0; j <= i; ++j) {\n                    bk[j] = 1;\n                }\n                ++ans;\n            }\n            if(b.find(sum - target) != b.end()) {\n                int pos = b[sum - target] + 1;\n                cout << pos << ' ' << i << endl;\n                bool fl = 1;\n                for(int j = pos; j <= i; ++j) {\n                    if(bk.find(j) != bk.end()) {\n                        fl = 0;\n                        break;\n                    }\n                }\n                if(fl) {\n                    puts(\"ok\");\n                    for(int j = pos; j <= i; ++j) bk[j] = 1;\n                    ++ans;\n                }\n            }\n                b[sum] = i;\n        }\n        cout << endl;\n        return ans;\n    }\n};",
+    "runtime": "932 ms",
+    "memory": "100.6 MB",
+    "rawMemory": "102976000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1596944460,
+    "lang": "cpp",
+    "passedTestCaseCnt": 69,
+    "totalTestCaseCnt": 69,
+    "sourceUrl": "/problems/maximum-number-of-non-overlapping-subarrays-with-sum-equals-target/",
+    "question": {
+      "titleSlug": "maximum-number-of-non-overlapping-subarrays-with-sum-equals-target",
+      "title": "Maximum Number of Non-Overlapping Subarrays With Sum Equals Target",
+      "translatedTitle": "\u548c\u4e3a\u76ee\u6807\u503c\u4e14\u4e0d\u91cd\u53e0\u7684\u975e\u7a7a\u5b50\u6570\u7ec4\u7684\u6700\u5927\u6570\u76ee",
+      "questionId": "1649",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

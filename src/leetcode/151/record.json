@@ -1,1 +1,45 @@
-{"simple": {"id": 61419688, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Accepted", "runtime": "8 ms", "url": "/submissions/detail/61419688/", "is_pending": "Not Pending", "title": "\u98a0\u5012\u5b57\u7b26\u4e32\u4e2d\u7684\u5355\u8bcd", "timestamp": 1586482022, "memory": "8.8 MB"}, "full": {"id": "61419688", "code": "class Solution {\npublic:\n    string reverseWords(string s) {\n        stringstream ss, out;\n        vector<string > a;\n        ss << s;\n        while(ss >> s) a.push_back(s);\n        bool fl = 0;\n        string ret;\n        for(auto i = a.rbegin(); i != a.rend(); ++i) {\n            if(fl) ret.push_back(' ');\n            ret += *i;\n            fl = 1;\n        }\n        return ret;\n    }\n};", "runtime": "8 ms", "memory": "8.8 MB", "rawMemory": "9040000", "statusDisplay": "Accepted", "timestamp": 1586482022, "lang": "cpp", "passedTestCaseCnt": 25, "totalTestCaseCnt": 58, "sourceUrl": "/problems/reverse-words-in-a-string/", "question": {"titleSlug": "reverse-words-in-a-string", "title": "Reverse Words in a String", "translatedTitle": "\u98a0\u5012\u5b57\u7b26\u4e32\u4e2d\u7684\u5355\u8bcd", "questionId": "151", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 61419688,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "8 ms",
+    "url": "/submissions/detail/61419688/",
+    "is_pending": "Not Pending",
+    "title": "\u98a0\u5012\u5b57\u7b26\u4e32\u4e2d\u7684\u5355\u8bcd",
+    "timestamp": 1586482022,
+    "memory": "8.8 MB"
+  },
+  "full": {
+    "id": "61419688",
+    "code": "class Solution {\npublic:\n    string reverseWords(string s) {\n        stringstream ss, out;\n        vector<string > a;\n        ss << s;\n        while(ss >> s) a.push_back(s);\n        bool fl = 0;\n        string ret;\n        for(auto i = a.rbegin(); i != a.rend(); ++i) {\n            if(fl) ret.push_back(' ');\n            ret += *i;\n            fl = 1;\n        }\n        return ret;\n    }\n};",
+    "runtime": "8 ms",
+    "memory": "8.8 MB",
+    "rawMemory": "9040000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1586482022,
+    "lang": "cpp",
+    "passedTestCaseCnt": 25,
+    "totalTestCaseCnt": 58,
+    "sourceUrl": "/problems/reverse-words-in-a-string/",
+    "question": {
+      "titleSlug": "reverse-words-in-a-string",
+      "title": "Reverse Words in a String",
+      "translatedTitle": "\u98a0\u5012\u5b57\u7b26\u4e32\u4e2d\u7684\u5355\u8bcd",
+      "questionId": "151",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

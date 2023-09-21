@@ -1,1 +1,45 @@
-{"simple": {"id": 71309736, "lang": "C++", "time": "1\u00a0\u5e74\uff0c10\u00a0\u6708", "status_display": "Accepted", "runtime": "132 ms", "url": "/submissions/detail/71309736/", "is_pending": "Not Pending", "title": "\u6700\u7b80\u5206\u6570", "timestamp": 1589639727, "memory": "21.5 MB"}, "full": {"id": "71309736", "code": "class Solution {\npublic:\n    int gcd(int x, int y) {\n        return !y ? x : gcd(y, x % y);\n    }\n    vector<string> simplifiedFractions(int n) {\n        vector<string> ret;\n        for(int i = 1; i <= n; ++i) {\n            for(int j = 1; j <= n; ++j) {\n                if(i < j && gcd(i, j) == 1) {\n                    ret.push_back(to_string(i) + '/' + to_string(j));\n                }\n            }\n        }\n        return ret;\n    }\n};", "runtime": "132 ms", "memory": "21.5 MB", "rawMemory": "21984000", "statusDisplay": "Accepted", "timestamp": 1589639727, "lang": "cpp", "passedTestCaseCnt": 100, "totalTestCaseCnt": 100, "sourceUrl": "/problems/simplified-fractions/", "question": {"titleSlug": "simplified-fractions", "title": "Simplified Fractions", "translatedTitle": "\u6700\u7b80\u5206\u6570", "questionId": "1543", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 71309736,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c10\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "132 ms",
+    "url": "/submissions/detail/71309736/",
+    "is_pending": "Not Pending",
+    "title": "\u6700\u7b80\u5206\u6570",
+    "timestamp": 1589639727,
+    "memory": "21.5 MB"
+  },
+  "full": {
+    "id": "71309736",
+    "code": "class Solution {\npublic:\n    int gcd(int x, int y) {\n        return !y ? x : gcd(y, x % y);\n    }\n    vector<string> simplifiedFractions(int n) {\n        vector<string> ret;\n        for(int i = 1; i <= n; ++i) {\n            for(int j = 1; j <= n; ++j) {\n                if(i < j && gcd(i, j) == 1) {\n                    ret.push_back(to_string(i) + '/' + to_string(j));\n                }\n            }\n        }\n        return ret;\n    }\n};",
+    "runtime": "132 ms",
+    "memory": "21.5 MB",
+    "rawMemory": "21984000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1589639727,
+    "lang": "cpp",
+    "passedTestCaseCnt": 100,
+    "totalTestCaseCnt": 100,
+    "sourceUrl": "/problems/simplified-fractions/",
+    "question": {
+      "titleSlug": "simplified-fractions",
+      "title": "Simplified Fractions",
+      "translatedTitle": "\u6700\u7b80\u5206\u6570",
+      "questionId": "1543",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

@@ -11,7 +11,9 @@ def pd(x):
             return False
         i = i + 6
     return True
+
+
 n = int(input())
-for i in map(int, input().split(' ')):
+for i in map(int, input().split(" ")):
     if pd(i):
-        print(i, end=' ')
+        print(i, end=" ")

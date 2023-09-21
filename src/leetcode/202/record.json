@@ -1,1 +1,45 @@
-{"simple": {"id": 67150278, "lang": "C++", "time": "1\u00a0\u5e74\uff0c10\u00a0\u6708", "status_display": "Accepted", "runtime": "0 ms", "url": "/submissions/detail/67150278/", "is_pending": "Not Pending", "title": "\u5feb\u4e50\u6570", "timestamp": 1588229378, "memory": "6.2 MB"}, "full": {"id": "67150278", "code": "class Solution {\npublic:\n    bool isHappy(int n) {\n        unordered_set<int> b;\n        while(1) {\n            if(n == 1) return 1;\n            if(b.find(n) != b.end()) return 0;\n            b.insert(n);\n            int t = 0;\n            while(n) {\n                t += (n % 10) * (n % 10);\n                n /= 10;\n            }\n            n = t;\n        }\n    }\n};", "runtime": "0 ms", "memory": "6.2 MB", "rawMemory": "6300000", "statusDisplay": "Accepted", "timestamp": 1588229378, "lang": "cpp", "passedTestCaseCnt": 401, "totalTestCaseCnt": 404, "sourceUrl": "/problems/happy-number/", "question": {"titleSlug": "happy-number", "title": "Happy Number", "translatedTitle": "\u5feb\u4e50\u6570", "questionId": "202", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 67150278,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c10\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "0 ms",
+    "url": "/submissions/detail/67150278/",
+    "is_pending": "Not Pending",
+    "title": "\u5feb\u4e50\u6570",
+    "timestamp": 1588229378,
+    "memory": "6.2 MB"
+  },
+  "full": {
+    "id": "67150278",
+    "code": "class Solution {\npublic:\n    bool isHappy(int n) {\n        unordered_set<int> b;\n        while(1) {\n            if(n == 1) return 1;\n            if(b.find(n) != b.end()) return 0;\n            b.insert(n);\n            int t = 0;\n            while(n) {\n                t += (n % 10) * (n % 10);\n                n /= 10;\n            }\n            n = t;\n        }\n    }\n};",
+    "runtime": "0 ms",
+    "memory": "6.2 MB",
+    "rawMemory": "6300000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1588229378,
+    "lang": "cpp",
+    "passedTestCaseCnt": 401,
+    "totalTestCaseCnt": 404,
+    "sourceUrl": "/problems/happy-number/",
+    "question": {
+      "titleSlug": "happy-number",
+      "title": "Happy Number",
+      "translatedTitle": "\u5feb\u4e50\u6570",
+      "questionId": "202",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

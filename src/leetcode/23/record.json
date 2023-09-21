@@ -1,1 +1,45 @@
-{"simple": {"id": 66001288, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Accepted", "runtime": "52 ms", "url": "/submissions/detail/66001288/", "is_pending": "Not Pending", "title": "\u5408\u5e76K\u4e2a\u5347\u5e8f\u94fe\u8868", "timestamp": 1587868749, "memory": "10.7 MB"}, "full": {"id": "66001288", "code": "class Solution {\npublic:\n    ListNode* mergeKLists(vector<ListNode*>& lists) {\n        priority_queue<int, vector<int>, greater<int> > q;\n        for(auto i : lists) {\n            while(i) {\n                q.push(i->val);\n                i = i->next;\n            }\n        }\n        ListNode *ret = new ListNode(-1), *tail = ret;\n        while(!q.empty()) {\n            tail->next = new ListNode(q.top());\n            tail = tail->next;\n            q.pop();\n        }\n        return ret->next;\n    }\n};\n", "runtime": "52 ms", "memory": "10.7 MB", "rawMemory": "10940000", "statusDisplay": "Accepted", "timestamp": 1587868749, "lang": "cpp", "passedTestCaseCnt": 131, "totalTestCaseCnt": 133, "sourceUrl": "/problems/merge-k-sorted-lists/", "question": {"titleSlug": "merge-k-sorted-lists", "title": "Merge k Sorted Lists", "translatedTitle": "\u5408\u5e76K\u4e2a\u5347\u5e8f\u94fe\u8868", "questionId": "23", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 66001288,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "52 ms",
+    "url": "/submissions/detail/66001288/",
+    "is_pending": "Not Pending",
+    "title": "\u5408\u5e76K\u4e2a\u5347\u5e8f\u94fe\u8868",
+    "timestamp": 1587868749,
+    "memory": "10.7 MB"
+  },
+  "full": {
+    "id": "66001288",
+    "code": "class Solution {\npublic:\n    ListNode* mergeKLists(vector<ListNode*>& lists) {\n        priority_queue<int, vector<int>, greater<int> > q;\n        for(auto i : lists) {\n            while(i) {\n                q.push(i->val);\n                i = i->next;\n            }\n        }\n        ListNode *ret = new ListNode(-1), *tail = ret;\n        while(!q.empty()) {\n            tail->next = new ListNode(q.top());\n            tail = tail->next;\n            q.pop();\n        }\n        return ret->next;\n    }\n};\n",
+    "runtime": "52 ms",
+    "memory": "10.7 MB",
+    "rawMemory": "10940000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1587868749,
+    "lang": "cpp",
+    "passedTestCaseCnt": 131,
+    "totalTestCaseCnt": 133,
+    "sourceUrl": "/problems/merge-k-sorted-lists/",
+    "question": {
+      "titleSlug": "merge-k-sorted-lists",
+      "title": "Merge k Sorted Lists",
+      "translatedTitle": "\u5408\u5e76K\u4e2a\u5347\u5e8f\u94fe\u8868",
+      "questionId": "23",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

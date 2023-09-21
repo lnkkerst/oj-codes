@@ -1,1 +1,45 @@
-{"simple": {"id": 67983488, "lang": "C++", "time": "1\u00a0\u5e74\uff0c10\u00a0\u6708", "status_display": "Runtime Error", "runtime": "N/A", "url": "/submissions/detail/67983488/", "is_pending": "Not Pending", "title": "\u8df3\u8dc3\u6e38\u620f II", "timestamp": 1588552230, "memory": "N/A"}, "full": {"id": "67983488", "code": "class Solution {\npublic:\n    int jump(vector<int>& nums) {\n        int pos = 0, ret = 0;\n        while(pos < (int)nums.size() - 1) {\n            int nex = -1, ma = -1;\n            for(int i = pos + 1; i <= pos + nums[pos] && i < (int)nums.size(); ++i) {\n                if(nums[i] + i > ma) {\n                    nums[i] + i;\n                    ma = i;\n                }\n            }\n            pos = ma;\n            ++ret;\n            if(pos + nums[pos] >= nums.size() - 1) break;\n        }\n        return ret;\n    }\n};", "runtime": "N/A", "memory": "N/A", "rawMemory": "N/A", "statusDisplay": "Runtime Error", "timestamp": 1588552230, "lang": "cpp", "passedTestCaseCnt": 1, "totalTestCaseCnt": 106, "sourceUrl": "/problems/jump-game-ii/", "question": {"titleSlug": "jump-game-ii", "title": "Jump Game II", "translatedTitle": "\u8df3\u8dc3\u6e38\u620f II", "questionId": "45", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "2", "input": "[2,3,0,1,4]", "compileError": "", "runtimeError": "Line 923: Char 34: runtime error: addition of unsigned offset to 0x6030000000a0 overflowed to 0x60300000009c (stl_vector.h)", "lastTestcase": "[2,3,0,1,4]", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 67983488,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c10\u00a0\u6708",
+    "status_display": "Runtime Error",
+    "runtime": "N/A",
+    "url": "/submissions/detail/67983488/",
+    "is_pending": "Not Pending",
+    "title": "\u8df3\u8dc3\u6e38\u620f II",
+    "timestamp": 1588552230,
+    "memory": "N/A"
+  },
+  "full": {
+    "id": "67983488",
+    "code": "class Solution {\npublic:\n    int jump(vector<int>& nums) {\n        int pos = 0, ret = 0;\n        while(pos < (int)nums.size() - 1) {\n            int nex = -1, ma = -1;\n            for(int i = pos + 1; i <= pos + nums[pos] && i < (int)nums.size(); ++i) {\n                if(nums[i] + i > ma) {\n                    nums[i] + i;\n                    ma = i;\n                }\n            }\n            pos = ma;\n            ++ret;\n            if(pos + nums[pos] >= nums.size() - 1) break;\n        }\n        return ret;\n    }\n};",
+    "runtime": "N/A",
+    "memory": "N/A",
+    "rawMemory": "N/A",
+    "statusDisplay": "Runtime Error",
+    "timestamp": 1588552230,
+    "lang": "cpp",
+    "passedTestCaseCnt": 1,
+    "totalTestCaseCnt": 106,
+    "sourceUrl": "/problems/jump-game-ii/",
+    "question": {
+      "titleSlug": "jump-game-ii",
+      "title": "Jump Game II",
+      "translatedTitle": "\u8df3\u8dc3\u6e38\u620f II",
+      "questionId": "45",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "2",
+      "input": "[2,3,0,1,4]",
+      "compileError": "",
+      "runtimeError": "Line 923: Char 34: runtime error: addition of unsigned offset to 0x6030000000a0 overflowed to 0x60300000009c (stl_vector.h)",
+      "lastTestcase": "[2,3,0,1,4]",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

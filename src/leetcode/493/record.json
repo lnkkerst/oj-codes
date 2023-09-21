@@ -1,1 +1,45 @@
-{"simple": {"id": 62268945, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Runtime Error", "runtime": "N/A", "url": "/submissions/detail/62268945/", "is_pending": "Not Pending", "title": "\u7ffb\u8f6c\u5bf9", "timestamp": 1586744928, "memory": "N/A"}, "full": {"id": "62268945", "code": "class Solution {\npublic:\n    int reversePairs(vector<int>& nums) {\n        int ret = 0, len = nums.size();\n        for(int i = 0; i < len; ++i)\n            for(int j = i + 1; j < len; ++j)\n                ret += nums[i] > nums[j] * 2;\n        return ret;\n    }\n};", "runtime": "N/A", "memory": "N/A", "rawMemory": "N/A", "statusDisplay": "Runtime Error", "timestamp": 1586744928, "lang": "cpp", "passedTestCaseCnt": 10, "totalTestCaseCnt": 136, "sourceUrl": "/problems/reverse-pairs/", "question": {"titleSlug": "reverse-pairs", "title": "Reverse Pairs", "translatedTitle": "\u7ffb\u8f6c\u5bf9", "questionId": "493", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "9", "input": "[2147483647,2147483647,-2147483647,-2147483647,-2147483647,2147483647]", "compileError": "", "runtimeError": "Line 7: Char 42: runtime error: signed integer overflow: 2147483647 * 2 cannot be represented in type 'int' (solution.cpp)", "lastTestcase": "[2147483647,2147483647,-2147483647,-2147483647,-2147483647,2147483647]", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 62268945,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Runtime Error",
+    "runtime": "N/A",
+    "url": "/submissions/detail/62268945/",
+    "is_pending": "Not Pending",
+    "title": "\u7ffb\u8f6c\u5bf9",
+    "timestamp": 1586744928,
+    "memory": "N/A"
+  },
+  "full": {
+    "id": "62268945",
+    "code": "class Solution {\npublic:\n    int reversePairs(vector<int>& nums) {\n        int ret = 0, len = nums.size();\n        for(int i = 0; i < len; ++i)\n            for(int j = i + 1; j < len; ++j)\n                ret += nums[i] > nums[j] * 2;\n        return ret;\n    }\n};",
+    "runtime": "N/A",
+    "memory": "N/A",
+    "rawMemory": "N/A",
+    "statusDisplay": "Runtime Error",
+    "timestamp": 1586744928,
+    "lang": "cpp",
+    "passedTestCaseCnt": 10,
+    "totalTestCaseCnt": 136,
+    "sourceUrl": "/problems/reverse-pairs/",
+    "question": {
+      "titleSlug": "reverse-pairs",
+      "title": "Reverse Pairs",
+      "translatedTitle": "\u7ffb\u8f6c\u5bf9",
+      "questionId": "493",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "9",
+      "input": "[2147483647,2147483647,-2147483647,-2147483647,-2147483647,2147483647]",
+      "compileError": "",
+      "runtimeError": "Line 7: Char 42: runtime error: signed integer overflow: 2147483647 * 2 cannot be represented in type 'int' (solution.cpp)",
+      "lastTestcase": "[2147483647,2147483647,-2147483647,-2147483647,-2147483647,2147483647]",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

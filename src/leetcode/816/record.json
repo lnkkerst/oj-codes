@@ -1,1 +1,45 @@
-{"simple": {"id": 61760027, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Accepted", "runtime": "240 ms", "url": "/submissions/detail/61760027/", "is_pending": "Not Pending", "title": "\u8bbe\u8ba1\u54c8\u5e0c\u96c6\u5408", "timestamp": 1586582782, "memory": "38.3 MB"}, "full": {"id": "61760027", "code": "class MyHashSet {\npublic:\n    /** Initialize your data structure here. */\n    map<int, bool> b;\n    MyHashSet() {\n        b.clear();\n    }\n    \n    void add(int key) {\n        b[key] = 1;\n    }\n    \n    void remove(int key) {\n        b[key] = 0;\n    }\n    \n    /** Returns true if this set contains the specified element */\n    bool contains(int key) {\n        return b[key];\n    }\n};\n\n/**\n * Your MyHashSet object will be instantiated and called as such:\n * MyHashSet* obj = new MyHashSet();\n * obj->add(key);\n * obj->remove(key);\n * bool param_3 = obj->contains(key);\n */", "runtime": "240 ms", "memory": "38.3 MB", "rawMemory": "39240000", "statusDisplay": "Accepted", "timestamp": 1586582782, "lang": "cpp", "passedTestCaseCnt": 28, "totalTestCaseCnt": 32, "sourceUrl": "/problems/design-hashset/", "question": {"titleSlug": "design-hashset", "title": "Design HashSet", "translatedTitle": "\u8bbe\u8ba1\u54c8\u5e0c\u96c6\u5408", "questionId": "816", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 61760027,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "240 ms",
+    "url": "/submissions/detail/61760027/",
+    "is_pending": "Not Pending",
+    "title": "\u8bbe\u8ba1\u54c8\u5e0c\u96c6\u5408",
+    "timestamp": 1586582782,
+    "memory": "38.3 MB"
+  },
+  "full": {
+    "id": "61760027",
+    "code": "class MyHashSet {\npublic:\n    /** Initialize your data structure here. */\n    map<int, bool> b;\n    MyHashSet() {\n        b.clear();\n    }\n    \n    void add(int key) {\n        b[key] = 1;\n    }\n    \n    void remove(int key) {\n        b[key] = 0;\n    }\n    \n    /** Returns true if this set contains the specified element */\n    bool contains(int key) {\n        return b[key];\n    }\n};\n\n/**\n * Your MyHashSet object will be instantiated and called as such:\n * MyHashSet* obj = new MyHashSet();\n * obj->add(key);\n * obj->remove(key);\n * bool param_3 = obj->contains(key);\n */",
+    "runtime": "240 ms",
+    "memory": "38.3 MB",
+    "rawMemory": "39240000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1586582782,
+    "lang": "cpp",
+    "passedTestCaseCnt": 28,
+    "totalTestCaseCnt": 32,
+    "sourceUrl": "/problems/design-hashset/",
+    "question": {
+      "titleSlug": "design-hashset",
+      "title": "Design HashSet",
+      "translatedTitle": "\u8bbe\u8ba1\u54c8\u5e0c\u96c6\u5408",
+      "questionId": "816",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

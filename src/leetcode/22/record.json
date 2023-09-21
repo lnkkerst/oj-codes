@@ -1,1 +1,45 @@
-{"simple": {"id": 61222908, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Accepted", "runtime": "4 ms", "url": "/submissions/detail/61222908/", "is_pending": "Not Pending", "title": "\u62ec\u53f7\u751f\u6210", "timestamp": 1586414476, "memory": "14.8 MB"}, "full": {"id": "61222908", "code": "class Solution {\npublic:\n    vector<string> generateParenthesis(int n) {\n        vector<string> ret;\n        dfs(n, n, \"\", ret);\n        return ret;\n    }\n    void dfs(int l, int r, string now, vector<string> &ret) {\n        if(!l && !r) {\n            ret.push_back(now);\n            return ;\n        }\n        if(l > 0) dfs(l - 1, r, now + '(', ret);\n        if(r > l) dfs(l, r - 1, now + ')', ret);\n        return ;\n    }\n};", "runtime": "4 ms", "memory": "14.8 MB", "rawMemory": "15132000", "statusDisplay": "Accepted", "timestamp": 1586414476, "lang": "cpp", "passedTestCaseCnt": 8, "totalTestCaseCnt": 8, "sourceUrl": "/problems/generate-parentheses/", "question": {"titleSlug": "generate-parentheses", "title": "Generate Parentheses", "translatedTitle": "\u62ec\u53f7\u751f\u6210", "questionId": "22", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 61222908,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "4 ms",
+    "url": "/submissions/detail/61222908/",
+    "is_pending": "Not Pending",
+    "title": "\u62ec\u53f7\u751f\u6210",
+    "timestamp": 1586414476,
+    "memory": "14.8 MB"
+  },
+  "full": {
+    "id": "61222908",
+    "code": "class Solution {\npublic:\n    vector<string> generateParenthesis(int n) {\n        vector<string> ret;\n        dfs(n, n, \"\", ret);\n        return ret;\n    }\n    void dfs(int l, int r, string now, vector<string> &ret) {\n        if(!l && !r) {\n            ret.push_back(now);\n            return ;\n        }\n        if(l > 0) dfs(l - 1, r, now + '(', ret);\n        if(r > l) dfs(l, r - 1, now + ')', ret);\n        return ;\n    }\n};",
+    "runtime": "4 ms",
+    "memory": "14.8 MB",
+    "rawMemory": "15132000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1586414476,
+    "lang": "cpp",
+    "passedTestCaseCnt": 8,
+    "totalTestCaseCnt": 8,
+    "sourceUrl": "/problems/generate-parentheses/",
+    "question": {
+      "titleSlug": "generate-parentheses",
+      "title": "Generate Parentheses",
+      "translatedTitle": "\u62ec\u53f7\u751f\u6210",
+      "questionId": "22",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

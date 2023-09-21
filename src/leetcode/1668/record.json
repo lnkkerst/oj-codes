@@ -1,1 +1,45 @@
-{"simple": {"id": 96089011, "lang": "C++", "time": "1\u00a0\u5e74\uff0c7\u00a0\u6708", "status_display": "Wrong Answer", "runtime": "N/A", "url": "/submissions/detail/96089011/", "is_pending": "Not Pending", "title": "\u627e\u51fa\u6700\u957f\u7684\u8d85\u8d5e\u5b50\u5b57\u7b26\u4e32", "timestamp": 1596902217, "memory": "N/A"}, "full": {"id": "96089011", "code": "class Solution {\npublic:\n    int longestAwesome(string s) {\n        vector<int> a(s.begin(), s.end());\n        for(auto &i : a) i -= '0' - 1;\n        bool bb[11] = {0};\n        for(auto &i : a) {\n            int t = 1;\n            if(bb[i]) bb[i] = 0, t = -1;\n            else bb[i] = 1;\n            i = (1 << i) * t;\n        }\n        int ans = 0;\n        unordered_map<int, int> b, b2;\n        for(int k = 1; k <= 10; ++k) {\n            int j = 1 << k;\n            for(int kk = 1; kk <= 2; ++kk) {\n                b.clear();\n                b[0] = -1;\n                int sm = 0;\n                for(int i = 0; i < a.size(); ++i) {\n                    sm += a[i];\n                    if(b.find(sm - j) != b.end()) {\n                        ans = max(ans, i - b[sm - j]);\n                    }\n                    if(b.find(sm) != b.end()) {\n                        b[sm] = i;\n                    }\n                }\n                j *= -1;\n            }\n        }\n        b.clear();\n        b[0] = -1;\n        int sm = 0, j  = 0;\n        for(int i = 0; i < a.size(); ++i) {\n            sm += a[i];\n            if(b.find(sm - j) != b.end()) {\n                ans = max(ans, i - b[sm - j]);\n            }\n            if(b.find(sm) != b.end()) {\n                b[sm] = i;\n            }\n        }\n        j *= -1;\n        return ans;\n    }\n};", "runtime": "N/A", "memory": "N/A", "rawMemory": "N/A", "statusDisplay": "Wrong Answer", "timestamp": 1596902217, "lang": "cpp", "passedTestCaseCnt": 29, "totalTestCaseCnt": 153, "sourceUrl": "/problems/find-longest-awesome-substring/", "question": {"titleSlug": "find-longest-awesome-substring", "title": "Find Longest Awesome Substring", "translatedTitle": "\u627e\u51fa\u6700\u957f\u7684\u8d85\u8d5e\u5b50\u5b57\u7b26\u4e32", "questionId": "1668", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "1", "expectedOutput": "3", "input": "\"51224\"", "compileError": "", "runtimeError": "", "lastTestcase": "\"51224\"", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 96089011,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c7\u00a0\u6708",
+    "status_display": "Wrong Answer",
+    "runtime": "N/A",
+    "url": "/submissions/detail/96089011/",
+    "is_pending": "Not Pending",
+    "title": "\u627e\u51fa\u6700\u957f\u7684\u8d85\u8d5e\u5b50\u5b57\u7b26\u4e32",
+    "timestamp": 1596902217,
+    "memory": "N/A"
+  },
+  "full": {
+    "id": "96089011",
+    "code": "class Solution {\npublic:\n    int longestAwesome(string s) {\n        vector<int> a(s.begin(), s.end());\n        for(auto &i : a) i -= '0' - 1;\n        bool bb[11] = {0};\n        for(auto &i : a) {\n            int t = 1;\n            if(bb[i]) bb[i] = 0, t = -1;\n            else bb[i] = 1;\n            i = (1 << i) * t;\n        }\n        int ans = 0;\n        unordered_map<int, int> b, b2;\n        for(int k = 1; k <= 10; ++k) {\n            int j = 1 << k;\n            for(int kk = 1; kk <= 2; ++kk) {\n                b.clear();\n                b[0] = -1;\n                int sm = 0;\n                for(int i = 0; i < a.size(); ++i) {\n                    sm += a[i];\n                    if(b.find(sm - j) != b.end()) {\n                        ans = max(ans, i - b[sm - j]);\n                    }\n                    if(b.find(sm) != b.end()) {\n                        b[sm] = i;\n                    }\n                }\n                j *= -1;\n            }\n        }\n        b.clear();\n        b[0] = -1;\n        int sm = 0, j  = 0;\n        for(int i = 0; i < a.size(); ++i) {\n            sm += a[i];\n            if(b.find(sm - j) != b.end()) {\n                ans = max(ans, i - b[sm - j]);\n            }\n            if(b.find(sm) != b.end()) {\n                b[sm] = i;\n            }\n        }\n        j *= -1;\n        return ans;\n    }\n};",
+    "runtime": "N/A",
+    "memory": "N/A",
+    "rawMemory": "N/A",
+    "statusDisplay": "Wrong Answer",
+    "timestamp": 1596902217,
+    "lang": "cpp",
+    "passedTestCaseCnt": 29,
+    "totalTestCaseCnt": 153,
+    "sourceUrl": "/problems/find-longest-awesome-substring/",
+    "question": {
+      "titleSlug": "find-longest-awesome-substring",
+      "title": "Find Longest Awesome Substring",
+      "translatedTitle": "\u627e\u51fa\u6700\u957f\u7684\u8d85\u8d5e\u5b50\u5b57\u7b26\u4e32",
+      "questionId": "1668",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "1",
+      "expectedOutput": "3",
+      "input": "\"51224\"",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "\"51224\"",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

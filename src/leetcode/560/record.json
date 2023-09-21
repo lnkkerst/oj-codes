@@ -1,1 +1,45 @@
-{"simple": {"id": 71048352, "lang": "C++", "time": "1\u00a0\u5e74\uff0c10\u00a0\u6708", "status_display": "Wrong Answer", "runtime": "N/A", "url": "/submissions/detail/71048352/", "is_pending": "Not Pending", "title": "\u548c\u4e3a K \u7684\u5b50\u6570\u7ec4", "timestamp": 1589537876, "memory": "N/A"}, "full": {"id": "71048352", "code": "class Solution {\npublic:\n    int subarraySum(vector<int>& nums, int k) {\n        int ret = 0;\n        for(int i = 1; i < (int)nums.size(); ++i) nums[i] += nums[i - 1];\n        for(int i = 1; i < (int)nums.size(); ++i) {\n            ret += nums[i] == k;\n            for(int j = i; j <(int)nums.size(); ++j)\n                if(nums[j] - nums[i - 1] == k) ++ret;\n        }\n        return ret;\n    }\n};", "runtime": "N/A", "memory": "N/A", "rawMemory": "N/A", "statusDisplay": "Wrong Answer", "timestamp": 1589537876, "lang": "cpp", "passedTestCaseCnt": 76, "totalTestCaseCnt": 89, "sourceUrl": "/problems/subarray-sum-equals-k/", "question": {"titleSlug": "subarray-sum-equals-k", "title": "Subarray Sum Equals K", "translatedTitle": "\u548c\u4e3a K \u7684\u5b50\u6570\u7ec4", "questionId": "560", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "0", "expectedOutput": "1", "input": "[1]\n1", "compileError": "", "runtimeError": "", "lastTestcase": "[1]\n1", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 71048352,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c10\u00a0\u6708",
+    "status_display": "Wrong Answer",
+    "runtime": "N/A",
+    "url": "/submissions/detail/71048352/",
+    "is_pending": "Not Pending",
+    "title": "\u548c\u4e3a K \u7684\u5b50\u6570\u7ec4",
+    "timestamp": 1589537876,
+    "memory": "N/A"
+  },
+  "full": {
+    "id": "71048352",
+    "code": "class Solution {\npublic:\n    int subarraySum(vector<int>& nums, int k) {\n        int ret = 0;\n        for(int i = 1; i < (int)nums.size(); ++i) nums[i] += nums[i - 1];\n        for(int i = 1; i < (int)nums.size(); ++i) {\n            ret += nums[i] == k;\n            for(int j = i; j <(int)nums.size(); ++j)\n                if(nums[j] - nums[i - 1] == k) ++ret;\n        }\n        return ret;\n    }\n};",
+    "runtime": "N/A",
+    "memory": "N/A",
+    "rawMemory": "N/A",
+    "statusDisplay": "Wrong Answer",
+    "timestamp": 1589537876,
+    "lang": "cpp",
+    "passedTestCaseCnt": 76,
+    "totalTestCaseCnt": 89,
+    "sourceUrl": "/problems/subarray-sum-equals-k/",
+    "question": {
+      "titleSlug": "subarray-sum-equals-k",
+      "title": "Subarray Sum Equals K",
+      "translatedTitle": "\u548c\u4e3a K \u7684\u5b50\u6570\u7ec4",
+      "questionId": "560",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "0",
+      "expectedOutput": "1",
+      "input": "[1]\n1",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "[1]\n1",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

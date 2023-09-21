@@ -1,1 +1,45 @@
-{"simple": {"id": 61362472, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Runtime Error", "runtime": "N/A", "url": "/submissions/detail/61362472/", "is_pending": "Not Pending", "title": "Z \u5b57\u5f62\u53d8\u6362", "timestamp": 1586442350, "memory": "N/A"}, "full": {"id": "61362472", "code": "class Solution {\npublic:\n    string convert(string s, int numRows) {\n        vector<vector<char> > ans;\n        ans.resize(numRows);\n        int now = 0, nex = -1;\n        for(auto i : s) {\n            ans[now].push_back(i);\n            if(now == 0 || now == numRows - 1) nex = -nex;\n            now += nex;\n        }\n        string ret;\n        for(auto i : ans)\n            for(auto j : i)\n                ret.push_back(j);\n        return ret;\n    }\n};", "runtime": "N/A", "memory": "N/A", "rawMemory": "N/A", "statusDisplay": "Runtime Error", "timestamp": 1586442350, "lang": "cpp", "passedTestCaseCnt": 8, "totalTestCaseCnt": 1157, "sourceUrl": "/problems/zigzag-conversion/", "question": {"titleSlug": "zigzag-conversion", "title": "ZigZag Conversion", "translatedTitle": "Z \u5b57\u5f62\u53d8\u6362", "questionId": "6", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "\"AB\"", "input": "\"AB\"\n2", "compileError": "", "runtimeError": "AddressSanitizer: heap-buffer-overflow on address 0x603000000180 at pc 0x00000039297f bp 0x7ffe530b0c00 sp 0x7ffe530b0bf8", "lastTestcase": "\"AB\"\n2", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 61362472,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Runtime Error",
+    "runtime": "N/A",
+    "url": "/submissions/detail/61362472/",
+    "is_pending": "Not Pending",
+    "title": "Z \u5b57\u5f62\u53d8\u6362",
+    "timestamp": 1586442350,
+    "memory": "N/A"
+  },
+  "full": {
+    "id": "61362472",
+    "code": "class Solution {\npublic:\n    string convert(string s, int numRows) {\n        vector<vector<char> > ans;\n        ans.resize(numRows);\n        int now = 0, nex = -1;\n        for(auto i : s) {\n            ans[now].push_back(i);\n            if(now == 0 || now == numRows - 1) nex = -nex;\n            now += nex;\n        }\n        string ret;\n        for(auto i : ans)\n            for(auto j : i)\n                ret.push_back(j);\n        return ret;\n    }\n};",
+    "runtime": "N/A",
+    "memory": "N/A",
+    "rawMemory": "N/A",
+    "statusDisplay": "Runtime Error",
+    "timestamp": 1586442350,
+    "lang": "cpp",
+    "passedTestCaseCnt": 8,
+    "totalTestCaseCnt": 1157,
+    "sourceUrl": "/problems/zigzag-conversion/",
+    "question": {
+      "titleSlug": "zigzag-conversion",
+      "title": "ZigZag Conversion",
+      "translatedTitle": "Z \u5b57\u5f62\u53d8\u6362",
+      "questionId": "6",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "\"AB\"",
+      "input": "\"AB\"\n2",
+      "compileError": "",
+      "runtimeError": "AddressSanitizer: heap-buffer-overflow on address 0x603000000180 at pc 0x00000039297f bp 0x7ffe530b0c00 sp 0x7ffe530b0bf8",
+      "lastTestcase": "\"AB\"\n2",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

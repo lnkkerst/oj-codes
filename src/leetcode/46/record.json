@@ -1,1 +1,45 @@
-{"simple": {"id": 61703891, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Wrong Answer", "runtime": "N/A", "url": "/submissions/detail/61703891/", "is_pending": "Not Pending", "title": "\u5168\u6392\u5217", "timestamp": 1586568874, "memory": "N/A"}, "full": {"id": "61703891", "code": "class Solution {\npublic:\n    vector<vector<int>> permute(vector<int>& nums) {\n        vector<vector<int> > ret;\n        do ret.push_back(nums);\n        while(next_permutation(nums.begin(), nums.end()));\n        return ret;\n    }\n};", "runtime": "N/A", "memory": "N/A", "rawMemory": "N/A", "statusDisplay": "Wrong Answer", "timestamp": 1586568874, "lang": "cpp", "passedTestCaseCnt": 7, "totalTestCaseCnt": 26, "sourceUrl": "/problems/permutations/", "question": {"titleSlug": "permutations", "title": "Permutations", "translatedTitle": "\u5168\u6392\u5217", "questionId": "46", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "[[0,-1,1],[0,1,-1],[1,-1,0],[1,0,-1]]", "expectedOutput": "[[0,-1,1],[0,1,-1],[-1,0,1],[-1,1,0],[1,0,-1],[1,-1,0]]", "input": "[0,-1,1]", "compileError": "", "runtimeError": "", "lastTestcase": "[0,-1,1]", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 61703891,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Wrong Answer",
+    "runtime": "N/A",
+    "url": "/submissions/detail/61703891/",
+    "is_pending": "Not Pending",
+    "title": "\u5168\u6392\u5217",
+    "timestamp": 1586568874,
+    "memory": "N/A"
+  },
+  "full": {
+    "id": "61703891",
+    "code": "class Solution {\npublic:\n    vector<vector<int>> permute(vector<int>& nums) {\n        vector<vector<int> > ret;\n        do ret.push_back(nums);\n        while(next_permutation(nums.begin(), nums.end()));\n        return ret;\n    }\n};",
+    "runtime": "N/A",
+    "memory": "N/A",
+    "rawMemory": "N/A",
+    "statusDisplay": "Wrong Answer",
+    "timestamp": 1586568874,
+    "lang": "cpp",
+    "passedTestCaseCnt": 7,
+    "totalTestCaseCnt": 26,
+    "sourceUrl": "/problems/permutations/",
+    "question": {
+      "titleSlug": "permutations",
+      "title": "Permutations",
+      "translatedTitle": "\u5168\u6392\u5217",
+      "questionId": "46",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "[[0,-1,1],[0,1,-1],[1,-1,0],[1,0,-1]]",
+      "expectedOutput": "[[0,-1,1],[0,1,-1],[-1,0,1],[-1,1,0],[1,0,-1],[1,-1,0]]",
+      "input": "[0,-1,1]",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "[0,-1,1]",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

@@ -1,1 +1,45 @@
-{"simple": {"id": 143964991, "lang": "C++", "time": "1\u00a0\u5e74\uff0c1\u00a0\u6708", "status_display": "Wrong Answer", "runtime": "N/A", "url": "/submissions/detail/143964991/", "is_pending": "Not Pending", "title": "\u5c3d\u53ef\u80fd\u4f7f\u5b57\u7b26\u4e32\u76f8\u7b49", "timestamp": 1612514221, "memory": "N/A"}, "full": {"id": "143964991", "code": "class Solution {\npublic:\n    int equalSubstring(string s, string t, int maxCost) {\n        int res = 0, cur = 0;\n        vector<int> cost;\n        for(size_t i = 0; i < s.length(); ++i) {\n            cost.emplace_back(abs(s[i] - t[i]));\n        }\n        size_t l = 0, r = 0;\n        while(r < s.length()) {\n            cur += cost[r++];\n            while(cur > maxCost) {\n                cur -= cost[l++];\n            }\n            res = max(res, cur);\n        }\n        return res;\n    }\n};", "runtime": "N/A", "memory": "N/A", "rawMemory": "N/A", "statusDisplay": "Wrong Answer", "timestamp": 1612514221, "lang": "cpp", "passedTestCaseCnt": 2, "totalTestCaseCnt": 37, "sourceUrl": "/problems/get-equal-substrings-within-budget/", "question": {"titleSlug": "get-equal-substrings-within-budget", "title": "Get Equal Substrings Within Budget", "translatedTitle": "\u5c3d\u53ef\u80fd\u4f7f\u5b57\u7b26\u4e32\u76f8\u7b49", "questionId": "1321", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "2", "expectedOutput": "1", "input": "\"abcd\"\n\"cdef\"\n3", "compileError": "", "runtimeError": "", "lastTestcase": "\"abcd\"\n\"cdef\"\n3", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 143964991,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c1\u00a0\u6708",
+    "status_display": "Wrong Answer",
+    "runtime": "N/A",
+    "url": "/submissions/detail/143964991/",
+    "is_pending": "Not Pending",
+    "title": "\u5c3d\u53ef\u80fd\u4f7f\u5b57\u7b26\u4e32\u76f8\u7b49",
+    "timestamp": 1612514221,
+    "memory": "N/A"
+  },
+  "full": {
+    "id": "143964991",
+    "code": "class Solution {\npublic:\n    int equalSubstring(string s, string t, int maxCost) {\n        int res = 0, cur = 0;\n        vector<int> cost;\n        for(size_t i = 0; i < s.length(); ++i) {\n            cost.emplace_back(abs(s[i] - t[i]));\n        }\n        size_t l = 0, r = 0;\n        while(r < s.length()) {\n            cur += cost[r++];\n            while(cur > maxCost) {\n                cur -= cost[l++];\n            }\n            res = max(res, cur);\n        }\n        return res;\n    }\n};",
+    "runtime": "N/A",
+    "memory": "N/A",
+    "rawMemory": "N/A",
+    "statusDisplay": "Wrong Answer",
+    "timestamp": 1612514221,
+    "lang": "cpp",
+    "passedTestCaseCnt": 2,
+    "totalTestCaseCnt": 37,
+    "sourceUrl": "/problems/get-equal-substrings-within-budget/",
+    "question": {
+      "titleSlug": "get-equal-substrings-within-budget",
+      "title": "Get Equal Substrings Within Budget",
+      "translatedTitle": "\u5c3d\u53ef\u80fd\u4f7f\u5b57\u7b26\u4e32\u76f8\u7b49",
+      "questionId": "1321",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "2",
+      "expectedOutput": "1",
+      "input": "\"abcd\"\n\"cdef\"\n3",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "\"abcd\"\n\"cdef\"\n3",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

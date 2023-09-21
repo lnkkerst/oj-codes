@@ -1,4 +1,4 @@
-s = '''  *
+s = """  *
  ***
-*****'''
-print(s.replace('*', input()))
+*****"""
+print(s.replace("*", input()))

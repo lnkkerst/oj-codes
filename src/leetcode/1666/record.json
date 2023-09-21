@@ -1,1 +1,45 @@
-{"simple": {"id": 96176215, "lang": "C++", "time": "1\u00a0\u5e74\uff0c7\u00a0\u6708", "status_display": "Accepted", "runtime": "4 ms", "url": "/submissions/detail/96176215/", "is_pending": "Not Pending", "title": "\u6574\u7406\u5b57\u7b26\u4e32", "timestamp": 1596943366, "memory": "6 MB"}, "full": {"id": "96176215", "code": "class Solution {\npublic:\n    string makeGood(string s) {\n        string ret;\n        for(int i = 0; i < s.size(); ++i) {\n            while(i < s.size() && ret.size() && (ret.back() == s[i] + 32 || ret.back() == s[i] - 32)) ++i, ret.pop_back();\n            if(i < s.size()) ret += s[i];\n            // cout << ret.size() << endl;\n        }\n        // cout << ret.size();\n        return ret;\n    }\n};", "runtime": "4 ms", "memory": "6 MB", "rawMemory": "6128000", "statusDisplay": "Accepted", "timestamp": 1596943366, "lang": "cpp", "passedTestCaseCnt": 334, "totalTestCaseCnt": 334, "sourceUrl": "/problems/make-the-string-great/", "question": {"titleSlug": "make-the-string-great", "title": "Make The String Great", "translatedTitle": "\u6574\u7406\u5b57\u7b26\u4e32", "questionId": "1666", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 96176215,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c7\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "4 ms",
+    "url": "/submissions/detail/96176215/",
+    "is_pending": "Not Pending",
+    "title": "\u6574\u7406\u5b57\u7b26\u4e32",
+    "timestamp": 1596943366,
+    "memory": "6 MB"
+  },
+  "full": {
+    "id": "96176215",
+    "code": "class Solution {\npublic:\n    string makeGood(string s) {\n        string ret;\n        for(int i = 0; i < s.size(); ++i) {\n            while(i < s.size() && ret.size() && (ret.back() == s[i] + 32 || ret.back() == s[i] - 32)) ++i, ret.pop_back();\n            if(i < s.size()) ret += s[i];\n            // cout << ret.size() << endl;\n        }\n        // cout << ret.size();\n        return ret;\n    }\n};",
+    "runtime": "4 ms",
+    "memory": "6 MB",
+    "rawMemory": "6128000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1596943366,
+    "lang": "cpp",
+    "passedTestCaseCnt": 334,
+    "totalTestCaseCnt": 334,
+    "sourceUrl": "/problems/make-the-string-great/",
+    "question": {
+      "titleSlug": "make-the-string-great",
+      "title": "Make The String Great",
+      "translatedTitle": "\u6574\u7406\u5b57\u7b26\u4e32",
+      "questionId": "1666",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

@@ -1,1 +1,45 @@
-{"simple": {"id": 76914052, "lang": "C++", "time": "1\u00a0\u5e74\uff0c9\u00a0\u6708", "status_display": "Accepted", "runtime": "356 ms", "url": "/submissions/detail/76914052/", "is_pending": "Not Pending", "title": "\u8bbe\u8ba1\u6d4f\u89c8\u5668\u5386\u53f2\u8bb0\u5f55", "timestamp": 1591498068, "memory": "53.5 MB"}, "full": {"id": "76914052", "code": "class BrowserHistory {\npublic:\n    vector<string> a;\n    int now;\n    BrowserHistory(string homepage) {\n        a.push_back(homepage);\n        now = 0;\n    }\n    \n    void visit(string url) {\n        a.erase(a.begin() + now + 1, a.end());\n        a.push_back(url);\n        now = a.size() - 1;\n    }\n    \n    string back(int steps) {\n        now = max(0, now - steps);\n        return a[now];\n    }\n    \n    string forward(int steps) {\n        now = min((int)a.size() - 1, now + steps);\n        return a[now];\n    }\n};\n\n/**\n * Your BrowserHistory object will be instantiated and called as such:\n * BrowserHistory* obj = new BrowserHistory(homepage);\n * obj->visit(url);\n * string param_2 = obj->back(steps);\n * string param_3 = obj->forward(steps);\n */", "runtime": "356 ms", "memory": "53.5 MB", "rawMemory": "54780000", "statusDisplay": "Accepted", "timestamp": 1591498068, "lang": "cpp", "passedTestCaseCnt": 71, "totalTestCaseCnt": 71, "sourceUrl": "/problems/design-browser-history/", "question": {"titleSlug": "design-browser-history", "title": "Design Browser History", "translatedTitle": "\u8bbe\u8ba1\u6d4f\u89c8\u5668\u5386\u53f2\u8bb0\u5f55", "questionId": "1582", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 76914052,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c9\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "356 ms",
+    "url": "/submissions/detail/76914052/",
+    "is_pending": "Not Pending",
+    "title": "\u8bbe\u8ba1\u6d4f\u89c8\u5668\u5386\u53f2\u8bb0\u5f55",
+    "timestamp": 1591498068,
+    "memory": "53.5 MB"
+  },
+  "full": {
+    "id": "76914052",
+    "code": "class BrowserHistory {\npublic:\n    vector<string> a;\n    int now;\n    BrowserHistory(string homepage) {\n        a.push_back(homepage);\n        now = 0;\n    }\n    \n    void visit(string url) {\n        a.erase(a.begin() + now + 1, a.end());\n        a.push_back(url);\n        now = a.size() - 1;\n    }\n    \n    string back(int steps) {\n        now = max(0, now - steps);\n        return a[now];\n    }\n    \n    string forward(int steps) {\n        now = min((int)a.size() - 1, now + steps);\n        return a[now];\n    }\n};\n\n/**\n * Your BrowserHistory object will be instantiated and called as such:\n * BrowserHistory* obj = new BrowserHistory(homepage);\n * obj->visit(url);\n * string param_2 = obj->back(steps);\n * string param_3 = obj->forward(steps);\n */",
+    "runtime": "356 ms",
+    "memory": "53.5 MB",
+    "rawMemory": "54780000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1591498068,
+    "lang": "cpp",
+    "passedTestCaseCnt": 71,
+    "totalTestCaseCnt": 71,
+    "sourceUrl": "/problems/design-browser-history/",
+    "question": {
+      "titleSlug": "design-browser-history",
+      "title": "Design Browser History",
+      "translatedTitle": "\u8bbe\u8ba1\u6d4f\u89c8\u5668\u5386\u53f2\u8bb0\u5f55",
+      "questionId": "1582",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

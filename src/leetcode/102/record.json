@@ -1,1 +1,45 @@
-{"simple": {"id": 70435305, "lang": "C++", "time": "1\u00a0\u5e74\uff0c10\u00a0\u6708", "status_display": "Runtime Error", "runtime": "N/A", "url": "/submissions/detail/70435305/", "is_pending": "Not Pending", "title": "\u4e8c\u53c9\u6811\u7684\u5c42\u5e8f\u904d\u5386", "timestamp": 1589350899, "memory": "N/A"}, "full": {"id": "70435305", "code": "/**\n * Definition for a binary tree node.\n * struct TreeNode {\n *     int val;\n *     TreeNode *left;\n *     TreeNode *right;\n *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}\n * };\n */\nclass Solution {\npublic:\n    vector<vector<int>> levelOrder(TreeNode* root) {\n        vector<vector<int> > ret;\n        queue<TreeNode*> q;\n        q.push(root);\n        while(!q.empty()) {\n            int sz = q.size();\n            vector<int> tmp;\n            for(int i = 0; i < sz; ++i) {\n                auto k = q.front();\n                q.pop();\n                tmp.push_back(k->val);\n                if(k->left) q.push(k->left);\n                if(k->right) q.push(k->right);\n            }\n            ret.push_back(tmp);\n        }\n        return ret;\n    }\n};", "runtime": "N/A", "memory": "N/A", "rawMemory": "N/A", "statusDisplay": "Runtime Error", "timestamp": 1589350899, "lang": "cpp", "passedTestCaseCnt": 1, "totalTestCaseCnt": 34, "sourceUrl": "/problems/binary-tree-level-order-traversal/", "question": {"titleSlug": "binary-tree-level-order-traversal", "title": "Binary Tree Level Order Traversal", "translatedTitle": "\u4e8c\u53c9\u6811\u7684\u5c42\u5e8f\u904d\u5386", "questionId": "102", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "[[1]]", "input": "[1]", "compileError": "", "runtimeError": "Line 22: Char 34: runtime error: member access within null pointer of type 'TreeNode' (solution.cpp)", "lastTestcase": "[1]", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 70435305,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c10\u00a0\u6708",
+    "status_display": "Runtime Error",
+    "runtime": "N/A",
+    "url": "/submissions/detail/70435305/",
+    "is_pending": "Not Pending",
+    "title": "\u4e8c\u53c9\u6811\u7684\u5c42\u5e8f\u904d\u5386",
+    "timestamp": 1589350899,
+    "memory": "N/A"
+  },
+  "full": {
+    "id": "70435305",
+    "code": "/**\n * Definition for a binary tree node.\n * struct TreeNode {\n *     int val;\n *     TreeNode *left;\n *     TreeNode *right;\n *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}\n * };\n */\nclass Solution {\npublic:\n    vector<vector<int>> levelOrder(TreeNode* root) {\n        vector<vector<int> > ret;\n        queue<TreeNode*> q;\n        q.push(root);\n        while(!q.empty()) {\n            int sz = q.size();\n            vector<int> tmp;\n            for(int i = 0; i < sz; ++i) {\n                auto k = q.front();\n                q.pop();\n                tmp.push_back(k->val);\n                if(k->left) q.push(k->left);\n                if(k->right) q.push(k->right);\n            }\n            ret.push_back(tmp);\n        }\n        return ret;\n    }\n};",
+    "runtime": "N/A",
+    "memory": "N/A",
+    "rawMemory": "N/A",
+    "statusDisplay": "Runtime Error",
+    "timestamp": 1589350899,
+    "lang": "cpp",
+    "passedTestCaseCnt": 1,
+    "totalTestCaseCnt": 34,
+    "sourceUrl": "/problems/binary-tree-level-order-traversal/",
+    "question": {
+      "titleSlug": "binary-tree-level-order-traversal",
+      "title": "Binary Tree Level Order Traversal",
+      "translatedTitle": "\u4e8c\u53c9\u6811\u7684\u5c42\u5e8f\u904d\u5386",
+      "questionId": "102",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "[[1]]",
+      "input": "[1]",
+      "compileError": "",
+      "runtimeError": "Line 22: Char 34: runtime error: member access within null pointer of type 'TreeNode' (solution.cpp)",
+      "lastTestcase": "[1]",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

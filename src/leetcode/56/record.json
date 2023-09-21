@@ -1,1 +1,45 @@
-{"simple": {"id": 63176838, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Runtime Error", "runtime": "N/A", "url": "/submissions/detail/63176838/", "is_pending": "Not Pending", "title": "\u5408\u5e76\u533a\u95f4", "timestamp": 1586996370, "memory": "N/A"}, "full": {"id": "63176838", "code": "class Solution {\npublic:\n    vector<vector<int>> merge(vector<vector<int>>& a) {\n        vector<vector<int> > ret;\n        int nl = a[0][0], nr = a[0][1];\n        for(int i = 1; i < (int)a.size(); ++i) {\n            if(a[i][0] <= nr) nr = a[i][1];\n            else {\n                ret.push_back({nl, nr});\n                nl = a[i][0];\n                nr = a[i][1];\n            }\n        }\n        ret.push_back({nl, nr});\n        return ret;\n    }\n};", "runtime": "N/A", "memory": "N/A", "rawMemory": "N/A", "statusDisplay": "Runtime Error", "timestamp": 1586996370, "lang": "cpp", "passedTestCaseCnt": 2, "totalTestCaseCnt": 168, "sourceUrl": "/problems/merge-intervals/", "question": {"titleSlug": "merge-intervals", "title": "Merge Intervals", "translatedTitle": "\u5408\u5e76\u533a\u95f4", "questionId": "56", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "[[1,3]]", "input": "[[1,3]]", "compileError": "", "runtimeError": "Line 923: Char 9: runtime error: reference binding to null pointer of type 'std::vector<int, std::allocator<int> >' (stl_vector.h)", "lastTestcase": "[[1,3]]", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 63176838,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Runtime Error",
+    "runtime": "N/A",
+    "url": "/submissions/detail/63176838/",
+    "is_pending": "Not Pending",
+    "title": "\u5408\u5e76\u533a\u95f4",
+    "timestamp": 1586996370,
+    "memory": "N/A"
+  },
+  "full": {
+    "id": "63176838",
+    "code": "class Solution {\npublic:\n    vector<vector<int>> merge(vector<vector<int>>& a) {\n        vector<vector<int> > ret;\n        int nl = a[0][0], nr = a[0][1];\n        for(int i = 1; i < (int)a.size(); ++i) {\n            if(a[i][0] <= nr) nr = a[i][1];\n            else {\n                ret.push_back({nl, nr});\n                nl = a[i][0];\n                nr = a[i][1];\n            }\n        }\n        ret.push_back({nl, nr});\n        return ret;\n    }\n};",
+    "runtime": "N/A",
+    "memory": "N/A",
+    "rawMemory": "N/A",
+    "statusDisplay": "Runtime Error",
+    "timestamp": 1586996370,
+    "lang": "cpp",
+    "passedTestCaseCnt": 2,
+    "totalTestCaseCnt": 168,
+    "sourceUrl": "/problems/merge-intervals/",
+    "question": {
+      "titleSlug": "merge-intervals",
+      "title": "Merge Intervals",
+      "translatedTitle": "\u5408\u5e76\u533a\u95f4",
+      "questionId": "56",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "[[1,3]]",
+      "input": "[[1,3]]",
+      "compileError": "",
+      "runtimeError": "Line 923: Char 9: runtime error: reference binding to null pointer of type 'std::vector<int, std::allocator<int> >' (stl_vector.h)",
+      "lastTestcase": "[[1,3]]",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

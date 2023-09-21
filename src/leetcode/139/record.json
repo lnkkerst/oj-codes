@@ -1,1 +1,45 @@
-{"simple": {"id": 61711271, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Wrong Answer", "runtime": "N/A", "url": "/submissions/detail/61711271/", "is_pending": "Not Pending", "title": "\u5355\u8bcd\u62c6\u5206", "timestamp": 1586571485, "memory": "N/A"}, "full": {"id": "61711271", "code": "class Solution {\npublic:\n    bool wordBreak(string s, vector<string>& wordDict) {\n        unordered_map<string, bool> b;\n        for(auto i : wordDict) b[i] = 1;\n        string now;\n        for(auto i : s) {\n            now.push_back(i);\n            if(b[now]) now.clear();\n        }\n        return !now.size();\n    }\n};", "runtime": "N/A", "memory": "N/A", "rawMemory": "N/A", "statusDisplay": "Wrong Answer", "timestamp": 1586571485, "lang": "cpp", "passedTestCaseCnt": 32, "totalTestCaseCnt": 45, "sourceUrl": "/problems/word-break/", "question": {"titleSlug": "word-break", "title": "Word Break", "translatedTitle": "\u5355\u8bcd\u62c6\u5206", "questionId": "139", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "false", "expectedOutput": "true", "input": "\"aaaaaaaa\"\n[\"aaaa\",\"aa\",\"a\"]", "compileError": "", "runtimeError": "", "lastTestcase": "\"aaaaaaaa\"\n[\"aaaa\",\"aa\",\"a\"]", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 61711271,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Wrong Answer",
+    "runtime": "N/A",
+    "url": "/submissions/detail/61711271/",
+    "is_pending": "Not Pending",
+    "title": "\u5355\u8bcd\u62c6\u5206",
+    "timestamp": 1586571485,
+    "memory": "N/A"
+  },
+  "full": {
+    "id": "61711271",
+    "code": "class Solution {\npublic:\n    bool wordBreak(string s, vector<string>& wordDict) {\n        unordered_map<string, bool> b;\n        for(auto i : wordDict) b[i] = 1;\n        string now;\n        for(auto i : s) {\n            now.push_back(i);\n            if(b[now]) now.clear();\n        }\n        return !now.size();\n    }\n};",
+    "runtime": "N/A",
+    "memory": "N/A",
+    "rawMemory": "N/A",
+    "statusDisplay": "Wrong Answer",
+    "timestamp": 1586571485,
+    "lang": "cpp",
+    "passedTestCaseCnt": 32,
+    "totalTestCaseCnt": 45,
+    "sourceUrl": "/problems/word-break/",
+    "question": {
+      "titleSlug": "word-break",
+      "title": "Word Break",
+      "translatedTitle": "\u5355\u8bcd\u62c6\u5206",
+      "questionId": "139",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "false",
+      "expectedOutput": "true",
+      "input": "\"aaaaaaaa\"\n[\"aaaa\",\"aa\",\"a\"]",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "\"aaaaaaaa\"\n[\"aaaa\",\"aa\",\"a\"]",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

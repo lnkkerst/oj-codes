@@ -1,1 +1,45 @@
-{"simple": {"id": 61250863, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Accepted", "runtime": "8 ms", "url": "/submissions/detail/61250863/", "is_pending": "Not Pending", "title": "\u63a5\u96e8\u6c34", "timestamp": 1586419390, "memory": "6.9 MB"}, "full": {"id": "61250863", "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        if(height.size() <= 1) return 0;\n        int ret = 0;\n        vector<int> lm, rm;\n        lm.reserve(height.size() + 1);\n        rm.reserve(height.size() + 1);\n        lm[0] = height[0], rm[height.size() - 1] = height.back();\n        for(int i = 1; i < (int)height.size(); ++i)\n            lm[i] = max(lm[i - 1], height[i]);\n        for(int i = (int)height.size() - 2; i >= 0; --i)\n            rm[i] = max(rm[i + 1], height[i]);\n        for(int i = 0; i < (int)height.size(); ++i)\n            ret += min(lm[i], rm[i]) - height[i];\n        return ret;\n    }\n};", "runtime": "8 ms", "memory": "6.9 MB", "rawMemory": "7104000", "statusDisplay": "Accepted", "timestamp": 1586419390, "lang": "cpp", "passedTestCaseCnt": 315, "totalTestCaseCnt": 320, "sourceUrl": "/problems/trapping-rain-water/", "question": {"titleSlug": "trapping-rain-water", "title": "Trapping Rain Water", "translatedTitle": "\u63a5\u96e8\u6c34", "questionId": "42", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "", "input": "", "compileError": "", "runtimeError": "", "lastTestcase": "", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 61250863,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Accepted",
+    "runtime": "8 ms",
+    "url": "/submissions/detail/61250863/",
+    "is_pending": "Not Pending",
+    "title": "\u63a5\u96e8\u6c34",
+    "timestamp": 1586419390,
+    "memory": "6.9 MB"
+  },
+  "full": {
+    "id": "61250863",
+    "code": "class Solution {\npublic:\n    int trap(vector<int>& height) {\n        if(height.size() <= 1) return 0;\n        int ret = 0;\n        vector<int> lm, rm;\n        lm.reserve(height.size() + 1);\n        rm.reserve(height.size() + 1);\n        lm[0] = height[0], rm[height.size() - 1] = height.back();\n        for(int i = 1; i < (int)height.size(); ++i)\n            lm[i] = max(lm[i - 1], height[i]);\n        for(int i = (int)height.size() - 2; i >= 0; --i)\n            rm[i] = max(rm[i + 1], height[i]);\n        for(int i = 0; i < (int)height.size(); ++i)\n            ret += min(lm[i], rm[i]) - height[i];\n        return ret;\n    }\n};",
+    "runtime": "8 ms",
+    "memory": "6.9 MB",
+    "rawMemory": "7104000",
+    "statusDisplay": "Accepted",
+    "timestamp": 1586419390,
+    "lang": "cpp",
+    "passedTestCaseCnt": 315,
+    "totalTestCaseCnt": 320,
+    "sourceUrl": "/problems/trapping-rain-water/",
+    "question": {
+      "titleSlug": "trapping-rain-water",
+      "title": "Trapping Rain Water",
+      "translatedTitle": "\u63a5\u96e8\u6c34",
+      "questionId": "42",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "",
+      "input": "",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}

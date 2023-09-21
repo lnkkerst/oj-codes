@@ -1,1 +1,45 @@
-{"simple": {"id": 61698913, "lang": "C++", "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708", "status_display": "Time Limit Exceeded", "runtime": "N/A", "url": "/submissions/detail/61698913/", "is_pending": "Not Pending", "title": "\u9e21\u86cb\u6389\u843d", "timestamp": 1586565689, "memory": "N/A"}, "full": {"id": "61698913", "code": "class Solution {\npublic:\n    int superEggDrop(int K, int N) {\n\t\tvector<vector<int> > dp;\n\t\tdp.resize(N + 1);\n\t\tfor(auto i = dp.begin(); i != dp.end(); ++i)\n\t\t\ti->resize(K + 1);\n\t\tfor(int i = 0; i <= K; ++i)\n\t\t\tdp[1][i] = 1;\n\t\tfor(int i = 0; i <= N; ++i)\n\t\t\tdp[i][1] = i;\n\t\tfor(int i = 1; i <= N; ++i) {\n\t\t\tfor(int j = 2; j <= K; ++j) {\n\t\t\t\tdp[i][j] = max(dp[0][j - 1], dp[i - 1][j]) + 1;\n\t\t\t\tfor(int k = 2; k <= i; ++k)\n\t\t\t\t\tdp[i][j] = min(dp[i][j], max(dp[k - 1][j - 1], dp[i - k][j]) + 1);\n\t\t\t}\n\t\t}\n\t\treturn dp[N][K];\n    }\n};", "runtime": "N/A", "memory": "N/A", "rawMemory": "N/A", "statusDisplay": "Time Limit Exceeded", "timestamp": 1586565689, "lang": "cpp", "passedTestCaseCnt": 64, "totalTestCaseCnt": 121, "sourceUrl": "/problems/super-egg-drop/", "question": {"titleSlug": "super-egg-drop", "title": "Super Egg Drop", "translatedTitle": "\u9e21\u86cb\u6389\u843d", "questionId": "923", "__typename": "QuestionNode"}, "outputDetail": {"codeOutput": "", "expectedOutput": "23", "input": "4\n10000", "compileError": "", "runtimeError": "", "lastTestcase": "4\n10000", "__typename": "SubmissionOutputNode"}, "__typename": "GeneralSubmissionNode", "submissionComment": null}}
+{
+  "simple": {
+    "id": 61698913,
+    "lang": "C++",
+    "time": "1\u00a0\u5e74\uff0c11\u00a0\u6708",
+    "status_display": "Time Limit Exceeded",
+    "runtime": "N/A",
+    "url": "/submissions/detail/61698913/",
+    "is_pending": "Not Pending",
+    "title": "\u9e21\u86cb\u6389\u843d",
+    "timestamp": 1586565689,
+    "memory": "N/A"
+  },
+  "full": {
+    "id": "61698913",
+    "code": "class Solution {\npublic:\n    int superEggDrop(int K, int N) {\n\t\tvector<vector<int> > dp;\n\t\tdp.resize(N + 1);\n\t\tfor(auto i = dp.begin(); i != dp.end(); ++i)\n\t\t\ti->resize(K + 1);\n\t\tfor(int i = 0; i <= K; ++i)\n\t\t\tdp[1][i] = 1;\n\t\tfor(int i = 0; i <= N; ++i)\n\t\t\tdp[i][1] = i;\n\t\tfor(int i = 1; i <= N; ++i) {\n\t\t\tfor(int j = 2; j <= K; ++j) {\n\t\t\t\tdp[i][j] = max(dp[0][j - 1], dp[i - 1][j]) + 1;\n\t\t\t\tfor(int k = 2; k <= i; ++k)\n\t\t\t\t\tdp[i][j] = min(dp[i][j], max(dp[k - 1][j - 1], dp[i - k][j]) + 1);\n\t\t\t}\n\t\t}\n\t\treturn dp[N][K];\n    }\n};",
+    "runtime": "N/A",
+    "memory": "N/A",
+    "rawMemory": "N/A",
+    "statusDisplay": "Time Limit Exceeded",
+    "timestamp": 1586565689,
+    "lang": "cpp",
+    "passedTestCaseCnt": 64,
+    "totalTestCaseCnt": 121,
+    "sourceUrl": "/problems/super-egg-drop/",
+    "question": {
+      "titleSlug": "super-egg-drop",
+      "title": "Super Egg Drop",
+      "translatedTitle": "\u9e21\u86cb\u6389\u843d",
+      "questionId": "923",
+      "__typename": "QuestionNode"
+    },
+    "outputDetail": {
+      "codeOutput": "",
+      "expectedOutput": "23",
+      "input": "4\n10000",
+      "compileError": "",
+      "runtimeError": "",
+      "lastTestcase": "4\n10000",
+      "__typename": "SubmissionOutputNode"
+    },
+    "__typename": "GeneralSubmissionNode",
+    "submissionComment": null
+  }
+}
