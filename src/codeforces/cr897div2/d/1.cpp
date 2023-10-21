@@ -13,30 +13,51 @@ using namespace std;
 void solve() {
   int n, k;
   cin >> n >> k;
-  vector<int> b(n + 1);
-  for (int i = 1; i <= n; ++i) {
-    cin >> b[i];
+  vector<int> b(n);
+  vector<int> clr(n);
+  for (auto &i : b) {
+    cin >> i;
   }
   if (k == 1) {
-    for (int i = 1; i <= n; ++i) {
-      if (b[i] != i) {
-        cout << "NO" << endl;
-        return;
-      }
+    if ([&]() {
+          for (int i = 0; i < n; ++i) {
+            if (b[i] != i + 1) {
+              return false;
+            }
+          }
+          return true;
+        }()) {
+      cout << "YES" << endl;
+    } else {
+      cout << "NO" << endl;
     }
-    cout << "YES" << endl;
     return;
   }
-  for (int i = 1; i <= n; ++i) {
-    if (b[i] == i) {
+  int cc = 1;
+  vector<int> a(n);
+  for (int i = 0; i < n; ++i) {
+    if (clr[i]) {
+      continue;
+    }
+    int u = i;
+    int cn = 0;
+    while (!clr[u]) {
+      clr[u] = cc;
+      a[u] = cn;
+      ++cn;
+      u = b[u] - 1;
+    }
+    if (clr[u] != cc) {
+      ++cc;
+      continue;
+    }
+    if (cn - a[u] != k) {
       cout << "NO" << endl;
       return;
     }
+    ++cc;
   }
-  unordered_map<int, int> bk;
-  for (auto i : b) {
-    ++bk[i];
-  }
+  cout << "YES" << endl;
 }
 
 int main() {
