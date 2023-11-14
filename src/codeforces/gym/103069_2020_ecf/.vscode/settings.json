@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    "chrono": "cpp",
+    "span": "cpp",
+    "iostream": "cpp",
+    "unordered_map": "cpp",
+    "vector": "cpp",
+    "algorithm": "cpp",
+    "ostream": "cpp"
+  }
+}
