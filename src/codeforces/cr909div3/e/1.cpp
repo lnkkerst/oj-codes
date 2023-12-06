@@ -2,8 +2,10 @@
 #include <algorithm>
 #include <array>
 #include <bitset>
+#include <cmath>
 #include <deque>
 #include <functional>
+#include <iomanip>
 #include <iostream>
 #include <map>
 #include <numeric>
@@ -15,36 +17,33 @@
 #include <vector>
 using namespace std;
 
-#define int long long
-
 void solve() {
   int n;
   cin >> n;
-  map<int, int> b;
+  vector<int> a(n + 1);
   for (int i = 1; i <= n; ++i) {
-    int x;
-    cin >> x;
-    ++b[x];
+    cin >> a[i];
   }
-  vector<int> dp(n + 1, 1e9);
-  int m = 0;
-  while (b[m]) {
-    ++m;
-  }
-  dp[m] = 0;
-  for (int i = m; i >= 1; --i) {
-    for (int j = 0; j < i; ++j) {
-      dp[j] = min(dp[j], dp[i] + i * b[j]);
+  int mi = 1;
+  for (int i = 1; i <= n; ++i) {
+    if (a[i] < a[mi]) {
+      mi = i;
     }
   }
-  cout << dp[0] - m << endl;
+  for (int i = mi + 1; i <= n; ++i) {
+    if (a[i] < a[i - 1]) {
+      cout << -1 << endl;
+      return;
+    }
+  }
+  cout << mi - 1 << endl;
 }
 
 signed main() {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
   cout.tie(nullptr);
-  int t;
+  int t = 1;
   cin >> t;
   while (t--) {
     solve();

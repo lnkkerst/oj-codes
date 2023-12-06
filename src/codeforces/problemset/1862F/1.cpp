@@ -2,8 +2,10 @@
 #include <algorithm>
 #include <array>
 #include <bitset>
+#include <cmath>
 #include <deque>
 #include <functional>
+#include <iomanip>
 #include <iostream>
 #include <map>
 #include <numeric>
@@ -18,33 +20,39 @@ using namespace std;
 #define int long long
 
 void solve() {
+  int w, f;
+  cin >> w >> f;
   int n;
   cin >> n;
-  map<int, int> b;
+  vector<int> a(n + 1);
+  int tot = 0;
   for (int i = 1; i <= n; ++i) {
-    int x;
-    cin >> x;
-    ++b[x];
+    cin >> a[i];
+    tot += a[i];
   }
-  vector<int> dp(n + 1, 1e9);
-  int m = 0;
-  while (b[m]) {
-    ++m;
-  }
-  dp[m] = 0;
-  for (int i = m; i >= 1; --i) {
-    for (int j = 0; j < i; ++j) {
-      dp[j] = min(dp[j], dp[i] + i * b[j]);
+  vector<int> dp(tot + 1);
+  dp[0] = 1;
+  for (int i = 1; i <= n; ++i) {
+    for (int w = tot; w - a[i] >= 0; --w) {
+      if (dp[w - a[i]]) {
+        dp[w] = true;
+      }
     }
   }
-  cout << dp[0] - m << endl;
+  int ans = 2e9;
+  for (int i = 0; i <= tot; ++i) {
+    if (dp[i]) {
+      ans = min(ans, max((i + w - 1) / w, (tot - i + f - 1) / f));
+    }
+  }
+  cout << ans << endl;
 }
 
 signed main() {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
   cout.tie(nullptr);
-  int t;
+  int t = 1;
   cin >> t;
   while (t--) {
     solve();

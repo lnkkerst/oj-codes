@@ -2,8 +2,10 @@
 #include <algorithm>
 #include <array>
 #include <bitset>
+#include <cmath>
 #include <deque>
 #include <functional>
+#include <iomanip>
 #include <iostream>
 #include <map>
 #include <numeric>
@@ -17,34 +19,37 @@ using namespace std;
 
 #define int long long
 
+int gcd(int a, int b) { return !b ? a : gcd(b, a % b); }
+
 void solve() {
+
   int n;
   cin >> n;
-  map<int, int> b;
+  vector<int> a(n + 1);
   for (int i = 1; i <= n; ++i) {
-    int x;
-    cin >> x;
-    ++b[x];
+    cin >> a[i];
   }
-  vector<int> dp(n + 1, 1e9);
-  int m = 0;
-  while (b[m]) {
-    ++m;
-  }
-  dp[m] = 0;
-  for (int i = m; i >= 1; --i) {
-    for (int j = 0; j < i; ++j) {
-      dp[j] = min(dp[j], dp[i] + i * b[j]);
+  int ans = 0;
+  for (int i = 1; i <= n; ++i) {
+    for (int j = i + 1; j <= n; ++j) {
+      for (int k = j + 1; k <= n; ++k) {
+        vector<int> t;
+        t.emplace_back(a[i]);
+        t.emplace_back(a[j]);
+        t.emplace_back(a[k]);
+        sort(t.begin(), t.end());
+        ans += gcd(t[0], t[1]);
+      }
     }
   }
-  cout << dp[0] - m << endl;
+  cout << ans << endl;
 }
 
 signed main() {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
   cout.tie(nullptr);
-  int t;
+  int t = 1;
   cin >> t;
   while (t--) {
     solve();
