@@ -42,27 +42,43 @@ void solve() {
   int n;
   cin >> n;
   vector<int> a(n);
-  for (auto &i : a) {
-    cin >> i;
-  }
-  Tree b;
-  int cnt = 0;
-  int ans = 1;
-  b.insert(a[0]);
+  vector<int> nm(n);
+  vector<int> su(n + 2);
+  vector<int> dp(n);
   for (int i = 0; i < n; ++i) {
-    int ls = b.order_of_key(a[i]);
-    int rs = b.size() - ls;
-    cnt += rs;
-    cnt %= MOD;
-    if (a[i] > a[i - 1]) {
-      ans *= 2;
-      ans %= MOD;
-    } else {
-      ans += cnt * 2;
+    cin >> a[i];
+  }
+  deque<int> st;
+  nm[n - 1] = n;
+  su[n] = 1;
+  for (int pos = n - 1; pos >= 0; --pos) {
+    while (!st.empty() && a[st.back()] > a[pos]) {
+      st.pop_back();
+    }
+    nm[pos] = st.empty() ? n : st.back();
+    st.emplace_back(pos);
+    int np = nm[pos];
+    int cur = su[pos + 1] - su[np + 1];
+    cur %= MOD;
+    if (np != n) {
+      cur = cur + dp[np];
+      cur %= MOD;
+      dp[pos] = su[np] - su[np + 1] + dp[np];
+      dp[pos] %= MOD;
+    }
+    su[pos] = cur + su[pos + 1];
+    su[pos] %= MOD;
+  }
+  int ans = 0;
+  int mi = a[0];
+  for (int i = 0; i < n; ++i) {
+    mi = min(mi, a[i]);
+    if (a[i] == mi) {
+      ans = ans + su[i] - su[i + 1];
       ans %= MOD;
     }
   }
-  cout << ans << endl;
+  cout << (ans + MOD) % MOD << endl;
 }
 
 signed main() {
