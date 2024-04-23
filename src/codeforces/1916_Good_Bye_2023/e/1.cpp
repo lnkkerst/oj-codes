@@ -35,16 +35,16 @@ void solve() {
   for (int i = 1; i <= n; ++i) {
     cin >> a[i];
   }
-  vector<vector<set<int> *>> b(n + 1);
+  vector<vector<unordered_set<int> *>> b(n + 1);
   int ans = 1;
   function<void(int)> dfs = [&](int u) {
     if (e[u].empty()) {
-      auto s = new set<int>();
+      auto s = new unordered_set<int>();
       s->insert(a[u]);
       b[u].emplace_back(s);
       return;
     }
-    vector<int> tm;
+    multiset<int> tm;
     for (auto v : e[u]) {
       dfs(v);
       int ma = 0;
@@ -56,14 +56,14 @@ void solve() {
         ans = max(ans, (int)(i->size()));
         b[u].emplace_back(i);
       }
-      tm.emplace_back(ma);
+      tm.insert(ma);
       b[v].clear();
     }
     if (tm.size() >= 2) {
-      auto it1 = max_element(tm.begin(), tm.end());
+      auto it1 = --tm.end();
       int l = *it1;
       tm.erase(it1);
-      auto it2 = max_element(tm.begin(), tm.end());
+      auto it2 = --tm.end();
       ans = max(ans, l * (*it2));
     }
   };
