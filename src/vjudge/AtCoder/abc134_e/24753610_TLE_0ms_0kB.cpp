@@ -6,8 +6,9 @@ bool b[100010];
 
 int main() {
   cin >> n;
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     cin >> a[i];
+  }
   for (int i = 1; i <= n; ++i) {
     if (!b[i]) {
       ++ans;

@@ -5,7 +5,7 @@ using namespace std;
 
 int n, k;
 priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>>
-    a;
+  a;
 
 signed main() {
   ios::sync_with_stdio(0);

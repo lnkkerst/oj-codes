@@ -37,21 +37,31 @@ int qmi(int x, int k, int p = MOD) {
 struct Node {
   int pre;
   int sup;
-  Node operator+(const Node &b) const { return {(pre + b.pre) % MOD, sup}; }
+  Node operator+(const Node &b) const {
+    return {(pre + b.pre) % MOD, sup};
+  }
   Node operator-(const Node &b) const {
     return {(pre - b.pre + MOD) % MOD, sup};
   }
   Node operator*(const Node &b) const {
     return {(pre * b.pre) % MOD, sup + b.sup};
   }
-  Node operator-() const { return {(-pre + MOD) % MOD, sup}; }
-  bool com(const Node &b) const { return sup == b.sup; }
-  int calc(int x) { return pre * qmi(x, sup) % MOD; }
+  Node operator-() const {
+    return {(-pre + MOD) % MOD, sup};
+  }
+  bool com(const Node &b) const {
+    return sup == b.sup;
+  }
+  int calc(int x) {
+    return pre * qmi(x, sup) % MOD;
+  }
 };
 
 struct Nodes {
   vector<Node> data;
-  Node &operator[](int index) { return data[index]; }
+  Node &operator[](int index) {
+    return data[index];
+  }
   Nodes operator+(const Nodes &b) const {
     auto res = data;
     for (auto &i : b.data) {

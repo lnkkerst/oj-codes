@@ -78,8 +78,7 @@ private:
   }
 
 public:
-  Tree(int _n) : n(_n), a((_n + 2) * 4), sum((_n + 2) * 4) {
-  }
+  Tree(int _n): n(_n), a((_n + 2) * 4), sum((_n + 2) * 4) {}
 
   void add(int l, int r, int x) {
     return add(1, n, l, r, x, 1);
@@ -138,8 +137,8 @@ void solve() {
       if (lb > r) {
         ++r;
         int val = v[*--s.lower_bound(l)];
-        cout << (lb - l) * (lb - l + 1) / 2 * val -
-                    (lb - r) * (lb - r + 1) / 2 * val
+        cout << (lb - l) * (lb - l + 1) / 2 * val
+                  - (lb - r) * (lb - r + 1) / 2 * val
              << endl;
         continue;
       }

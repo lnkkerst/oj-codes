@@ -10,10 +10,12 @@ int read() {
   int res;
   char ch;
   bool flag = 0;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (flag = 1);
-  for (res = num; isdigit(ch = getchar()); res = res * 10 + num)
+  }
+  for (res = num; isdigit(ch = getchar()); res = res * 10 + num) {
     (flag) && (res = -res);
+  }
   return res;
 }
 
@@ -23,16 +25,17 @@ void print(int x) {
     x = -x;
   }
 
-  if (x > 9)
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
 int main() {
   n = read() - 1;
-  if (n == 0)
+  if (n == 0) {
     print(0);
-  else {
+  } else {
     for (int i = 2; i <= n; ++i) {
       if (!vis[i]) {
         b[top++] = i;
@@ -40,9 +43,9 @@ int main() {
       }
       for (int j = 1; (x = i * b[j]) <= n; ++j) {
         vis[x] = 1;
-        if (i % b[j])
+        if (i % b[j]) {
           a[x] = a[i] * (b[j] - 1);
-        else {
+        } else {
           a[x] = a[i] * b[j];
           break;
         }

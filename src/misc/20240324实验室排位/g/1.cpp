@@ -23,7 +23,9 @@ void solve() {
     } else {
       cin >> x >> y;
     }
-    qs[i] = {op, {x, y}};
+    qs[i] = {
+      op, {x, y}
+    };
   }
   reverse(qs.begin(), qs.end());
   deque<int> a;

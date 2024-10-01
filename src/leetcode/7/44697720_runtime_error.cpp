@@ -2,8 +2,9 @@ class Solution {
 public:
   int reverse(int x) {
     bool fl = x >= 0;
-    if (!fl)
+    if (!fl) {
       x = -x;
+    }
     int ret = 0;
     do {
       ret *= 10;

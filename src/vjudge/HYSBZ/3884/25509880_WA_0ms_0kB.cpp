@@ -7,22 +7,27 @@ int calc(int x) {
   for (int i = 2; i * i <= x; ++i) {
     if (!(x % i)) {
       ans = ans / i * (i - 1);
-      while (!(x % i))
+      while (!(x % i)) {
         x /= i;
+      }
     }
   }
-  if (x > 1)
+  if (x > 1) {
     ans = ans / x * (x - 1);
+  }
   return ans;
 }
 
 int solve(int x) {
-  if (x == 2)
+  if (x == 2) {
     return 0;
-  if (x == 3)
+  }
+  if (x == 3) {
     return 1;
-  if (x == 6)
+  }
+  if (x == 6) {
     return 4;
+  }
   return (1 << (solve(calc(x))) % x);
 }
 

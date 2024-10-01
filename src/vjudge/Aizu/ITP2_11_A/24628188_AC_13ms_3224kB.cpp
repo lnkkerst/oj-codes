@@ -9,8 +9,9 @@ int main() {
     printf("%d:", cnt++);
     int t = i, j = 0;
     do {
-      if (t % 2)
+      if (t % 2) {
         printf(" %d", j);
+      }
       t >>= 1, ++j;
     } while (t);
     puts("");

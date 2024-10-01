@@ -9,12 +9,14 @@ public:
       fl = 1;
     }
     while (k) {
-      if (k & 1)
+      if (k & 1) {
         ret *= x;
+      }
       x *= x, k >>= 1;
     }
-    if (fl)
+    if (fl) {
       return 1.0 / ret;
+    }
     return ret;
   }
 };

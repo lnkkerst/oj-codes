@@ -28,8 +28,8 @@ int calc1(multiset<int> &s) {
     return 0;
   }
   res += (a[0] - a[1]) * (a[0] - a[1]);
-  res +=
-      (a[a.size() - 1] - a[a.size() - 2]) * (a[a.size() - 1] - a[a.size() - 2]);
+  res += (a[a.size() - 1] - a[a.size() - 2])
+         * (a[a.size() - 1] - a[a.size() - 2]);
   for (int i = 1; i < a.size() - 1; ++i) {
     int t1 = a[i] - a[i - 1];
     int t2 = a[i] - a[i + 1];
@@ -44,8 +44,8 @@ int calc(vector<int> &a) {
     return 0;
   }
   res += (a[0] - a[1]) * (a[0] - a[1]);
-  res +=
-      (a[a.size() - 1] - a[a.size() - 2]) * (a[a.size() - 1] - a[a.size() - 2]);
+  res += (a[a.size() - 1] - a[a.size() - 2])
+         * (a[a.size() - 1] - a[a.size() - 2]);
   for (int i = 1; i < a.size() - 1; ++i) {
     int t1 = a[i] - a[i - 1];
     int t2 = a[i] - a[i + 1];

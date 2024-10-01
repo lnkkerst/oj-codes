@@ -11,17 +11,23 @@ void pushdown(int cur, int len) {
   sum[cur << 1 | 1] += cov[cur] * (len >> 1);
   cov[cur] = 0;
 }
-void update(int cur) { sum[cur] = sum[cur << 1] + sum[cur << 1 | 1]; }
+void update(int cur) {
+  sum[cur] = sum[cur << 1] + sum[cur << 1 | 1];
+}
 int query(int l, int r, int L, int R, int cur) {
-  if (l >= L && r <= R)
+  if (l >= L && r <= R) {
     return sum[cur];
-  if (cov[cur])
+  }
+  if (cov[cur]) {
     pushdown(cur, r - l + 1);
+  }
   int mid = l + r >> 1, ans = 0;
-  if (L <= mid)
+  if (L <= mid) {
     ans += query(l, mid, L, R, cur << 1);
-  if (R > mid)
+  }
+  if (R > mid) {
     ans += query(mid + 1, r, L, R, cur << 1 | 1);
+  }
   return ans;
 }
 void add(int l, int r, int L, int R, int x, int cur) {
@@ -30,13 +36,16 @@ void add(int l, int r, int L, int R, int x, int cur) {
     sum[cur] += (r - l + 1) * x;
     return;
   }
-  if (cov[cur])
+  if (cov[cur]) {
     pushdown(cur, r - l + 1);
+  }
   int mid = l + r >> 1;
-  if (L <= mid)
+  if (L <= mid) {
     add(l, mid, L, R, x, cur << 1);
-  if (R > mid)
+  }
+  if (R > mid) {
     add(mid + 1, r, L, R, x, cur << 1 | 1);
+  }
   update(cur);
 }
 #undef int

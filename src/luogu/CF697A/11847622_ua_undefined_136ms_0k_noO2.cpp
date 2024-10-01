@@ -8,9 +8,10 @@ int main() {
     printf("YES");
     return 0;
   }
-  if ((tmp % s == 0 || tmp % s == 1) && tmp != 1)
+  if ((tmp % s == 0 || tmp % s == 1) && tmp != 1) {
     printf("YES");
-  else
+  } else {
     printf("NO");
+  }
   return 0;
 }

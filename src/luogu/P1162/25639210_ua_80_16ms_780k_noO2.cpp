@@ -11,9 +11,10 @@ void dfs(int x, int y) {
   while (!q.empty()) {
     now = q.front();
     q.pop();
-    if (now.first < 1 || now.second < 1 || now.first > n || now.second > m ||
-        e[now.first][now.second] != 0)
+    if (now.first < 1 || now.second < 1 || now.first > n || now.second > m
+        || e[now.first][now.second] != 0) {
       continue;
+    }
     e[now.first][now.second] = 2;
     q.push(make_pair(now.first + 1, now.second));
     q.push(make_pair(now.first - 1, now.second));
@@ -25,17 +26,23 @@ void dfs(int x, int y) {
 int main() {
   cin >> n;
   m = n;
-  for (int i = 1; i <= n; ++i)
-    for (int j = 1; j <= m; ++j)
+  for (int i = 1; i <= n; ++i) {
+    for (int j = 1; j <= m; ++j) {
       cin >> e[i][j];
-  for (int i = 1; i <= n; ++i)
-    for (int j = 1; j <= m; ++j)
+    }
+  }
+  for (int i = 1; i <= n; ++i) {
+    for (int j = 1; j <= m; ++j) {
       if (e[i][j]) {
         dfs(i + 1, j + 1);
         break;
       }
-  for (int i = 1; i <= n; ++i, cout << endl)
-    for (int j = 1; j <= m; ++j)
+    }
+  }
+  for (int i = 1; i <= n; ++i, cout << endl) {
+    for (int j = 1; j <= m; ++j) {
       cout << e[i][j] << ' ';
+    }
+  }
   return 0;
 }

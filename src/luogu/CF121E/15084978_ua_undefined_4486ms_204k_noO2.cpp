@@ -4,8 +4,9 @@ const int MAXN = 100001;
 
 bool pd(int x) {
   while (x != 0) {
-    if (x % 10 != 4 && x % 10 != 7)
+    if (x % 10 != 4 && x % 10 != 7) {
       return 0;
+    }
 
     x /= 10;
   }
@@ -18,8 +19,9 @@ int main() {
 
   scanf("%d%d", &n, &m);
 
-  for (int i = 1; i <= n; i++)
+  for (int i = 1; i <= n; i++) {
     scanf("%d", &a[i]);
+  }
 
   for (int j = 1; j <= m; j++) {
     scanf("%s", q);
@@ -27,8 +29,9 @@ int main() {
     if (q[0] == 'a') {
       scanf("%d%d%d", &l, &r, &d);
 
-      for (int i = l; i <= r; i++)
+      for (int i = l; i <= r; i++) {
         a[i] += d;
+      }
     }
 
     if (q[0] == 'c') {
@@ -36,8 +39,9 @@ int main() {
 
       scanf("%d%d", &l, &r);
 
-      for (int i = l; i <= r; i++)
+      for (int i = l; i <= r; i++) {
         ans += pd(a[i]);
+      }
 
       printf("%d\n", ans);
     }

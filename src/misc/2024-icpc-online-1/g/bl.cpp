@@ -65,7 +65,9 @@ void solve() {
       adjust(mid);
     };
 
-    auto get_mid = [&]() { return lq.top(); };
+    auto get_mid = [&]() {
+      return lq.top();
+    };
 
     for (int j = i; j <= n; ++j) {
       push(a[j]);

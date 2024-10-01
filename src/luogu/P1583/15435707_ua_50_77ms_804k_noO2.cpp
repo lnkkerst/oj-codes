@@ -9,8 +9,9 @@ struct p {
 } a[MAXN];
 
 bool cmp(p a, p b) {
-  if (a.w == b.w)
+  if (a.w == b.w) {
     return a.m < b.m;
+  }
 
   return a.w > b.w;
 }
@@ -20,8 +21,9 @@ int main() {
 
   scanf("%d%d", &n, &k);
 
-  for (int i = 1; i <= 10; i++)
+  for (int i = 1; i <= 10; i++) {
     scanf("%d", e + i);
+  }
 
   for (int i = 1; i <= n; i++) {
     a[i].m = i;
@@ -30,13 +32,15 @@ int main() {
 
   std::sort(a + 1, a + n + 1, cmp);
 
-  for (int i = 1; i <= n; i++)
+  for (int i = 1; i <= n; i++) {
     a[i].w += e[i % 10];
+  }
 
   std::sort(a + 1, a + n + 1, cmp);
 
-  for (int i = 1; i <= k; i++)
+  for (int i = 1; i <= k; i++) {
     printf("%d ", a[i].m);
+  }
 
   return 0;
 }

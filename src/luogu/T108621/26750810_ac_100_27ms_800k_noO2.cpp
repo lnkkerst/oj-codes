@@ -17,8 +17,9 @@ ll fpow(ll a, ll k) {
   return ret % mod;
 }
 int exgcd(int a, int b, int &x, int &y) {
-  if (b == 0)
+  if (b == 0) {
     return x = 1, y = 0, a;
+  }
   int r = exgcd(b, a % b, x, y);
   int t = x;
   x = y;
@@ -33,7 +34,9 @@ ll calc(ll a, ll b) {
   x = (x % mod + mod) % mod;
   return x;
 }
-inline ll inv(int x) { return fpow(x, mod - 2) % mod; }
+inline ll inv(int x) {
+  return fpow(x, mod - 2) % mod;
+}
 signed main() {
   using namespace std;
   ll n, k;

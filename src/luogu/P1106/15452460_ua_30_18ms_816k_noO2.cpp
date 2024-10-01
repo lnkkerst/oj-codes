@@ -10,7 +10,7 @@ int main() {
 
   int l = strlen(n);
 
-  for (int i = 0; i < k; i++)
+  for (int i = 0; i < k; i++) {
     for (int j = 0; j < l - 1; j++) {
       if (n[j] > n[j + 1] && !b[j]) {
         b[j] = 1;
@@ -18,6 +18,7 @@ int main() {
         break;
       }
     }
+  }
 
   int i = 0;
 

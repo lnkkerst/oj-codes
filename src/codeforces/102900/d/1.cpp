@@ -27,8 +27,9 @@ void solve() {
   };
   auto calc = [&](double p, double v, double t) {
     auto s = v * t;
-    if (s < p)
+    if (s < p) {
       return (double)0;
+    }
     return max(p, max(s - p, (s + p) / 2));
   };
   // ans = min(calc1(p1, v1), calc1(p2, v2));

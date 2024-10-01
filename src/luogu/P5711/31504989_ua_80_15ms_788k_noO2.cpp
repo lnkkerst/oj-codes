@@ -5,9 +5,10 @@ using namespace std;
 int main() {
   int x;
   cin >> x;
-  if (x % 4 == 0 && x != 10 != 0 || x % 400 == 0)
+  if (x % 4 == 0 && x != 10 != 0 || x % 400 == 0) {
     cout << 1;
-  else
+  } else {
     cout << 0;
+  }
   return 0;
 }

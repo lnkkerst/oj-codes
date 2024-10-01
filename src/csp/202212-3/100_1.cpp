@@ -17,7 +17,9 @@ double alpha(int u) {
 struct Matrix {
   array<array<double, 8>, 8> data = {};
 
-  array<double, 8> &operator[](int x) { return this->data[x]; }
+  array<double, 8> &operator[](int x) {
+    return this->data[x];
+  }
 
   Matrix operator*(Matrix &b) {
     Matrix res;
@@ -104,9 +106,9 @@ struct Matrix {
     double res = 0;
     for (int u = 0; u < 8; ++u) {
       for (int v = 0; v < 8; ++v) {
-        res += alpha(u) * alpha(v) * data[u][v] *
-               cos((PI / 8) * (i + 1.0 / 2) * u) *
-               cos((PI / 8) * (j + 1.0 / 2) * v);
+        res += alpha(u) * alpha(v) * data[u][v]
+               * cos((PI / 8) * (i + 1.0 / 2) * u)
+               * cos((PI / 8) * (j + 1.0 / 2) * v);
       }
     }
     res /= 4;

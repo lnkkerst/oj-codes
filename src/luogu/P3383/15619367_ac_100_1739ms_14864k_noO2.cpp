@@ -9,8 +9,9 @@ void sieve() {
   for (int i = 2; i <= MAXN; i++) {
     if (!IsNotprime[i]) {
       prime[++cnt] = i;
-      for (int j = i * 2; j <= MAXN; j += i)
+      for (int j = i * 2; j <= MAXN; j += i) {
         IsNotprime[j] = 1;
+      }
     }
   }
 }

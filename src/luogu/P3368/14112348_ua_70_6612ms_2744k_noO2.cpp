@@ -10,8 +10,9 @@ int main() {
 
     scanf("%d", &a);
 
-    for (int j = i; j <= n; j += j & -j)
+    for (int j = i; j <= n; j += j & -j) {
       tree[j] += a;
+    }
   }
 
   for (int k = 1; k <= m; k++) {
@@ -24,19 +25,23 @@ int main() {
 
       scanf("%d%d%d", &x, &y, &k);
 
-      for (int i = x; i <= y; i++)
-        for (int j = i; j <= n; j += j & -j)
+      for (int i = x; i <= y; i++) {
+        for (int j = i; j <= n; j += j & -j) {
           tree[j] += k;
+        }
+      }
     } else {
       int x, tmpx = 0, tmpy = 0;
 
       scanf("%d", &x);
 
-      for (int j = x; j; j -= j & -j)
+      for (int j = x; j; j -= j & -j) {
         tmpy += tree[j];
+      }
 
-      for (int j = x - 1; j; j -= j & -j)
+      for (int j = x - 1; j; j -= j & -j) {
         tmpx += tree[j];
+      }
 
       printf("%d\n", tmpy - tmpx);
     }

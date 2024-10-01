@@ -14,13 +14,16 @@ class Solution {
 public:
   void dfs(TreeNode *u, int &ans, int last) {
     // cout << u->val << ' ' << last << endl;
-    if (last <= u->val)
+    if (last <= u->val) {
       ++ans;
+    }
     last = max(last, u->val);
-    if (u->left)
+    if (u->left) {
       dfs(u->left, ans, last);
-    if (u->right)
+    }
+    if (u->right) {
       dfs(u->right, ans, last);
+    }
   }
   int goodNodes(TreeNode *root) {
     int ans = 0;

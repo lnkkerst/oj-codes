@@ -30,7 +30,9 @@ void solve() {
   int BLK = (n + BSZ - 1) / BSZ;
   vector<int> plus(BLK);
   vector<vector<int>> sd(BLK);
-  auto get_blk = [&](int x) { return x / BSZ; };
+  auto get_blk = [&](int x) {
+    return x / BSZ;
+  };
   auto sort_blk = [&](int x) {
     int l = x * BSZ, r = min(n - 1, (x + 1) * BSZ - 1);
     sd[x].clear();

@@ -14,8 +14,9 @@ int main() {
     for (int j = 0; j < l - 1; j++) {
       int t = j + 1;
 
-      while (b[t])
+      while (b[t]) {
         t++;
+      }
 
       if (n[j] > n[t] && !b[j]) {
         b[j] = 1;

@@ -17,7 +17,9 @@ int main() {
     cin >> a[i].w >> a[i].v;
     a[i].a = (double)a[i].v / a[i].w;
   }
-  sort(a + 1, a + n + 1, [](Coin a, Coin b) -> bool { return a.a > b.a; });
+  sort(a + 1, a + n + 1, [](Coin a, Coin b) -> bool {
+    return a.a > b.a;
+  });
   int pos = 1;
   while (c && pos <= n) {
     --c;

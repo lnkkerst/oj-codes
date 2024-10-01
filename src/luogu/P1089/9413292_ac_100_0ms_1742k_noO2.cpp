@@ -19,9 +19,10 @@ int main() {
   c = c * 100;
   c = c + c * 0.2;
   a = a + c;
-  if (m != 0)
+  if (m != 0) {
     printf("-%d", m);
-  else
+  } else {
     printf("%d", a);
+  }
   return 0;
 }

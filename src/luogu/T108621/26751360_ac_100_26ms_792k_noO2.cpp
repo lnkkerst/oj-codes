@@ -14,7 +14,9 @@ ll fpow(ll a, ll k) {
   }
   return ret % mod;
 }
-inline ll inv(int x) { return fpow(x, mod - 2); }
+inline ll inv(int x) {
+  return fpow(x, mod - 2);
+}
 int main() {
   using namespace std;
   ll n, k;

@@ -25,8 +25,9 @@ signed main() {
     return 0;
   }
   if (!a || !b) {
-    if (!a)
+    if (!a) {
       swap(a, b);
+    }
     if (s % a) {
       puts("NO");
       return 0;

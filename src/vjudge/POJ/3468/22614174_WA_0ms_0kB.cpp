@@ -21,13 +21,16 @@ struct SmT {
     int ret;
     char ch;
     bool flag = 0;
-    while (!isdigit(ch = getchar()))
+    while (!isdigit(ch = getchar())) {
       (ch == '-') && (flag = true);
+    }
     for (ret = ch - '0'; isdigit(ch = getchar()); ret = ret * 10 + ch - '0')
       ;
     a[++rs] = ret;
   }
-  void update(int x) { sum[x] = sum[lc] + sum[rc]; }
+  void update(int x) {
+    sum[x] = sum[lc] + sum[rc];
+  }
   void tbuild(int l, int r, int x) {
     if (l == r) {
       sum[x] = a[l];
@@ -38,19 +41,26 @@ struct SmT {
     tbuild(mid + 1, r, rc);
     update(x);
   }
-  void build() { tbuild(ls, rs, 1); }
+  void build() {
+    tbuild(ls, rs, 1);
+  }
   int tquery(int a, int b, int l, int r, int x) {
-    if (a <= l && r <= b)
+    if (a <= l && r <= b) {
       return sum[x];
+    }
     down(l, r, x);
     int mid = (l + r) >> 1, ans = 0;
-    if (a <= mid)
+    if (a <= mid) {
       ans += tquery(a, b, l, mid, lc);
-    if (mid < b)
+    }
+    if (mid < b) {
       ans += tquery(a, b, mid + 1, r, rc);
+    }
     return ans;
   }
-  int query(int a, int b) { return tquery(a, b, ls, rs, 1); }
+  int query(int a, int b) {
+    return tquery(a, b, ls, rs, 1);
+  }
   void down(int l, int r, int x) {
     int mid = (l + r) >> 1;
     if (tag[x]) {
@@ -69,21 +79,26 @@ struct SmT {
     }
     down(l, r, x);
     int mid = (l + r) >> 1;
-    if (a <= mid)
+    if (a <= mid) {
       tadd(a, b, v, l, mid, lc);
-    if (mid < b)
+    }
+    if (mid < b) {
       tadd(a, b, v, mid + 1, r, rc);
+    }
     update(x);
   }
-  void add(int a, int b, int v) { tadd(a, b, v, ls, rs, 1); }
+  void add(int a, int b, int v) {
+    tadd(a, b, v, ls, rs, 1);
+  }
 } smt;
 
 int read() {
   int ret;
   char ch;
   bool flag = 0;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (flag = true);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret = ret * 10 + ch - '0')
     ;
   return flag ? -ret : ret;
@@ -93,13 +108,15 @@ int read() {
 int main() {
 #define int long long
   int n = read(), m = read();
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     smt.read();
+  }
   smt.build();
   while (m--) {
     char opt = getchar();
-    while (opt != 'C' && opt != 'Q')
+    while (opt != 'C' && opt != 'Q') {
       opt = getchar();
+    }
     if (opt == 'C') {
       int x = read(), y = read(), v = read();
       smt.add(x, y, v);

@@ -8,7 +8,9 @@ struct peanut {
   int x, y, t, w;
 } pea[401];
 
-bool cmp(peanut a, peanut b) { return a.w > b.w; }
+bool cmp(peanut a, peanut b) {
+  return a.w > b.w;
+}
 
 int main() {
   int m, n, k, top = 0;
@@ -28,8 +30,9 @@ int main() {
   k -= (pea[1].x + 1);
   for (int i = 2; i <= top; ++i) {
     k -= (abs(pea[i].x - pea[i - 1].x) + abs(pea[i].y - pea[i - 1].y) + 1);
-    if ((k - pea[i].x) < 0)
+    if ((k - pea[i].x) < 0) {
       break;
+    }
     ans += pea[i].w;
   }
   printf("%d", ans);

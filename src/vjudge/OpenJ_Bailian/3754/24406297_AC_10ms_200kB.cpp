@@ -7,8 +7,9 @@ string a, b;
 
 int main() {
   cin >> a >> b;
-  if (a.length() < b.length())
+  if (a.length() < b.length()) {
     swap(a, b);
+  }
   int l1 = a.length(), l2 = b.length();
   a += a, b += b;
   int size = l2;

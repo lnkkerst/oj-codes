@@ -22,10 +22,10 @@ void solve() {
   int n;
   cin >> n;
   vector<int> a(n * 10 + 10, inf), l(n * 10 + 10, 0), r(n * 10 + 10, 0),
-      val(n * 10 + 10), sy(n * 10 + 10);
+    val(n * 10 + 10), sy(n * 10 + 10);
   priority_queue<pair<int, int>, vector<pair<int, int>>,
                  greater<pair<int, int>>>
-      q;
+    q;
 
   for (int i = 1; i <= n; ++i) {
     cin >> a[i];

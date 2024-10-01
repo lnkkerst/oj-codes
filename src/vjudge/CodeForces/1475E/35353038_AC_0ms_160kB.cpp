@@ -30,9 +30,9 @@ int fastPower(int x, int b) {
 }
 
 int calc(int n, int m) {
-  return (fac[n] * fastPower(fac[m], MOD - 2) % MOD *
-          fastPower(fac[n - m], MOD - 2)) %
-         MOD;
+  return (fac[n] * fastPower(fac[m], MOD - 2) % MOD
+          * fastPower(fac[n - m], MOD - 2))
+         % MOD;
 }
 
 signed main() {

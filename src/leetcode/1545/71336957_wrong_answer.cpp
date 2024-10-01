@@ -5,8 +5,9 @@ public:
     // fill(begin(dp), end(dp), "0");
     // string ans[5010];
     unordered_map<int, int> b;
-    for (int i = 0; i < 9; ++i)
+    for (int i = 0; i < 9; ++i) {
       b[cost[i]] = i + 1;
+    }
     for (int i = 1; i <= target; ++i) {
       // cout << i << endl;
       for (auto j : b) {
@@ -15,14 +16,16 @@ public:
           // cout << nex << ' ' << i - j.first << ' ' << j.first << '
           // ' << j.second << endl;
           int tot = 0;
-          for (auto k : nex)
+          for (auto k : nex) {
             tot += cost[k - '0' - 1];
+          }
           if (tot == i) {
-            if (nex.length() > dp[i].length())
+            if (nex.length() > dp[i].length()) {
               dp[i] = nex;
-            else if (nex.length() == dp[i].length()) {
-              if (nex > dp[i])
+            } else if (nex.length() == dp[i].length()) {
+              if (nex > dp[i]) {
                 dp[i] = nex;
+              }
             }
           }
         }

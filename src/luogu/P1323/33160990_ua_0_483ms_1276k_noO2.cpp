@@ -17,10 +17,13 @@ int main() {
   }
   cout << s << endl;
   int ans = 0;
-  while (ans != m)
-    for (int i = 0; ans != m && i < (int)s.length() - 1; ++i)
-      if (s[i] < s[i + 1])
+  while (ans != m) {
+    for (int i = 0; ans != m && i < (int)s.length() - 1; ++i) {
+      if (s[i] < s[i + 1]) {
         ++ans, s.erase(i, 1);
+      }
+    }
+  }
   cout << s << endl;
   return 0;
 }

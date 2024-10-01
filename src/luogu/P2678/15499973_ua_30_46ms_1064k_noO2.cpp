@@ -13,17 +13,21 @@ bool check(int x) {
     if (t < x) {
       num++;
 
-      if (num > m)
+      if (num > m) {
         return 0;
-    } else
+      }
+    } else {
       t = 0;
+    }
   }
 
   t += a[n + 1] - a[n];
 
-  if (t < x)
-    if (num == m || num == n)
+  if (t < x) {
+    if (num == m || num == n) {
       return 0;
+    }
+  }
 
   return 1;
 }
@@ -31,8 +35,9 @@ bool check(int x) {
 int main() {
   scanf("%d%d%d", &d, &n, &m);
 
-  for (int i = 1; i <= n; i++)
+  for (int i = 1; i <= n; i++) {
     scanf("%d", &a[i]);
+  }
 
   a[n + 1] = d;
 
@@ -46,8 +51,9 @@ int main() {
       ans = mid;
     }
 
-    else
+    else {
       r = mid - 1;
+    }
   }
 
   printf("%d", l);

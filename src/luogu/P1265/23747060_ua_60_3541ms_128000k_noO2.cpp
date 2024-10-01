@@ -25,16 +25,23 @@ struct Edge {
 int n, m, f[MAXN], cnt, x[5010], y[5010];
 double ans;
 
-bool cmp(Edge a, Edge b) { return a.w < b.w; }
-
-void init(int x) {
-  for (int i = 1; i <= x; ++i)
-    f[i] = i;
+bool cmp(Edge a, Edge b) {
+  return a.w < b.w;
 }
 
-int find(int x) { return x == f[x] ? x : f[x] = find(f[x]); }
+void init(int x) {
+  for (int i = 1; i <= x; ++i) {
+    f[i] = i;
+  }
+}
 
-void merge(int x, int y) { f[find(x)] = find(y); }
+int find(int x) {
+  return x == f[x] ? x : f[x] = find(f[x]);
+}
+
+void merge(int x, int y) {
+  f[find(x)] = find(y);
+}
 
 int main() {
   cin >> n;
@@ -57,8 +64,9 @@ int main() {
       merge(edges[i].u, edges[i].v);
       ++cnt;
     }
-    if (cnt == n - 1)
+    if (cnt == n - 1) {
       break;
+    }
   }
   printf("%.2lf", ans);
   return 0;

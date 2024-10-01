@@ -6,10 +6,11 @@ int main() {
   cin >> n >> k;
   int x = 1;
   while (n--) {
-    if (x * 2 > x + k)
+    if (x * 2 > x + k) {
       x += k;
-    else
+    } else {
       x *= 2;
+    }
   }
   cout << x;
   return 0;

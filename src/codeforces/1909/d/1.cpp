@@ -19,9 +19,13 @@ using namespace std;
 
 #define int long long
 
-int sgn(int x) { return x < 0 ? -1 : x > 0; }
+int sgn(int x) {
+  return x < 0 ? -1 : x > 0;
+}
 
-int gcd(int a, int b) { return b ? gcd(b, a % b) : a; }
+int gcd(int a, int b) {
+  return b ? gcd(b, a % b) : a;
+}
 
 void solve() {
   int n, k;

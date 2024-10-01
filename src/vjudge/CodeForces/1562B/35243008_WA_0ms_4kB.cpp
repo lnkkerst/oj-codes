@@ -5,13 +5,16 @@
 using namespace std;
 
 bool isPrime(int x) {
-  if (x == 1)
+  if (x == 1) {
     return false;
-  if (x == 2)
+  }
+  if (x == 2) {
     return true;
+  }
   for (int i = 2; i * i <= x; ++i) {
-    if (x % i == 0)
+    if (x % i == 0) {
       return false;
+    }
   }
   return true;
 }
@@ -35,8 +38,9 @@ int main() {
         break;
       }
     }
-    if (fl)
+    if (fl) {
       continue;
+    }
     unordered_set<int> b;
     for (auto i : a) {
       if (b.find(i) != b.end()) {
@@ -45,8 +49,9 @@ int main() {
         break;
       }
     }
-    if (fl)
+    if (fl) {
       continue;
+    }
     for (auto i = a.begin(); i != a.end(); ++i) {
       if (i != a.begin() && (*i == 2 || *i == 5)) {
         cout << 2 << endl << a.front() << *i << endl;
@@ -54,8 +59,9 @@ int main() {
         break;
       }
     }
-    if (fl)
+    if (fl) {
       continue;
+    }
     bool fl3 = false, fl7 = false;
     for (auto i = a.begin() + 1; i != a.end(); ++i) {
       if (*i == 3) {
@@ -74,8 +80,9 @@ int main() {
         }
       }
     }
-    if (fl)
+    if (fl) {
       continue;
+    }
     if (fl7) {
       for (int i = 0; i < a.size(); ++i) {
         if (a[i] != 7 && !isPrime(a[i] * 10 + 7)) {
@@ -85,7 +92,8 @@ int main() {
         }
       }
     }
-    if (fl)
+    if (fl) {
       continue;
+    }
   }
 }

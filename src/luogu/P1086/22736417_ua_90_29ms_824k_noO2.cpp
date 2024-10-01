@@ -8,7 +8,9 @@ struct peanut {
   int x, y, w;
 } pea[1000];
 
-bool cmp(peanut a, peanut b) { return a.w > b.w; }
+bool cmp(peanut a, peanut b) {
+  return a.w > b.w;
+}
 
 int main() {
   int m, n, k, top = 0;
@@ -22,7 +24,7 @@ int main() {
   //			pea[top].w = tmp;
   //		}
   //	}
-  for (int i = 1; i <= m; ++i)
+  for (int i = 1; i <= m; ++i) {
     for (int j = 1; j <= n; ++j) {
       int tmp;
       scanf("%d", &tmp);
@@ -32,14 +34,16 @@ int main() {
         pea[top].w = tmp;
       }
     }
+  }
   sort(pea + 1, pea + top + 1, cmp);
   int ans = 0;
   ans += pea[1].w;
   k -= (pea[1].x + 1);
   for (int i = 2; i <= top; ++i) {
     k -= (abs(pea[i].x - pea[i - 1].x) + abs(pea[i].y - pea[i - 1].y) + 1);
-    if ((k - pea[i].x) < 0)
+    if ((k - pea[i].x) < 0) {
       break;
+    }
     ans += pea[i].w;
   }
   printf("%d", ans);

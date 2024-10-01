@@ -23,8 +23,9 @@ int main() {
 
   sort(stu + 1, stu + n + 1, cmp);
 
-  for (int i = 1; i <= 5; ++i)
+  for (int i = 1; i <= 5; ++i) {
     printf("%d %d\n", stu[i].no, stu[i].tot);
+  }
 
   return 0;
 }

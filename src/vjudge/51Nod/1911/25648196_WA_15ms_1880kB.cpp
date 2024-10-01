@@ -11,16 +11,18 @@ int main() {
     cnt1 += x;
   }
   int x = 0;
-  if (n & 1)
+  if (n & 1) {
     cin >> x;
+  }
   for (int i = 1; i <= (n >> 1); ++i) {
     int x;
     cin >> x;
     cnt2 += x;
   }
-  if (cnt1 + x == cnt2 || cnt1 == cnt2 + x)
+  if (cnt1 + x == cnt2 || cnt1 == cnt2 + x) {
     puts("Yes");
-  else
+  } else {
     puts("No");
+  }
   return 0;
 }

@@ -13,7 +13,9 @@ struct Edge {
   int to, next, w;
 } edge[MAXN * 20];
 
-int min(int &x, int &y) { return x < y ? x : y; }
+int min(int &x, int &y) {
+  return x < y ? x : y;
+}
 
 void add(int u, int v, int w) {
   cnt++;
@@ -24,16 +26,18 @@ void add(int u, int v, int w) {
 }
 std::priority_queue<std::pair<int, int>> q;
 void dijkstra(int start) {
-  for (int i = 0; i <= m * k * 2; i++)
+  for (int i = 0; i <= m * k * 2; i++) {
     dis[i] = __INT_MAX__;
+  }
   q.push(std::make_pair(0, 1));
   dis[start] = 0;
 
   while (!q.empty()) {
     int p = q.top().second;
     q.pop();
-    if (vis[p])
+    if (vis[p]) {
       continue;
+    }
     vis[p] = 1;
     for (int i = head[p]; i; i = edge[i].next) {
       int y = edge[i].to, z = edge[i].w;
@@ -66,8 +70,9 @@ int main() {
   tmpp = n;
   dijkstra(1);
   int ans = dis[tmpp];
-  for (int i = 1; i <= k; i++)
+  for (int i = 1; i <= k; i++) {
     ans = min(ans, dis[i * n + tmpp]);
+  }
 
   printf("%d", ans);
 

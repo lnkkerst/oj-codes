@@ -9,8 +9,9 @@ int main() {
     cout << n * n;
     return 0;
   }
-  for (int i = k + 1; i <= n; ++i)
+  for (int i = k + 1; i <= n; ++i) {
     ans += (n / i) * (i - k) + max(n % i - k + 1, 0ll);
+  }
   cout << ans;
   return 0;
 }

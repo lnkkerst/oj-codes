@@ -20,10 +20,12 @@ public:
       for (int i = 1; i <= sz; ++i) {
         auto u = q.front();
         q.pop();
-        if (u->right)
+        if (u->right) {
           q.push(u->right);
-        if (u->left)
+        }
+        if (u->left) {
           q.push(u->left);
+        }
       }
     }
     return ret;

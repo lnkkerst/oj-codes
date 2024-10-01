@@ -16,8 +16,9 @@ signed main() {
       int hash = 0;
       for (int j = i; j <= len; ++j) {
         hash = (hash * 26 + str[j] - 'a') % MOD;
-        if (!b[hash])
+        if (!b[hash]) {
           ++ans, b[hash] = 1;
+        }
       }
     }
     printf("%d\n", ans);

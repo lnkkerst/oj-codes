@@ -7,8 +7,9 @@ public:
       while (r < n && (*b.rbegin() >> 20) - (*b.begin() >> 20) <= k) {
         // cout << "!! " << *b.rbegin() << ' ' << *b.begin() << endl;
         ++r;
-        if (r < n)
+        if (r < n) {
           b.insert((a[r] << 20) + r);
+        }
         // cout << l << ' ' << r << endl;
         ans = max(r - l, ans);
       }

@@ -1,7 +1,9 @@
 #include <cctype>
 #include <cstdio>
 
-int max(int x, int y) { return x > y ? x : y; }
+int max(int x, int y) {
+  return x > y ? x : y;
+}
 
 int main() {
   int last = -999999, ans = -999999;

@@ -4,9 +4,13 @@ using namespace std;
 
 int l, r, a, b;
 
-int gcd(int x, int y) { return !y ? x : gcd(y, x % y); }
+int gcd(int x, int y) {
+  return !y ? x : gcd(y, x % y);
+}
 
-int lcm(int x, int y) { return x * y / gcd(x, y); }
+int lcm(int x, int y) {
+  return x * y / gcd(x, y);
+}
 
 signed main() {
   cin >> l >> r >> a >> b;

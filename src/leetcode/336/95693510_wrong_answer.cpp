@@ -4,8 +4,9 @@ public:
   vector<string> srv;
   bool pd(const string &s) {
     for (int i = 0, j = s.size() - 1; i < j; ++i, --j) {
-      if (s[i] != s[j])
+      if (s[i] != s[j]) {
         return 0;
+      }
     }
     return 1;
   }
@@ -20,13 +21,15 @@ public:
       for (int j = 0; j < words[i].size(); ++j) {
         if (pd(words[i].substr(j, words[i].size() - j))) {
           auto it = b.find(words[i].substr(0, j));
-          if (it != b.end() && it->second != i)
+          if (it != b.end() && it->second != i) {
             ret.push_back({i, it->second});
+          }
         }
         if (pd(words[i].substr(0, j))) {
           auto it = b.find(words[i].substr(j, words[i].size() - j));
-          if (it != b.end() && it->second != i)
+          if (it != b.end() && it->second != i) {
             ret.push_back({it->second, i});
+          }
         }
       }
     }

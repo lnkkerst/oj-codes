@@ -10,15 +10,17 @@ int pd(int x) {
     x -= num;
     num += 2;
   }
-  if (x)
+  if (x) {
     return -1;
+  }
   return num >> 1;
 }
 
 signed main() {
   cin >> n;
-  for (int i = 2; i <= n; i += 2)
+  for (int i = 2; i <= n; i += 2) {
     cin >> a[i];
+  }
   int now = 0;
   bool fl = 0;
   for (int i = 1; i <= n; i += 2) {
@@ -36,15 +38,17 @@ signed main() {
       }
       ++num;
     }
-    if (fl)
+    if (fl) {
       break;
+    }
   }
   if (fl) {
     puts("NO");
     return 0;
   }
   puts("YES");
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     cout << a[i] << ' ';
+  }
   return 0;
 }

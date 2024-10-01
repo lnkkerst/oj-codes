@@ -8,22 +8,25 @@ void l(int k) {
     if (h[k / 2] > h[k]) {
       std::swap(h[k / 2], h[k]);
       k /= 2;
-    } else
+    } else {
       return;
+    }
   }
 }
 
 void r(int k) {
   for (; k * 2 <= tot;) {
     int j = 2 * k;
-    if (j < tot && h[j + 1] < h[j])
+    if (j < tot && h[j + 1] < h[j]) {
       j++;
+    }
 
     if (h[j] < h[k]) {
       std::swap(h[j], h[k]);
       k = j;
-    } else
+    } else {
       return;
+    }
   }
 }
 

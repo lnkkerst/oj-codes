@@ -9,7 +9,7 @@ struct Edge {
   int start, to, w, next;
   Edge() {}
   Edge(int start, int to, int w, int next)
-      : start(start), to(to), w(w), next(next) {}
+    : start(start), to(to), w(w), next(next) {}
 } edge[N_MAX];
 
 int head[N_MAX], edge_size;
@@ -65,13 +65,15 @@ int main() {
     for (int i = 1; i <= m; i++) {
       scanf("%d %d %d", &u, &v, &w);
       add_edge(u, v, w);
-      if (w >= 0)
+      if (w >= 0) {
         add_edge(v, u, w);
+      }
     }
     spfa(1);
-    if (flag)
+    if (flag) {
       printf("YE5\n");
-    else
+    } else {
       printf("N0\n");
+    }
   }
 }

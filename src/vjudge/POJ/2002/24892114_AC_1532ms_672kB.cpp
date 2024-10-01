@@ -15,22 +15,26 @@ bool search(int x, int y) {
   int l = 1, r = n + 1;
   while (l <= r) {
     int mid = (l + r) >> 1;
-    if (a[mid].x == x && a[mid].y == y)
+    if (a[mid].x == x && a[mid].y == y) {
       return 1;
-    if (a[mid].x == x && a[mid].y < y || a[mid].x < x)
+    }
+    if (a[mid].x == x && a[mid].y < y || a[mid].x < x) {
       l = mid + 1;
-    else
+    } else {
       r = mid - 1;
+    }
   }
   return 0;
 }
 
 int main() {
   while (cin >> n) {
-    if (!n)
+    if (!n) {
       return 0;
-    for (int i = 1; i <= n; ++i)
+    }
+    for (int i = 1; i <= n; ++i) {
       cin >> a[i].x >> a[i].y;
+    }
     ans = 0;
     sort(a + 1, a + n + 1);
     for (int i = 1; i <= n; ++i) {
@@ -40,8 +44,9 @@ int main() {
         bool fl = search(tx, ty);
         tx = a[j].x - a[j].y + a[i].y;
         ty = a[j].y + a[j].x - a[i].x;
-        if (fl && search(tx, ty))
+        if (fl && search(tx, ty)) {
           ++ans;
+        }
       }
     }
     cout << ans / 2 << endl;

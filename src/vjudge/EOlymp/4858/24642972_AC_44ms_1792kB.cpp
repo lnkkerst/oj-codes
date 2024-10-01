@@ -22,11 +22,12 @@ int solve(int x) {
 int main() {
   int x;
   cin >> x;
-  for (int i = max(x - 1000000, 1); i <= x; ++i)
+  for (int i = max(x - 1000000, 1); i <= x; ++i) {
     if (solve(i) == x) {
       cout << i;
       return 0;
     }
+  }
   cout << -1;
   return 0;
 }

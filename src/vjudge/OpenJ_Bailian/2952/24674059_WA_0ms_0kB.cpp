@@ -6,12 +6,14 @@ char ch;
 int n;
 
 int main() {
-  while (cin >> ch)
+  while (cin >> ch) {
     a[++n] = ch - '0';
+  }
   bool fl = 1;
   for (int k = 1; k <= n; ++k) {
-    for (int i = 1; i <= n; ++i)
+    for (int i = 1; i <= n; ++i) {
       b[i] = a[i] * k;
+    }
     for (int i = n; i >= 1; --i) {
       b[i - 1] += b[i] / 10;
       b[i] %= 10;
@@ -20,18 +22,22 @@ int main() {
     for (int i = 1; i <= n; ++i) {
       int pos = i;
       for (int j = 1; j <= n; ++j) {
-        if (a[j] != b[pos])
+        if (a[j] != b[pos]) {
           break;
-        if (pos == n)
+        }
+        if (pos == n) {
           pos = 1;
-        else
+        } else {
           ++pos;
+        }
       }
-      if (pos == i && b[pos] == a[n])
+      if (pos == i && b[pos] == a[n]) {
         fll = 1;
+      }
     }
-    if (!fll)
+    if (!fll) {
       fl = 0;
+    }
   }
   cout << fl;
   return 0;

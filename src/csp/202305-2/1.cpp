@@ -23,7 +23,7 @@ using namespace std;
 struct Mat {
   vector<vector<int>> data;
   int n, m;
-  Mat(int _n = 0, int _m = 0) : n(_n), m(_m) {
+  Mat(int _n = 0, int _m = 0): n(_n), m(_m) {
     data = vector<vector<int>>(n, vector<int>(m, 0));
   }
   Mat operator*(const Mat &b) const {

@@ -22,7 +22,7 @@ struct XXJ {
   bool flag = false;
   vector<int> a, tmp;
 
-  XXJ() : a(N), tmp(N) {}
+  XXJ(): a(N), tmp(N) {}
 
   void insert(int x) {
     for (int i = N; ~i; --i) {

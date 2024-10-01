@@ -22,8 +22,9 @@ int main() {
     } else if (e == 2) {
       printf("%d\n", a.top());
       a.pop();
-    } else
+    } else {
       a.pop();
+    }
   }
 
   return 0;

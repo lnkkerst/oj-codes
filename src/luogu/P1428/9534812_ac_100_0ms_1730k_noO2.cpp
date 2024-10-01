@@ -12,8 +12,9 @@ int main() {
   for (int i = 1; i < n; i++) {
     s = 0;
     for (int j = 1; j <= i; j++) {
-      if (a[i - j] < a[i])
+      if (a[i - j] < a[i]) {
         s++;
+      }
     }
     printf("%d ", s);
   }

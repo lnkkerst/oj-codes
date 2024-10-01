@@ -23,8 +23,9 @@ int read() {
   int res;
   char ch;
   bool flag = 0;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (flag = true);
+  }
   for (res = num; isdigit(ch = getchar()); res = res * 10 + num)
     ;
   (flag) && (res = -res);
@@ -36,14 +37,19 @@ void print(int x) {
     putchar('-');
     x = -x;
   }
-  if (x > 9)
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
-int max(int x, int y) { return x > y ? x : y; }
+int max(int x, int y) {
+  return x > y ? x : y;
+}
 
-int min(int x, int y) { return x < y ? x : y; }
+int min(int x, int y) {
+  return x < y ? x : y;
+}
 
 void swap(int &x, int &y) {
   int t;
@@ -52,7 +58,9 @@ void swap(int &x, int &y) {
   y = t;
 }
 
-bool cmp(Edge a, Edge b) { return a.w < b.w; }
+bool cmp(Edge a, Edge b) {
+  return a.w < b.w;
+}
 
 void add(int u, int v, int w) {
   e[++tot].u = u;
@@ -73,8 +81,9 @@ void dfs(int u, int fa) {
   for (int i = head[u]; i; i = e[i].next) {
     int v = e[i].v;
 
-    if (v == fa)
+    if (v == fa) {
       continue;
+    }
 
     deep[v] = deep[u] + 1ll;
     maxi[v][0] = e[i].w;
@@ -83,20 +92,24 @@ void dfs(int u, int fa) {
   }
 }
 
-int father(int x) { return fa[x] == x ? x : fa[x] = father(fa[x]); }
+int father(int x) {
+  return fa[x] == x ? x : fa[x] = father(fa[x]);
+}
 
 void cal() {
-  for (int i = 1; i <= 18; i++)
+  for (int i = 1; i <= 18; i++) {
     for (int j = 1; j <= n; j++) {
       bz[j][i] = bz[bz[j][i - 1]][i - 1];
       maxi[j][i] = max(maxi[j][i - 1], maxi[bz[j][i - 1]][i - 1]);
       mini[j][i] = max(mini[j][i - 1], mini[bz[j][i - 1]][i - 1]);
 
-      if (maxi[j][i - 1] > maxi[bz[j][i - 1]][i - 1])
+      if (maxi[j][i - 1] > maxi[bz[j][i - 1]][i - 1]) {
         mini[j][i] = max(mini[j][i], maxi[bz[j][i - 1]][i - 1]);
-      else if (maxi[j][i - 1] < maxi[bz[j][i - 1]][i - 1])
+      } else if (maxi[j][i - 1] < maxi[bz[j][i - 1]][i - 1]) {
         mini[j][i] = max(mini[j][i], maxi[j][i - 1]);
+      }
     }
+  }
 }
 
 // int lca(int x, int y) {
@@ -130,21 +143,26 @@ void cal() {
 // }
 
 int lca(int x, int y) {
-  if (deep[x] < deep[y])
+  if (deep[x] < deep[y]) {
     swap(x, y);
+  }
 
-  for (int i = 18; i >= 0; i--)
-    if (deep[bz[x][i]] >= deep[y])
+  for (int i = 18; i >= 0; i--) {
+    if (deep[bz[x][i]] >= deep[y]) {
       x = bz[x][i];
+    }
+  }
 
-  if (x == y)
+  if (x == y) {
     return x;
+  }
 
-  for (int i = 18; i >= 0; i--)
+  for (int i = 18; i >= 0; i--) {
     if (bz[x][i] ^ bz[y][i]) {
       x = bz[x][i];
       y = bz[y][i];
     }
+  }
 
   return bz[x][0];
 }
@@ -154,10 +172,11 @@ int qmax(int u, int v, int maxx) {
 
   for (int i = 18; i >= 0; i--) {
     if (deep[bz[u][i]] >= deep[v]) {
-      if (maxx != maxi[u][i])
+      if (maxx != maxi[u][i]) {
         ans = max(ans, maxi[u][i]);
-      else
+      } else {
         ans = max(ans, mini[u][i]);
+      }
       u = bz[u][i];
     }
   }
@@ -168,8 +187,9 @@ int qmax(int u, int v, int maxx) {
 int kruskal() {
   std::sort(ee + 1, ee + m + 1, cmp);
 
-  for (int i = 1; i <= n; i++)
+  for (int i = 1; i <= n; i++) {
     fa[i] = i;
+  }
   int cnt = 0ll;
   for (int i = 1; i <= m; i++) {
     int tu = father(ee[i].u), tv = father(ee[i].v);

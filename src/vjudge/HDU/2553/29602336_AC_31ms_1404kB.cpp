@@ -6,8 +6,9 @@ int main() {
   int n;
   while (true) {
     cin >> n;
-    if (!n)
+    if (!n) {
       return 0;
+    }
     cout << ans[n] << endl;
   }
 }

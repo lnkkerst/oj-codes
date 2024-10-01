@@ -39,8 +39,12 @@ struct Tree {
   }
 } t0, t1;
 
-int get0(int x, int y, int n) { return x + y + 1; }
-int get1(int x, int y, int n) { return (x) + (n - y - 1) + 1; }
+int get0(int x, int y, int n) {
+  return x + y + 1;
+}
+int get1(int x, int y, int n) {
+  return (x) + (n - y - 1) + 1;
+}
 
 char s[MAXN];
 
@@ -56,8 +60,8 @@ void solve() {
     scanf("%s", s);
     vector<int> p;
     for (int j = 0; j < n; ++j) {
-      if ((t0.query(get0(i, j, n)) + t1.query(get1(i, j, n)) + s[j] - '0') &
-          1) {
+      if ((t0.query(get0(i, j, n)) + t1.query(get1(i, j, n)) + s[j] - '0')
+          & 1) {
         ++ans;
         p.push_back(j);
       }

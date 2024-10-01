@@ -26,8 +26,7 @@ struct Pos {
 
 struct Pair {
   int l, r;
-  Pair(int _l = -1, int _r = -1) : l(_l), r(_r) {
-  }
+  Pair(int _l = -1, int _r = -1): l(_l), r(_r) {}
 };
 
 void solve() {
@@ -47,8 +46,8 @@ void solve() {
   vector<Pair> ye;
   for (int i = 1; i <= n; ++i) {
     for (int j = i + 1; j <= n; ++j) {
-      if ((a[i].x == a[j].x && abs(a[i].y - a[j].y) == 1) ||
-          (a[i].y == a[j].y && abs(a[i].x - a[j].x) == 1)) {
+      if ((a[i].x == a[j].x && abs(a[i].y - a[j].y) == 1)
+          || (a[i].y == a[j].y && abs(a[i].x - a[j].x) == 1)) {
         cout << -1 << endl;
         return;
       }
@@ -148,8 +147,8 @@ void solve() {
       int left = min(a[xe[i].l].y, a[xe[i].r].y);
       int right = max(a[xe[i].l].y, a[xe[i].r].y);
       // cout << top << ' ' << bottom << ' ' << left << ' ' << right << endl;
-      if (a[xe[i].l].x > top && a[xe[i].l].x < bottom && a[ye[j].l].y > left &&
-          a[ye[j].l].y < right) {
+      if (a[xe[i].l].x > top && a[xe[i].l].x < bottom && a[ye[j].l].y > left
+          && a[ye[j].l].y < right) {
         g[i][j] = 1;
       }
     }

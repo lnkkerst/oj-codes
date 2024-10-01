@@ -63,8 +63,9 @@ int main() {
       int x;
       cin >> x;
       int pos = 1;
-      while (b[pos][x] || b[pos][x + 1] || b[pos][x - 1])
+      while (b[pos][x] || b[pos][x + 1] || b[pos][x - 1]) {
         ++pos;
+      }
       b[pos][x] = 1;
       ans = max(ans, pos);
     }

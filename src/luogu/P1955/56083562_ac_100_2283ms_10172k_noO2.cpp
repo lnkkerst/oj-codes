@@ -8,9 +8,13 @@ vector<pair<int, int>> a, b;
 int n, cnt;
 unordered_map<int, int> id;
 
-int find(int x) { return fa[x] == x ? x : fa[x] = find(fa[x]); }
+int find(int x) {
+  return fa[x] == x ? x : fa[x] = find(fa[x]);
+}
 
-void merge(int x, int y) { fa[find(x)] = find(y); }
+void merge(int x, int y) {
+  fa[find(x)] = find(y);
+}
 
 int main() {
   int t;

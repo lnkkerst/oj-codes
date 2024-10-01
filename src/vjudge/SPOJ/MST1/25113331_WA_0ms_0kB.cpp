@@ -24,12 +24,13 @@ int main() {
     cin >> x;
     int ans = 0;
     while (x != 1) {
-      if (x % 3 == 0)
+      if (x % 3 == 0) {
         x /= 3;
-      else if (x % 2 == 0)
+      } else if (x % 2 == 0) {
         x /= 2;
-      else
+      } else {
         --x;
+      }
       ++ans;
     }
     cout << ans << endl;

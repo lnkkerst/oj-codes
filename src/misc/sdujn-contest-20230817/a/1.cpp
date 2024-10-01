@@ -22,8 +22,8 @@ void solve() {
     }
     int tk = max(1ll, (ta - y + tc - 1) / tc);
     int tb = tk * tc + y;
-    if (ta >= 1 && ta <= (int)1e18 && tb >= 1 && tb <= (int)1e18 && tc >= 1 &&
-        tc <= (int)1e18 && ta % tb == x && tb % tc == y && tc % ta == z) {
+    if (ta >= 1 && ta <= (int)1e18 && tb >= 1 && tb <= (int)1e18 && tc >= 1
+        && tc <= (int)1e18 && ta % tb == x && tb % tc == y && tc % ta == z) {
       int ans[3];
       ans[i] = ta;
       ans[(i + 1) % 3] = tb;

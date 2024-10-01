@@ -27,10 +27,12 @@ int main() {
     if (b[1]) {
       cout << "-1";
       return 0;
-    } else
+    } else {
       a[1] = 1;
+    }
   }
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     cout << a[i];
+  }
   return 0;
 }

@@ -22,8 +22,9 @@ long long query(int x) {
 
 bool pd(int x) {
   while (x != 0) {
-    if (x % 10 != 4 && x % 10 != 7)
+    if (x % 10 != 4 && x % 10 != 7) {
       return 0;
+    }
 
     x /= 10;
   }
@@ -51,8 +52,9 @@ int main() {
     } else {
       int ll, rr, anss = 0;
       scanf("%d%d", &ll, &rr);
-      for (int i = ll; i <= rr; i++)
+      for (int i = ll; i <= rr; i++) {
         anss += pd(query(i));
+      }
       printf("%d\n", anss);
     }
   }

@@ -7,8 +7,9 @@ int sx, sy, ex, ey;
 int ans;
 
 void dfs(int x, int y) {
-  if (x < 1 || x > n || y < 1 || y > m || e[x][y] || b[x][y])
+  if (x < 1 || x > n || y < 1 || y > m || e[x][y] || b[x][y]) {
     return;
+  }
   if (x == ex && y == ey) {
     ++ans;
     return;

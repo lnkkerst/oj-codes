@@ -5,16 +5,19 @@ using namespace std;
 bool fl;
 
 void dfs(int a, int b, int s) {
-  if (fl)
+  if (fl) {
     return;
+  }
   if (a == s || b == s) {
     fl = 1;
     return;
   }
-  if (a + b < s && b < s)
+  if (a + b < s && b < s) {
     dfs(a + b, b, s);
-  if (a < s && a + b < s)
+  }
+  if (a < s && a + b < s) {
     dfs(a, a + b, s);
+  }
 }
 
 signed main() {

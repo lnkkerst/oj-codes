@@ -5,8 +5,9 @@ using namespace std;
 int n, l, g;
 
 void cut(int &w, int &h) {
-  while (w > g || h > g)
+  while (w > g || h > g) {
     w >>= 1, h >>= 1;
+  }
 }
 
 int main() {

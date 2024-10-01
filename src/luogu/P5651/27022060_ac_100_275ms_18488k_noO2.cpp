@@ -22,18 +22,21 @@ int n, m, q, cnt;
 int read() {
   int ret, f = 1;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (f = -1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return ret * f;
 }
 
 void print(int x) {
-  if (x < 0)
+  if (x < 0) {
     putchar('-'), x = -x;
-  if (x > 9)
+  }
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
@@ -46,8 +49,9 @@ void addedge(int u, int v, int w) {
 
 void spfa(int start) {
   queue<int> q;
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     nodes[i].dis = 2147483647;
+  }
   nodes[start].dis = 0, nodes[start].inq = 1;
   q.push(start);
   while (!q.empty()) {

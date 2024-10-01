@@ -11,8 +11,9 @@ int pd(int x) {
     x -= now;
     now += 2;
   }
-  if (x)
+  if (x) {
     return -1;
+  }
   return now >> 1;
 }
 
@@ -21,8 +22,9 @@ signed main() {
   cin.tie(NULL);
   cout.tie(NULL);
   cin >> n;
-  for (int i = 2; i <= n; i += 2)
+  for (int i = 2; i <= n; i += 2) {
     cin >> a[i];
+  }
   int last = 0;
   bool fl = 0;
   for (int i = 1; i <= n; i += 2) {
@@ -40,15 +42,17 @@ signed main() {
       }
       ++now;
     }
-    if (fl)
+    if (fl) {
       break;
+    }
   }
   if (fl) {
     cout << "No\n";
     return 0;
   }
   cout << "Yes\n";
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     cout << a[i] << ' ';
+  }
   return 0;
 }

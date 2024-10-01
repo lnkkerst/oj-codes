@@ -19,8 +19,9 @@ int main() {
         l = 0;
         continue;
       }
-      if (!b[s.substr(l, size)])
+      if (!b[s.substr(l, size)]) {
         ++ans, b[s.substr(l, size)] = 1;
+      }
       ++l;
     }
     printf("%d\n", ans);

@@ -17,8 +17,9 @@ int main() {
   }
   sort(y, y + j);
   for (i = 0; i < j; i++) {
-    if (s - y[i] < 0)
+    if (s - y[i] < 0) {
       break;
+    }
     s = s - y[i];
     ans++;
   }

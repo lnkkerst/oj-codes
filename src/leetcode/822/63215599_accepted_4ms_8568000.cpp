@@ -8,8 +8,9 @@ public:
     unordered_set<string> b;
     for (auto i : words) {
       string t;
-      for (auto j : i)
+      for (auto j : i) {
         t += e[j - 'a'];
+      }
       b.insert(t);
     }
     return b.size();

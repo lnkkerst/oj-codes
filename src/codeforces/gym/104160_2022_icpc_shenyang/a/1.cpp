@@ -36,8 +36,9 @@ void solve() {
   double ans = 0;
   for (auto [l1, r1] : a) {
     for (auto [l2, r2] : b) {
-      ans += abs(0.5 * ((r1 * r1 - l1 * l1) * (r2 - l2) +
-                        (l2 * l2 - r2 * r2) * (r1 - l1)));
+      ans += abs(
+        0.5
+        * ((r1 * r1 - l1 * l1) * (r2 - l2) + (l2 * l2 - r2 * r2) * (r1 - l1)));
     }
   }
   cout << fixed << setprecision(14) << ans / tota / totb << endl;

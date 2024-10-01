@@ -10,7 +10,9 @@
 #include <string>
 #include <vector>
 using namespace std;
-long long lob(long long k) { return k & (-k); }
+long long lob(long long k) {
+  return k & (-k);
+}
 #define int long long
 long long n, m;
 long long p[6000000], ans[3];

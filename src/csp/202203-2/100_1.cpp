@@ -10,12 +10,12 @@ using namespace std;
 
 struct Node {
   int t, c;
-  explicit Node(int _t = 0, int _c = 0) : t(_t), c(_c) {}
+  explicit Node(int _t = 0, int _c = 0): t(_t), c(_c) {}
 };
 
 struct Ava {
   int l, r;
-  explicit Ava(int _l = 0, int _r = 0) : l(_l), r(_r) {}
+  explicit Ava(int _l = 0, int _r = 0): l(_l), r(_r) {}
   bool operator<(const Ava &b) const {
     if (l == b.l) {
       return r < b.r;

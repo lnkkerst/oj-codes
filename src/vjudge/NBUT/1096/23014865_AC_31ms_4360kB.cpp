@@ -7,26 +7,31 @@ int maxn = 1;
 int read() {
   int ret, f = 1;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (f = -1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return ret * f;
 }
 
 void print(int x) {
-  if (x < 0)
+  if (x < 0) {
     putchar('-'), x = -x;
-  if (x > 9)
+  }
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
 void init(int x) {
-  if (f[maxn] > x)
+  if (f[maxn] > x) {
     return;
-  while (f[maxn] <= x)
+  }
+  while (f[maxn] <= x) {
     f[++maxn] = (maxn * maxn + maxn) / 2;
+  }
   return;
 }
 
@@ -34,10 +39,11 @@ int find(int x) {
   int l = 1, r = maxn;
   while (l < r) {
     int mid = (l + r) >> 1;
-    if (f[mid] > x)
+    if (f[mid] > x) {
       r = mid;
-    else
+    } else {
       l = mid + 1;
+    }
   }
   return l;
 }
@@ -56,7 +62,8 @@ void work(int x) {
 
 int main() {
   int x;
-  while (scanf("%d", &x) != EOF)
+  while (scanf("%d", &x) != EOF) {
     work(x);
+  }
   return 0;
 }

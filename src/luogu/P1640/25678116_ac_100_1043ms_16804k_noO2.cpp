@@ -15,18 +15,21 @@ int n, cnt, ans;
 int read() {
   int ret, f = 1;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (f = -1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return ret * f;
 }
 
 void print(int x) {
-  if (x < 0)
+  if (x < 0) {
     putchar('-'), x = -x;
-  if (x > 9)
+  }
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
@@ -37,8 +40,9 @@ void addedge(int u, int v) {
 }
 
 bool dfs(int u) {
-  if (nodes[u].vis)
+  if (nodes[u].vis) {
     return 0;
+  }
   nodes[u].vis = 1;
   for (int i = nodes[u].h; i; i = edges[i].nex) {
     if (!nodes[edges[i].to].pre || dfs(nodes[edges[i].to].pre)) {
@@ -57,12 +61,14 @@ int main() {
     addedge(t2, i);
   }
   for (int i = 1; i <= 10000; ++i) {
-    for (int j = 1; j <= 10000; ++j)
+    for (int j = 1; j <= 10000; ++j) {
       nodes[j].vis = 0;
-    if (dfs(i))
+    }
+    if (dfs(i)) {
       ++ans;
-    else
+    } else {
       break;
+    }
   }
   print(ans);
   return 0;

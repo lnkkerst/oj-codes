@@ -23,11 +23,13 @@ int main() {
     if (a[i] > b[i]) {
       fl = 1;
       break;
-    } else if (a[i] < b[i])
+    } else if (a[i] < b[i]) {
       break;
+    }
   }
-  if (fl)
+  if (fl) {
     swap(a, b);
+  }
   int ans = 0;
   do {
     fl = 0;
@@ -37,8 +39,9 @@ int main() {
         break;
       }
     }
-    if (!fl)
+    if (!fl) {
       break;
+    }
     ++ans;
   } while (next_permutation(a.begin(), a.end()));
   cout << ans;

@@ -18,7 +18,9 @@ int calc(vector<pair<int, int>> &a) {
   return ret >> 1;
 }
 
-bool inArea(int r, int x, int y) { return x * x + y * y <= r * r; }
+bool inArea(int r, int x, int y) {
+  return x * x + y * y <= r * r;
+}
 
 vector<int> aa;
 vector<pair<int, int>> a;

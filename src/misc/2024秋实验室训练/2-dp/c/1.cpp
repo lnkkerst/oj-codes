@@ -44,8 +44,8 @@ void solve() {
           if ((i >> k) & 1) {
             continue;
           }
-          dp[i | (1 << k)][k] =
-              max(dp[i | (1 << k)][k], dp[i][j] + mp[j][k] + a[k]);
+          dp[i | (1 << k)][k]
+            = max(dp[i | (1 << k)][k], dp[i][j] + mp[j][k] + a[k]);
         }
       }
     }

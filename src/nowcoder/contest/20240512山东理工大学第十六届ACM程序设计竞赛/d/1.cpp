@@ -22,8 +22,7 @@ using namespace std;
 struct Tree {
   vector<int> a;
   int n;
-  Tree(int _n) : n(_n), a(_n + 10) {
-  }
+  Tree(int _n): n(_n), a(_n + 10) {}
   static int lowbit(int x) {
     return x & -x;
   }

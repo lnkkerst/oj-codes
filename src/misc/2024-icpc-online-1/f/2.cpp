@@ -24,7 +24,7 @@ void solve() {
   vector<int> a(n + 100), l(n + 100), r(n + 100);
   priority_queue<pair<int, int>, vector<pair<int, int>>,
                  greater<pair<int, int>>>
-      q;
+    q;
   for (int i = 1; i <= n; ++i) {
     cin >> a[i];
     l[i] = i - 1;

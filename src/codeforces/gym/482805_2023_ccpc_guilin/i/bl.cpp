@@ -20,7 +20,9 @@ using namespace std;
 struct Node {
   int l, r;
   int mex;
-  bool operator<(const Node &b) const { return r < b.r; }
+  bool operator<(const Node &b) const {
+    return r < b.r;
+  }
 };
 
 void solve() {

@@ -19,10 +19,12 @@ int main() {
   a[0] = 1;
   for (int i = 0; i <= n; ++i) {
     a[i] %= ((int)1e9 + 7);
-    if (!b[i + 1])
+    if (!b[i + 1]) {
       a[i + 1] += a[i];
-    if (!b[i + 2])
+    }
+    if (!b[i + 2]) {
       a[i + 2] += a[i];
+    }
   }
   cout << a[n];
   return 0;

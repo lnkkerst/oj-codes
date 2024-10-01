@@ -12,16 +12,20 @@ string sum(const string &a, const string &b) {
   string nb = string(b.rbegin(), b.rend());
   int last = 0;
   string ret;
-  if (na.size() < nb.size())
+  if (na.size() < nb.size()) {
     swap(na, nb);
-  for (int i = 0; i < (int)nb.size(); ++i)
+  }
+  for (int i = 0; i < (int)nb.size(); ++i) {
     ret.push_back((na[i] + nb[i] - 96 + last) % 10 + 48),
-        last = (na[i] + nb[i] - 96 + last) / 10;
-  for (int i = (int)nb.size(); i < (int)na.size(); ++i)
+      last = (na[i] + nb[i] - 96 + last) / 10;
+  }
+  for (int i = (int)nb.size(); i < (int)na.size(); ++i) {
     ret.push_back((na[i] - 48 + last) % 10 + 48),
-        last = (na[i] - 48 + last) / 10;
-  if (last)
+      last = (na[i] - 48 + last) / 10;
+  }
+  if (last) {
     ret.push_back(last + 48);
+  }
   return string(ret.rbegin(), ret.rend());
 }
 class Solution {

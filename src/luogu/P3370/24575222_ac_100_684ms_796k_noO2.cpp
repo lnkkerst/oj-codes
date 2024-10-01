@@ -10,8 +10,9 @@ int a[10010];
 int bkdrhs(string s) {
   int l = s.length();
   int ret = 0;
-  for (int i = 0; i < l; ++i)
+  for (int i = 0; i < l; ++i) {
     ret = (1ll * ret * k + s[i]) % MOD;
+  }
   return ret;
 }
 
@@ -25,9 +26,11 @@ int main() {
   }
   sort(a + 1, a + n + 1);
   int ans = 1;
-  for (int i = 2; i <= n; ++i)
-    if (a[i] != a[i - 1])
+  for (int i = 2; i <= n; ++i) {
+    if (a[i] != a[i - 1]) {
       ans++;
+    }
+  }
   cout << ans << endl;
   return 0;
 }

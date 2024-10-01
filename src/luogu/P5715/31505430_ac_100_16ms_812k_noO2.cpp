@@ -12,7 +12,8 @@ int main() {
     a.push_back(x);
   }
   sort(a.begin(), a.end());
-  for (auto i : a)
+  for (auto i : a) {
     cout << i << ' ';
+  }
   return 0;
 }

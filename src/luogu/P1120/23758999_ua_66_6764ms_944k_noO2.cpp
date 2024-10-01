@@ -21,8 +21,9 @@ int read() {
   int ret;
   char ch;
   bool f = 0;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (f = 1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return f ? -ret : ret;
@@ -42,7 +43,9 @@ void print(int x) {
 int a[MAXN], n, m, next[MAXN], cnt, sum, l;
 bool vis[MAXN], f;
 
-bool cmp(int a, int b) { return a > b; }
+bool cmp(int a, int b) {
+  return a > b;
+}
 
 void dfs(int k, int last, int rest) {
   int i;
@@ -51,35 +54,43 @@ void dfs(int k, int last, int rest) {
       f = 1;
       return;
     }
-    for (i = 1; i <= cnt; ++i)
-      if (!vis[i])
+    for (i = 1; i <= cnt; ++i) {
+      if (!vis[i]) {
         break;
+      }
+    }
     vis[i] = 1;
     dfs(k + 1, i, l - a[i]);
     vis[i] = 0;
-    if (f)
+    if (f) {
       return;
+    }
   }
   for (i = 1; i <= cnt; ++i) {
-    if (a[i] <= rest)
+    if (a[i] <= rest) {
       break;
+    }
   }
   while (i <= cnt) {
     if (!vis[i]) {
       vis[i] = 1;
       dfs(k, i, rest - a[i]);
       vis[i] = 0;
-      if (f)
+      if (f) {
         return;
-      if (rest == a[i] || rest == l)
+      }
+      if (rest == a[i] || rest == l) {
         return;
-      for (; i <= cnt; ++i)
+      }
+      for (; i <= cnt; ++i) {
         if (a[i] != a[i + 1]) {
           ++i;
           break;
         }
-      if (i == cnt)
+      }
+      if (i == cnt) {
         return;
+      }
     }
     ++i;
   }
@@ -98,8 +109,9 @@ int main() {
   }
   sort(a + 1, a + 1 + cnt, cmp);
   for (l = a[1]; l <= sum / 2; l++) {
-    if (sum % l)
+    if (sum % l) {
       continue;
+    }
     m = sum / l;
     f = false;
     vis[1] = true;

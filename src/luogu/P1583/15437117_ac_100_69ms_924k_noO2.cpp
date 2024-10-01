@@ -9,8 +9,9 @@ struct nu {
 } p[20010];
 
 bool cmp(nu a, nu b) {
-  if (a.w != b.w)
+  if (a.w != b.w) {
     return a.w > b.w;
+  }
 
   return a.num < b.num;
 }
@@ -18,8 +19,9 @@ bool cmp(nu a, nu b) {
 int main() {
   scanf("%d%d", &n, &k);
 
-  for (int i = 0; i < 10; i++)
+  for (int i = 0; i < 10; i++) {
     scanf("%d", &e[i]);
+  }
 
   for (int i = 0; i < n; i++) {
     scanf("%d", &p[i].w);
@@ -29,13 +31,15 @@ int main() {
 
   std::sort(p, p + n, cmp);
 
-  for (int i = 0; i < n; i++)
+  for (int i = 0; i < n; i++) {
     p[i].w += e[i % 10];
+  }
 
   std::sort(p, p + n, cmp);
 
-  for (int i = 0; i < k; i++)
+  for (int i = 0; i < k; i++) {
     printf("%d ", p[i].num);
+  }
 
   return 0;
 }

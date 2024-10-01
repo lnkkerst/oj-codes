@@ -5,9 +5,10 @@ using namespace std;
 int main() {
   int a, b, c;
   cin >> a >> b >> c;
-  if (!b)
+  if (!b) {
     cout << a;
-  else
+  } else {
     cout << max(0, a - c / b);
+  }
   return 0;
 }

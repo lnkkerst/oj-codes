@@ -11,9 +11,11 @@ int e[MAXN][MAXN], h = 0, t = 1, n, m, sx, sy;
 int main() {
   scanf("%d%d%d%d", &n, &m, &sx, &sy);
 
-  for (int i = 1; i <= n; i++)
-    for (int j = 1; j <= m; j++)
+  for (int i = 1; i <= n; i++) {
+    for (int j = 1; j <= m; j++) {
       e[i][j] = -1;
+    }
+  }
 
   e[sx][sy] = 0;
 
@@ -40,8 +42,9 @@ int main() {
   }
 
   for (int i = 1; i <= n; i++) {
-    for (int j = 1; j <= m; j++)
+    for (int j = 1; j <= m; j++) {
       printf("%-5d", e[i][j]);
+    }
 
     putchar('\n');
   }

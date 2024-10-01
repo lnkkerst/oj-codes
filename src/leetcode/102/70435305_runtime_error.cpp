@@ -20,10 +20,12 @@ public:
         auto k = q.front();
         q.pop();
         tmp.push_back(k->val);
-        if (k->left)
+        if (k->left) {
           q.push(k->left);
-        if (k->right)
+        }
+        if (k->right) {
           q.push(k->right);
+        }
       }
       ret.push_back(tmp);
     }

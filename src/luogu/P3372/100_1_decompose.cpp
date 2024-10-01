@@ -29,7 +29,9 @@ void solve() {
   int BLK = (n + BSZ - 1) / BSZ;
   vector<int> su(BLK);
   vector<int> plus(BLK);
-  auto get_blk = [&](int x) { return x / BSZ; };
+  auto get_blk = [&](int x) {
+    return x / BSZ;
+  };
   for (int i = 0; i < n; ++i) {
     su[get_blk(i)] += a[i];
   }

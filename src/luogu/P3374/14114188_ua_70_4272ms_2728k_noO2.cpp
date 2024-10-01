@@ -8,8 +8,9 @@ void read(int &x) {
   char s = getchar();
 
   while (s < '0' || s > '9') {
-    if (s == '-')
+    if (s == '-') {
       f = -1;
+    }
 
     s = getchar();
   }
@@ -29,8 +30,9 @@ void print(int x) {
     x *= -1;
   }
 
-  if (x > 9)
+  if (x > 9) {
     print(x / 10);
+  }
 
   putchar(x % 10 + '0');
 }
@@ -46,8 +48,9 @@ int main() {
 
     read(a);
 
-    for (int j = i; j <= n; j++)
+    for (int j = i; j <= n; j++) {
       tree[j] += a;
+    }
   }
 
   int e, x, y;
@@ -57,10 +60,11 @@ int main() {
     read(x);
     read(y);
 
-    if (e == 1)
-      for (int i = x; i <= n; i++)
+    if (e == 1) {
+      for (int i = x; i <= n; i++) {
         tree[i] += y;
-    else {
+      }
+    } else {
       print(tree[y] - tree[x - 1]);
       putchar('\n');
     }

@@ -20,19 +20,23 @@ int dig[1010];
 int read() {
   int ret, fl = 1;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (fl = -1);
+  }
   ret = ch - '0';
-  while (isdigit(ch = getchar()))
+  while (isdigit(ch = getchar())) {
     ret *= 10, ret += ch - '0';
+  }
   return ret * fl;
 }
 
 void print(int x) {
-  if (x < 0)
+  if (x < 0) {
     putchar('-'), x = -x;
-  if (x > 9)
+  }
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
@@ -43,9 +47,11 @@ void print(int x) {
 
 int main() {
   n = read(), m = read();
-  while (m--)
+  while (m--) {
     ++dig[read()], ++dig[read()];
-  for (int i = 1; i <= n; ++i)
+  }
+  for (int i = 1; i <= n; ++i) {
     cnt += dig[i] & 1;
+  }
   return print(cnt ? cnt / 2 : 1), 0;
 }

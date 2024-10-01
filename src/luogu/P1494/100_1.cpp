@@ -24,14 +24,18 @@ struct Query {
   int id;
 };
 
-int gcd(int a, int b) { return b ? gcd(b, a % b) : a; }
+int gcd(int a, int b) {
+  return b ? gcd(b, a % b) : a;
+}
 
 void solve() {
   int n, m;
   cin >> n >> m;
   int bsz = sqrt(n);
   int blk = (n + bsz - 1) / bsz;
-  auto get_blk = [&](int x) { return x / bsz; };
+  auto get_blk = [&](int x) {
+    return x / bsz;
+  };
   vector<int> a(n);
   vector<int> b(n + 1);
   for (auto &i : a) {

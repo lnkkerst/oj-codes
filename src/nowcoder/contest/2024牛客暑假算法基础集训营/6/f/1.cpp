@@ -30,12 +30,12 @@ void solve() {
     mp[u][v] = mp[v][u] = 1;
   }
   set<int, std::function<bool(const int &, const int &)>> s(
-      [&](const int &a, const int &b) {
-        if (du[a] == du[b]) {
-          return a < b;
-        }
-        return du[a] < du[b];
-      });
+    [&](const int &a, const int &b) {
+      if (du[a] == du[b]) {
+        return a < b;
+      }
+      return du[a] < du[b];
+    });
   // set<int> s;
   int start = 0;
   for (int i = 1; i <= n; ++i) {

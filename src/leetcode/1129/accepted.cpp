@@ -15,8 +15,8 @@ public:
   void dfs(int cur, int last) {
     for (auto &i : a[cur]) {
       if (last ^ i.second) {
-        if (ans[i.first][last ^ 1] == -1 ||
-            ans[i.first][last ^ 1] > ans[cur][last] + 1) {
+        if (ans[i.first][last ^ 1] == -1
+            || ans[i.first][last ^ 1] > ans[cur][last] + 1) {
           ans[i.first][last ^ 1] = ans[cur][last] + 1;
           dfs(i.first, i.second);
         }

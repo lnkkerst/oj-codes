@@ -10,29 +10,37 @@ int mod;
 int read() {
   int ret, f = 1;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (f = -1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return ret * f;
 }
 
 void print(int x) {
-  if (x < 0)
+  if (x < 0) {
     putchar('-'), x = -x;
-  if (x > 9)
+  }
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
-int min(int x, int y) { return x < y ? x : y; }
+int min(int x, int y) {
+  return x < y ? x : y;
+}
 
-int max(int x, int y) { return x > y ? x : y; }
+int max(int x, int y) {
+  return x > y ? x : y;
+}
 
 signed main() {
   n = read(), mod = read();
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     a[i] = read();
+  }
   int maxn = -1;
   for (int i = 1; i <= n; ++i) {
     b[i] = max(a[i], a[i] + b[i - 1]);
@@ -43,12 +51,14 @@ signed main() {
   maxn = max(f[1], f[2]);
   bool fl = 0;
   for (int i = 2; i <= n; ++i) {
-    if (f[i - 1] + t[i - 1] < 0 && f[i - 1] > 0)
+    if (f[i - 1] + t[i - 1] < 0 && f[i - 1] > 0) {
       fl = 1;
-    if (fl)
+    }
+    if (fl) {
       f[i] = f[i - 1] % mod + t[i - 1] % mod;
-    else
+    } else {
       f[i] = max(f[i - 1], f[i - 1] + t[i - 1]);
+    }
     maxn = max(maxn, f[i]) % mod;
   }
   print(maxn % mod);

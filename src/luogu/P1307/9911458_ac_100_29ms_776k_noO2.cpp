@@ -9,9 +9,11 @@ int main() {
     printf("-");
     h++;
   }
-  while (s[t] == '0')
+  while (s[t] == '0') {
     t--;
-  for (i = t; i >= h; i--)
+  }
+  for (i = t; i >= h; i--) {
     printf("%c", s[i]);
+  }
   return 0;
 }

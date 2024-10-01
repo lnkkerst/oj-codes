@@ -9,36 +9,41 @@ deque<char> a;
 
 int main() {
   cin >> str >> n;
-  for (auto i : str)
+  for (auto i : str) {
     a.push_back(i);
+  }
   while (n--) {
     int opt;
     cin >> opt;
-    if (opt == 1)
+    if (opt == 1) {
       fl = !fl;
-    else {
+    } else {
       int pos;
       char ch;
       cin >> pos >> ch;
       if (pos == 1) {
-        if (fl)
+        if (fl) {
           a.push_back(ch);
-        else
+        } else {
           a.push_front(ch);
+        }
       } else {
-        if (fl)
+        if (fl) {
           a.push_front(ch);
-        else
+        } else {
           a.push_back(ch);
+        }
       }
     }
   }
   if (fl) {
-    for (auto i = a.begin(); i != a.end(); ++i)
+    for (auto i = a.begin(); i != a.end(); ++i) {
       cout << *i;
+    }
   } else {
-    for (auto i : a)
+    for (auto i : a) {
       cout << i;
+    }
   }
   return 0;
 }

@@ -15,20 +15,25 @@ signed main() {
     ans[1] = 1;
     memset(kmp, 0, sizeof(kmp));
     for (int i = 2; i <= la; ++i) {
-      while (j && a[i] != a[j + 1])
+      while (j && a[i] != a[j + 1]) {
         j = kmp[j];
-      if (a[i] == a[j + 1])
+      }
+      if (a[i] == a[j + 1]) {
         ++j;
+      }
       kmp[i] = j, ans[i] = ans[j] + 1;
     }
     j = 0;
     for (int i = 2; i <= la; ++i) {
-      while (j && a[i] != a[j + 1])
+      while (j && a[i] != a[j + 1]) {
         j = kmp[j];
-      if (a[i] == a[j + 1])
+      }
+      if (a[i] == a[j + 1]) {
         ++j;
-      while (j * 2 > i)
+      }
+      while (j * 2 > i) {
         j = kmp[j];
+      }
       cnt *= ans[j] + 1, cnt %= MOD;
     }
     printf("%lld\n", cnt);

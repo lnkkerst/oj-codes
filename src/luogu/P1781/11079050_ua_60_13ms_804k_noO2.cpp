@@ -10,21 +10,25 @@ int main() {
     lt = strlen(tmp);
     la = strlen(ans);
     if (lt > la) {
-      for (int j = 0; j < lt; j++)
+      for (int j = 0; j < lt; j++) {
         ans[j] = tmp[j];
+      }
       ansn = i + 1;
       continue;
-    } else if (la > lt)
+    } else if (la > lt) {
       continue;
-    else
-      for (int j = 0; j < lt; j++)
+    } else {
+      for (int j = 0; j < lt; j++) {
         if (tmp[j] > ans[j]) {
           flag = 1;
           break;
         }
+      }
+    }
     if (flag == 1) {
-      for (int j = 0; j < lt; j++)
+      for (int j = 0; j < lt; j++) {
         ans[j] = tmp[j];
+      }
       ansn = i + 1;
       continue;
     }

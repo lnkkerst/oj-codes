@@ -4,10 +4,11 @@ using namespace std;
 int main() {
   char ch = getchar(), last = ch;
   while ((ch = getchar()) != EOF) {
-    if (ch != last)
+    if (ch != last) {
       putchar('1');
-    else
+    } else {
       putchar('0');
+    }
     putchar(' ');
     last = ch;
   }

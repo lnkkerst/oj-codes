@@ -6,10 +6,11 @@ public:
     while (l < r) {
       int t = min(a[l], a[r]) * (r - l);
       ans = max(ans, t);
-      if (a[l] <= a[r])
+      if (a[l] <= a[r]) {
         ++l;
-      else
+      } else {
         --r;
+      }
     }
     return ans;
   }

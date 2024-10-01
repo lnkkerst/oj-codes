@@ -30,8 +30,9 @@ ll read() {
   char ch = getchar();
   ll xx = 0, ff = 1;
   while (ch < '0' || ch > '9') {
-    if (ch == '-')
+    if (ch == '-') {
       ff = -1;
+    }
     ch = getchar();
   }
   while (ch >= '0' && ch <= '9') {

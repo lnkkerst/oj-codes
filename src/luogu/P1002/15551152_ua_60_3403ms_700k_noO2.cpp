@@ -12,16 +12,19 @@ void dfs(int x, int y) {
     return;
   }
 
-  if (x > n || y > m)
+  if (x > n || y > m) {
     return;
+  }
 
   a[x][y] = 1;
 
-  if (a[x + 1][y] == 0)
+  if (a[x + 1][y] == 0) {
     dfs(x + 1, y);
+  }
 
-  if (a[x][y + 1] == 0)
+  if (a[x][y + 1] == 0) {
     dfs(x, y + 1);
+  }
 
   a[x][y] = 0;
 }

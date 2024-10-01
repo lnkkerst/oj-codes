@@ -9,11 +9,13 @@ using namespace std;
 int a[100010] = {0, 1};
 
 int main() {
-  for (int i = 2; i <= 100000; ++i)
-    if (i & 1)
+  for (int i = 2; i <= 100000; ++i) {
+    if (i & 1) {
       a[i] = a[i >> 1] + a[i >> 1 | 1];
-    else
+    } else {
       a[i] = a[i >> 1];
+    }
+  }
   int t;
   cin >> t;
   while (t--) {

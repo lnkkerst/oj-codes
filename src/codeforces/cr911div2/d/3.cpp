@@ -24,7 +24,9 @@ using namespace __gnu_pbds;
 using Tree = tree<int, null_type, less_equal<>, rb_tree_tag,
                   tree_order_statistics_node_update>;
 
-int gcd(int a, int b) { return !b ? a : gcd(b, a % b); }
+int gcd(int a, int b) {
+  return !b ? a : gcd(b, a % b);
+}
 
 void solve() {
   int n;

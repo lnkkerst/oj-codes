@@ -34,8 +34,9 @@ int read() {
   int res;
   char ch;
   bool flag = 0;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (flag = true);
+  }
   for (res = num; isdigit(ch = getchar()); res = res * 10 + num)
     ;
   (flag) && (res = -res);
@@ -47,8 +48,9 @@ void print(int x) {
     putchar('-');
     x = -x;
   }
-  if (x > 9)
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
@@ -71,28 +73,35 @@ void dfslca(Node *v) {
 void binaryLift(int root) {
   fa[root][0] = root;
 
-  while ((1 << (logn + 1)) <= n)
+  while ((1 << (logn + 1)) <= n) {
     logn++;
-  for (int j = 1; j <= logn; j++)
-    for (int i = 1; i <= n; i++)
+  }
+  for (int j = 1; j <= logn; j++) {
+    for (int i = 1; i <= n; i++) {
       fa[i][j] = fa[fa[i][j - 1]][j - 1];
+    }
+  }
 }
 
 bool isAncestor(int ancestor, int child) {
-  return nodes[ancestor].dfn < nodes[child].dfn &&
-         nodes[ancestor].dfnOut > nodes[child].dfnOut;
+  return nodes[ancestor].dfn < nodes[child].dfn
+         && nodes[ancestor].dfnOut > nodes[child].dfnOut;
 }
 
 int lca(int u, int v) {
-  if (u == v)
+  if (u == v) {
     return u;
-  if (isAncestor(u, v))
+  }
+  if (isAncestor(u, v)) {
     return u;
-  if (isAncestor(v, u))
+  }
+  if (isAncestor(v, u)) {
     return v;
+  }
   for (int j = logn; j >= 0; j--) {
-    if (!isAncestor(fa[u][j], v))
+    if (!isAncestor(fa[u][j], v)) {
       u = fa[u][j];
+    }
   }
   return fa[u][0];
 }

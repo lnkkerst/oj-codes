@@ -29,7 +29,9 @@ void solve() {
   int BLK = (n + BSZ - 1) / BSZ;
   vector<int> plus(BLK);
   vector<vector<int>> sd(BLK);
-  auto get_blk = [&](int x) { return x / BSZ; };
+  auto get_blk = [&](int x) {
+    return x / BSZ;
+  };
   auto sort_blk = [&](int x) {
     int l = x * BSZ, r = min(n - 1, (x + 1) * BSZ - 1);
     sd[x].clear();
@@ -57,8 +59,8 @@ void solve() {
       res += (a[i] + plus[get_blk(i)]) < x;
     }
     for (int i = lk + 1; i <= rk - 1; ++i) {
-      res +=
-          lower_bound(sd[i].begin(), sd[i].end(), x - plus[i]) - sd[i].begin();
+      res
+        += lower_bound(sd[i].begin(), sd[i].end(), x - plus[i]) - sd[i].begin();
     }
     for (int i = rk * BSZ; i <= r; ++i) {
       res += (a[i] + plus[get_blk(i)]) < x;

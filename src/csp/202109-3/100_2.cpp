@@ -104,9 +104,8 @@ int main() {
       double b_tmp = Node[j].b;
       double c_tmp = Node[j].c;
       double d_tmp = Node[j].d;
-      Node[j].v = v_tmp +
-                  t1 * (0.04 * v_tmp * v_tmp + 5 * v_tmp + 140 - u_tmp) +
-                  I_k[t_tmp][j];
+      Node[j].v = v_tmp + t1 * (0.04 * v_tmp * v_tmp + 5 * v_tmp + 140 - u_tmp)
+                  + I_k[t_tmp][j];
       Node[j].u = u_tmp + t1 * a_tmp * (b_tmp * v_tmp - u_tmp);
       if (Node[j].v >= 30) {
         Node[j].v = c_tmp;

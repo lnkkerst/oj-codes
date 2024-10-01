@@ -13,30 +13,35 @@ int main() {
   while (n--) {
     int opt;
     cin >> opt;
-    if (opt == 1)
+    if (opt == 1) {
       fl = !fl;
-    else {
+    } else {
       char ch;
       int pos;
       cin >> pos >> ch;
       if (pos == 1) {
-        if (!fl)
+        if (!fl) {
           a[--head] = ch;
-        else
+        } else {
           a[++tail] = ch;
+        }
       } else {
-        if (!fl)
+        if (!fl) {
           a[++tail] = ch;
-        else
+        } else {
           a[--head] = ch;
+        }
       }
     }
   }
-  if (!fl)
-    for (int i = head; i <= tail; ++i)
+  if (!fl) {
+    for (int i = head; i <= tail; ++i) {
       putchar(a[i]);
-  else
-    for (int i = tail; i >= head; --i)
+    }
+  } else {
+    for (int i = tail; i >= head; --i) {
       putchar(a[i]);
+    }
+  }
   return 0;
 }

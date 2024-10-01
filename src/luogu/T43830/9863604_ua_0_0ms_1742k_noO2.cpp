@@ -9,8 +9,9 @@ int main() {
     max = 0;
     for (int j = 0; j < n; j++) {
       scanf("%ld", &a[i][j]);
-      if (a[i][j] > max)
+      if (a[i][j] > max) {
         max = a[i][j];
+      }
     }
     rp += max;
   }

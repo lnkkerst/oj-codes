@@ -27,7 +27,9 @@ void solve() {
   vector<vector<int>> dp(n + 1, vector<int>(k + 1, 0));
   vector<int> ma1(n + 1, -1e14), ma2 = ma1;
   vector<int> mi1(n + 1, 1e14), mi2 = mi1;
-  auto calc = [&](int l, int r) { return abs(b[l] - a[r]) + abs(b[r] - a[l]); };
+  auto calc = [&](int l, int r) {
+    return abs(b[l] - a[r]) + abs(b[r] - a[l]);
+  };
   for (int i = 0; i <= n; ++i) {
     for (int j = 0; j <= i && j <= k; ++j) {
       if (i != 0) {

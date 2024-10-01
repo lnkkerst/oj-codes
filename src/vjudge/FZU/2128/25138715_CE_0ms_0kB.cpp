@@ -6,8 +6,9 @@ using namespace std;
 struct Node {
   int l, r;
   bool operator<(const Node &b) const {
-    if (this->l == b.l)
+    if (this->l == b.l) {
       return this->r < b.r;
+    }
     return this->l < b.l;
   }
 };
@@ -23,8 +24,9 @@ int main() {
       int pos = 0;
       while (1) {
         pos = s.find(t, pos);
-        if (pos == (int)string::npos)
+        if (pos == (int)string::npos) {
           break;
+        }
         d.push_back({pos, pos + (int)t.length() - 1});
         ++pos;
       }
@@ -35,10 +37,11 @@ int main() {
     for (int i = 1; i < (int)d.size(); ++i) {
       ans = max(ans, d[i].r - d[i - 1].l - 1);
     }
-    if (ans == -1)
+    if (ans == -1) {
       cout << s.length();
-    else
+    } else {
       cout << ans;
+    }
     cout << endl;
     d.clear();
   }

@@ -5,12 +5,14 @@ int main() {
   string a;
   cin >> n >> a;
   for (int i = 0; i < a.length(); i++) {
-    if (a[i] + n <= 122)
+    if (a[i] + n <= 122) {
       a[i] = a[i] + n;
-    else
+    } else {
       a[i] = a[i] + n - 26;
+    }
   }
-  for (int i = 0; i < a.length(); i++)
+  for (int i = 0; i < a.length(); i++) {
     cout << a[i];
+  }
   return 0;
 }

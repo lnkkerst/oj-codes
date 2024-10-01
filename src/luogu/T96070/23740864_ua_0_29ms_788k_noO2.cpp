@@ -20,8 +20,9 @@ int read() {
   int ret;
   char ch;
   bool f;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (f = 1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return f ? -ret : ret;

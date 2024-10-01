@@ -10,8 +10,9 @@ public:
   /** Inserts a value to the set. Returns true if the set did not already
    * contain the specified element. */
   bool insert(int val) {
-    if (b.find(val) != b.end())
+    if (b.find(val) != b.end()) {
       return 0;
+    }
     b.insert(val);
     return 1;
   }
@@ -19,8 +20,9 @@ public:
   /** Removes a value from the set. Returns true if the set contained the
    * specified element. */
   bool remove(int val) {
-    if (b.find(val) == b.end())
+    if (b.find(val) == b.end()) {
       return 0;
+    }
     b.erase(b.find(val));
     return 1;
   }
@@ -29,8 +31,9 @@ public:
   int getRandom() {
     int rk = rand() % b.size();
     auto i = b.begin();
-    for (int j = 0; j < rk; ++j)
+    for (int j = 0; j < rk; ++j) {
       ++i;
+    }
     return *i;
   }
 };

@@ -15,8 +15,9 @@ int main() {
     maxn = max(maxn, ++b[str]);
   }
   for (auto i : b) {
-    if (i.second == maxn)
+    if (i.second == maxn) {
       cout << i.first << endl;
+    }
   }
   return 0;
 }

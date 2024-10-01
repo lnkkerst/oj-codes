@@ -10,10 +10,12 @@ public:
       ret.push_back(now);
       return;
     }
-    if (l > 0)
+    if (l > 0) {
       dfs(l - 1, r, now + '(', ret);
-    if (r > l)
+    }
+    if (r > l) {
       dfs(l, r - 1, now + ')', ret);
+    }
     return;
   }
 };

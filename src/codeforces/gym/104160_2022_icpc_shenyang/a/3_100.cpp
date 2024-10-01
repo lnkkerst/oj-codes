@@ -82,8 +82,8 @@ int main() {
   sort(b + 1, b + cb + 1);
   for (int i = 1; i <= ca; ++i) {
     if (tota) {
-      sa[i] = sa[i - 1] +
-              (a[i].second - a[i].first) / 2.0 * (a[i].first + a[i].second);
+      sa[i] = sa[i - 1]
+              + (a[i].second - a[i].first) / 2.0 * (a[i].first + a[i].second);
     } else {
       sa[i] = sa[i - 1] + a[i].first;
     }
@@ -95,8 +95,8 @@ int main() {
   }
   for (int i = 1; i <= cb; ++i) {
     if (totb) {
-      sb[i] = sb[i - 1] +
-              (b[i].second - b[i].first) / 2.0 * (b[i].first + b[i].second);
+      sb[i] = sb[i - 1]
+              + (b[i].second - b[i].first) / 2.0 * (b[i].first + b[i].second);
     } else {
       sb[i] = sb[i - 1] + b[i].first;
     }
@@ -111,18 +111,18 @@ int main() {
     int lf = lower_bound(b + 1, b + cb + 1, a[i]) - b - 1;
     int rt = upper_bound(b + 1, b + cb + 1, a[i]) - b;
     if (lf > 0) {
-      ans += (cna[i] - cna[i - 1]) *
-             ((a[i].first + a[i].second) / 2.0 * cnb[lf] - sb[lf]);
+      ans += (cna[i] - cna[i - 1])
+             * ((a[i].first + a[i].second) / 2.0 * cnb[lf] - sb[lf]);
     }
     if (rt <= cb) {
-      ans += (cna[i] - cna[i - 1]) *
-             (sb[cb] - sb[rt - 1] -
-              (a[i].first + a[i].second) / 2.0 * (cnb[cb] - cnb[rt - 1]));
+      ans += (cna[i] - cna[i - 1])
+             * (sb[cb] - sb[rt - 1]
+                - (a[i].first + a[i].second) / 2.0 * (cnb[cb] - cnb[rt - 1]));
     }
     if (lf + 1 != rt) {
       if (tota) {
-        ans += (cna[i] - cna[i - 1]) * (cna[i] - cna[i - 1]) / 3.0 *
-               (cna[i] - cna[i - 1]);
+        ans += (cna[i] - cna[i - 1]) * (cna[i] - cna[i - 1]) / 3.0
+               * (cna[i] - cna[i - 1]);
       }
     }
   }

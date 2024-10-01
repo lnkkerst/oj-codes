@@ -15,8 +15,9 @@ int main() {
     }
     int tmn = s.back(), pos = s.length() - 1;
     for (int i = (int)s.length() - 1; i >= 0; --i) {
-      if (s[i] > tmn)
+      if (s[i] > tmn) {
         pos = i;
+      }
       tmn = min(tmn, (int)s[i]);
     }
     // cout << pos << endl;

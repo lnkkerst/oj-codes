@@ -1,7 +1,9 @@
 #include <cstdio>
 #define int long long
 
-int gcd(int x, int y) { return !y ? x : gcd(y, x % y); }
+int gcd(int x, int y) {
+  return !y ? x : gcd(y, x % y);
+}
 
 signed main() {
   int a, b, s;

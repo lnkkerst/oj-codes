@@ -8,23 +8,28 @@ int read() {
   int ret;
   bool flag = 0;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (flag = 1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return flag ? -ret : ret;
 }
 
-int max(int x, int y) { return x > y ? x : y; }
+int max(int x, int y) {
+  return x > y ? x : y;
+}
 
 int main() {
   n = read();
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     a[i] = read();
+  }
   for (int i = 1; i <= n; ++i) {
     dp[i][i] = a[i];
-    for (int j = i + 1; j <= n; ++j)
+    for (int j = i + 1; j <= n; ++j) {
       dp[i][j] = max(dp[i][j - 1] + a[j], a[j]);
+    }
   }
   for (int i = 1; i <= n; ++i) {
     int maxdp = dp[i][i];

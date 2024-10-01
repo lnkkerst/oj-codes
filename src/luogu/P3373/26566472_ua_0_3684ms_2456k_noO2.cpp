@@ -13,21 +13,27 @@ int blocks, cnt = 0, l[MAXN], r[MAXN], sum[MAXN], dlt[MAXN], maxa[MAXN],
 
 void init() {
   blocks = sqrt(n);
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     bl[i] = i / blocks;
-  for (int i = n; i >= 1; --i)
+  }
+  for (int i = n; i >= 1; --i) {
     l[bl[i]] = i;
-  for (int i = 1; i <= n; ++i)
+  }
+  for (int i = 1; i <= n; ++i) {
     r[bl[i]] = i;
-  for (int i = 1; i <= n; ++i)
+  }
+  for (int i = 1; i <= n; ++i) {
     sum[bl[i]] += a[i];
-  for (int i = bl[1]; i <= bl[n]; ++i)
+  }
+  for (int i = bl[1]; i <= bl[n]; ++i) {
     mul[i] = 1;
+  }
 }
 
 void reset(int x) {
-  for (int i = l[x]; i <= r[x]; ++i)
+  for (int i = l[x]; i <= r[x]; ++i) {
     a[i] = a[i] * mul[x] + add[x], a[i] %= p;
+  }
   mul[x] = 1, add[x] = 0;
 }
 
@@ -35,42 +41,51 @@ void sum_range(int x, int y, int v) {
   reset(bl[x]);
   sum[bl[x]] = sum[bl[x]] + (min(y, r[bl[x]] - x + 1) * v), sum[bl[x]] %= p;
   int tmp = min(y, r[bl[x]]);
-  for (int j = x; j <= tmp; ++j)
+  for (int j = x; j <= tmp; ++j) {
     a[j] += v, a[j] %= p;
+  }
   if (bl[x] != bl[y]) {
     reset(bl[y]);
     sum[bl[y]] = sum[bl[y]] + (y - l[bl[y]] + 1) * y, sum[bl[y]] %= p;
-    for (int j = y; j >= l[bl[y]]; --j)
+    for (int j = y; j >= l[bl[y]]; --j) {
       a[j] += v, a[j] %= p;
-    for (int j = bl[x] + 1; j <= bl[y] - 1; ++j)
+    }
+    for (int j = bl[x] + 1; j <= bl[y] - 1; ++j) {
       add[j] += v, sum[j] = sum[j] + blocks * v, add[j] %= p, sum[j] %= p;
+    }
   }
 }
 
 void mul_range(int x, int y, int v) {
   reset(bl[x]);
   int tmp = min(y, r[bl[x]]);
-  for (int j = x; j <= tmp; ++j)
+  for (int j = x; j <= tmp; ++j) {
     sum[bl[x]] += (v - 1) * a[j], a[j] = a[j] * v, sum[bl[x]] %= p, a[j] %= p;
+  }
   if (bl[x] != bl[y]) {
     reset(bl[y]);
-    for (int j = y; j >= l[bl[y]]; --j)
+    for (int j = y; j >= l[bl[y]]; --j) {
       sum[bl[y]] += (v - 1) * a[j], a[j] = a[j] * v, sum[bl[y]] %= p, a[j] %= p;
+    }
   }
-  for (int j = bl[x] + 1; j <= bl[y] - 1; ++j)
+  for (int j = bl[x] + 1; j <= bl[y] - 1; ++j) {
     mul[j] *= v, add[j] *= v, sum[j] *= v, mul[j] %= p, add[j] %= p,
-        sum[j] %= p;
+      sum[j] %= p;
+  }
 }
 
 int query(int x, int y) {
   int ret = 0, tmp = min(y, r[bl[x]]);
-  for (int j = x; j <= tmp; ++j)
+  for (int j = x; j <= tmp; ++j) {
     ret += a[j] * mul[bl[x]] + add[bl[x]], ret %= p;
+  }
   if (bl[x] != bl[y]) {
-    for (int j = y; j >= l[bl[y]]; --j)
+    for (int j = y; j >= l[bl[y]]; --j) {
       ret += a[j] * mul[bl[y]] + add[bl[y]], ret %= p;
-    for (int j = bl[x] + 1; j <= bl[y] - 1; ++j)
+    }
+    for (int j = bl[x] + 1; j <= bl[y] - 1; ++j) {
       ret += sum[j], ret %= p;
+    }
   }
   return ret % p;
 }
@@ -78,25 +93,29 @@ int query(int x, int y) {
 int read() {
   int ret, f = 1;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (f = -1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return ret * f;
 }
 
 void print(int x) {
-  if (x < 0)
+  if (x < 0) {
     putchar('-'), x = -x;
-  if (x > 9)
+  }
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
 signed main() {
   n = read(), m = read(), p = read();
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     a[i] = read();
+  }
   init();
   for (int i = 1; i <= m; ++i) {
     int opt = read();

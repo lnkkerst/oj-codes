@@ -24,8 +24,10 @@ bool pd(int x, int b) {
 signed main() {
   int x;
   cin >> x;
-  for (int i = 1; i <= 300; ++i)
-    if (pd(i * i, x))
+  for (int i = 1; i <= 300; ++i) {
+    if (pd(i * i, x)) {
       cout << i << ' ' << i * i << endl;
+    }
+  }
   return 0;
 }

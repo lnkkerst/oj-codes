@@ -60,7 +60,9 @@ private:
     a[u] = 0;
   }
 
-  void pushup(int u) { sum[u] = sum[ls] + sum[rs]; }
+  void pushup(int u) {
+    sum[u] = sum[ls] + sum[rs];
+  }
 
   void add(int l, int r, int L, int R, int x, int u) {
     int len = r - l + 1;
@@ -101,19 +103,25 @@ private:
   }
 
 public:
-  Tree(int _n, int _mi, int _ma) : n(_n), mi(_mi), ma(_ma) {
+  Tree(int _n, int _mi, int _ma): n(_n), mi(_mi), ma(_ma) {
     a = sum = lson = rson = vector<int>((_n + 2) * 2);
   }
 
-  void add(int l, int r, int x) { return add(mi, ma, l, r, x, 1); }
+  void add(int l, int r, int x) {
+    return add(mi, ma, l, r, x, 1);
+  }
 
-  int query(int l, int r) { return query(mi, ma, l, r, 1); }
+  int query(int l, int r) {
+    return query(mi, ma, l, r, 1);
+  }
 
 #undef ls
 #undef rs
 };
 
-int gcd(int a, int b) { return !b ? a : gcd(b, a % b); }
+int gcd(int a, int b) {
+  return !b ? a : gcd(b, a % b);
+}
 
 void solve() {
   int n;

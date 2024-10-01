@@ -20,7 +20,7 @@ using namespace std;
 struct Fenwick {
   int n;
   vector<int> a;
-  Fenwick(int _n) : n(_n), a(_n) {}
+  Fenwick(int _n): n(_n), a(_n) {}
   void add(int k, int x) {
     while (k <= n) {
       a[k] += x;

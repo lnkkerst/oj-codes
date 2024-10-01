@@ -12,13 +12,18 @@ void init(int tot) {
   memset(tr, 0, sizeof(tr));
   memset(b, 0, sizeof(b));
   cnt = 0;
-  for (int i = 0; i < n; ++i)
+  for (int i = 0; i < n; ++i) {
     fa[i] = tr[i] = i;
+  }
 }
 
-int find(int x) { return x == fa[x] ? x : fa[x] = find(fa[x]); }
+int find(int x) {
+  return x == fa[x] ? x : fa[x] = find(fa[x]);
+}
 
-void merge(int x, int y) { fa[find(x)] = find(y); }
+void merge(int x, int y) {
+  fa[find(x)] = find(y);
+}
 
 void sepa(int x) {
   tr[x] = ++cnt + n - 1;
@@ -30,8 +35,9 @@ int main() {
   cin.tie(NULL);
   while (233) {
     cin >> n >> m;
-    if (!n || !m)
+    if (!n || !m) {
       return 0;
+    }
     init(n);
     for (int i = 1; i <= m; ++i) {
       char opt;
@@ -49,8 +55,9 @@ int main() {
     int ans = 0;
     for (int i = 0; i < n; ++i) {
       int tmp = find(tr[i]);
-      if (!b[tmp])
+      if (!b[tmp]) {
         ++ans, b[tmp] = 1;
+      }
     }
     cout << "Case #" << ++t << ": " << ans << endl;
   }

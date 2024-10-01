@@ -6,12 +6,15 @@ char ch;
 int n;
 
 int main() {
-  while (cin >> ch)
+  while (cin >> ch) {
     a[++n] = ch - '0';
-  if (a[1] * n > 9)
+  }
+  if (a[1] * n > 9) {
     return cout << 0, 0;
-  for (int i = 1; i <= n; ++i)
+  }
+  for (int i = 1; i <= n; ++i) {
     b[i] = a[i] * n;
+  }
   for (int i = n; i >= 1; --i) {
     b[i - 1] += b[i] / 10;
     b[i] %= 10;
@@ -20,15 +23,18 @@ int main() {
   for (int i = 1; i <= n; ++i) {
     int pos = i;
     for (int j = 1; j <= n; ++j) {
-      if (a[j] != b[pos])
+      if (a[j] != b[pos]) {
         break;
-      if (pos == n)
+      }
+      if (pos == n) {
         pos = 1;
-      else
+      } else {
         ++pos;
+      }
     }
-    if (pos == i && b[pos] == a[n])
+    if (pos == i && b[pos] == a[n]) {
       fl = 1;
+    }
   }
   cout << fl;
   return 0;

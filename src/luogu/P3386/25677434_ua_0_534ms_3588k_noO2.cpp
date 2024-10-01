@@ -19,8 +19,9 @@ void addedge(int u, int v) {
 }
 
 bool dfs(int u) {
-  if (nodes[u].vis)
+  if (nodes[u].vis) {
     return 0;
+  }
   nodes[u].vis = 1;
   for (int i = 1; i; i = edges[i].nex) {
     if (!nodes[edges[i].to].pre || dfs(nodes[edges[i].to].pre)) {
@@ -36,16 +37,19 @@ int main() {
   for (int i = 1; i <= e; ++i) {
     int t1, t2;
     cin >> t1 >> t2;
-    if (t1 <= n && t2 <= m)
+    if (t1 <= n && t2 <= m) {
       addedge(t1, t2 + n);
+    }
   }
   for (int i = 1; i <= n + m; ++i) {
-    for (int j = 1; j <= n + m; ++j)
+    for (int j = 1; j <= n + m; ++j) {
       nodes[j].vis = 0;
-    if (dfs(i))
+    }
+    if (dfs(i)) {
       ++ans;
-    else
+    } else {
       break;
+    }
   }
   cout << ans << endl;
 }

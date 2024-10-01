@@ -2,9 +2,11 @@
 #include <cstdio>
 using namespace std;
 bool ss(int x) {
-  for (int i = 2; i <= sqrt(x); i++)
-    if (x % i == 0)
+  for (int i = 2; i <= sqrt(x); i++) {
+    if (x % i == 0) {
       return 0;
+    }
+  }
   return 1;
 }
 bool hws(int x) {
@@ -14,17 +16,21 @@ bool hws(int x) {
     tmp += x % 10;
     x /= 10;
   }
-  if (tmp == t)
+  if (tmp == t) {
     return 1;
-  else
+  } else {
     return 0;
+  }
 }
 int main() {
   int a, b;
   scanf("%ld%ld", &a, &b);
-  for (int i = a; i <= b; i++)
-    if (hws(i) == 1)
-      if (ss(i) == 1)
+  for (int i = a; i <= b; i++) {
+    if (hws(i) == 1) {
+      if (ss(i) == 1) {
         printf("%d\n", i);
+      }
+    }
+  }
   return 0;
 }

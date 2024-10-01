@@ -5,8 +5,9 @@ int read() {
   int res;
   char ch;
   bool flag = 0;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (flag = true);
+  }
   for (res = ch - '0'; isdigit(ch = getchar()); res = res * 10 + ch - '0')
     ;
   (flag) && (res = -res);
@@ -18,9 +19,12 @@ void print(int x) {
     putchar('-');
     x = -x;
   }
-  if (x > 9)
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
-int main() { print(read() * 2 / 10 + read() * 3 / 10 + read() * 5 / 10); }
+int main() {
+  print(read() * 2 / 10 + read() * 3 / 10 + read() * 5 / 10);
+}

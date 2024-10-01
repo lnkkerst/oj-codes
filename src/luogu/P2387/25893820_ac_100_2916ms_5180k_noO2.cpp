@@ -18,7 +18,9 @@ int n, m;
 int cnt;
 int ans = 0x3fffffff;
 
-bool cmp(eedge a, eedge b) { return a.a < b.a; }
+bool cmp(eedge a, eedge b) {
+  return a.a < b.a;
+}
 
 void addedge(int u, int v, int w) {
   edges[++cnt].nex = nodes[u].h;
@@ -49,11 +51,13 @@ void spfa(int s, int t) {
 
 int main() {
   cin >> n >> m;
-  for (int i = 1; i <= m; ++i)
+  for (int i = 1; i <= m; ++i) {
     cin >> edge[i].x >> edge[i].y >> edge[i].a >> edge[i].b;
+  }
   sort(edge + 1, edge + m + 1, cmp);
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     nodes[i].dis = 0x3fffffff;
+  }
   nodes[1].dis = 0, nodes[1].inq = 1, q.push(1);
   for (int i = 1; i <= m; ++i) {
     addedge(edge[i].x, edge[i].y, edge[i].b);

@@ -46,8 +46,8 @@ void solve() {
           dp[i][j + 1][k] = max(dp[i][j + 1][k], dp[i][j][k]);
         }
         if (i < n) {
-          dp[i + 1][j][k] =
-              max(dp[i + 1][j][k],
+          dp[i + 1][j][k]
+            = max(dp[i + 1][j][k],
                   dp[i][j][k] + (j == 1 ? a[i + 1] : 0) * (k == 1 ? x : 1));
         }
       }

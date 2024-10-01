@@ -10,17 +10,23 @@ int main() {
     int ans = 0;
     int pos = 0;
     int e[][2] = {
-        {r, 0},       {-r, 0},     {0, r},     {0, -r}, {pos, pos},
-        {-pos, -pos}, {pos, -pos}, {-pos, pos}
-        // {pos + 1, pos - 1},
-        // {-pos - 1, 1 - pos},
-        // {-pos - 1, pos - 1},
-        // {pos + 1, 1 - pos}
+      {r,    0   },
+      {-r,   0   },
+      {0,    r   },
+      {0,    -r  },
+      {pos,  pos },
+      {-pos, -pos},
+      {pos,  -pos},
+      {-pos, pos }
+      // {pos + 1, pos - 1},
+      // {-pos - 1, 1 - pos},
+      // {-pos - 1, pos - 1},
+      // {pos + 1, 1 - pos}
     };
     for (int i = 0; i < n; ++i) {
       for (int j = i + 1; j < n; ++j) {
-        ans += (e[i][0] - e[j][0]) * (e[i][0] - e[j][0]) +
-               (e[i][1] - e[j][1]) * (e[i][1] - e[j][1]);
+        ans += (e[i][0] - e[j][0]) * (e[i][0] - e[j][0])
+               + (e[i][1] - e[j][1]) * (e[i][1] - e[j][1]);
       }
     }
     cout << ans << endl;

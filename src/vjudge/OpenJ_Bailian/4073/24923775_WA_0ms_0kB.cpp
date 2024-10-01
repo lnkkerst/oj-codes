@@ -5,16 +5,18 @@ using namespace std;
 int main() {
   int n;
   while (cin >> n) {
-    if (!n)
+    if (!n) {
       return 0;
+    }
     vector<string> a;
     int minl = 1e9;
     for (int i = 1; i <= n; ++i) {
       string inp;
       cin >> inp;
       string res;
-      for (string::reverse_iterator i = inp.rbegin(); i != inp.rend(); ++i)
+      for (string::reverse_iterator i = inp.rbegin(); i != inp.rend(); ++i) {
         res += *i;
+      }
       minl = min(minl, (int)res.length());
       a.push_back(res);
     }
@@ -27,11 +29,13 @@ int main() {
           break;
         }
       }
-      if (fl)
+      if (fl) {
         ans += a[0][i];
+      }
     }
-    for (int i = (int)ans.length() - 1; i >= 1; --i)
+    for (int i = (int)ans.length() - 1; i >= 1; --i) {
       cout << ans[i];
+    }
     cout << ans[0] << endl;
   }
   return 0;

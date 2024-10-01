@@ -34,28 +34,36 @@ void assign_range(int x, int y, int v) {
     dlt[lc] = v;
     return;
   }
-  for (int i = x; i <= r[lc]; ++i)
+  for (int i = x; i <= r[lc]; ++i) {
     assign(i, v);
-  if (l[lc] > x && l[rc] < y)
+  }
+  if (l[lc] > x && l[rc] < y) {
     return;
-  for (int i = l[rc]; i <= y; ++i)
+  }
+  for (int i = l[rc]; i <= y; ++i) {
     assign(i, v);
-  for (int i = lc + 1; i <= rc; ++i)
+  }
+  for (int i = lc + 1; i <= rc; ++i) {
     dlt[i] += v;
+  }
 }
 
 int query(int x, int y) {
   int lc = bl[x], rc = bl[y], ret = 0;
-  if (lc == rc)
-    for (int i = x; i <= y; ++i)
+  if (lc == rc) {
+    for (int i = x; i <= y; ++i) {
       ret += a[i] + dlt[bl[i]];
-  else {
-    for (int i = x; i <= r[lc]; ++i)
+    }
+  } else {
+    for (int i = x; i <= r[lc]; ++i) {
       ret += a[i] + dlt[bl[i]];
-    for (int i = lc + 1; i < rc; ++i)
+    }
+    for (int i = lc + 1; i < rc; ++i) {
       ret += sum[i] + dlt[i] * (r[i] - l[i] + 1);
-    for (int i = l[rc]; i <= y; ++i)
+    }
+    for (int i = l[rc]; i <= y; ++i) {
       ret += a[i] + dlt[bl[i]];
+    }
   }
   return ret;
 }
@@ -63,25 +71,29 @@ int query(int x, int y) {
 int read() {
   int ret, f = 1;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (f = -1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return ret * f;
 }
 
 void print(int x) {
-  if (x < 0)
+  if (x < 0) {
     putchar('-'), x = -x;
-  if (x > 9)
+  }
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
 int main() {
   n = read(), m = read();
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     a[i] = read();
+  }
   init();
   for (int i = 1; i <= m; ++i) {
     int opt = read();

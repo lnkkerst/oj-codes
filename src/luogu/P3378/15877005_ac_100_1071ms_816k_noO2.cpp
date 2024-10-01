@@ -11,10 +11,11 @@ int main() {
     if (x == 1) {
       scanf("%d", &x);
       q.push(x);
-    } else if (x == 2)
+    } else if (x == 2) {
       printf("%d\n", q.top());
-    else
+    } else {
       q.pop();
+    }
   }
   return 0;
 }

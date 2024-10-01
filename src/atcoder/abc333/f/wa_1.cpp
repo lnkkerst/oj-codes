@@ -34,12 +34,18 @@ int qmi(int x, int k, int p = MOD) {
   return res;
 }
 
-int inv(int x) { return qmi(x, MOD - 2, MOD); }
+int inv(int x) {
+  return qmi(x, MOD - 2, MOD);
+}
 
 void solve() {
   int n;
   cin >> n;
-  vector<pii> a{{}, {1, 3}, {2, 3}};
+  vector<pii> a{
+    {},
+    {1, 3},
+    {2, 3}
+  };
   for (int i = 3; i <= n; ++i) {
     vector<pii> mu(i);
     mu[0] = {1, 1};

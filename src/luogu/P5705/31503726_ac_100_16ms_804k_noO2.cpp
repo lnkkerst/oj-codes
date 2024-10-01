@@ -5,8 +5,9 @@ int main() {
   string str;
   cin >> str;
   string res;
-  for (auto i = str.rbegin(); i != str.rend(); ++i)
+  for (auto i = str.rbegin(); i != str.rend(); ++i) {
     res += *i;
+  }
   cout << res;
   return 0;
 }

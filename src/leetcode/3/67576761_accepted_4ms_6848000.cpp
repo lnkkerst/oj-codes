@@ -7,8 +7,9 @@ public:
       if (!b[s[r]]) {
         b[s[r++]] = 1;
         ret = max(ret, r - l);
-      } else
+      } else {
         b[s[l++]] = 0;
+      }
     }
     return ret;
   }

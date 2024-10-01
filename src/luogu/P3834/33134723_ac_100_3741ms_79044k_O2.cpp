@@ -7,13 +7,14 @@ struct Tree {
   int cnt;
   vector<int> sum;
   vector<int> ls, rs;
-  Tree(int n) : cnt(0), sum(n), ls(n), rs(n){};
+  Tree(int n): cnt(0), sum(n), ls(n), rs(n) {};
   int build(int l, int r) {
     ++cnt;
     sum[cnt] = 0;
     int mid = (l + r) >> 1;
-    if (l < r)
+    if (l < r) {
       ls[cnt] = build(l, mid), rs[cnt] = build(mid + 1, r);
+    }
     return cnt;
   }
   int updatef(int pre, int l, int r, int x) {
@@ -23,10 +24,11 @@ struct Tree {
     sum[cnt] = sum[pre] + 1;
     int mid = (l + r) >> 1;
     if (l < r) {
-      if (x <= mid)
+      if (x <= mid) {
         ls[cnt] = update(ls[pre], l, mid, x);
-      else
+      } else {
         rs[cnt] = update(rs[pre], mid + 1, r, x);
+      }
     }
     return cnt;
   }
@@ -35,10 +37,11 @@ struct Tree {
     ls[cnt] = ls[pre], rs[cnt] = rs[pre], sum[cnt] = sum[pre];
     if (l < r) {
       int mid = (l + r) >> 1;
-      if (x <= mid)
+      if (x <= mid) {
         ls[cnt] = update(ls[pre], l, mid, x);
-      else
+      } else {
         rs[cnt] = update(rs[cnt], mid + 1, r, x);
+      }
     }
     return cnt;
   }
@@ -49,22 +52,25 @@ struct Tree {
     sum[rt] = sum[pre] + 1;
     if (l < r) {
       int mid = (l + r) >> 1;
-      if (x <= mid)
+      if (x <= mid) {
         ls[rt] = update(ls[pre], l, mid, x);
-      else
+      } else {
         rs[rt] = update(rs[pre], mid + 1, r, x);
+      }
     }
     return rt;
   }
   int query(int a, int b, int l, int r, int k) {
-    if (l >= r)
+    if (l >= r) {
       return l;
+    }
     int t = sum[ls[b]] - sum[ls[a]];
     int mid = (l + r) >> 1;
-    if (t >= k)
+    if (t >= k) {
       return query(ls[a], ls[b], l, mid, k);
-    else
+    } else {
       return query(rs[a], rs[b], mid + 1, r, k - t);
+    }
   }
 };
 
@@ -73,8 +79,9 @@ int main() {
   cin >> n >> q;
   vector<int> a(n + 1), b(n + 1), tree(n + n);
   Tree base((n + 1) << 5);
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     cin >> a[i], b[i] = a[i];
+  }
   sort(b.begin() + 1, b.end());
   b.erase(unique(b.begin() + 1, b.end()), b.end());
   tree[0] = base.build(1, b.size() - 1);

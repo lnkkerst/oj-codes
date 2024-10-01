@@ -2,15 +2,18 @@ class Solution {
 public:
   int toInt(string &s) {
     int ret = 0;
-    for (auto i = s.rbegin(); i != s.rend(); ++i)
+    for (auto i = s.rbegin(); i != s.rend(); ++i) {
       ret *= 10, ret += *i - '0';
+    }
     return ret;
   }
   void cvt(string &s, char x, char y) {
     x += '0', y += '0';
-    for (auto &i : s)
-      if (i == x)
+    for (auto &i : s) {
+      if (i == x) {
         i = y;
+      }
+    }
   }
   int maxDiff(int num) {
     int ans = 0;

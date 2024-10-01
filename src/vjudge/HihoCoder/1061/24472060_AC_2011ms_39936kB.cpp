@@ -16,22 +16,27 @@ int main() {
     last = ch;
     for (int i = 2; i <= n; ++i) {
       cin >> ch;
-      if (ch == last)
+      if (ch == last) {
         ++num;
-      else {
+      } else {
         a.push_back(make_pair(last, num));
         last = ch;
         num = 1;
       }
     }
-    if (num)
+    if (num) {
       a.push_back(make_pair(last, num));
+    }
     bool ans = 0;
-    for (int i = 0; i < (int)a.size() - 2; ++i)
-      if (a[i].second >= a[i + 1].second && a[i + 1].second <= a[i + 2].second)
-        if (a[i].first == a[i + 1].first - 1 &&
-            a[i].first == a[i + 2].first - 2)
+    for (int i = 0; i < (int)a.size() - 2; ++i) {
+      if (a[i].second >= a[i + 1].second
+          && a[i + 1].second <= a[i + 2].second) {
+        if (a[i].first == a[i + 1].first - 1
+            && a[i].first == a[i + 2].first - 2) {
           ans = 1;
+        }
+      }
+    }
     cout << (ans ? "YES\n" : "NO\n");
   }
   return 0;

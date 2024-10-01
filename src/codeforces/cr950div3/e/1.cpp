@@ -50,8 +50,8 @@ void solve() {
   }
   for (int i = 1; i <= n; ++i) {
     for (int j = 1; j <= m; ++j) {
-      if (find(b[i][j]) != find(b[i][1]) ||
-          find(b[i][j] + n * m) != find(b[1][j] + n * m)) {
+      if (find(b[i][j]) != find(b[i][1])
+          || find(b[i][j] + n * m) != find(b[1][j] + n * m)) {
         cout << "NO" << endl;
         return;
       }

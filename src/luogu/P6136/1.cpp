@@ -8,7 +8,7 @@ using namespace std;
 using namespace __gnu_pbds;
 
 tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>
-    a;
+  a;
 
 signed main() {
   ios::sync_with_stdio(false);

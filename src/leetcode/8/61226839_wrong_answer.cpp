@@ -4,12 +4,14 @@ public:
     int ret = 0, fl = 1;
     for (auto i : str) {
       if (i < '0' || i > '9') {
-        if (i == '-')
+        if (i == '-') {
           fl = -1;
-        else if (i != ' ')
+        } else if (i != ' ') {
           return 0;
-      } else
+        }
+      } else {
         ret *= 10, ret += i - '0';
+      }
     }
     return ret * fl;
   }

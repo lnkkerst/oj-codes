@@ -6,17 +6,17 @@ int t;
 
 int main() {
   cin >> p1x >> p1y >> p2x >> p2y >> t;
-  if (p1y == p2y)
+  if (p1y == p2y) {
     while (t--) {
       cin >> a >> b;
       printf("%.9lf %.9lf\n", a, p1y * 2 - b);
     }
-  else if (p1x == p2x)
+  } else if (p1x == p2x) {
     while (t--) {
       cin >> a >> b;
       printf("%.9lf %.9lf\n", p1x * 2 - a, b);
     }
-  else {
+  } else {
     k = (p1y - p2y) / (p1x - p2x);
     m = p1y - k * p1x;
     cout << k << ' ' << m << endl;

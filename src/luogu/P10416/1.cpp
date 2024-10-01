@@ -25,8 +25,8 @@ void solve() {
     cout << 0 << endl;
     return;
   }
-  int ans =
-      (r - l * 2 + 1) * (r - l * 2 + 1) - ((r - l * 2 + 1) * (r - l * 2)) / 2;
+  int ans
+    = (r - l * 2 + 1) * (r - l * 2 + 1) - ((r - l * 2 + 1) * (r - l * 2)) / 2;
   cout << ans << endl;
 }
 

@@ -21,8 +21,9 @@ int read() {
   int ret;
   char ch;
   bool f;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (f = 1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return f ? -ret : ret;
@@ -46,16 +47,23 @@ struct Edge {
 
 int f[MAXN], n, m, ans = -1, cnt = 0;
 
-bool cmp(Edge a, Edge b) { return a.w < b.w; }
-
-void init() {
-  for (int i = 1; i <= n; ++i)
-    f[i] = i;
+bool cmp(Edge a, Edge b) {
+  return a.w < b.w;
 }
 
-int find(int x) { return x == f[x] ? x : f[x] = find(f[x]); }
+void init() {
+  for (int i = 1; i <= n; ++i) {
+    f[i] = i;
+  }
+}
 
-void merge(int x, int y) { f[find(x)] = find(y); }
+int find(int x) {
+  return x == f[x] ? x : f[x] = find(f[x]);
+}
+
+void merge(int x, int y) {
+  f[find(x)] = find(y);
+}
 
 int main() {
   n = read();

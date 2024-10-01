@@ -7,10 +7,12 @@ using namespace std;
 bool pd(string a) {
   int len = (int)a.length();
   string b;
-  for (int i = 0; i < len; ++i)
+  for (int i = 0; i < len; ++i) {
     b.push_back(a[len - i - 1]);
-  if (a == b)
+  }
+  if (a == b) {
     return 1;
+  }
   return 0;
 }
 
@@ -20,10 +22,11 @@ int main() {
   cin >> n;
   while (n--) {
     cin >> a;
-    if (pd(a))
+    if (pd(a)) {
       cout << "yes\n";
-    else
+    } else {
       cout << "no\n";
+    }
   }
   return 0;
 }

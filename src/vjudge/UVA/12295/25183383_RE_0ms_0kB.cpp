@@ -26,8 +26,9 @@ void addedge(int u, int v, int w) {
 
 void spfa(int st) {
   queue<int> q;
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     a[i].dis = (int)1e9;
+  }
   a[st].dis = 0, a[st].vis = 1, a[st].cnt = 1;
   q.push(st);
   while (!q.empty()) {
@@ -42,18 +43,21 @@ void spfa(int st) {
           a[v].vis = 1;
           q.push(v);
         }
-      } else if (a[v].dis == a[u].dis + e[i].w)
+      } else if (a[v].dis == a[u].dis + e[i].w) {
         a[v].cnt += a[u].cnt, a[v].cnt %= MOD;
+      }
     }
     a[u].vis = 0;
   }
 }
 
 int cno(int x, int y) {
-  if (y > m - x + 1)
+  if (y > m - x + 1) {
     return -1;
-  if (x < 1 || y < 1)
+  }
+  if (x < 1 || y < 1) {
     return -2;
+  }
   --x;
   return n = max(n, (m * x - (x * x - x) / 2) + y);
 }
@@ -66,29 +70,37 @@ void add(int x, int y) {
     // cout << "a " << nx << ' ' << ny << ' ';
     int v = cno(nx, ny);
     // cout << v << endl;
-    if (v < 0)
+    if (v < 0) {
       continue;
+    }
     addedge(u, v, c[nx][ny] + c[m - y + 1][m - x + 1]);
   }
 }
 
 int main() {
   while (cin >> m) {
-    if (!m)
+    if (!m) {
       return 0;
-    for (int i = 1; i <= m; ++i)
-      for (int j = 1; j <= m; ++j)
+    }
+    for (int i = 1; i <= m; ++i) {
+      for (int j = 1; j <= m; ++j) {
         cin >> c[i][j];
-    for (int i = 1; i <= m; ++i)
-      for (int j = 1; j <= m - i + 1; ++j)
+      }
+    }
+    for (int i = 1; i <= m; ++i) {
+      for (int j = 1; j <= m - i + 1; ++j) {
         add(i, j);
+      }
+    }
     spfa(1);
     unordered_map<int, int> ans;
-    for (int i = 1; i <= m; ++i)
+    for (int i = 1; i <= m; ++i) {
       ++ans[a[cno(i, m - i + 1)].cnt];
+    }
     int ansn = -1;
-    for (auto i : ans)
+    for (auto i : ans) {
       ansn = max(ansn, i.second);
+    }
     cout << ansn << endl;
     memset(a, 0, sizeof a);
     memset(e, 0, sizeof e);

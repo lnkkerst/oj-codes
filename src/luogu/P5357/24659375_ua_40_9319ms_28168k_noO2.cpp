@@ -6,8 +6,9 @@ int read() {
   int ret;
   bool flag = 0;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (flag = 1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return flag ? -ret : ret;
@@ -35,8 +36,9 @@ void insert(char *str, int no) {
   int x = 0;
   for (int i = 0; i < l; i++) {
     int k = str[i] - 'a';
-    if (!trie[x].go[k])
+    if (!trie[x].go[k]) {
       trie[x].go[k] = ++cnt, clean(cnt);
+    }
     x = trie[x].go[k];
   }
   trie[x].end = no;
@@ -45,11 +47,12 @@ void insert(char *str, int no) {
 void init_fail() {
   trie[0].fail = 0;
   queue<int> q;
-  for (int i = 0; i < 26; ++i)
+  for (int i = 0; i < 26; ++i) {
     if (trie[0].go[i]) {
       trie[trie[0].go[i]].fail = 0;
       q.push(trie[0].go[i]);
     }
+  }
   while (!q.empty()) {
     int u = q.front();
     q.pop();
@@ -57,8 +60,9 @@ void init_fail() {
       if (trie[u].go[i]) {
         trie[trie[u].go[i]].fail = trie[trie[u].fail].go[i];
         q.push(trie[u].go[i]);
-      } else
+      } else {
         trie[u].go[i] = trie[trie[u].fail].go[i];
+      }
     }
   }
 }
@@ -68,16 +72,18 @@ void query(char *s) {
   int now = 0;
   for (int i = 0; i < l; ++i) {
     now = trie[now].go[s[i] - 'a'];
-    for (int t = now; t; t = trie[t].fail)
+    for (int t = now; t; t = trie[t].fail) {
       ++ans[trie[t].end].no;
+    }
   }
 }
 
 bool cmp(struct count a, struct count b) {
-  if (a.no != b.no)
+  if (a.no != b.no) {
     return a.no > b.no;
-  else
+  } else {
     return a.pos < b.pos;
+  }
 }
 
 void work(int n) {
@@ -92,8 +98,9 @@ void work(int n) {
   init_fail();
   scanf("%s", s);
   query(s);
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     cout << ans[i].no << endl;
+  }
 }
 
 int main() {

@@ -11,9 +11,9 @@ int main() {
   cin >> n;
   while (n--) {
     cin >> opt >> x;
-    if (opt == 'I')
+    if (opt == 'I') {
       a.insert(x);
-    else {
+    } else {
       ans = a.begin();
       for (int i = 1; i < x; ++i, ++ans)
         ;

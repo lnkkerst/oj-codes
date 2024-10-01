@@ -5,9 +5,10 @@ int n, m;
 
 int main() {
   cin >> n >> m;
-  if (m % n)
+  if (m % n) {
     cout << m % n;
-  else
+  } else {
     cout << m / n;
+  }
   return 0;
 }

@@ -26,7 +26,7 @@ void solve() {
   int su = 0;
   tree<pair<int, int>, null_type, greater<pair<int, int>>, rb_tree_tag,
        tree_order_statistics_node_update>
-      tr;
+    tr;
   for (int i = 0; i < n; ++i) {
     cin >> a[i] >> b[i];
     su += a[i] + b[i];

@@ -11,7 +11,7 @@ using namespace std;
 char c[1100000];
 // #define int long long
 int numOfC[1000010][70], numOfCD[1000010][4000], numOfDCD[1000010][4000],
-    numOfCDCD[1000010][4000];
+  numOfCDCD[1000010][4000];
 
 void solve() {
   cin >> c;

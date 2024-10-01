@@ -5,12 +5,16 @@ using namespace std;
 int a[10000][10000];
 int n, m;
 
-int lb(int x) { return x & -x; }
+int lb(int x) {
+  return x & -x;
+}
 
 void add(int x, int y, int v) {
-  for (int i = x; i <= n; i += lb(i))
-    for (int j = y; j <= m; j += lb(j))
+  for (int i = x; i <= n; i += lb(i)) {
+    for (int j = y; j <= m; j += lb(j)) {
       a[i][j] += v;
+    }
+  }
 }
 
 void addRange(int x1, int y1, int x2, int y2, int v) {
@@ -22,9 +26,11 @@ void addRange(int x1, int y1, int x2, int y2, int v) {
 
 int query(int x, int y) {
   int ret = 0;
-  for (int i = x; i; i -= lb(i))
-    for (int j = y; j; j -= lb(j))
+  for (int i = x; i; i -= lb(i)) {
+    for (int j = y; j; j -= lb(j)) {
       ret += a[i][j];
+    }
+  }
   return ret;
 }
 

@@ -3,14 +3,14 @@ public:
   struct Node {
     int dis, h;
     bool inq;
-    Node() : dis(0), inq(0), h(0) {}
+    Node(): dis(0), inq(0), h(0) {}
   } nodes[201000];
   struct Edge {
     int to, nex, w;
-    Edge() : to(0), nex(0), w(0) {}
+    Edge(): to(0), nex(0), w(0) {}
   } edges[501000];
   int n, m, cnt;
-  Solution() : cnt(0) {}
+  Solution(): cnt(0) {}
   void addEdge(int u, int v, int w) {
     edges[++cnt].nex = nodes[u].h;
     edges[cnt].to = v;
@@ -41,8 +41,9 @@ public:
   // }
   void spfa(int start) {
     queue<int> q;
-    for (int i = 1; i <= n; ++i)
+    for (int i = 1; i <= n; ++i) {
       nodes[i].dis = -1;
+    }
     nodes[start].dis = 0, nodes[start].inq = 1;
     q.push(start);
     while (!q.empty()) {

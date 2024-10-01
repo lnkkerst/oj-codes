@@ -7,8 +7,9 @@ int len;
 
 int dfs(int l, int r, int depth) {
   // cout << endl << l << ' ' << r << endl;
-  if (l == r - 1)
+  if (l == r - 1) {
     return 1;
+  }
   int ret = 0;
   for (int i = l + 1; i <= r - 1; ++i) {
     if (dep[i] == depth) {
@@ -31,10 +32,11 @@ int main() {
   --len;
   int cnt = 1;
   for (int i = 1; i <= len; ++i) {
-    if (s[i] == '(')
+    if (s[i] == '(') {
       dep[i] = ++cnt;
-    else
+    } else {
       dep[i] = cnt--;
+    }
   }
   dep[0] = dep[len + 1] = 1;
   cout << (dfs(0, len + 1, 2) / 2);

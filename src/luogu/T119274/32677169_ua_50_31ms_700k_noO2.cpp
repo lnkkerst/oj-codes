@@ -18,10 +18,11 @@ signed main() {
       tl += x - 1;
       tr += m - x;
     }
-    if (n != 1)
+    if (n != 1) {
       cout << max(((tl - tr) / n) + 1, 1ll) << ' ' << min(m, tl + 1) << endl;
-    else
+    } else {
       cout << 1;
+    }
   }
   return 0;
 }

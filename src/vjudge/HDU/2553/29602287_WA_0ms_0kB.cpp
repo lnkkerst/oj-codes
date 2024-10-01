@@ -27,8 +27,9 @@ void dfs(int step) {
 int main() {
   while (true) {
     cin >> n;
-    if (!n)
+    if (!n) {
       break;
+    }
     x = vector<int>(n + 1, 0);
     y = dx = dy = vector<bool>(n + 1, 0);
     ans = 0;

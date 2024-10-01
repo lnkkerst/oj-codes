@@ -13,7 +13,9 @@ struct SG_mtree {
     memset(a, 0, sizeof(a));
     memset(tag, 0, sizeof(0));
   }
-  void update(int x) { sum[x] = sum[lc] + sum[rc]; }
+  void update(int x) {
+    sum[x] = sum[lc] + sum[rc];
+  }
   void build(int l, int r, int x) {
     if (l == r) {
       sum[x] = a[l];
@@ -35,14 +37,17 @@ struct SG_mtree {
     }
   }
   int query(int a, int b, int l, int r, int x) {
-    if (a <= l && b >= r)
+    if (a <= l && b >= r) {
       return sum[x];
+    }
     pushdown(l, r, x);
     int mid = (r + l) >> 1, ret = 0;
-    if (a <= mid)
+    if (a <= mid) {
       ret += query(a, b, l, mid, lc);
-    if (mid < b)
+    }
+    if (mid < b) {
       ret += query(a, b, mid + 1, r, rc);
+    }
     return ret;
   }
   void add(int a, int b, int v, int l, int r, int x) {
@@ -53,10 +58,12 @@ struct SG_mtree {
     }
     pushdown(l, r, x);
     int mid = (l + r) >> 1;
-    if (a <= mid)
+    if (a <= mid) {
       add(a, b, v, l, mid, lc);
-    if (mid < b)
+    }
+    if (mid < b) {
       add(a, b, v, mid + 1, r, rc);
+    }
     update(x);
   }
 } tree;
@@ -64,32 +71,37 @@ struct SG_mtree {
 int read() {
   int ret, f = 1;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (f = -1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return ret * f;
 }
 
 void print(int x) {
-  if (x < 0)
+  if (x < 0) {
     putchar('-'), x = -x;
-  if (x > 9)
+  }
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
 int main() {
   int n = read(), m = read();
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     tree.a[i] = read();
+  }
   tree.build(1, n, 1);
   while (m--) {
     int opt = read(), l = read(), r = read();
-    if (opt == 1)
+    if (opt == 1) {
       tree.add(l, r, read(), 1, n, 1);
-    else
+    } else {
       print(tree.query(l, r, 1, n, 1)), putchar('\n');
+    }
   }
   return 0;
 }

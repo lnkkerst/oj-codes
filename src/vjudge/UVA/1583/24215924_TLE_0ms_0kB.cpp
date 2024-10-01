@@ -8,10 +8,11 @@ bool check(int x, int t) {
     base += x % 10;
     x /= 10;
   } while (x);
-  if (base == t)
+  if (base == t) {
     return 1;
-  else
+  } else {
     return 0;
+  }
 }
 
 int solve(int x) {

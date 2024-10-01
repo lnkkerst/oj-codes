@@ -8,12 +8,14 @@ public:
       fl = 1;
     }
     while (n) {
-      if (n & 1)
+      if (n & 1) {
         ret *= x;
+      }
       x *= x, n >>= 1;
     }
-    if (fl)
+    if (fl) {
       return 1.0 / ret;
+    }
     return ret;
   }
 };

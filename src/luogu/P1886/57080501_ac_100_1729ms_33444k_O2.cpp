@@ -14,7 +14,7 @@ int main() {
   priority_queue<pair<int, int>> queMax;
   priority_queue<pair<int, int>, vector<pair<int, int>>,
                  greater<pair<int, int>>>
-      queMin;
+    queMin;
   vector<int> ansMax, ansMin;
   for (int i = 0; i < k; ++i) {
     queMax.emplace(a[i], i);

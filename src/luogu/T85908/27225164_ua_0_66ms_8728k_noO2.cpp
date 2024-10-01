@@ -30,29 +30,34 @@ void addedge(int u, int v, int w) {
 int read() {
   int ret, f = 1;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (f = -1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return ret * f;
 }
 
 void print(int x) {
-  if (x < 0)
+  if (x < 0) {
     putchar('-'), x = -x;
-  if (x > 9)
+  }
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
 void dij(int start) {
-  for (int i = 1; i <= n; ++i)
-    for (int j = 0; j <= k; ++j)
+  for (int i = 1; i <= n; ++i) {
+    for (int j = 0; j <= k; ++j) {
       nodes[i].dis[j] = (int)1e9;
+    }
+  }
   nodes[start].dis[0] = 0, nodes[start].vis = 0;
   priority_queue<pair<int, int>, vector<pair<int, int>>,
                  greater<pair<int, int>>>
-      heap;
+    heap;
   heap.push(make_pair(nodes[start].dis[0], start));
   while (!heap.empty()) {
     int u = heap.top().second;
@@ -61,14 +66,16 @@ void dij(int start) {
     // nodes[u].vis = 1;
     for (int i = nodes[u].h; i; i = edges[i].nex) {
       int v = edges[i].to;
-      if (nodes[v].dis[0] > nodes[u].dis[0] + edges[i].w)
+      if (nodes[v].dis[0] > nodes[u].dis[0] + edges[i].w) {
         nodes[v].dis[0] = nodes[u].dis[0] + edges[i].w;
+      }
       for (int j = 1; j <= k; ++j) {
         nodes[v].dis[j] = min(nodes[v].dis[j], min(nodes[u].dis[j] + edges[i].w,
                                                    nodes[u].dis[j - 1]));
       }
-      if (!(--nodes[v].d))
+      if (!(--nodes[v].d)) {
         heap.push(make_pair(nodes[v].dis[0], v));
+      }
     }
   }
 }

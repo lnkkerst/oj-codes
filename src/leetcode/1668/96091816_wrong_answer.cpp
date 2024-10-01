@@ -5,26 +5,31 @@ public:
     int sm = 0, ret = 0;
     for (int i = 0; i < a.size(); ++i) {
       sm += a[i];
-      if (sm == k)
+      if (sm == k) {
         ret = max(ret, i + 1);
-      if (b.find(sm - k) != b.end())
+      }
+      if (b.find(sm - k) != b.end()) {
         ret = max(ret, i - b[sm - k]);
-      if (b.find(sm) == b.end())
+      }
+      if (b.find(sm) == b.end()) {
         b[sm] = i;
+      }
     }
     return ret;
   }
   int longestAwesome(string s) {
     vector<int> a(s.begin(), s.end());
-    for (auto &i : a)
+    for (auto &i : a) {
       i -= '0' - 1;
+    }
     bool bb[11] = {0};
     for (auto &i : a) {
       int t = 1;
-      if (bb[i])
+      if (bb[i]) {
         bb[i] = 0, t = -1;
-      else
+      } else {
         bb[i] = 1;
+      }
       i = (1 << i) * t;
     }
     cout << endl;

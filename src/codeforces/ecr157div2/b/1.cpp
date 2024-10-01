@@ -31,8 +31,8 @@ void solve() {
   }
   int ansd = 0;
   for (int i = 1; i < n; ++i) {
-    ansd += abs(ans[i].first - ans[i - 1].first) +
-            abs(ans[i].second - ans[i - 1].second);
+    ansd += abs(ans[i].first - ans[i - 1].first)
+            + abs(ans[i].second - ans[i - 1].second);
   }
   cout << ansd << endl;
   for (auto [x, y] : ans) {

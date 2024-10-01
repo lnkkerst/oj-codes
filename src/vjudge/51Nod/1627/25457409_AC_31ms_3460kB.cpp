@@ -12,8 +12,9 @@ int jc[200010] = {1};
 int qpow(int x, int k, int p) {
   int ret = 1;
   while (k) {
-    if (k & 1)
+    if (k & 1) {
       ret *= x;
+    }
     x *= x, k >>= 1;
     x %= p, ret %= p;
   }
@@ -25,10 +26,11 @@ int qpow(int x, int k, int p) {
 // }
 
 void exgcd(int a, int b, int &x, int &y, int &d) {
-  if (!b)
+  if (!b) {
     d = a, x = 1, y = 0;
-  else
+  } else {
     exgcd(b, a % b, y, x, d), y -= (a / b) * x;
+  }
 }
 
 int inv(int a, int p) {
@@ -42,8 +44,9 @@ int C(int n, int m) {
 }
 
 signed main() {
-  for (int i = 1; i < 200010; ++i)
+  for (int i = 1; i < 200010; ++i) {
     jc[i] = (jc[i - 1] * i) % MOD;
+  }
   cin >> n >> m;
   cout << C(n + m - 4, m - 2);
   return 0;

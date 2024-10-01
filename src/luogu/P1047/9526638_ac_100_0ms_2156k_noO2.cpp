@@ -10,12 +10,14 @@ int main() {
   for (int i = 1; i <= m; i++) {
     int s, e;
     cin >> s >> e;
-    for (int j = s; j <= e; j++)
+    for (int j = s; j <= e; j++) {
       a[j] = 1;
+    }
   }
   for (int i = 0; i <= l; i++) {
-    if (a[i] == 0)
+    if (a[i] == 0) {
       sum++;
+    }
   }
   cout << sum;
   return 0;

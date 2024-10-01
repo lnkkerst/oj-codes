@@ -13,8 +13,9 @@ int main() {
   while (1) {
     now += a;
     ++ans;
-    if (now >= h)
+    if (now >= h) {
       break;
+    }
     now -= b;
   }
   cout << ans << endl;

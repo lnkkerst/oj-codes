@@ -17,7 +17,9 @@
 #include <vector>
 using namespace std;
 
-int sgn(int x) { return x < 0 ? -1 : x > 0; }
+int sgn(int x) {
+  return x < 0 ? -1 : x > 0;
+}
 
 void solve() {
   int n;

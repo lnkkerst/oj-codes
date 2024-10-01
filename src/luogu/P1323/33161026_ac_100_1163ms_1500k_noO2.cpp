@@ -18,13 +18,15 @@ signed main() {
   }
   cout << s << endl;
   int ans = 0;
-  while (ans != m)
-    for (int i = 0; ans != m && i < (int)s.length() - 1; ++i)
+  while (ans != m) {
+    for (int i = 0; ans != m && i < (int)s.length() - 1; ++i) {
       if (s[i] < s[i + 1]) {
         ++ans;
         s.erase(i, 1);
         break;
       }
+    }
+  }
   cout << s;
   return 0;
 }

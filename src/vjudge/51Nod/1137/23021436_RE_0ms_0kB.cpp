@@ -11,29 +11,39 @@ using namespace std;
 struct Mat {
   int n, m;
   int dataee[MAXN][MAXN];
-  Mat() { memset(dataee, 0, sizeof(dataee)); }
+  Mat() {
+    memset(dataee, 0, sizeof(dataee));
+  }
   Mat(int _n, int _m) {
     n = _n;
     m = _m;
     memset(dataee, 0, sizeof(dataee));
   }
-  int *operator[](int x) { return dataee[x]; }
+  int *operator[](int x) {
+    return dataee[x];
+  }
   Mat operator*(Mat b) {
     Mat c(n, b.m);
-    for (int i = 1; i <= n; ++i)
-      for (int j = 1; j <= b.m; ++j)
-        for (int k = 1; k <= m; ++k)
+    for (int i = 1; i <= n; ++i) {
+      for (int j = 1; j <= b.m; ++j) {
+        for (int k = 1; k <= m; ++k) {
           c[i][j] = (c[i][j] % MOD + dataee[i][k] * b[k][j] % MOD) % MOD;
+        }
+      }
+    }
     return c;
   }
   Mat pow(int k) {
     Mat tmp(n, n), res(n, n);
-    for (int i = 1; i <= n; res[i][i] = 1, ++i)
-      for (int j = 1; j <= n; ++j)
+    for (int i = 1; i <= n; res[i][i] = 1, ++i) {
+      for (int j = 1; j <= n; ++j) {
         tmp[i][j] = dataee[i][j];
+      }
+    }
     while (k) {
-      if (k & 1)
+      if (k & 1) {
         res = res * tmp;
+      }
       tmp = tmp * tmp;
       k >>= 1;
     }
@@ -47,8 +57,9 @@ int read() {
   int res;
   bool flag = 0;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (flag = 1);
+  }
   for (res = ch - '0'; isdigit(ch = getchar()); res *= 10, res += ch - '0')
     ;
   (flag == 1) && (res *= -1);
@@ -60,8 +71,9 @@ void print(int x) {
     putchar('-');
     x *= -1;
   }
-  if (x > 9)
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
@@ -70,14 +82,20 @@ int main() {
 #define int long long
   n = read();
   Mat a(n, n), b(n, n);
-  for (int i = 1; i <= n; ++i)
-    for (int j = 1; j <= n; ++j)
+  for (int i = 1; i <= n; ++i) {
+    for (int j = 1; j <= n; ++j) {
       a[i][j] = read();
-  for (int i = 1; i <= n; ++i)
-    for (int j = 1; j <= n; ++j)
+    }
+  }
+  for (int i = 1; i <= n; ++i) {
+    for (int j = 1; j <= n; ++j) {
       b[i][j] = read();
+    }
+  }
   a = a * b;
-  for (int i = 1; i <= n; ++i, putchar('\n'))
-    for (int j = 1; j <= n; ++j)
+  for (int i = 1; i <= n; ++i, putchar('\n')) {
+    for (int j = 1; j <= n; ++j) {
       print(a[i][j]), putchar(' ');
+    }
+  }
 }

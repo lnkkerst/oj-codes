@@ -5,7 +5,9 @@ using namespace std;
 int a[20000][20000];
 int n, m;
 
-int lb(int x) { return x & -x; }
+int lb(int x) {
+  return x & -x;
+}
 
 void add(int x, int y, int v) {
   while (x <= n) {

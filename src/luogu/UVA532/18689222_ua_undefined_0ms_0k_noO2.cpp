@@ -35,8 +35,9 @@ void add(int u, int v, int w) {
 }
 
 int dijkstra(int start, int end) {
-  for (int i = 1; i <= tot; ++i)
+  for (int i = 1; i <= tot; ++i) {
     nodes[i].dis = INF;
+  }
 
   std::priority_queue<std::pair<int, Node *>> q;
 
@@ -47,8 +48,9 @@ int dijkstra(int start, int end) {
     std::pair<int, Node *> p = q.top();
     q.pop();
 
-    if (-p.first != p.second->dis)
+    if (-p.first != p.second->dis) {
       continue;
+    }
     Node *v = p.second;
 
     for (int i = 0; i < (int)v->edges.size(); ++i) {
@@ -64,14 +66,16 @@ int dijkstra(int start, int end) {
 
 int main() {
   while (1) {
-    for (int i = 1; i <= tot; i++)
+    for (int i = 1; i <= tot; i++) {
       nodes[i].edges.clear();
+    }
     tot = 0;
     memset(map, '#', sizeof(map));
     scanf("%d%d%d", &k, &m, &n);
     // getchar();
-    if (k == 0 && n == 0 && m == 0)
+    if (k == 0 && n == 0 && m == 0) {
       return 0;
+    }
     char tmp;
     for (int kk = 1; kk <= k; ++kk) {
       for (int i = 1; i <= m; ++i) {
@@ -91,10 +95,12 @@ int main() {
               add(map[i][j].n, tot, 1);
               add(tot, map[i][j].n, 1);
             }
-            if (tmp == 'S')
+            if (tmp == 'S') {
               s = tot;
-            if (tmp == 'E')
+            }
+            if (tmp == 'E') {
               e = tot;
+            }
           }
           map[i][j].c = tmp;
           map[i][j].n = tot;
@@ -103,9 +109,10 @@ int main() {
       }
     }
     int ans = dijkstra(s, e);
-    if (ans == INF)
+    if (ans == INF) {
       printf("Trapped!\n");
-    else
+    } else {
       printf("Escaped in %d minute(s).\n", ans);
+    }
   }
 }

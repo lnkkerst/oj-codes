@@ -71,8 +71,12 @@ struct Node {
   string h;
   vector<int> a;
   int pos;
-  bool operator<(const Node &b) const { return h < b.h; }
-  bool operator==(const Node &b) const { return h == b.h; }
+  bool operator<(const Node &b) const {
+    return h < b.h;
+  }
+  bool operator==(const Node &b) const {
+    return h == b.h;
+  }
 };
 
 struct NodeHash {

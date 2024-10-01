@@ -12,8 +12,9 @@ int main() {
   for (int i = 1; i <= k; ++i) {
     int x, y;
     cin >> x >> y;
-    if (!b[y])
+    if (!b[y]) {
       ++ans;
+    }
     b[x] = true;
   }
   cout << ans;

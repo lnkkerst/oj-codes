@@ -7,16 +7,19 @@ void solve() {
   std::string s;
   s += std::string(a + (bool)b, '0');
   s += std::string(c + (bool)b, '1');
-  if (s.empty())
+  if (s.empty()) {
     s += '1';
-  for (int i = 1; i < b; ++i) {
-    if (s.back() == '1')
-      s += '0';
-    else
-      s += '1';
   }
-  if (s.length() != a + b + c + 1)
+  for (int i = 1; i < b; ++i) {
+    if (s.back() == '1') {
+      s += '0';
+    } else {
+      s += '1';
+    }
+  }
+  if (s.length() != a + b + c + 1) {
     s += s.back();
+  }
   std::cout << s << std::endl;
 }
 

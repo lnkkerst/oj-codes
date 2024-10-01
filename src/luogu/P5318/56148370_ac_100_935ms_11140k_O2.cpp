@@ -12,22 +12,25 @@ struct Node {
   bool visDfs;
   bool visBfs;
   vector<Edge> edges;
-  Node() : visDfs(false), visBfs(false) {}
+  Node(): visDfs(false), visBfs(false) {}
 };
 
 struct Edge {
   int u, v;
-  explicit Edge(int _u = 0, int _v = 0) : u(_u), v(_v) {}
+  explicit Edge(int _u = 0, int _v = 0): u(_u), v(_v) {}
 };
 
 struct Map {
   vector<Node> nodes;
-  explicit Map(int _n = 0) : nodes(vector<Node>(_n + 1)) {}
-  void addEdge(int u, int v) { nodes[u].edges.emplace_back(Edge(u, v)); }
+  explicit Map(int _n = 0): nodes(vector<Node>(_n + 1)) {}
+  void addEdge(int u, int v) {
+    nodes[u].edges.emplace_back(Edge(u, v));
+  }
   void sortEdge() {
     for (auto &i : nodes) {
-      sort(i.edges.begin(), i.edges.end(),
-           [](Edge a, Edge b) -> bool { return a.v < b.v; });
+      sort(i.edges.begin(), i.edges.end(), [](Edge a, Edge b) -> bool {
+        return a.v < b.v;
+      });
     }
   }
   void dfs(int no) {
@@ -45,8 +48,9 @@ struct Map {
 
 private:
   void dfsIn(int now) {
-    if (nodes[now].visDfs)
+    if (nodes[now].visDfs) {
       return;
+    }
     nodes[now].visDfs = true;
     cout << now << ' ';
     for (auto i : nodes[now].edges) {

@@ -7,10 +7,12 @@ int main() {
   cin >> a;
   getline(cin, b);
   getline(cin, b);
-  for (auto &i : a)
+  for (auto &i : a) {
     i = tolower(i);
-  for (auto &i : b)
+  }
+  for (auto &i : b) {
     i = tolower(i);
+  }
   a = " " + a + " ";
   b = " " + b + " ";
   int pos = b.find(a);

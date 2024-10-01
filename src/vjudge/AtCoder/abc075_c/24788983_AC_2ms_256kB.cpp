@@ -8,10 +8,12 @@ bool vis[51];
 void dfs(int node) {
   vis[node] = 1;
   for (int i = 1; i <= n; ++i) {
-    if (i == node)
+    if (i == node) {
       continue;
-    if (!vis[i] && e[node][i])
+    }
+    if (!vis[i] && e[node][i]) {
       dfs(i);
+    }
   }
 }
 
@@ -27,11 +29,12 @@ int main() {
     e[u[i]][v[i]] = e[v[i]][u[i]] = 0;
     memset(vis, 0, sizeof(vis));
     dfs(1);
-    for (int i = 1; i <= n; ++i)
+    for (int i = 1; i <= n; ++i) {
       if (!vis[i]) {
         ++ans;
         break;
       }
+    }
     e[u[i]][v[i]] = e[v[i]][u[i]] = 1;
   }
   cout << ans;

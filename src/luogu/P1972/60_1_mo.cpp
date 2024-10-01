@@ -26,9 +26,11 @@ struct IO {
   char pbuf[MAXSIZE], *pp;
 #if DEBUG
 #else
-  IO() : p1(buf), p2(buf), pp(pbuf) {}
+  IO(): p1(buf), p2(buf), pp(pbuf) {}
 
-  ~IO() { fwrite(pbuf, 1, pp - pbuf, stdout); }
+  ~IO() {
+    fwrite(pbuf, 1, pp - pbuf, stdout);
+  }
 #endif
   char gc() {
 #if DEBUG // 调试，可显示字符
@@ -44,7 +46,8 @@ struct IO {
     return ch == ' ' || ch == '\n' || ch == '\r' || ch == '\t';
   }
 
-  template <class T> void read(T &x) {
+  template <class T>
+  void read(T &x) {
     double tmp = 1;
     bool sign = 0;
     x = 0;
@@ -93,7 +96,8 @@ struct IO {
 #endif
   }
 
-  template <class T> void write(T x) {
+  template <class T>
+  void write(T x) {
     if (x < 0) {
       x = -x, push('-'); // 负数输出
     }
@@ -107,7 +111,8 @@ struct IO {
     }
   }
 
-  template <class T> void write(T x, char lastChar) {
+  template <class T>
+  void write(T x, char lastChar) {
     write(x), push(lastChar);
   }
 } io;
@@ -135,7 +140,9 @@ void solve() {
     q[i].r--;
   }
   int bsz = sqrt(n);
-  auto get_blk = [&](int x) { return x / bsz; };
+  auto get_blk = [&](int x) {
+    return x / bsz;
+  };
   sort(q.begin(), q.end(), [&](const Query &a, const Query &b) {
     int ak = get_blk(a.l), bk = get_blk(b.l);
     if (ak == bk) {

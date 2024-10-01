@@ -14,8 +14,9 @@ int main() {
 
   ar /= n;
 
-  for (int i = 1; i <= n; i++)
+  for (int i = 1; i <= n; i++) {
     a[i] -= ar;
+  }
 
   int l = 1, r = n;
 

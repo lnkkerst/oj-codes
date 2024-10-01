@@ -38,9 +38,11 @@ private:
   }
 
 public:
-  Tree(int _n) : t1(_n + 2), t2(_n + 2), n(_n) {}
+  Tree(int _n): t1(_n + 2), t2(_n + 2), n(_n) {}
 
-  static int lowbit(int x) { return x & -x; }
+  static int lowbit(int x) {
+    return x & -x;
+  }
 
   // 区间加
   void add(int l, int r, int v) {
@@ -50,15 +52,17 @@ public:
 
   // 求区间和
   int query(int l, int r) {
-    return (r + 1) * query_(t1, r) - l * query_(t1, l - 1) -
-           (query_(t2, r) - query_(t2, l - 1));
+    return (r + 1) * query_(t1, r) - l * query_(t1, l - 1)
+           - (query_(t2, r) - query_(t2, l - 1));
   }
 };
 
 struct Node {
   int l, r;
   int mex;
-  bool operator<(const Node &b) const { return r < b.r; }
+  bool operator<(const Node &b) const {
+    return r < b.r;
+  }
 };
 
 void solve() {

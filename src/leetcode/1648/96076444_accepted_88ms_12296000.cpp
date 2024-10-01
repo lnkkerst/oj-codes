@@ -3,9 +3,9 @@ public:
   int minInsertions(string s) {
     int cnt = 0, ans = 0;
     for (int i = s.size() - 1; i >= 0; --i) {
-      if (s[i] == '(')
+      if (s[i] == '(') {
         --cnt;
-      else {
+      } else {
         if (i == 0) {
           ans += 2;
           break;

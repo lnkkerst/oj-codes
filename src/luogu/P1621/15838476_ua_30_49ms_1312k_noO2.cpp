@@ -5,13 +5,18 @@ int a, b, p, f[MAXN], ans;
 bool book[MAXN];
 
 void lnin(int x, int y) {
-  for (int i = x; i <= y; i++)
+  for (int i = x; i <= y; i++) {
     f[i] = i;
+  }
 }
 
-int find(int x) { return f[x] == x ? x : f[x] = find(f[x]); }
+int find(int x) {
+  return f[x] == x ? x : f[x] = find(f[x]);
+}
 
-void merge(int x, int y) { f[find(x)] = find(y); }
+void merge(int x, int y) {
+  f[find(x)] = find(y);
+}
 
 int main() {
   scanf("%d%d%d", &a, &b, &p);

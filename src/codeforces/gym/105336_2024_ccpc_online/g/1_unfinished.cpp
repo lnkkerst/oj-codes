@@ -72,8 +72,7 @@ int dfs(int x, int z) {
   }
 }
 
-void solve() {
-}
+void solve() {}
 
 signed main() {
   ios::sync_with_stdio(false);

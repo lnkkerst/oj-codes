@@ -48,8 +48,7 @@ void solve() {
         ans1 = su[u] + su[v];
         mau = u;
       }
-      if (su[v] + a[u]) {
-      }
+      if (su[v] + a[u]) {}
       su[u] = max(su[u], su[v] + a[u]);
     }
     ans1 = max(ans1, su[u]);

@@ -29,8 +29,9 @@ int read() {
   int res;
   char ch;
   bool flag = 0;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (flag = true);
+  }
   for (res = num; isdigit(ch = getchar()); res = res * 10 + num)
     ;
   (flag) && (res = -res);
@@ -42,8 +43,9 @@ void print(int x) {
     putchar('-');
     x = -x;
   }
-  if (x > 9)
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
@@ -57,8 +59,9 @@ void add(int u, int v, int w) {
 }
 
 bool spfa(int start) {
-  for (int i = 1; i <= n; i++)
+  for (int i = 1; i <= n; i++) {
     nodes[i].dist = INF;
+  }
 
   std::queue<Node *> q;
 
@@ -81,8 +84,9 @@ bool spfa(int start) {
           q.push(e->to);
           e->to->cnt++;
         }
-        if (e->to->cnt > n)
+        if (e->to->cnt > n) {
           return 1;
+        }
       }
     }
   }
@@ -104,10 +108,11 @@ int main() {
       int t1 = read(), t2 = read(), t3 = read();
       add(t1, t2, -t3);
     }
-    if (spfa(1))
+    if (spfa(1)) {
       printf("YES\n");
-    else
+    } else {
       printf("NO\n");
+    }
   }
   return 0;
 }

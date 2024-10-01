@@ -1,6 +1,8 @@
 class Solution {
 public:
-  int gcd(int x, int y) { return !y ? x : gcd(y, x % y); }
+  int gcd(int x, int y) {
+    return !y ? x : gcd(y, x % y);
+  }
   vector<string> simplifiedFractions(int n) {
     vector<string> ret;
     for (int i = 1; i <= n; ++i) {

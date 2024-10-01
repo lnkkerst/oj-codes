@@ -59,8 +59,8 @@ public:
 
   // 求区间和
   int query(int l, int r) {
-    return (r + 1) * query_(t1, r) - l * query_(t1, l - 1) -
-           (query_(t2, r) - query_(t2, l - 1));
+    return (r + 1) * query_(t1, r) - l * query_(t1, l - 1)
+           - (query_(t2, r) - query_(t2, l - 1));
   }
 };
 

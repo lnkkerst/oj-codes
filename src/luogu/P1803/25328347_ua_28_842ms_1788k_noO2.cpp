@@ -18,9 +18,11 @@ int main() {
     if (!b[i]) {
       ++ans;
       b[i] = 1;
-      for (int j = i + 1; j < n; ++j)
-        if (a[i].first > a[j].second)
+      for (int j = i + 1; j < n; ++j) {
+        if (a[i].first > a[j].second) {
           b[j] = 1;
+        }
+      }
     }
   }
   cout << ans << endl;

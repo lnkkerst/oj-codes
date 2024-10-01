@@ -17,19 +17,24 @@ vector<Line> q;
 void dfs(int pt) {
   if (pt >= n) {
     int tmp = 0;
-    for (auto i = q.begin(); i != q.end(); ++i)
-      for (auto j = i + 1; j != q.end(); ++j)
-        if (i->x * j->y == i->y * j->x)
+    for (auto i = q.begin(); i != q.end(); ++i) {
+      for (auto j = i + 1; j != q.end(); ++j) {
+        if (i->x * j->y == i->y * j->x) {
           ++tmp;
+        }
+      }
+    }
     ans = max(ans, tmp);
     return;
   }
-  while (a[pt].vis)
+  while (a[pt].vis) {
     ++pt;
+  }
   a[pt].vis = 1;
   for (int i = 1; i <= n; ++i) {
-    if (i == pt)
+    if (i == pt) {
       continue;
+    }
     if (!a[i].vis) {
       a[i].vis = 1;
       q.push_back((Line){a[i].x - a[pt].x, a[i].y - a[pt].y});
@@ -44,8 +49,9 @@ void dfs(int pt) {
 
 int main() {
   cin >> n;
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     cin >> a[i].x >> a[i].y;
+  }
   dfs(1);
   cout << ans;
   return 0;

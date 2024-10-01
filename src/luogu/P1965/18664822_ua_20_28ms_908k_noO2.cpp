@@ -7,8 +7,9 @@ int n, m, k, x;
 int qpow(int a, int b, int p) {
   int ans = 1;
   while (b) {
-    if (b & 1)
+    if (b & 1) {
       ans = 1LL * ans * a % p;
+    }
     b >>= 1;
     a = 1LL * a * a % p;
   }

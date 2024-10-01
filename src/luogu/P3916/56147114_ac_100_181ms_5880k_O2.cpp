@@ -10,24 +10,29 @@ struct Node {
   int maxNo;
   bool vis;
   vector<Edge> edges;
-  Node() : maxNo(-1), vis(false) {}
+  Node(): maxNo(-1), vis(false) {}
 };
 
 struct Edge {
   int u, v;
-  explicit Edge(int _u = 0, int _v = 0) : u(_u), v(_v) {}
+  explicit Edge(int _u = 0, int _v = 0): u(_u), v(_v) {}
 };
 
 struct Map {
   vector<Node> nodes;
-  explicit Map(int _n = 0) : nodes(vector<Node>(_n + 1)) {}
-  void addEdge(int u, int v) { nodes[u].edges.emplace_back(Edge(u, v)); }
-  void update(int no) { dfs(no, no); }
+  explicit Map(int _n = 0): nodes(vector<Node>(_n + 1)) {}
+  void addEdge(int u, int v) {
+    nodes[u].edges.emplace_back(Edge(u, v));
+  }
+  void update(int no) {
+    dfs(no, no);
+  }
 
 private:
   void dfs(int now, int no) {
-    if (nodes[now].vis)
+    if (nodes[now].vis) {
       return;
+    }
     nodes[now].vis = true;
     nodes[now].maxNo = no;
     for (auto i : nodes[now].edges) {

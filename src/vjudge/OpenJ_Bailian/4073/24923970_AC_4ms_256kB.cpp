@@ -7,8 +7,9 @@ using namespace std;
 int main() {
   int n;
   while (cin >> n) {
-    if (!n)
+    if (!n) {
       return 0;
+    }
     vector<string> a;
     int minl = 1e9;
     for (int i = 1; i <= n; ++i) {
@@ -27,14 +28,15 @@ int main() {
           break;
         }
       }
-      if (fl)
+      if (fl) {
         ans += a[0][i];
-      else
+      } else {
         break;
+      }
     }
-    if (!ans.length())
+    if (!ans.length()) {
       cout << endl;
-    else {
+    } else {
       reverse(ans.begin(), ans.end());
       cout << ans << endl;
     }

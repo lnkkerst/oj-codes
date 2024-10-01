@@ -32,8 +32,7 @@ void solve() {
     }
     return res;
   };
-  auto process_10 = [&](vector<int> a) {
-  };
+  auto process_10 = [&](vector<int> a) {};
   auto n7 = process_7(n - 1);
   auto m7 = process_7(m - 1);
   int len = n7.size() + m7.size();

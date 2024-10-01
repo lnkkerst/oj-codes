@@ -9,18 +9,24 @@ string sum(string a, string b) {
   vector<int> na, nb;
   int la = a.size(), lb = b.size();
   int lmax = max(la, lb);
-  for (int i = 0; i <= lmax; ++i)
+  for (int i = 0; i <= lmax; ++i) {
     na.push_back(0), nb.push_back(0);
-  for (int i = 0; i < la; ++i)
+  }
+  for (int i = 0; i < la; ++i) {
     na[la - i - 1] = a[i] - '0';
-  for (int i = 0; i < lb; ++i)
+  }
+  for (int i = 0; i < lb; ++i) {
     nb[lb - i - 1] = b[i] - '0';
-  for (int i = 0; i < lmax; ++i)
+  }
+  for (int i = 0; i < lmax; ++i) {
     na[i] += nb[i], na[i + 1] += na[i] / 10, na[i] = na[i] % 10;
-  if (na[lmax])
+  }
+  if (na[lmax]) {
     ++lmax;
-  for (int i = lmax - 1; i >= 0; --i)
+  }
+  for (int i = lmax - 1; i >= 0; --i) {
     ret += na[i] + '0';
+  }
   return ret;
 }
 

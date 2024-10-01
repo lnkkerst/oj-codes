@@ -9,8 +9,9 @@ string read() {
   char c;
   while (c = getchar(), c != '\n') {
     if (c == '<') {
-      if (res.size())
+      if (res.size()) {
         res.erase(res.end() - 1);
+      }
     } else {
       res.push_back(c);
     }
@@ -26,8 +27,9 @@ int main() {
   int minl = min((int)a.size(), (int)b.size());
   for (int i = 0; i < minl; ++i) {
     int mins = min((int)a[i].size(), (int)b[i].size());
-    for (int j = 0; j < mins; ++j)
+    for (int j = 0; j < mins; ++j) {
       ans += a[i][j] == b[i][j];
+    }
   }
   cin >> t;
   cout << (int)(ans * 60 / (double)t) << endl;

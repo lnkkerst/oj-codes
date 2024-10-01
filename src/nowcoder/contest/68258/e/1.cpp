@@ -31,7 +31,9 @@ int qmi(int x, int k, int p = MOD) {
   return res;
 }
 
-int inv(int x, int p = MOD) { return qmi(x, MOD - 2); }
+int inv(int x, int p = MOD) {
+  return qmi(x, MOD - 2);
+}
 
 vector<vector<int>> dp(3010, vector<int>(3010, -1));
 
@@ -48,8 +50,8 @@ int dfs(int i, int j) {
   if (dp[i][j] != -1) {
     return dp[i][j];
   }
-  dp[i][j] = (dfs(i - 1, j) + 1) * (i - j) % MOD * inv(i) % MOD +
-             (dfs(i - 1, j - 1) + 2) * j % MOD * inv(i) % MOD;
+  dp[i][j] = (dfs(i - 1, j) + 1) * (i - j) % MOD * inv(i) % MOD
+             + (dfs(i - 1, j - 1) + 2) * j % MOD * inv(i) % MOD;
   return dp[i][j] %= MOD;
 }
 

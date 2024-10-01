@@ -10,16 +10,18 @@ struct mem {
 int n, m;
 
 bool cmp(mem a, mem b) {
-  if (a.score <= b.score)
+  if (a.score <= b.score) {
     return 0;
+  }
   return 1;
 }
 
 int main() {
   scanf("%d%d", &n, &m);
 
-  for (int i = 1; i <= n; i++)
+  for (int i = 1; i <= n; i++) {
     scanf("%d%d", &a[i].num, &a[i].score);
+  }
 
   std::sort(a + 1, a + n + 1, cmp);
 
@@ -39,7 +41,8 @@ int main() {
 
   printf("%d\n", i);
 
-  for (int j = 1; j <= i; j++)
+  for (int j = 1; j <= i; j++) {
     printf("%d %d\n", a[j].num, a[j].score);
+  }
   return 0;
 }

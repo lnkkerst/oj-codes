@@ -7,9 +7,10 @@ int main() {
     st = st + v;
     v = v * 0.98;
   }
-  if (st + v > s + x)
+  if (st + v > s + x) {
     printf("n");
-  else
+  } else {
     printf("y");
+  }
   return 0;
 }

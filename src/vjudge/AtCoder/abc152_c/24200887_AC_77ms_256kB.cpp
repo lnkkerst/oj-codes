@@ -7,8 +7,9 @@ int main() {
   cin >> n;
   while (n--) {
     cin >> x;
-    if (x < minn)
+    if (x < minn) {
       ++ans;
+    }
     minn = min(minn, x);
   }
   cout << ans;

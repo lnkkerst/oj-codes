@@ -21,18 +21,21 @@ stack<int> tj;
 int read() {
   int ret, f = 1;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (f = -1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return ret * f;
 }
 
 void print(int x) {
-  if (x < 0)
+  if (x < 0) {
     putchar('-'), x = -x;
-  if (x > 9)
+  }
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
@@ -48,10 +51,11 @@ void tarjan(int u) {
   nodes[u].ins = 1;
   for (int i = nodes[u].h; i; i = edges[i].nex) {
     int v = edges[i].to;
-    if (!nodes[v].dfn)
+    if (!nodes[v].dfn) {
       tarjan(v), nodes[u].low = min(nodes[u].low, nodes[v].low);
-    else if (nodes[v].ins)
+    } else if (nodes[v].ins) {
       nodes[u].low = min(nodes[u].low, nodes[v].dfn);
+    }
   }
   if (nodes[u].low == nodes[u].dfn) {
     ++cnt_tj;
@@ -74,22 +78,27 @@ int main() {
       a = read();
     }
   }
-  for (int i = 1; i <= n; ++i)
-    if (!nodes[i].dfn)
+  for (int i = 1; i <= n; ++i) {
+    if (!nodes[i].dfn) {
       tarjan(i);
+    }
+  }
   for (int k = 1; k <= n; ++k) {
     for (int i = nodes[k].h; i; i = edges[i].nex) {
       int u = edges[i].to;
-      if (nodes[k].col != nodes[u].col)
+      if (nodes[k].col != nodes[u].col) {
         ++nodes[nodes[u].col].ru, ++nodes[nodes[k].col].du;
+      }
     }
   }
   int ans1 = 0, ans2 = 0;
   for (int i = 1; i <= cnt_tj; ++i) {
-    if (!nodes[i].ru)
+    if (!nodes[i].ru) {
       ++ans1;
-    if (!nodes[i].du)
+    }
+    if (!nodes[i].du) {
       ++ans2;
+    }
   }
   print(ans1);
   putchar('\n');

@@ -7,11 +7,13 @@ int t, ans;
 string read() {
   string ret;
   char ch;
-  while (ch = getchar(), ch != '\n')
-    if (ch == '<' && ret.size())
+  while (ch = getchar(), ch != '\n') {
+    if (ch == '<' && ret.size()) {
       ret.erase(ret.end() - 1);
-    else
+    } else {
       ret.push_back(ch);
+    }
+  }
   return ret;
 }
 
@@ -23,8 +25,9 @@ int main() {
   int minl = min((int)a.size(), (int)b.size());
   for (int i = 0; i < minl; ++i) {
     int mins = min((int)a[i].size(), (int)b[i].size());
-    for (int j = 0; j < mins; ++j)
+    for (int j = 0; j < mins; ++j) {
       ans += a[i][j] == b[i][j];
+    }
   }
   cin >> t;
   cout << (int)(ans * 60 / (double)t) << endl;

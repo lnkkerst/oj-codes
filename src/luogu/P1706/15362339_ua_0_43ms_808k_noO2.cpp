@@ -6,8 +6,9 @@ bool b[MAXN] = {false};
 
 void dfs(int i) {
   if (i == n + 1) {
-    for (int j = 1; j <= n; j++)
+    for (int j = 1; j <= n; j++) {
       printf("%5d", a[j]);
+    }
 
     putchar('\n');
 

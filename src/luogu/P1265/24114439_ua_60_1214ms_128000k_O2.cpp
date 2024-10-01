@@ -31,14 +31,16 @@ double prim(int s) {
   }
   nodes[s].pos = 1;
   nodes[s].dis = 0;
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     heap.insert(make_pair(nodes[i].dis, &nodes[i]));
+  }
   while (heap.size() > 0) {
     double d = heap.begin()->first;
     Node *u = heap.begin()->second;
     heap.erase(heap.begin());
-    if (d > u->dis)
+    if (d > u->dis) {
       continue;
+    }
     u->pos = 1;
     for (int i = 0; i < (int)u->edges.size(); ++i) {
       if (!u->edges[i].to->pos && u->edges[i].w < u->edges[i].to->dis) {
@@ -47,8 +49,9 @@ double prim(int s) {
       }
     }
   }
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     ret += nodes[i].dis;
+  }
   return ret;
 }
 
@@ -58,11 +61,12 @@ int main() {
     cin >> x[i] >> y[i];
     nodes[i].edges.reserve(10100);
   }
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     for (int j = i + 1; j <= n; ++j) {
       add(i, j, sqrt(pow(x[i] - x[j], 2) + pow(y[i] - y[j], 2)));
       add(j, i, sqrt(pow(x[i] - x[j], 2) + pow(y[i] - y[j], 2)));
     }
+  }
   printf("%.2lf", prim(1));
   return 0;
 }

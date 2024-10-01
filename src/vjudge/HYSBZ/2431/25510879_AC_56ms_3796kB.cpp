@@ -9,13 +9,15 @@ int main() {
   vector<vector<int>> dp(n + 2, vector<int>(k + 2, 0));
   dp[1][0] = 1;
   for (int i = 2; i <= n; ++i) {
-    for (int j = 0; j <= k; ++j)
-      a[j + 1] = (a[j] + dp[i - 1][j]) % MOD;
     for (int j = 0; j <= k; ++j) {
-      if (j >= i)
+      a[j + 1] = (a[j] + dp[i - 1][j]) % MOD;
+    }
+    for (int j = 0; j <= k; ++j) {
+      if (j >= i) {
         dp[i][j] = (a[j + 1] - a[j - i + 1] + MOD) % MOD;
-      else
+      } else {
         dp[i][j] = a[j + 1] % MOD;
+      }
     }
   }
   cout << dp[n][k];

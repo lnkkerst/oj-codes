@@ -18,8 +18,7 @@ using namespace std;
 struct Fenwick {
   int n;
   vector<int> a;
-  Fenwick(int _n) : n(_n), a(_n + 10) {
-  }
+  Fenwick(int _n): n(_n), a(_n + 10) {}
   void add(int k, int x) {
     while (k <= n) {
       a[k] += x;
@@ -39,8 +38,7 @@ struct Fenwick {
   }
 };
 
-void solve() {
-}
+void solve() {}
 
 signed main() {
   ios::sync_with_stdio(false);

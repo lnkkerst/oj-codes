@@ -17,18 +17,21 @@ int n, m, t, w, cnt;
 int read() {
   int ret, f = 1;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (f = -1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return ret * f;
 }
 
 void print(int x) {
-  if (x < 0)
+  if (x < 0) {
     putchar('-'), x = -x;
-  if (x > 9)
+  }
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
@@ -51,8 +54,9 @@ bool spfa(int start) {
         nodes[v].dis = nodes[u].dis + edges[i].w;
         if (!nodes[v].vis) {
           nodes[v].vis = 1, ++nodes[v].cnt;
-          if (nodes[v].cnt == n)
+          if (nodes[v].cnt == n) {
             return 1;
+          }
           q.push(v);
         }
       }
@@ -63,8 +67,9 @@ bool spfa(int start) {
 
 void work() {
   n = read(), m = read(), w = read(), cnt = 0;
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     nodes[i] = (Node){0, (int)1e9 + 7, 0, 0};
+  }
   for (int i = 1; i <= m; ++i) {
     int u = read(), v = read(), w = read();
     addedge(u, v, w);
@@ -80,7 +85,8 @@ void work() {
 
 int main() {
   t = read();
-  while (t--)
+  while (t--) {
     work();
+  }
   return 0;
 }

@@ -3,16 +3,18 @@ public:
   int longestAwesome(string s) {
     vector<int> a{s.begin(), s.end()};
     unordered_map<int, int> b;
-    for (auto &i : a)
+    for (auto &i : a) {
       i -= '0';
+    }
     bool bk[11] = {0};
     for (auto &i : a) {
       int t = 1;
       if (bk[i]) {
         bk[i] = 0;
         t = -1;
-      } else
+      } else {
         bk[i] = 1;
+      }
       i = pow(10, i) * t;
     }
     vector<int> target{0};

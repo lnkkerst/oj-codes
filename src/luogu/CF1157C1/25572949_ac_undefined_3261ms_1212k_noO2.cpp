@@ -13,8 +13,8 @@ int main() {
   }
   string ans;
   int now = 0;
-  while (!a.empty() && (a.front() >= now || a.back() >= now) &&
-         (int)ans.size() != n) {
+  while (!a.empty() && (a.front() >= now || a.back() >= now)
+         && (int)ans.size() != n) {
     if (a.front() > a.back()) {
       if (a.back() >= now) {
         now = a.back();
@@ -24,8 +24,9 @@ int main() {
         now = a.front();
         a.pop_front();
         ans.push_back('L');
-      } else
+      } else {
         break;
+      }
     } else {
       if (a.front() >= now) {
         now = a.front();
@@ -35,8 +36,9 @@ int main() {
         now = a.back();
         a.pop_back();
         ans.push_back('R');
-      } else
+      } else {
         break;
+      }
     }
   }
   cout << (int)ans.size() << endl << ans << endl;

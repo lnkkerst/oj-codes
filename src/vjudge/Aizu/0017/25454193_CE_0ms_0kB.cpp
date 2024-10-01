@@ -6,12 +6,14 @@ int main() {
   while (getline(cin, s)) {
     while (s.find("this") == s.npos && s.find("that" && s.find("the"))) {
       for (auto &i : s) {
-        if (!islower(i))
+        if (!islower(i)) {
           continue;
-        if (i != 'z')
+        }
+        if (i != 'z') {
           ++i;
-        else
+        } else {
           i = 'a';
+        }
       }
     }
     cout << s << endl;

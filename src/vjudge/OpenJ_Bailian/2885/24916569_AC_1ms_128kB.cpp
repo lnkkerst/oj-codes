@@ -3,8 +3,9 @@ using namespace std;
 
 int solve(int x) {
   int fl = 1;
-  if (x < 0)
+  if (x < 0) {
     x = -x, fl = -1;
+  }
   int ret = 0;
   while (x) {
     ret *= 10, ret += x % 10;
@@ -15,7 +16,8 @@ int solve(int x) {
 
 int main() {
   int x;
-  while (cin >> x)
+  while (cin >> x) {
     cout << solve(x) << endl;
+  }
   return 0;
 }

@@ -13,8 +13,9 @@ struct Trie {
     int now = root;
     for (int i = 0; str[i]; ++i) {
       int k = str[i] - '0';
-      if (!nex[now][k])
+      if (!nex[now][k]) {
         return 0;
+      }
       now = nex[now][k];
     }
     return val[now];
@@ -24,10 +25,11 @@ struct Trie {
     for (int i = 0; str[i]; ++i) {
       int k = str[i] - '0';
       if (!nex[now][k]) {
-        if (v == -1)
+        if (v == -1) {
           return;
-        else
+        } else {
           nex[now][k] = ++tot;
+        }
       }
       now = nex[now][k];
     }
@@ -38,18 +40,21 @@ struct Trie {
 int read() {
   int ret, f = 1;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (f = -1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return ret * f;
 }
 
 void print(int x) {
-  if (x < 0)
+  if (x < 0) {
     putchar('-'), x = -x;
-  if (x > 9)
+  }
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 

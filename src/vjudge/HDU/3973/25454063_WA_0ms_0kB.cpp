@@ -14,8 +14,9 @@ int main() {
   for (int k = 1; k <= t; ++k) {
     cout << "Case #" << k << ":\n";
     cin >> n;
-    for (int i = 1; i <= n; ++i)
+    for (int i = 1; i <= n; ++i) {
       cin >> wd[i];
+    }
     cin >> str;
     cin >> m;
     while (m--) {
@@ -26,15 +27,17 @@ int main() {
         cin >> l >> r;
         string tmp = str.substr(l, r - l + 1);
         bool fl = 0;
-        for (int i = 1; i <= n; ++i)
+        for (int i = 1; i <= n; ++i) {
           if (wd[i] == tmp) {
             fl = 1;
             break;
           }
-        if (fl)
+        }
+        if (fl) {
           cout << "YES\n";
-        else
+        } else {
           cout << "NO\n";
+        }
       } else {
         int x;
         char ch;

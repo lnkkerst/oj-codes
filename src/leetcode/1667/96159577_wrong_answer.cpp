@@ -2,10 +2,11 @@ class Solution {
 public:
   string rev(string s) {
     for (auto &i : s) {
-      if (i == '0')
+      if (i == '0') {
         i = '1';
-      else
+      } else {
         i = '0';
+      }
     }
     return s;
   }

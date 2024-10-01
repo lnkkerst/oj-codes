@@ -17,7 +17,9 @@
 #include <vector>
 using namespace std;
 
-auto myMax(auto x, auto y) { return x > y ? x : y; }
+auto myMax(auto x, auto y) {
+  return x > y ? x : y;
+}
 
 auto solve() {
   int n, m;

@@ -10,18 +10,23 @@ struct SmT {
 #define rc x << 1 | 1
   int ls, rs;
   int sum[MAXN], a[MAXN], tag[MAXN], tagc[MAXN];
-  SmT() { ls = 1, rs = 0; }
+  SmT() {
+    ls = 1, rs = 0;
+  }
   void read() {
     int ret;
     char ch;
     bool flag = 0;
-    while (!isdigit(ch = getchar()))
+    while (!isdigit(ch = getchar())) {
       (ch == '-') && (flag = true);
+    }
     for (ret = ch - '0'; isdigit(ch = getchar()); ret = ret * 10 + ch - '0')
       ;
     a[++rs] = ret;
   }
-  void update(int x) { sum[x] = (sum[lc] % p + sum[rc] % p) % p; }
+  void update(int x) {
+    sum[x] = (sum[lc] % p + sum[rc] % p) % p;
+  }
   void tbuild(int l, int r, int x) {
     sum[x] = 0, tag[x] = 0, tagc[x] = 1;
     if (l == r) {
@@ -33,21 +38,29 @@ struct SmT {
     tbuild(mid + 1, r, rc);
     update(x);
   }
-  void build() { tbuild(ls, rs, 1); }
+  void build() {
+    tbuild(ls, rs, 1);
+  }
   int tquery(int a, int b, int l, int r, int x) {
-    if (a <= l && r <= b)
+    if (a <= l && r <= b) {
       return sum[x] % p;
+    }
     // down(l, r, x);
     int mid = (l + r) >> 1, ans = 0;
-    if (tagc[x] != 1 || tag[x])
+    if (tagc[x] != 1 || tag[x]) {
       down(l, r, x);
-    if (a <= mid)
+    }
+    if (a <= mid) {
       ans += tquery(a, b, l, mid, lc), ans %= p;
-    if (mid < b)
+    }
+    if (mid < b) {
       ans += tquery(a, b, mid + 1, r, rc), ans %= p;
+    }
     return ans % p;
   }
-  int query(int a, int b) { return tquery(a, b, ls, rs, 1); }
+  int query(int a, int b) {
+    return tquery(a, b, ls, rs, 1);
+  }
   void down(int l, int r, int x) {
     int mid = (l + r) >> 1;
     // if(tag[x]) {
@@ -80,15 +93,20 @@ struct SmT {
     }
     // down(l, r, x);
     int mid = (l + r) >> 1;
-    if (tagc[x] != 1 || tag[x])
+    if (tagc[x] != 1 || tag[x]) {
       down(l, r, x);
-    if (a <= mid)
+    }
+    if (a <= mid) {
       tadd(a, b, v, l, mid, lc);
-    if (mid < b)
+    }
+    if (mid < b) {
       tadd(a, b, v, mid + 1, r, rc);
+    }
     update(x);
   }
-  void add(int a, int b, int v) { tadd(a, b, v, ls, rs, 1); }
+  void add(int a, int b, int v) {
+    tadd(a, b, v, ls, rs, 1);
+  }
   void tmul(int a, int b, int v, int l, int r, int x) {
     if (a <= l && r <= b) {
       tagc[x] = (tagc[x] * v) % p;
@@ -97,23 +115,29 @@ struct SmT {
       return;
     }
     int mid = (l + r) >> 1;
-    if (tagc[x] != 1 || tag[x])
+    if (tagc[x] != 1 || tag[x]) {
       down(l, r, x);
-    if (a <= mid)
+    }
+    if (a <= mid) {
       tmul(a, b, v, l, mid, x);
-    if (b > mid)
+    }
+    if (b > mid) {
       tmul(a, b, v, mid + 1, r, x);
+    }
     update(x);
   }
-  void mul(int a, int b, int v) { tmul(a, b, v, ls, rs, 1); }
+  void mul(int a, int b, int v) {
+    tmul(a, b, v, ls, rs, 1);
+  }
 } smt;
 
 int read() {
   int ret;
   char ch;
   bool flag = 0;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (flag = true);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret = ret * 10 + ch - '0')
     ;
   return flag ? -ret : ret;
@@ -124,16 +148,18 @@ int main() {
 #define int long long
   int n = read(), m = read();
   p = read();
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     smt.read();
+  }
   smt.build();
   while (m--) {
     int opt = read();
     if (opt == 2) {
       int x = read(), y = read(), v = read();
       smt.add(x, y, v);
-      for (int i = 1; i <= n; ++i)
+      for (int i = 1; i <= n; ++i) {
         printf("%d ", smt.query(i, i));
+      }
       printf("\n");
     } else if (opt == 3) {
       int x = read(), y = read();
@@ -141,8 +167,9 @@ int main() {
     } else {
       int x = read(), y = read(), v = read();
       smt.mul(x, y, v);
-      for (int i = 1; i <= n; ++i)
+      for (int i = 1; i <= n; ++i) {
         printf("%d ", smt.query(i, i));
+      }
       printf("\n");
     }
   }

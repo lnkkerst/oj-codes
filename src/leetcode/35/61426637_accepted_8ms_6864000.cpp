@@ -6,8 +6,9 @@ public:
       nums.push_back(target);
       return nums.size() - 1;
     }
-    if (*num == target)
+    if (*num == target) {
       return num - nums.begin();
+    }
     int ret = num - nums.begin();
     nums.insert(num, target);
     return ret;

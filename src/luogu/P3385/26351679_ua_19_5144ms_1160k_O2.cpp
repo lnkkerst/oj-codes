@@ -24,9 +24,10 @@ void addedge(int u, int v, int w) {
 bool spfa(int start) {
   priority_queue<pair<int, int>, vector<pair<int, int>>,
                  greater<pair<int, int>>>
-      q;
-  for (int i = 1; i <= n; ++i)
+    q;
+  for (int i = 1; i <= n; ++i) {
     nodes[i].dis = 2147483647;
+  }
   nodes[start].dis = 0, nodes[start].inq = 1, ++nodes[start].cnt;
   q.push(make_pair(nodes[start].dis, start));
   while (!q.empty()) {
@@ -40,8 +41,9 @@ bool spfa(int start) {
         if (!nodes[v].inq) {
           nodes[v].inq = 1;
           ++nodes[v].cnt;
-          if (nodes[v].cnt == n && edges[i].w < 0)
+          if (nodes[v].cnt == n && edges[i].w < 0) {
             return 1;
+          }
           q.push(make_pair(nodes[v].dis, v));
         }
       }
@@ -56,15 +58,17 @@ void work() {
     int u, v, w;
     cin >> u >> v >> w;
     addedge(u, v, w);
-    if (w >= 0)
+    if (w >= 0) {
       addedge(v, u, w);
+    }
   }
   printf("%s\n", spfa(1) ? "YE5" : "N0");
 }
 
 int main() {
   cin >> s;
-  while (s--)
+  while (s--) {
     work();
+  }
   return 0;
 }

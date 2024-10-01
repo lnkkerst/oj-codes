@@ -9,9 +9,11 @@ int main() {
       int t = l;
       l = r, r = t;
     }
-    for (int i = 0; i < 7; ++i)
-      if (a[i] >= l && a[i] <= r)
+    for (int i = 0; i < 7; ++i) {
+      if (a[i] >= l && a[i] <= r) {
         printf("%d ", a[i]);
+      }
+    }
     putchar('\n');
   }
   return 0;

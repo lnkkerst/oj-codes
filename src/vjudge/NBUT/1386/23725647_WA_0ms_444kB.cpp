@@ -6,8 +6,9 @@ bool y[MAXN], dx[MAXN], dy[MAXN];
 
 void dfs(int step) {
   if (step > n) {
-    for (int i = 1; i <= n; i++)
+    for (int i = 1; i <= n; i++) {
       printf("%d", x[i]);
+    }
     printf("\n");
   }
   for (int i = 1; i <= n; i++) {

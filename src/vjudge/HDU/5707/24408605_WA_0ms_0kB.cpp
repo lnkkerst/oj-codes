@@ -7,34 +7,40 @@ int cnta[233], cntb[233], cntc[233];
 int main() {
   while (cin >> a >> b >> c) {
     bool fl = 1;
-    for (auto i : a)
+    for (auto i : a) {
       ++cnta[i];
-    for (auto i : b)
+    }
+    for (auto i : b) {
       ++cntb[i];
-    for (auto i : c)
+    }
+    for (auto i : c) {
       ++cntc[i];
-    for (int i = 0; i < 233; ++i)
+    }
+    for (int i = 0; i < 233; ++i) {
       if (cntc[i] != cnta[i] + cntb[i]) {
         puts("No");
         fl = 0;
         break;
       }
-    if (!fl)
+    }
+    if (!fl) {
       continue;
+    }
     int posa = 0, posb = 0;
     for (auto i : c) {
-      if (i == a[posa])
+      if (i == a[posa]) {
         ++posa;
-      else if (i == b[posb])
+      } else if (i == b[posb]) {
         ++posb;
-      else {
+      } else {
         puts("No");
         fl = 0;
         break;
       }
     }
-    if (!fl)
+    if (!fl) {
       continue;
+    }
     puts("Yes");
   }
   return 0;

@@ -11,7 +11,8 @@ int main() {
       printf("%ld\n", i);
     }
   }
-  if (flag == 0)
+  if (flag == 0) {
     printf("No");
+  }
   return 0;
 }

@@ -21,11 +21,13 @@ bool match(char *s, char *p) {
 
 int main() {
   scanf("%d", &n);
-  for (int i = 1; i <= n; i++)
+  for (int i = 1; i <= n; i++) {
     scanf("%s", a[n]);
+  }
   scanf("%s", pl);
-  for (int i = 1; i <= n; i++)
+  for (int i = 1; i <= n; i++) {
     ans += match(a[i], pl);
+  }
   printf("%d", ans);
   return 0;
 }

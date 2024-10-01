@@ -6,11 +6,17 @@ using namespace __gnu_cxx;
 
 int f[1000001];
 
-int find(int x) { return f[x] == x ? x : f[x] = find(f[x]); }
+int find(int x) {
+  return f[x] == x ? x : f[x] = find(f[x]);
+}
 
-void merge(int u, int v) { f[find(u)] = find(v); }
+void merge(int u, int v) {
+  f[find(u)] = find(v);
+}
 
-bool query(int u, int v) { return find(u) == find(v); }
+bool query(int u, int v) {
+  return find(u) == find(v);
+}
 
 int main() {
   int t;
@@ -20,19 +26,23 @@ int main() {
     hash_map<int, int> id;
     vector<pair<int, int>> a;
     cin >> n;
-    for (int i = 1; i <= n; ++i)
+    for (int i = 1; i <= n; ++i) {
       f[i] = i;
+    }
     for (int i = 1; i <= n; ++i) {
       int u, v, opt;
       cin >> u >> v >> opt;
-      if (!id[u])
+      if (!id[u]) {
         id[u] = ++cnt;
-      if (!id[v])
+      }
+      if (!id[v]) {
         id[v] = ++cnt;
-      if (opt)
+      }
+      if (opt) {
         merge(id[u], id[v]);
-      else
+      } else {
         a.push_back(make_pair(id[u], id[v]));
+      }
     }
     bool fl = 1;
     for (int i = 0; i < (int)a.size(); ++i) {
@@ -41,8 +51,9 @@ int main() {
         fl = 0;
       }
     }
-    if (fl)
+    if (fl) {
       puts("YES");
+    }
   }
   return 0;
 }

@@ -16,19 +16,21 @@ public:
       for (int i = 1; head && i <= k; ++i) {
         q.push_back(head->val);
         head = head->next;
-        if (!head)
+        if (!head) {
           fl = false;
+        }
       }
-      if (fl)
+      if (fl) {
         for (auto i = q.rbegin(); i != q.rend(); ++i) {
           tail->next = new ListNode(*i);
           tail = tail->next;
         }
-      else
+      } else {
         for (auto i = q.begin(); i != q.end(); ++i) {
           tail->next = new ListNode(*i);
           tail = tail->next;
         }
+      }
       q.clear();
     }
     return ret->next;

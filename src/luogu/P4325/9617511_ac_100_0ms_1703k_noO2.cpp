@@ -7,8 +7,9 @@ int main() {
     b[a[i] % 42]++;
   }
   for (int i = 0; i < 42; i++) {
-    if (b[i] != 0)
+    if (b[i] != 0) {
       s++;
+    }
   }
   printf("%d", s);
   return 0;

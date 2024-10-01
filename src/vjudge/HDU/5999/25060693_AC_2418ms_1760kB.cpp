@@ -11,13 +11,16 @@ int main() {
   for (int k = 1; k <= t; ++k) {
     int n;
     scanf("%d", &n);
-    for (int i = 1; i <= n; ++i)
+    for (int i = 1; i <= n; ++i) {
       scanf("%d", &a[i]);
+    }
     sort(a + 1, a + n + 1, greater<int>());
     int ans = 0;
-    for (int i = 1; i <= n; ++i)
-      if (i % 3)
+    for (int i = 1; i <= n; ++i) {
+      if (i % 3) {
         ans += a[i];
+      }
+    }
     printf("Case #%d: %d\n", k, ans);
   }
   return 0;

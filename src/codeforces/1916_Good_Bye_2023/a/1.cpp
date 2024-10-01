@@ -29,20 +29,20 @@ void solve() {
     tot *= i;
   }
   vector<int> ans;
-  function<void(int, int, vector<int>)> dfs = [&](int s, int cur,
-                                                  vector<int> a) {
-    if (s == k + 1) {
-      if (cur == 2023) {
-        ans = a;
-      }
-      return;
-    }
-    for (auto x : {1, 7, 17, 119, 289, 2023}) {
-      a.emplace_back(x);
-      dfs(s + 1, cur * x, a);
-      a.pop_back();
-    }
-  };
+  function<void(int, int, vector<int>)> dfs
+    = [&](int s, int cur, vector<int> a) {
+        if (s == k + 1) {
+          if (cur == 2023) {
+            ans = a;
+          }
+          return;
+        }
+        for (auto x : {1, 7, 17, 119, 289, 2023}) {
+          a.emplace_back(x);
+          dfs(s + 1, cur * x, a);
+          a.pop_back();
+        }
+      };
   dfs(1, tot, vector<int>());
   if (ans.size() == k) {
     cout << "YES\n";

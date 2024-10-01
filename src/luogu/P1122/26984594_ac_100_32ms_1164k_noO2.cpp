@@ -12,22 +12,27 @@ int h[23333];
 int read() {
   int ret, f = 1;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (f = -1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return ret * f;
 }
 
 void print(int x) {
-  if (x < 0)
+  if (x < 0) {
     putchar('-'), x = -x;
-  if (x > 9)
+  }
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
-int max(int x, int y) { return x > y ? x : y; }
+int max(int x, int y) {
+  return x > y ? x : y;
+}
 
 void addedge(int u, int v) {
   edges[++cnt] = (Edge){v, h[u]};
@@ -47,8 +52,9 @@ void dfs(int fa, int u) {
 
 int main() {
   n = read();
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     f[i] = a[i] = read();
+  }
   for (int i = 1; i <= n - 1; ++i) {
     int u = read(), v = read();
     addedge(u, v);

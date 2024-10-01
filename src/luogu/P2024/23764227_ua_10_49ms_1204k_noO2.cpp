@@ -21,8 +21,9 @@ int read() {
   int ret;
   char ch;
   bool f = 0;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (f = 1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return f ? -ret : ret;
@@ -41,13 +42,18 @@ void print(int x) {
 
 int f[300005], n, m, ans;
 
-int find(int x) { return x == f[x] ? x : f[x] = find(f[x]); }
+int find(int x) {
+  return x == f[x] ? x : f[x] = find(f[x]);
+}
 
-void merge(int x, int y) { f[find(x)] = f[y]; }
+void merge(int x, int y) {
+  f[find(x)] = f[y];
+}
 
 void init(int x) {
-  for (int i = 1; i <= x; ++i)
+  for (int i = 1; i <= x; ++i) {
     f[i] = i;
+  }
 }
 
 int main() {

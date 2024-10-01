@@ -10,8 +10,9 @@ int main() {
     printf("HANJIALONG");
     return 0;
   }
-  for (int i = 0; i <= 25; ++i)
+  for (int i = 0; i <= 25; ++i) {
     mima['A' + i] = '0';
+  }
   int l = strlen(s1 + 1);
   for (int i = 1; i < l; ++i) {
     if (mima[s1[i]] != '0' && mima[s1[i]] != s2[i]) {
@@ -27,7 +28,8 @@ int main() {
     }
   }
   l = strlen(s3 + 1);
-  for (int i = 1; i <= l; ++i)
+  for (int i = 1; i <= l; ++i) {
     printf("%c", mima[s3[i]]);
+  }
   return 0;
 }

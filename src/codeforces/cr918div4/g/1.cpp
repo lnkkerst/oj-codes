@@ -41,7 +41,9 @@ void solve() {
   using piii = pair<int, pair<int, int>>;
   priority_queue<piii, vector<piii>, greater<>> q;
   dis[1][s[1]] = 0;
-  q.push({0, {1, s[1]}});
+  q.push({
+    0, {1, s[1]}
+  });
   while (!q.empty()) {
     auto [u, k] = q.top().second;
     q.pop();
@@ -53,7 +55,9 @@ void solve() {
       int mi = min(s[v], k);
       if (dis[v][mi] > dis[u][k] + w * k) {
         dis[v][mi] = dis[u][k] + w * k;
-        q.push({dis[v][mi], {v, mi}});
+        q.push({
+          dis[v][mi], {v, mi}
+        });
       }
     }
   }

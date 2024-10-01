@@ -9,63 +9,81 @@ struct NumS {
     vector<int> na, nb;
     int la = a.size(), lb = b.size();
     int lmax = max(la, lb);
-    for (int i = 0; i <= lmax; ++i)
+    for (int i = 0; i <= lmax; ++i) {
       na.push_back(0), nb.push_back(0);
-    for (int i = 0; i < la; ++i)
+    }
+    for (int i = 0; i < la; ++i) {
       na[la - i - 1] = a[i] - '0';
-    for (int i = 0; i < lb; ++i)
+    }
+    for (int i = 0; i < lb; ++i) {
       nb[lb - i - 1] = b[i] - '0';
-    for (int i = 0; i < lmax; ++i)
+    }
+    for (int i = 0; i < lmax; ++i) {
       na[i] += nb[i], na[i + 1] += na[i] / 10, na[i] = na[i] % 10;
-    if (na[lmax])
+    }
+    if (na[lmax]) {
       ++lmax;
-    for (int i = lmax - 1; i >= 0; --i)
+    }
+    for (int i = lmax - 1; i >= 0; --i) {
       ret += na[i] + '0';
+    }
     return ret;
   }
-  NumS operator+(NumS b) { return (NumS){sum(s, b.s), 0}; }
+  NumS operator+(NumS b) {
+    return (NumS){sum(s, b.s), 0};
+  }
   string sub(string a, string b) {
     string ret;
     vector<int> na, nb;
     int la = a.size(), lb = b.size();
     int lmax = max(la, lb);
-    for (int i = 0; i <= lmax; ++i)
+    for (int i = 0; i <= lmax; ++i) {
       na.push_back(0), nb.push_back(0);
-    for (int i = 0; i < la; ++i)
+    }
+    for (int i = 0; i < la; ++i) {
       na[la - i - 1] = a[i] - '0';
-    for (int i = 0; i < lb; ++i)
+    }
+    for (int i = 0; i < lb; ++i) {
       nb[lb - i - 1] = b[i] - '0';
+    }
     for (int i = 0; i < lmax; ++i) {
       na[i] -= nb[i];
-      if (na[i] < 0)
+      if (na[i] < 0) {
         na[i] += 10, --na[i + 1];
+      }
     }
-    while (!na[lmax] && lmax > 0)
+    while (!na[lmax] && lmax > 0) {
       --lmax;
-    for (int i = lmax - 1; i >= 0; --i)
+    }
+    for (int i = lmax - 1; i >= 0; --i) {
       ret += na[i] + '0';
+    }
     return ret;
   }
   NumS operator-(NumS b) {
-    if ((s.length() == b.s.length() && b.s > s) || s.length() < b.s.length())
+    if ((s.length() == b.s.length() && b.s > s) || s.length() < b.s.length()) {
       return (NumS){sub(b.s, s), 1};
+    }
     return (NumS){sub(s, b.s), 0};
   }
   void read() {
     char ch;
     while (!isdigit(ch = getchar()) && ch != '-')
       ;
-    if (ch == '-')
+    if (ch == '-') {
       isf = 1;
-    else
+    } else {
       s.push_back(ch);
-    while (isdigit(ch = getchar()))
+    }
+    while (isdigit(ch = getchar())) {
       s.push_back(ch);
+    }
   }
   void print() {
     ios::sync_with_stdio(0);
-    if (isf)
+    if (isf) {
       cout << '-';
+    }
     cout << s;
   }
 };

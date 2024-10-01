@@ -48,9 +48,9 @@ void solve() {
   for (int i = 0; i < min(10ll, n); ++i) {
     for (int j = 0; j < min(10ll, n); ++j) {
       for (int k = 0; k < min(10ll, n); ++k) {
-        if ((a[i].second == b[j].second) + (a[i].second == c[k].second) +
-                (b[j].second == c[k].second) !=
-            0) {
+        if ((a[i].second == b[j].second) + (a[i].second == c[k].second)
+              + (b[j].second == c[k].second)
+            != 0) {
           continue;
         }
         ans = max(ans, a[i].first + b[j].first + c[k].first);

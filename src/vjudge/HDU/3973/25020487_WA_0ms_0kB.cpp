@@ -9,12 +9,14 @@ using namespace std;
 using namespace __gnu_cxx;
 
 namespace __gnu_cxx {
-template <> struct hash<const string> {
+template <>
+struct hash<const string> {
   size_t operator()(const string &s) const {
     return hash<const char *>()(s.c_str());
   }
 };
-template <> struct hash<string> {
+template <>
+struct hash<string> {
   size_t operator()(const string &s) const {
     return hash<const char *>()(s.c_str());
   }
@@ -38,8 +40,9 @@ int main() {
     for (int i = 1; i <= n; ++i) {
       string inp;
       cin >> inp;
-      if (inp.size() <= 100000)
+      if (inp.size() <= 100000) {
         wd.push_back(inp);
+      }
     }
     cin >> str >> m;
     for (int i = 1; i <= m; ++i) {
@@ -57,24 +60,26 @@ int main() {
         l1[r - l + 1] = 1;
       }
     }
-    for (vector<string>::iterator i = wd.begin(); i != wd.end(); ++i)
+    for (vector<string>::iterator i = wd.begin(); i != wd.end(); ++i) {
       if (l1[(int)i->size()]) {
         b.insert(*i);
         l2[(int)i->size()] = 1;
       }
+    }
     for (vector<pair<char, pair<int, int>>>::iterator i = q.begin();
          i != q.end(); ++i) {
-      if (i->first == 'C')
+      if (i->first == 'C') {
         str[i->second.first] = i->second.second;
-      else {
-        if (!l2[i->second.second - i->second.first + 1])
+      } else {
+        if (!l2[i->second.second - i->second.first + 1]) {
           cout << "No\n";
-        else
+        } else {
           cout << (b.find(str.substr(i->second.first,
-                                     i->second.second - i->second.first + 1)) !=
-                           b.end()
-                       ? "Yes\n"
-                       : "No\n");
+                                     i->second.second - i->second.first + 1))
+                       != b.end()
+                     ? "Yes\n"
+                     : "No\n");
+        }
       }
     }
     wd.clear();

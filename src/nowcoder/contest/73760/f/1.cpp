@@ -59,12 +59,12 @@ void solve() {
   }
 
   vector<vector<vector<vector<int>>>> dp(
-      ca[1] + 1, vector<vector<vector<int>>>(
-                     ca[2] + 1, vector<vector<int>>(
-                                    cb[1] + 1, vector<int>(cb[2] + 1, -1))));
+    ca[1] + 1,
+    vector<vector<vector<int>>>(
+      ca[2] + 1, vector<vector<int>>(cb[1] + 1, vector<int>(cb[2] + 1, -1))));
 
-  function<int(int, int, int, int)> dfs = [&](int ca1, int ca2, int cb1,
-                                              int cb2) -> int {
+  function<int(int, int, int, int)> dfs
+    = [&](int ca1, int ca2, int cb1, int cb2) -> int {
     if (ca1 == 0 && ca2 == 0) {
       return 0;
     }

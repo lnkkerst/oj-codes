@@ -12,8 +12,9 @@ string getstr(int x) {
     now = fa[now];
   }
   int len = (int)ret.length();
-  for (int i = 0; i < len / 2; ++i)
+  for (int i = 0; i < len / 2; ++i) {
     swap(ret[i], ret[len - i - 1]);
+  }
   return ret;
 }
 
@@ -25,15 +26,17 @@ int work(int x) {
     int count = 0;
     bool f = 1;
     for (int j = i; j < len; ++j) {
-      if (str[j] == '(')
+      if (str[j] == '(') {
         ++count;
-      else {
-        if (count == 0)
+      } else {
+        if (count == 0) {
           break;
+        }
         --count;
       }
-      if (!count && f)
+      if (!count && f) {
         ++ret;
+      }
     }
   }
   // cout << str << endl;
@@ -42,13 +45,16 @@ int work(int x) {
 
 int main() {
   cin >> n;
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     cin >> s[i];
-  for (int i = 2; i <= n; ++i)
+  }
+  for (int i = 2; i <= n; ++i) {
     cin >> fa[i];
+  }
   int ans = 0;
-  for (int i = 2; i <= n; ++i)
+  for (int i = 2; i <= n; ++i) {
     ans ^= i * work(i);
+  }
   cout << ans;
   return 0;
 }

@@ -22,8 +22,7 @@ struct Segment {
   int n;
   vector<int> a, sum;
 
-  Segment(int _n) : n(_n), a(_n + 10) {
-  }
+  Segment(int _n): n(_n), a(_n + 10) {}
   void pushdown(int u, int len) {
     a[ls] += a[u];
     a[rs] += a[u];
@@ -86,8 +85,7 @@ void solve() {
     }
   }
   int cnt = 0;
-  for (int i = 1; i <= 1e6; ++i) {
-  }
+  for (int i = 1; i <= 1e6; ++i) {}
 }
 
 signed main() {

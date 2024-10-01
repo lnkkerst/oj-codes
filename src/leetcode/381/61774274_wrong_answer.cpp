@@ -2,7 +2,9 @@ class RandomizedCollection {
 public:
   /** Initialize your data structure here. */
   unordered_map<int, int> b;
-  RandomizedCollection() { b.clear(); }
+  RandomizedCollection() {
+    b.clear();
+  }
 
   /** Inserts a value to the collection. Returns true if the collection did
    * not already contain the specified element. */
@@ -16,17 +18,20 @@ public:
    * contained the specified element. */
   bool remove(int val) {
     int ret = b[val];
-    if (!ret)
+    if (!ret) {
       return 0;
+    }
     --b[val];
     return 1;
   }
 
   /** Get a random element from the collection. */
   int getRandom() {
-    for (auto i = b.begin(); i != b.end(); ++i)
-      if (i->second)
+    for (auto i = b.begin(); i != b.end(); ++i) {
+      if (i->second) {
         return i->first;
+      }
+    }
     return 1;
   }
 };

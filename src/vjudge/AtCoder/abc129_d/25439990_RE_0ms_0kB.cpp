@@ -17,36 +17,42 @@ int main() {
   for (int i = 1; i <= n; ++i) {
     int ct = 0, now = 1, last = 1;
     while (1) {
-      if (e[i][now] == '.')
+      if (e[i][now] == '.') {
         ++ct, ++now;
-      else {
-        for (int j = last; j <= now - 1; ++j)
+      } else {
+        for (int j = last; j <= now - 1; ++j) {
           cnt[i][j] = ct;
+        }
         ct = 0;
-        while (e[i][now] == '#')
+        while (e[i][now] == '#') {
           ++now;
-        if (now >= m)
+        }
+        if (now >= m) {
           break;
-        else
+        } else {
           last = now;
+        }
       }
     }
   }
   for (int i = 1; i <= m; ++i) {
     int ct = 0, now = 1, last = 1;
     while (1) {
-      if (e[now][i] == '.')
+      if (e[now][i] == '.') {
         ++ct, ++now;
-      else {
-        for (int j = last; j <= now - 1; ++j)
+      } else {
+        for (int j = last; j <= now - 1; ++j) {
           cnt[j][i] += ct;
+        }
         ct = 0;
-        while (e[now][i] == '#')
+        while (e[now][i] == '#') {
           ++now;
-        if (now >= n)
+        }
+        if (now >= n) {
           break;
-        else
+        } else {
           last = now;
+        }
       }
     }
   }

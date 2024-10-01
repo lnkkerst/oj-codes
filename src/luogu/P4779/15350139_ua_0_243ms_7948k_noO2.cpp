@@ -13,16 +13,19 @@ int main() {
 
   scanf("%d%d%d", &n, &m, &s);
 
-  for (int i = 1; i <= n; i++)
+  for (int i = 1; i <= n; i++) {
     dis[i] = inf;
+  }
 
   dis[s] = 0;
 
-  for (int i = 1; i <= n; i++)
+  for (int i = 1; i <= n; i++) {
     book[i] = 0;
+  }
 
-  for (int i = 1; i <= n; i++)
+  for (int i = 1; i <= n; i++) {
     first[i] = -1;
+  }
 
   for (int i = 1; i <= m; i++) {
     scanf("%d%d%d", &u[i], &v[i], &w[i]);
@@ -55,11 +58,13 @@ int main() {
     h++;
   }
 
-  for (int i = 1; i <= n; i++)
-    if (dis[i] == inf)
+  for (int i = 1; i <= n; i++) {
+    if (dis[i] == inf) {
       printf("2147483647 ");
-    else
+    } else {
       printf("%d ", dis[i]);
+    }
+  }
 
   return 0;
 }

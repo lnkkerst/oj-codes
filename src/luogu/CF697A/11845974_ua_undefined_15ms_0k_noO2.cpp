@@ -9,8 +9,9 @@ int main() {
       return 0;
     }
     t += s;
-    if (t > x)
+    if (t > x) {
       break;
+    }
   }
   printf("NO");
   return 0;

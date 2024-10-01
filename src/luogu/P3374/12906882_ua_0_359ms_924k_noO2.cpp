@@ -6,20 +6,24 @@ int main() {
 
   scanf("%d%d", &n, &m);
 
-  for (int i = 1; i <= n; i++)
+  for (int i = 1; i <= n; i++) {
     scanf("%d", &s[i]);
+  }
   for (int i = 1; i <= m; i++) {
     int event, x, y;
     scanf("%d%d%d", &event, &x, &y);
-    if (event == 1)
+    if (event == 1) {
       s[x] += y;
+    }
     if (event == 2) {
-      for (int j = x; j <= y; j++)
+      for (int j = x; j <= y; j++) {
         ans[ansn] += s[j];
+      }
       ansn++;
     }
   }
-  for (int i = 1; i < ansn; i++)
+  for (int i = 1; i < ansn; i++) {
     printf("%d ", ans[i]);
+  }
   return 0;
 }

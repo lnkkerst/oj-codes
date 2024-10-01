@@ -1,15 +1,19 @@
-bool cmp(const string &a, const string &b) { return a.length() > b.length(); }
+bool cmp(const string &a, const string &b) {
+  return a.length() > b.length();
+}
 class Solution {
 public:
   bool wordBreak1(string s, vector<string> &wordDict) {
     unordered_map<string, bool> b;
-    for (auto i : wordDict)
+    for (auto i : wordDict) {
       b[i] = 1;
+    }
     string now;
     for (auto i : s) {
       now.push_back(i);
-      if (b[now])
+      if (b[now]) {
         now.clear();
+      }
     }
     return !now.size();
   }

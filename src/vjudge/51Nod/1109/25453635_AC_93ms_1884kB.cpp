@@ -9,8 +9,9 @@ void dfs(int st, int mod, int num) {
     cout << ans;
     exit(0);
   }
-  if (st >= num)
+  if (st >= num) {
     return;
+  }
   ans.push_back('0');
   dfs(st + 1, (mod * 10) % n, num);
   ans.back() = '1';
@@ -20,6 +21,7 @@ void dfs(int st, int mod, int num) {
 
 int main() {
   cin >> n;
-  for (int i = 1;; ++i)
+  for (int i = 1;; ++i) {
     dfs(0, 1, i);
+  }
 }

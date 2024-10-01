@@ -36,8 +36,8 @@ void solve() {
     }
   }
   int ne = (n - a[a.size() - 2]) / d;
-  int ol = (n - a[a.size() - 1]) / d +
-           (a[a.size() - 1] - a[a.size() - 2] - 1) / d + 1;
+  int ol = (n - a[a.size() - 1]) / d
+           + (a[a.size() - 1] - a[a.size() - 2] - 1) / d + 1;
   if (ne < ol) {
     ++ans;
   }

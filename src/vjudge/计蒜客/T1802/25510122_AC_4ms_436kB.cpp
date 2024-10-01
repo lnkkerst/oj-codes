@@ -4,8 +4,9 @@
 using namespace std;
 
 char cvt(unsigned ori) {
-  if (ori <= 9)
+  if (ori <= 9) {
     return ori + '0';
+  }
   return ori - 10 + 'A';
 }
 

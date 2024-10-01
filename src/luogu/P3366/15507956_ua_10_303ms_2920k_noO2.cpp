@@ -11,11 +11,14 @@ struct Edge {
   int w;
 } e[MAXN];
 
-bool cmp(Edge a, Edge b) { return a.w < b.w; }
+bool cmp(Edge a, Edge b) {
+  return a.w < b.w;
+}
 
 int find(int x) {
-  if (f[x] == x)
+  if (f[x] == x) {
     return x;
+  }
 
   return f[x] = find(f[x]);
 }
@@ -23,20 +26,23 @@ int find(int x) {
 int main() {
   scanf("%d%d", &n, &m);
 
-  for (int i = 1; i <= m; i++)
+  for (int i = 1; i <= m; i++) {
     scanf("%d%d%d", &e[i].u, &e[i].v, &e[i].w);
+  }
 
   std::sort(e + 1, e + m + 1, cmp);
 
-  for (int i = 1; i <= n; i++)
+  for (int i = 1; i <= n; i++) {
     f[i] = i;
+  }
 
   for (int i = 1; i <= n; i++) {
     int x = find(e[i].u);
     int y = find(e[i].v);
 
-    if (x == y)
+    if (x == y) {
       continue;
+    }
 
     f[x] = y;
     ans += e[i].w;

@@ -13,8 +13,8 @@ double dis(Node a, Node b) {
 }
 
 double mulX(Node a, Node b, Node c) {
-  return (b.first - a.first) * (c.second - a.second) -
-         (b.second - a.second) * (c.first - b.first);
+  return (b.first - a.first) * (c.second - a.second)
+         - (b.second - a.second) * (c.first - b.first);
 }
 
 void solve() {
@@ -25,8 +25,8 @@ void solve() {
   for (int i = 0; i < 20; ++i) {
     if (fabs(dis(a[i], a[(i + 1) % 20]) - 9) < eps) {
       auto a1 = a[i], a2 = a[(i + 1) % 20], a3 = a[(i + 2) % 20];
-      if ((mulX(a1, a2, a3) > 0 && (fabs(dis(a2, a3) - 8) < eps)) ||
-          (mulX(a1, a2, a3) < 0 && (fabs(dis(a2, a3) - 6) < eps))) {
+      if ((mulX(a1, a2, a3) > 0 && (fabs(dis(a2, a3) - 8) < eps))
+          || (mulX(a1, a2, a3) < 0 && (fabs(dis(a2, a3) - 6) < eps))) {
         cout << "right" << endl;
       } else {
         cout << "left" << endl;

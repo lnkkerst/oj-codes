@@ -11,9 +11,12 @@ int main() {
   }
   scanf("%d", &n);
   n = n - 4;
-  for (int i = 0; i < 1001; i++)
-    for (int j = 0; j < 1001; j++)
-      if (a[i] + a[j] + a[i + j] == n)
+  for (int i = 0; i < 1001; i++) {
+    for (int j = 0; j < 1001; j++) {
+      if (a[i] + a[j] + a[i + j] == n) {
         s++;
+      }
+    }
+  }
   printf("%d", s);
 }

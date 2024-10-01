@@ -7,12 +7,15 @@ int main() {
 
   scanf("%d%d%d", &n, &m, &s);
 
-  for (int i = 1; i <= n; i++)
-    for (int j = 1; j <= n; j++)
-      if (i == j)
+  for (int i = 1; i <= n; i++) {
+    for (int j = 1; j <= n; j++) {
+      if (i == j) {
         e[i][j] = 0;
-      else
+      } else {
         e[i][j] = inf;
+      }
+    }
+  }
 
   for (int i = 1; i <= m; i++) {
     int t1, t2, t3;
@@ -32,25 +35,31 @@ int main() {
   for (int i = 1; i <= n - 1; i++) {
     min = inf;
 
-    for (int j = 1; j <= n; j++)
+    for (int j = 1; j <= n; j++) {
       if (book[j] == 0 && dis[j] < min) {
         min = dis[j];
         u = j;
       }
+    }
 
     book[u] = 1;
 
-    for (v = 1; v <= n; v++)
-      if (e[u][v] < inf)
-        if (dis[v] > dis[u] + e[u][v])
+    for (v = 1; v <= n; v++) {
+      if (e[u][v] < inf) {
+        if (dis[v] > dis[u] + e[u][v]) {
           dis[v] = dis[u] + e[u][v];
+        }
+      }
+    }
   }
 
-  for (int i = 1; i <= n; i++)
-    if (dis[i] == inf)
+  for (int i = 1; i <= n; i++) {
+    if (dis[i] == inf) {
       printf("2147483647 ");
-    else
+    } else {
       printf("%d ", dis[i]);
+    }
+  }
 
   return 0;
 }

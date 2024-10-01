@@ -78,8 +78,8 @@ void solve() {
   int rr = c0 * 2 + c1;
   int rest = n - rr;
   for (int i = 0; i <= rest; i += 2) {
-    ans += C(rest, i + (rest & 1)) * fm[(rest - i) / 2] % MOD *
-           inv(f[(rest - i) / 2]) % MOD;
+    ans += C(rest, i + (rest & 1)) * fm[(rest - i) / 2] % MOD
+           * inv(f[(rest - i) / 2]) % MOD;
     ans %= MOD;
   }
   cout << ans << endl;

@@ -21,18 +21,21 @@ int st, ed;
 int read() {
   int ret, f = 1;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (f = -1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return ret * f;
 }
 
 void print(int x) {
-  if (x < 0)
+  if (x < 0) {
     putchar('-'), x = -x;
-  if (x > 9)
+  }
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
@@ -44,25 +47,28 @@ void addedge(int u, int v, int w) {
 }
 
 int dij(int start) {
-  for (int i = 1; i <= n * m * 2; ++i)
+  for (int i = 1; i <= n * m * 2; ++i) {
     nodes[i].dis = (int)1e9;
+  }
   nodes[start].dis = 0;
   priority_queue<pair<int, int>, vector<pair<int, int>>,
                  greater<pair<int, int>>>
-      heap;
+    heap;
   heap.push(make_pair(nodes[start].dis, start));
   while (!heap.empty()) {
     int u = heap.top().second;
     heap.pop();
-    if (nodes[u].vis)
+    if (nodes[u].vis) {
       continue;
+    }
     nodes[u].vis = 1;
     for (int i = nodes[u].h; i; i = edges[i].nex) {
       int v = edges[i].to;
       if (nodes[v].dis > nodes[u].dis + edges[i].w) {
         nodes[v].dis = nodes[u].dis + edges[i].w;
-        if (!nodes[v].vis)
+        if (!nodes[v].vis) {
           heap.push(make_pair(nodes[v].dis, v));
+        }
       }
     }
   }
@@ -71,8 +77,9 @@ int dij(int start) {
 
 int spfa(int start) {
   queue<int> q;
-  for (int i = 1; i <= 1000009; ++i)
+  for (int i = 1; i <= 1000009; ++i) {
     nodes[i].dis = 0x3f;
+  }
   nodes[start].dis = 0, nodes[start].vis = 1;
   q.push(start);
   while (!q.empty()) {
@@ -96,33 +103,38 @@ int spfa(int start) {
 signed main() {
   n = read(), m = read();
   st = (n - 1) * (m - 1) * 2 + 1, ed = (n - 1) * (m - 1) * 2 + 2;
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     for (int j = 1; j <= m - 1; ++j) {
       int x = read();
-      if (i == 1)
+      if (i == 1) {
         addedge(st, j, x);
-      else if (i == n)
+      } else if (i == n) {
         addedge((2 * (n - 1) - 1) * (m - 1) + j, ed, x);
-      else
+      } else {
         addedge((2 * (i - 1) - 1) * (m - 1) + j, 2 * (i - 1) * (m - 1) + j, x);
+      }
     }
-  for (int i = 1; i <= n - 1; ++i)
+  }
+  for (int i = 1; i <= n - 1; ++i) {
     for (int j = 1; j <= m; ++j) {
       int x = read();
-      if (j == 1)
+      if (j == 1) {
         addedge((i * 2 - 1) * (m - 1) + 1, ed, x);
-      else if (j == m)
+      } else if (j == m) {
         addedge(st, 2 * i * (m - 1) - (m - 1), x);
-      else
+      } else {
         addedge((i - 1) * 2 * (m - 1) + j - 1, ((i - 1) * 2 + 1) * (m - 1) + j,
                 x);
+      }
     }
-  for (int i = 1; i <= n - 1; ++i)
+  }
+  for (int i = 1; i <= n - 1; ++i) {
     for (int j = 1; j <= m - 1; ++j) {
       int x = read();
       addedge((i - 1) * 2 * (m - 1) + j, (i - 1) * 2 * (m - 1) + (m - 1) + j,
               x);
     }
+  }
   print(dij(st));
   return 0;
 }

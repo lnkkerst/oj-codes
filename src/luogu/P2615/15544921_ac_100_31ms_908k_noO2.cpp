@@ -21,15 +21,17 @@ int main() {
     } else if (x != 1 && y != n && a[x - 1][y + 1] == 0) {
       x--;
       y++;
-    } else
+    } else {
       x++;
+    }
 
     a[x][y] = i;
   }
 
   for (int i = 1; i <= n; i++) {
-    for (int j = 1; j <= n; j++)
+    for (int j = 1; j <= n; j++) {
       printf("%d ", a[i][j]);
+    }
 
     putchar('\n');
   }

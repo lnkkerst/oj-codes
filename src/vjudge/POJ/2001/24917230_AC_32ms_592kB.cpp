@@ -10,8 +10,9 @@ void insert(char s[]) {
   int now = root;
   for (int i = 0; s[i]; ++i) {
     int v = s[i] - 'a';
-    if (!t[now].to[v])
+    if (!t[now].to[v]) {
       t[now].to[v] = ++cnt;
+    }
     now = t[now].to[v];
     ++t[now].end;
   }
@@ -36,9 +37,11 @@ char str[1001][21];
 int tot;
 
 int main() {
-  while (scanf("%s", str[++tot]) != EOF)
+  while (scanf("%s", str[++tot]) != EOF) {
     insert(str[tot]);
-  for (int i = 1; i <= tot; ++i)
+  }
+  for (int i = 1; i <= tot; ++i) {
     printf("%s %s\n", str[i], query(str[i]));
+  }
   return 0;
 }

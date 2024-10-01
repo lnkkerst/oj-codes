@@ -5,12 +5,14 @@ using namespace std;
 using namespace __gnu_cxx;
 
 namespace __gnu_cxx {
-template <> struct hash<const string> {
+template <>
+struct hash<const string> {
   size_t operator()(const string &s) const {
     return hash<const char *>()(s.c_str());
   }
 };
-template <> struct hash<string> {
+template <>
+struct hash<string> {
   size_t operator()(const string &s) const {
     return hash<const char *>()(s.c_str());
   }

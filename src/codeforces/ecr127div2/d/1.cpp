@@ -35,10 +35,10 @@ void solve() {
     int mi = a[0] - 1;
     ans = min(ans, cur + abs(a[0] - m) + (m - 1));
     for (int i = 0; i < n - 1; ++i) {
-      ans = min(ans, cur + mi - abs(a[i] - a[i + 1]) + abs(a[i] - m) +
-                         abs(a[i + 1] - m));
-      ans = min(ans, cur - abs(a[i] - a[i + 1]) + abs(a[i] - m) +
-                         abs(a[i + 1] - 1) + (m - 1));
+      ans = min(ans, cur + mi - abs(a[i] - a[i + 1]) + abs(a[i] - m)
+                       + abs(a[i + 1] - m));
+      ans = min(ans, cur - abs(a[i] - a[i + 1]) + abs(a[i] - m)
+                       + abs(a[i + 1] - 1) + (m - 1));
       mi = min(mi,
                0ll - abs(a[i] - a[i + 1]) + abs(a[i] - 1) + abs(a[i + 1] - 1));
     }

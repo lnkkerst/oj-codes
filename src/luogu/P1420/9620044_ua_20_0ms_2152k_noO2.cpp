@@ -6,22 +6,24 @@ int main() {
   cin >> n;
   const int N = n;
   int a[N];
-  for (int i = 0; i < n; i++)
+  for (int i = 0; i < n; i++) {
     cin >> a[i];
+  }
   sort(a, a + n);
   for (int i = 1; i < n; i++) {
-    if (a[i] == a[i - 1] + 1)
+    if (a[i] == a[i - 1] + 1) {
       s++;
-    else {
+    } else {
       if (s > e) {
         e = s;
         s = 1;
       }
     }
   }
-  if (e == 0)
+  if (e == 0) {
     cout << s;
-  else
+  } else {
     cout << e;
+  }
   return 0;
 }

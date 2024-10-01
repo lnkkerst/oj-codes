@@ -7,8 +7,9 @@ int read() {
   int res;
   bool flag = 0;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (flag = 1);
+  }
   for (res = ch - '0'; isdigit(ch = getchar()); res *= 10, res += ch - '0')
     ;
   (flag == 1) && (res *= -1);
@@ -48,10 +49,12 @@ void insert(char *str) {
 
 int search(char *str) {
   int x = root;
-  for (int i = 0; str[i]; ++i)
+  for (int i = 0; str[i]; ++i) {
     int k = str[i] - 'a';
-  if (!trie[x].go[k])
+  }
+  if (!trie[x].go[k]) {
     return 0;
+  }
   x = trie[x].go[k];
   int ret = trie[x].end;
   trie[x].end = 2;
@@ -69,12 +72,13 @@ int main() {
   while (n--) {
     scanf("%s", ch);
     int t2 = search(ch);
-    if (t2 == 1)
+    if (t2 == 1) {
       puts("OK");
-    else if (t2 == 2)
+    } else if (t2 == 2) {
       puts("REPEAT");
-    else
+    } else {
       puts("WRONG");
+    }
   }
   return 0;
 }

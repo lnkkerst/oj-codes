@@ -12,8 +12,9 @@ public:
       }
       pos = ma;
       ++ret;
-      if (pos + nums[pos] >= nums.size() - 1)
+      if (pos + nums[pos] >= nums.size() - 1) {
         break;
+      }
     }
     return ret;
   }

@@ -3,8 +3,9 @@ public:
   int x[233], n, ans;
   bool y[233], dx[233], dy[233];
   void dfs(int step) {
-    if (step > n)
+    if (step > n) {
       ans++;
+    }
     for (int i = 1; i <= n; i++) {
       if (!y[i] && !dx[i + step] && !dy[step - i + n]) {
         x[step] = i;

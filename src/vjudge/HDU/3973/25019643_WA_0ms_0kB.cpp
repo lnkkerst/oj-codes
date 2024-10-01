@@ -6,12 +6,14 @@ using namespace std;
 using namespace __gnu_cxx;
 
 namespace __gnu_cxx {
-template <> struct hash<const string> {
+template <>
+struct hash<const string> {
   size_t operator()(const string &s) const {
     return hash<const char *>()(s.c_str());
   }
 };
-template <> struct hash<string> {
+template <>
+struct hash<string> {
   size_t operator()(const string &s) const {
     return hash<const char *>()(s.c_str());
   }
@@ -36,8 +38,9 @@ int main() {
   for (int k = 1; k <= t; ++k) {
     printf("Case #%d:\n", k);
     cin >> n;
-    for (int i = 1; i <= n; ++i)
+    for (int i = 1; i <= n; ++i) {
       cin >> wd[i];
+    }
     cin >> str >> m;
     for (int i = 1; i <= m; ++i) {
       char opt;
@@ -54,22 +57,24 @@ int main() {
         q[i] = (Qus){opt, l, r};
       }
     }
-    for (int i = 1; i <= n; ++i)
+    for (int i = 1; i <= n; ++i) {
       if (len[(int)wd[i].size()]) {
         word.insert(wd[i]);
         lens[(int)wd[i].size()] = 1;
       }
+    }
     for (int i = 1; i <= m; ++i) {
-      if (q[i].opt == 'C')
+      if (q[i].opt == 'C') {
         str[q[i].l] = q[i].r;
-      else {
-        if (!lens[q[i].r - q[i].l + 1])
+      } else {
+        if (!lens[q[i].r - q[i].l + 1]) {
           cout << "No\n";
-        else
-          cout << (word.find(str.substr(q[i].l, q[i].r - q[i].l + 1)) !=
-                           word.end()
-                       ? "Yes\n"
-                       : "No\n");
+        } else {
+          cout << (word.find(str.substr(q[i].l, q[i].r - q[i].l + 1))
+                       != word.end()
+                     ? "Yes\n"
+                     : "No\n");
+        }
       }
     }
     word.clear();

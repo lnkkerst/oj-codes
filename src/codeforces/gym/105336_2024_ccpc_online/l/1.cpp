@@ -27,8 +27,8 @@ void solve() {
   int ans = 0;
   for (int i = 0; i < n - 1; ++i) {
     for (int j = 0; j < m - 1; ++j) {
-      if (a[i][j] == 'c' && a[i][j + 1] == 'c' && a[i + 1][j] == 'p' &&
-          a[i + 1][j + 1] == 'c') {
+      if (a[i][j] == 'c' && a[i][j + 1] == 'c' && a[i + 1][j] == 'p'
+          && a[i + 1][j + 1] == 'c') {
         ++ans;
       }
     }

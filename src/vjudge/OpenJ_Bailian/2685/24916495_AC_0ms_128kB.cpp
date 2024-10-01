@@ -13,8 +13,10 @@ bool pd(int x) {
 }
 
 int main() {
-  for (int i = 100; i < 1000; ++i)
-    if (pd(i))
+  for (int i = 100; i < 1000; ++i) {
+    if (pd(i)) {
       cout << i << endl;
+    }
+  }
   return 0;
 }

@@ -33,8 +33,7 @@ void solve() {
     b.insert({0, i});
   }
   function<pair<double, double>(decltype(a), decltype(b))> dfs =
-      [&](set<pair<int, int>> a,
-          set<pair<int, int>> b) -> pair<double, double> {
+    [&](set<pair<int, int>> a, set<pair<int, int>> b) -> pair<double, double> {
     auto na = a, nb = b;
     double wa = 1, wb = 1;
     auto ca = *na.begin();

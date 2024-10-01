@@ -8,32 +8,42 @@ const int MOD = (int)1e9 + 7, MAXN = 10;
 struct Mat {
   int n, m;
   int dataee[MAXN][MAXN];
-  Mat() { memset(dataee, 0, sizeof(dataee)); }
+  Mat() {
+    memset(dataee, 0, sizeof(dataee));
+  }
   Mat(int _n, int _m) {
     n = _n;
     m = _m;
     memset(dataee, 0, sizeof(dataee));
   }
-  int *operator[](int x) { return dataee[x]; }
+  int *operator[](int x) {
+    return dataee[x];
+  }
   Mat operator*(Mat b) {
     Mat c(n, b.m);
-    for (int i = 1; i <= n; ++i)
-      for (int j = 1; j <= b.m; ++j)
-        for (int k = 1; k <= m; ++k)
-          c[i][j] = (((c[i][j] % MOD + MOD) % MOD +
-                      (dataee[i][k] * b[k][j] % MOD + MOD) % MOD) +
-                     MOD) %
-                    MOD;
+    for (int i = 1; i <= n; ++i) {
+      for (int j = 1; j <= b.m; ++j) {
+        for (int k = 1; k <= m; ++k) {
+          c[i][j] = (((c[i][j] % MOD + MOD) % MOD
+                      + (dataee[i][k] * b[k][j] % MOD + MOD) % MOD)
+                     + MOD)
+                    % MOD;
+        }
+      }
+    }
     return c;
   }
   Mat pow(int k) {
     Mat tmp(n, n), res(n, n);
-    for (int i = 1; i <= n; res[i][i] = 1, ++i)
-      for (int j = 1; j <= n; ++j)
+    for (int i = 1; i <= n; res[i][i] = 1, ++i) {
+      for (int j = 1; j <= n; ++j) {
         tmp[i][j] = dataee[i][j];
+      }
+    }
     while (k) {
-      if (k & 1)
+      if (k & 1) {
         res = res * tmp;
+      }
       tmp = tmp * tmp;
       k >>= 1;
     }

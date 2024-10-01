@@ -12,7 +12,7 @@ using namespace std;
 struct Node {
   int v, w; // 单个节点，ｖ 储存目标机器，w 储存额度
 
-  Node(int _v, int _w) : v(_v), w(_w) {}
+  Node(int _v, int _w): v(_v), w(_w) {}
 
   // 排序根据题目要求，额度作为第一关键字升序，编号作为第二关键字降序
   bool operator<(const Node &b) const {
@@ -26,13 +26,13 @@ struct Node {
 struct Req {   // 用来储存修改额度的请求
   int u, v, x; // 和题目所述意义相同
 
-  Req(int _u, int _v, int _x) : u(_u), v(_v), x(_x) {}
+  Req(int _u, int _v, int _x): u(_u), v(_v), x(_x) {}
 };
 
 int n, m;                 // 含义如题
 vector<multiset<Node>> a; // 每台机器的伪平衡树
 vector<unordered_map<int, decltype(a.front().begin())>>
-    b; // b[u][v] 储存机器 u 到机器 v 的额度在 a 中的迭代器（如果存在）
+  b; // b[u][v] 储存机器 u 到机器 v 的额度在 a 中的迭代器（如果存在）
 vector<vector<Req>> de; // de[i] 储存第 i 天失效的请求
 int cntSingle, cntPair; // 储存通信孤岛和通信对的数量
 

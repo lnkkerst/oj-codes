@@ -12,9 +12,10 @@ int main() {
     printf("NO");
     return 0;
   }
-  if ((tmp % s == 0 || tmp % s == 1) && tmp != 1 && tmp >= 0)
+  if ((tmp % s == 0 || tmp % s == 1) && tmp != 1 && tmp >= 0) {
     printf("YES");
-  else
+  } else {
     printf("NO");
+  }
   return 0;
 }

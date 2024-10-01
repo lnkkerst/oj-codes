@@ -13,10 +13,12 @@ int main() {
     b[str[i]] = 1;
   }
   for (int i = 1; i <= n; ++i) {
-    for (auto j = str[i].rbegin(); j != str[i].rend(); ++j)
+    for (auto j = str[i].rbegin(); j != str[i].rend(); ++j) {
       res += *j;
-    if (b[res])
+    }
+    if (b[res]) {
       ++ans, b[str[i]] = 0;
+    }
     res.clear();
   }
   cout << ans;

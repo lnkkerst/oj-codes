@@ -21,7 +21,9 @@ using namespace std;
 
 constexpr double EPS = 1e-8;
 
-int gcd(int a, int b) { return !b ? a : gcd(b, a % b); }
+int gcd(int a, int b) {
+  return !b ? a : gcd(b, a % b);
+}
 
 void exgcd(int a, int b, int &x, int &y) {
   if (b == 0) {

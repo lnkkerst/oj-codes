@@ -15,10 +15,11 @@ int main() {
     if (mp[s] == 1) {
       std::cout << "OK\n";
       mp[s] = 2;
-    } else if (mp[s] == 2)
+    } else if (mp[s] == 2) {
       std::cout << "REPEAT\n";
-    else
+    } else {
       std::cout << "WRONG\n";
+    }
   }
   return 0;
 }

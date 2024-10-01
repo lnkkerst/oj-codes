@@ -20,8 +20,9 @@ public:
     vector<int> ret;
     int cnt = 0;
     for (auto i = pt.rbegin(); i != pt.rend(); ++i) {
-      if (cnt >= 10)
+      if (cnt >= 10) {
         break;
+      }
       if (i->first == userId || a[userId][i->first]) {
         ++cnt;
         ret.push_back(i->second);
@@ -32,7 +33,9 @@ public:
 
   /** Follower follows a followee. If the operation is invalid, it should be a
    * no-op. */
-  void follow(int followerId, int followeeId) { a[followerId][followeeId] = 1; }
+  void follow(int followerId, int followeeId) {
+    a[followerId][followeeId] = 1;
+  }
 
   /** Follower unfollows a followee. If the operation is invalid, it should be
    * a no-op. */

@@ -5,7 +5,9 @@ using namespace std;
 
 struct Trie {
   int cnt, root, go[150000][2];
-  Trie() { clear(); }
+  Trie() {
+    clear();
+  }
   void clear() {
     memset(go, 0, sizeof(go));
     root = cnt = 0;
@@ -14,8 +16,9 @@ struct Trie {
     int now = root;
     for (int i = 31; i >= 0; --i) {
       int k = (num >> i) & 1;
-      if (!go[now][k])
+      if (!go[now][k]) {
         go[now][k] = ++cnt;
+      }
       now = go[now][k];
     }
   }
@@ -26,8 +29,9 @@ struct Trie {
       if (go[now][k]) {
         ret |= (1 << i);
         now = go[now][k];
-      } else
+      } else {
         now = go[now][!k];
+      }
     }
     return ret;
   }
@@ -41,11 +45,13 @@ signed main() {
   while (t--) {
     int n;
     cin >> n;
-    for (int i = 1; i <= n; ++i)
+    for (int i = 1; i <= n; ++i) {
       cin >> a[i], b.add(a[i]);
+    }
     int ans = 0;
-    for (int i = 1; i <= n; ++i)
+    for (int i = 1; i <= n; ++i) {
       ans = max(ans, b.query(a[i]));
+    }
     cout << ans << endl;
     b.clear();
   }

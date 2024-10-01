@@ -2,7 +2,9 @@ class RandomizedCollection {
 public:
   /** Initialize your data structure here. */
   unordered_multiset<int> b;
-  RandomizedCollection() { b.clear(); }
+  RandomizedCollection() {
+    b.clear();
+  }
 
   /** Inserts a value to the collection. Returns true if the collection did
    * not already contain the specified element. */
@@ -18,8 +20,9 @@ public:
   bool remove(int val) {
     auto t = b.find(val);
     bool ret = (t != b.end());
-    if (ret)
+    if (ret) {
       b.erase(t);
+    }
     return ret;
   }
 
@@ -28,8 +31,9 @@ public:
     // srand(time(NULL));
     int rk = (rand() % b.size()) * rand() % b.size();
     auto t = b.begin();
-    for (int i = 0; i < rk; ++i)
+    for (int i = 0; i < rk; ++i) {
       ++t;
+    }
     return *t;
   }
 };

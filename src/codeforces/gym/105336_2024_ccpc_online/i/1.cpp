@@ -63,8 +63,8 @@ void solve() {
       dp[i][0] = 1;
 
       for (int j = 1; j <= n - i + 1; ++j) {
-        dp[i][j] =
-            dp[i + 1][j - 1] * max(0ll, (p[a[i]] - j + 1)) % MOD + dp[i + 1][j];
+        dp[i][j]
+          = dp[i + 1][j - 1] * max(0ll, (p[a[i]] - j + 1)) % MOD + dp[i + 1][j];
         dp[i][j] %= MOD;
       }
     }
@@ -78,8 +78,8 @@ void solve() {
       dp[i][0] = 1;
 
       for (int j = 1; j <= n - i + 1; ++j) {
-        dp[i][j] = dp[i + 1][j - 1] * max(0ll, (p[a[i] + 1] - j + 1)) % MOD +
-                   dp[i + 1][j];
+        dp[i][j] = dp[i + 1][j - 1] * max(0ll, (p[a[i] + 1] - j + 1)) % MOD
+                   + dp[i + 1][j];
         dp[i][j] %= MOD;
       }
     }

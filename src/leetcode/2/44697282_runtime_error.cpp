@@ -30,8 +30,9 @@ public:
       p2 = p2->next;
       pr = pr->next;
     }
-    if (tmp)
+    if (tmp) {
       pr->next = new ListNode(tmp);
+    }
     return ret->next;
   }
 };

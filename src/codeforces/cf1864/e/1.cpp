@@ -36,7 +36,9 @@ int qmi(int x, int k, int p = MOD) {
   return res;
 }
 
-int inv(int x, int p = MOD) { return qmi(x, p - 2, p); }
+int inv(int x, int p = MOD) {
+  return qmi(x, p - 2, p);
+}
 
 void solve() {
   int n;

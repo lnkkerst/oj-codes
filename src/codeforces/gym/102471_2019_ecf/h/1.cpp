@@ -35,9 +35,13 @@ int qmi(int x, int k, int p) {
   return res;
 }
 
-int getR(int l, int r) { return rand() % (r - l + 1) + l; }
+int getR(int l, int r) {
+  return rand() % (r - l + 1) + l;
+}
 
-int inv(int x, int p) { return qmi(x, p - 2, p); }
+int inv(int x, int p) {
+  return qmi(x, p - 2, p);
+}
 
 void solve() {
   int n, p;

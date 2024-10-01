@@ -9,8 +9,9 @@ const int MOD = (int)1e9 + 7;
 int n, k;
 
 int exgcd(int a, int b, int &x, int &y) {
-  if (b == 0)
+  if (b == 0) {
     return x = 1, y = 0, a;
+  }
   int r = exgcd(b, a % b, x, y);
   int t = x;
   x = y;
@@ -29,35 +30,43 @@ int calc(int a, int b) {
 int read() {
   int ret, f = 1;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (f = -1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return ret * f;
 }
 
 void print(int x) {
-  if (x < 0)
+  if (x < 0) {
     putchar('-'), x = -x;
-  if (x > 9)
+  }
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
 int qpow(int x, int mi) {
   int ret = 1, tmp = x;
   while (mi) {
-    if (mi & 1)
+    if (mi & 1) {
       ret *= tmp, ret %= MOD;
+    }
     tmp *= tmp, tmp %= MOD;
     mi >>= 1;
   }
   return ret % MOD;
 }
 
-int inv(int x) { return qpow(x, MOD - 2); }
+int inv(int x) {
+  return qpow(x, MOD - 2);
+}
 
-int gcd(int x, int y) { return !y ? x : gcd(y, x % y); }
+int gcd(int x, int y) {
+  return !y ? x : gcd(y, x % y);
+}
 
 signed main() {
   //	freopen("kasrra.in", "r", stdin);

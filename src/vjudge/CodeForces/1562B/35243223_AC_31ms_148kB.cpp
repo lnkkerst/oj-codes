@@ -5,13 +5,16 @@
 using namespace std;
 
 bool isPrime(int x) {
-  if (x == 1)
+  if (x == 1) {
     return false;
-  if (x == 2)
+  }
+  if (x == 2) {
     return true;
+  }
   for (int i = 2; i * i <= x; ++i) {
-    if (x % i == 0)
+    if (x % i == 0) {
       return false;
+    }
   }
   return true;
 }
@@ -35,8 +38,9 @@ int main() {
         break;
       }
     }
-    if (fl)
+    if (fl) {
       continue;
+    }
     for (int i = 0; i < a.size(); ++i) {
       bool fll = false;
       for (int j = i + 1; j < a.size(); ++j) {
@@ -46,8 +50,9 @@ int main() {
           break;
         }
       }
-      if (fll)
+      if (fll) {
         break;
+      }
     }
   }
 }

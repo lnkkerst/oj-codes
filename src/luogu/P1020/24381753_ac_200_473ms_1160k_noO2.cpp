@@ -12,14 +12,16 @@ int main() {
   l1 = l2 = 1;
   d1[1] = d2[1] = a[1];
   for (int i = 2; i <= n; ++i) {
-    if (d1[l1] >= a[i])
+    if (d1[l1] >= a[i]) {
       d1[++l1] = a[i];
-    else
+    } else {
       *upper_bound(d1 + 1, d1 + l1 + 1, a[i], greater<int>()) = a[i];
-    if (d2[l2] < a[i])
+    }
+    if (d2[l2] < a[i]) {
       d2[++l2] = a[i];
-    else
+    } else {
       *lower_bound(d2 + 1, d2 + l2 + 1, a[i]) = a[i];
+    }
   }
   cout << l1 << endl << l2 << endl;
   return 0;

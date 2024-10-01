@@ -13,8 +13,9 @@ int main() {
     cin >> tmp;
     b |= b << tmp;
   }
-  for (int i = 1; i < 100010; ++i)
+  for (int i = 1; i < 100010; ++i) {
     a[i] = a[i - 1] + b[i];
+  }
   for (int i = 1; i <= q; ++i) {
     int t1, t2;
     cin >> t1 >> t2;

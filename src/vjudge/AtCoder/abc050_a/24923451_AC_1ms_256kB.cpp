@@ -6,9 +6,10 @@ char op;
 
 int main() {
   cin >> a >> op >> b;
-  if (op == '+')
+  if (op == '+') {
     cout << a + b;
-  else
+  } else {
     cout << a - b;
+  }
   return 0;
 }

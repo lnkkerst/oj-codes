@@ -7,7 +7,9 @@ using namespace std;
 
 struct App {
   int v, m;
-  App() { v = m = 0; }
+  App() {
+    v = m = 0;
+  }
 };
 
 signed main() {

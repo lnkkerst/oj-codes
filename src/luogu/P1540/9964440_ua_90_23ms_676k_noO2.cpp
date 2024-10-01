@@ -20,10 +20,11 @@ int main() {
     if (flag == 0) {
       ans++;
       a[h] = word;
-      if (h + 1 == m)
+      if (h + 1 == m) {
         h = 0;
-      else
+      } else {
         h++;
+      }
     }
   }
   cout << ans;

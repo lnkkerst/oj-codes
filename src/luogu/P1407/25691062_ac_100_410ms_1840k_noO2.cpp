@@ -22,18 +22,21 @@ map<string, int> couple;
 int read() {
   int ret, f = 1;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (f = -1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return ret * f;
 }
 
 void print(int x) {
-  if (x < 0)
+  if (x < 0) {
     putchar('-'), x = -x;
-  if (x > 9)
+  }
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
@@ -49,10 +52,11 @@ void tarjan(int u) {
   nodes[u].ins = 1;
   for (int i = nodes[u].h; i; i = edges[i].nex) {
     int v = edges[i].to;
-    if (!nodes[v].dfn)
+    if (!nodes[v].dfn) {
       tarjan(v), nodes[u].low = min(nodes[u].low, nodes[v].low);
-    else if (nodes[v].ins)
+    } else if (nodes[v].ins) {
       nodes[u].low = min(nodes[u].low, nodes[v].dfn);
+    }
   }
   if (nodes[u].low == nodes[u].dfn) {
     ++cnt_tj;
@@ -80,13 +84,17 @@ int main() {
     cin >> girl >> boy;
     addedge(couple[boy], couple[girl]);
   }
-  for (int i = 1; i <= n * 2; ++i)
-    if (!nodes[i].dfn)
+  for (int i = 1; i <= n * 2; ++i) {
+    if (!nodes[i].dfn) {
       tarjan(i);
-  for (int i = 1; i <= n; ++i)
-    if (nodes[i].col == nodes[i + n].col)
+    }
+  }
+  for (int i = 1; i <= n; ++i) {
+    if (nodes[i].col == nodes[i + n].col) {
       printf("Unsafe\n");
-    else
+    } else {
       printf("Safe\n");
+    }
+  }
   return 0;
 }

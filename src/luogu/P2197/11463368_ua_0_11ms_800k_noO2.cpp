@@ -14,10 +14,12 @@ int main() {
       ans[i] = ans[i] ^ num;
     }
   }
-  for (i = 0; i < n; i++)
-    if (ans[i] == 0)
+  for (i = 0; i < n; i++) {
+    if (ans[i] == 0) {
       printf("No\n");
-    else
+    } else {
       printf("Yes\n");
+    }
+  }
   return 0;
 }

@@ -27,9 +27,10 @@ void bfs() {
       ans = now.step;
       break;
     }
-    if (now.k < 1 || now.k > k || now.x < 1 || now.x > n || now.y < 1 ||
-        now.y > m || e[now.k][now.x][now.y] || b[now.k][now.x][now.y])
+    if (now.k < 1 || now.k > k || now.x < 1 || now.x > n || now.y < 1
+        || now.y > m || e[now.k][now.x][now.y] || b[now.k][now.x][now.y]) {
       continue;
+    }
     b[now.k][now.x][now.y] = 1;
     Node next = now;
     ++next.step;
@@ -45,27 +46,34 @@ void bfs() {
 int main() {
   while (1) {
     scanf("%d%d%d", &k, &n, &m);
-    if (!k && !n && !m)
+    if (!k && !n && !m) {
       return 0;
+    }
     memset(e, 0, sizeof(e));
     memset(b, 0, sizeof(b));
     ans = -1, found = 0;
-    for (int kk = 1; kk <= k; ++kk)
-      for (int i = 1; i <= n; ++i)
+    for (int kk = 1; kk <= k; ++kk) {
+      for (int i = 1; i <= n; ++i) {
         for (int j = 1; j <= m; ++j) {
           char ch;
           cin >> ch;
-          if (ch == 'S')
+          if (ch == 'S') {
             sx = i, sy = j, sk = kk;
-          if (ch == 'E')
+          }
+          if (ch == 'E') {
             ex = i, ey = j, ek = kk;
-          if (ch == '#')
+          }
+          if (ch == '#') {
             e[kk][i][j] = 1;
+          }
         }
+      }
+    }
     bfs();
-    if (ans == -1)
+    if (ans == -1) {
       puts("Trapped!");
-    else
+    } else {
       printf("Escaped in %d minute(s).\n", ans);
+    }
   }
 }

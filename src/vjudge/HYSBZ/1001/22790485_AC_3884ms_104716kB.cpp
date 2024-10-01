@@ -9,15 +9,19 @@ using namespace std;
 inline void read(int &x) {
   x = 0;
   char c = getchar();
-  while (!isdigit(c))
+  while (!isdigit(c)) {
     c = getchar();
-  while (isdigit(c))
+  }
+  while (isdigit(c)) {
     x = x * 10 + c - '0', c = getchar();
+  }
 }
 #define MAXN 2000010
 struct node {
   int to, va;
-  node(int a, int b) { to = a, va = b; }
+  node(int a, int b) {
+    to = a, va = b;
+  }
 };
 vector<node> v[MAXN];
 inline void add_edge(int f, int t, int w) {
@@ -41,8 +45,9 @@ int SPFA() {
       int o = v[tmp][i].to;
       if (dis[o] > dis[tmp] + v[tmp][i].va) {
         dis[o] = dis[tmp] + v[tmp][i].va;
-        if (!vis[o])
+        if (!vis[o]) {
           q.push(o), vis[o] = 1;
+        }
       }
     }
   }
@@ -50,20 +55,22 @@ int SPFA() {
 }
 int n, m;
 inline void getheng(int i, int j, int k) {
-  if (i == 1)
+  if (i == 1) {
     add_edge(st, j, k);
-  else if (i == n)
+  } else if (i == n) {
     add_edge((2 * (n - 1) - 1) * (m - 1) + j, ed, k);
-  else
+  } else {
     add_edge((2 * (i - 1) - 1) * (m - 1) + j, 2 * (i - 1) * (m - 1) + j, k);
+  }
 }
 inline void getshu(int i, int j, int k) {
-  if (j == 1)
+  if (j == 1) {
     add_edge((i * 2 - 1) * (m - 1) + 1, ed, k);
-  else if (j == m)
+  } else if (j == m) {
     add_edge(st, 2 * i * (m - 1) - (m - 1), k);
-  else
+  } else {
     add_edge((i - 1) * 2 * (m - 1) + j - 1, ((i - 1) * 2 + 1) * (m - 1) + j, k);
+  }
 }
 inline void getxie(int i, int j, int k) {
   add_edge((i - 1) * 2 * (m - 1) + j, (i - 1) * 2 * (m - 1) + (m - 1) + j, k);
@@ -73,16 +80,19 @@ int main() {
   st = (n - 1) * (m - 1) * 2 + 1, ed = (n - 1) * (m - 1) * 2 + 2;
   int x;
   for (int i = 1; i <= n; ++i) {
-    for (int j = 1; j < m; ++j)
+    for (int j = 1; j < m; ++j) {
       read(x), getheng(i, j, x);
+    }
   }
   for (int i = 1; i < n; ++i) {
-    for (int j = 1; j <= m; ++j)
+    for (int j = 1; j <= m; ++j) {
       read(x), getshu(i, j, x);
+    }
   }
   for (int i = 1; i < n; ++i) {
-    for (int j = 1; j < m; ++j)
+    for (int j = 1; j < m; ++j) {
       read(x), getxie(i, j, x);
+    }
   }
   cout << SPFA() << endl;
   return 0;

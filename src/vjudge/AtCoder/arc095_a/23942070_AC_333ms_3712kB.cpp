@@ -15,10 +15,11 @@ int main() {
   sort(a + 1, a + n + 1);
   int mid = n / 2 + 1;
   for (int i = 1; i <= n; ++i) {
-    if (b[i] < a[mid])
+    if (b[i] < a[mid]) {
       cout << a[mid];
-    else
+    } else {
       cout << a[mid - 1];
+    }
     cout << endl;
   }
   return 0;

@@ -13,8 +13,9 @@ int read() {
   int ret;
   char ch;
   bool flag = 0;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (flag = 1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return flag ? -ret : ret;
@@ -28,8 +29,9 @@ void addedge(int w, int v, int u) {
 }
 
 void dij(int s) {
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     nodes[i].dis = (int)1e9;
+  }
   nodes[s].dis = 0;
   priority_queue<pair<int, int>> heap;
   heap.push(make_pair(nodes[s].dis, s));
@@ -37,22 +39,26 @@ void dij(int s) {
     int d = heap.top().first;
     int u = heap.top().second;
     heap.pop();
-    if (d > nodes[u].dis)
+    if (d > nodes[u].dis) {
       continue;
-    for (int i = nodes[u].h; i; i = edges[i].nex)
+    }
+    for (int i = nodes[u].h; i; i = edges[i].nex) {
       if (nodes[u].dis + edges[i].w < nodes[edges[i].v].dis) {
         nodes[edges[i].v].dis = nodes[u].dis + edges[i].w;
         heap.push(make_pair(nodes[edges[i].v].dis, edges[i].v));
       }
+    }
   }
 }
 
 int main() {
   n = read(), m = read(), s = read();
-  for (int i = 1; i <= m; ++i)
+  for (int i = 1; i <= m; ++i) {
     addedge(read(), read(), read());
+  }
   dij(s);
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     printf("%d ", nodes[i].dis);
+  }
   return 0;
 }

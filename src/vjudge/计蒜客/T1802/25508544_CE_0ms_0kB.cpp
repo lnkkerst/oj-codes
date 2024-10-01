@@ -20,8 +20,10 @@ bool solve(int x, int b) {
 int main() {
   int x;
   cin >> x;
-  for (int i = 1; i <= 300; ++i)
-    if (solve(i * i, x))
+  for (int i = 1; i <= 300; ++i) {
+    if (solve(i * i, x)) {
       cout << i << ' ' << i * i << endl;
+    }
+  }
   return 0;
 }

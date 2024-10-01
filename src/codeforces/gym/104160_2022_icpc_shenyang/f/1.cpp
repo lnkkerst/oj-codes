@@ -55,7 +55,9 @@ void init() {
 
 void solve() {
   int n = read(), m = read();
-  auto calc = [](int n, int m) { return (n * n + n) / 2 * (m * m + m) / 2; };
+  auto calc = [](int n, int m) {
+    return (n * n + n) / 2 * (m * m + m) / 2;
+  };
   if (calc(n, m) & 1) {
     puts("No");
     return;

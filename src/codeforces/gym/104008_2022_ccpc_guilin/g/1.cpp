@@ -23,8 +23,12 @@ struct Node {
   using Tree = tree<int, null_type, greater_equal<>, rb_tree_tag,
                     tree_order_statistics_node_update>;
   Tree tr;
-  void insert(int x) { tr.insert(x); }
-  void remove(int x) { tr.erase(tr.upper_bound(x + 1)); }
+  void insert(int x) {
+    tr.insert(x);
+  }
+  void remove(int x) {
+    tr.erase(tr.upper_bound(x + 1));
+  }
   int operator[](int i) const {
     if (i >= tr.size()) {
       return 0;

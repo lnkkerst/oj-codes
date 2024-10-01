@@ -22,8 +22,7 @@ using namespace std;
 struct Tree {
   vector<int> a;
   int n;
-  Tree(int _n) : a(_n + 2), n(_n) {
-  }
+  Tree(int _n): a(_n + 2), n(_n) {}
 
   void add(int pos, int val) {
     while (pos <= n) {
@@ -113,8 +112,7 @@ void solve() {
         }
       }
     }
-    if (bm == 1 && (cnt & 1)) {
-    }
+    if (bm == 1 && (cnt & 1)) {}
     if (bm == 1 && !(cnt & 1)) {
       vector<pair<int, int>> t = b;
       int last = -1;

@@ -24,8 +24,9 @@ public:
         }
         if (fl) {
           puts("ok");
-          for (int j = pos; j <= i; ++j)
+          for (int j = pos; j <= i; ++j) {
             bk[j] = 1;
+          }
           ++ans;
         }
       }

@@ -10,7 +10,13 @@ using namespace std;
 
 void solve() {
   int n = 5;
-  map<char, int> mp{{'A', 1}, {'T', 10}, {'J', 11}, {'Q', 12}, {'K', 13}};
+  map<char, int> mp{
+    {'A', 1 },
+    {'T', 10},
+    {'J', 11},
+    {'Q', 12},
+    {'K', 13}
+  };
   for (int i = '2'; i <= '9'; ++i) {
     mp[i] = i - '0';
   }
@@ -50,8 +56,8 @@ void solve() {
   for (int i = 2; i < 5; ++i) {
     ss.insert(a[i]);
   }
-  if (find(j1.begin(), j1.end(), a[0]) == j1.end() &&
-      find(j1.begin(), j1.end(), a[1]) == j1.end()) {
+  if (find(j1.begin(), j1.end(), a[0]) == j1.end()
+      && find(j1.begin(), j1.end(), a[1]) == j1.end()) {
     for (int i = 2; i < 5; ++i) {
       if (find(j1.begin(), j1.end(), a[i]) != j1.end()) {
         cout << "check\n";

@@ -10,10 +10,13 @@ int main() {
       j = j / 10;
     }
   }
-  for (int i = 0; i <= 1000; i++)
-    for (int j = 0; j <= 1000; j++)
-      if (a[i] + a[j] + a[i + j] == n)
+  for (int i = 0; i <= 1000; i++) {
+    for (int j = 0; j <= 1000; j++) {
+      if (a[i] + a[j] + a[i + j] == n) {
         ans++;
+      }
+    }
+  }
   printf("%d", ans);
   return 0;
 }

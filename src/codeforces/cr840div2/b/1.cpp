@@ -8,7 +8,9 @@ using namespace std;
 struct Node {
   int first;
   int second;
-  bool operator<(const Node &b) const { return this->first < b.first; }
+  bool operator<(const Node &b) const {
+    return this->first < b.first;
+  }
 };
 
 void solve() {

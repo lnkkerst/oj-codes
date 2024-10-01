@@ -15,18 +15,21 @@ void siftdown(int i) {
   bool flag = 0;
 
   while (i * 2 <= n && flag == 0) {
-    if (h[i] > h[i * 2])
+    if (h[i] > h[i * 2]) {
       t = i * 2;
-    else
+    } else {
       t = i;
+    }
 
-    if (h[t] > h[i * 2 + 1] && i * 2 + 1 <= n)
+    if (h[t] > h[i * 2 + 1] && i * 2 + 1 <= n) {
       t = i * 2 + 1;
+    }
 
-    if (t != i)
+    if (t != i) {
       swap(h[t], h[i]);
-    else
+    } else {
       flag = 1;
+    }
   }
 
   return;
@@ -35,14 +38,16 @@ void siftdown(int i) {
 void siftup(int i) {
   bool flag = 0;
 
-  if (i == 1)
+  if (i == 1) {
     return;
+  }
 
   if (i != 1 && flag == 0) {
-    if (h[i] < h[i / 2])
+    if (h[i] < h[i / 2]) {
       swap(h[i], h[i / 2]);
-    else
+    } else {
       flag = 1;
+    }
 
     i /= 2;
   }
@@ -76,12 +81,13 @@ int main() {
 
     scanf("%d", &e);
 
-    if (e == 1)
+    if (e == 1) {
       add();
-    else if (e == 2)
+    } else if (e == 2) {
       printf("%d\n", h[1]);
-    else if (e == 3)
+    } else if (e == 3) {
       del();
+    }
   }
 
   return 0;

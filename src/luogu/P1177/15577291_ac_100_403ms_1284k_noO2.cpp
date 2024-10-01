@@ -7,7 +7,9 @@ using namespace std;
 priority_queue<int, vector<int>, greater<int>> a;
 
 struct cmp {
-  bool operator()(int &a, int &b) { return a > b; }
+  bool operator()(int &a, int &b) {
+    return a > b;
+  }
 };
 
 int main() {

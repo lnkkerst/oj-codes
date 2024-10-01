@@ -4,10 +4,11 @@ public:
     unordered_set<int> a;
     for (auto &i : nums) {
       auto t = a.find(i);
-      if (t == a.end())
+      if (t == a.end()) {
         a.insert(i);
-      else
+      } else {
         a.erase(t);
+      }
     }
     return vector<int>(a.begin(), a.end());
   }

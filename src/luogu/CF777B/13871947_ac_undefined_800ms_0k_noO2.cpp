@@ -11,15 +11,17 @@ int main() {
   std::sort(s, s + n);
   std::sort(m, m + n);
 
-  for (int i = 0, j = 0; (i < n) && (j < n);)
+  for (int i = 0, j = 0; (i < n) && (j < n);) {
     if (m[j] > s[i]) {
       i++;
       j++;
       sn++;
-    } else
+    } else {
       j++;
+    }
+  }
 
-  for (int i = 0, j = 0; (i < n) && (j < n);)
+  for (int i = 0, j = 0; (i < n) && (j < n);) {
     if (m[j] >= s[i]) {
       i++;
       j++;
@@ -27,6 +29,7 @@ int main() {
       j++;
       mn++;
     }
+  }
 
   printf("%d\n%d", mn, sn);
   return 0;

@@ -8,8 +8,9 @@ void dfs(int step) {
   if (step > n) {
     ans++;
     if (ans <= 3) {
-      for (int i = 1; i <= n; i++)
+      for (int i = 1; i <= n; i++) {
         printf("%d ", x[i]);
+      }
       printf("\n");
     }
   }

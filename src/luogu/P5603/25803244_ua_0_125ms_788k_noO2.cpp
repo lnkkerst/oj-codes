@@ -7,8 +7,9 @@ long long eat;
 int read() {
   int ret, flag = 1;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (flag = -1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return ret * flag;
@@ -29,8 +30,9 @@ int main() {
   n = read();
   for (int i = 1; i <= n; ++i) {
     int tmp = read();
-    if (tmp >= 1)
+    if (tmp >= 1) {
       ++full, eat += tmp;
+    }
   }
   printf("%lf\n", (double)(eat) / (double)(full) * (double)(eat));
   return 0;

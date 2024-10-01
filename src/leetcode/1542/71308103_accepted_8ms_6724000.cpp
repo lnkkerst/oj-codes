@@ -5,8 +5,9 @@ public:
     int ans = 0;
     while (pos < (int)s.length()) {
       int nex = pos;
-      while (nex < (int)s.length() && s[nex] == s[pos])
+      while (nex < (int)s.length() && s[nex] == s[pos]) {
         ++nex;
+      }
       ans = max(ans, nex - pos);
       pos = nex;
     }

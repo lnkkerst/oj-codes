@@ -48,9 +48,8 @@ void solve() {
       auto bna = na;
       int sc = na[1];
       sort(na.begin() + 1, na.begin() + n + 1, greater<>());
-      int rk =
-          (lower_bound(na.begin() + 1, na.begin() + n + 1, sc, greater<>()) -
-           na.begin());
+      int rk = (lower_bound(na.begin() + 1, na.begin() + n + 1, sc, greater<>())
+                - na.begin());
       if (rk < ans) {
         ans = rk;
         ba = bna;

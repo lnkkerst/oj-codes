@@ -21,7 +21,8 @@ int main() {
     }
   }
   puts("YES");
-  for (int i = 1; i <= n * 2; ++i)
+  for (int i = 1; i <= n * 2; ++i) {
     cout << a[i] << ' ';
+  }
   return 0;
 }

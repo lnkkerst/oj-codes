@@ -54,14 +54,17 @@ struct Node {
 
 int n;
 
-bool cmp(Node a, Node b) { return a.l * a.r < b.l * b.r; }
+bool cmp(Node a, Node b) {
+  return a.l * a.r < b.l * b.r;
+}
 
 #undef int
 int main() {
 #define int long long
   cin >> n >> a[0].l >> a[0].r;
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     cin >> a[i].l >> a[i].r;
+  }
   sort(a + 1, a + n + 1, cmp);
   int ans = -1, sum = a[0].l;
   for (int i = 1; i <= n; ++i) {

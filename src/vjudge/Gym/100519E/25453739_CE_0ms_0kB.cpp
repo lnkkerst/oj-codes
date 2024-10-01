@@ -12,9 +12,11 @@ int main() {
     int len = strlen(s);
     // cout << s << endl;
     int tmp = 0;
-    for (int i = len - 1; i >= 0; --i, ++tmp)
-      if (s[i] != d + '0')
+    for (int i = len - 1; i >= 0; --i, ++tmp) {
+      if (s[i] != d + '0') {
         break;
+      }
+    }
     if (tmp > ansx) {
       ansk = k;
       ansx = tmp;

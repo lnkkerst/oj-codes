@@ -11,8 +11,9 @@ void dfs(int x, int y) {
     ++ans;
     return;
   }
-  if (x < 1 || x > n || y < 1 || y > m || e[x][y] || b[x][y])
+  if (x < 1 || x > n || y < 1 || y > m || e[x][y] || b[x][y]) {
     return;
+  }
   b[x][y] = 1;
   dfs(x + 1, y);
   dfs(x - 1, y);

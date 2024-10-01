@@ -11,7 +11,9 @@ struct Sg_mtree {
 #define lc (x << 1)
 #define rc (x << 1 | 1)
   int sum[MAXN << 2], tag[MAXN << 2], mul[MAXN << 2], a[MAXN];
-  void update(int x) { sum[x] = (sum[lc] % mod + sum[rc] % mod) % mod; }
+  void update(int x) {
+    sum[x] = (sum[lc] % mod + sum[rc] % mod) % mod;
+  }
   void build(int l, int r, int x) {
     sum[x] = 0, tag[x] = 0, mul[x] = 1;
     if (l == r) {
@@ -39,16 +41,20 @@ struct Sg_mtree {
     tag[x] = 0;
   }
   int query(int a, int b, int l, int r, int x) {
-    if (a <= l && b >= r)
+    if (a <= l && b >= r) {
       return sum[x] % mod;
+    }
     int mid = (l + r) >> 1, ret = 0;
     ;
-    if (mul[x] != 1 || tag[x])
+    if (mul[x] != 1 || tag[x]) {
       pushdown(l, r, x);
-    if (a <= mid)
+    }
+    if (a <= mid) {
       ret += query(a, b, l, mid, lc);
-    if (mid < b)
+    }
+    if (mid < b) {
       ret += query(a, b, mid + 1, r, rc);
+    }
     return ret % mod;
   }
   void add(int a, int b, int v, int l, int r, int x) {
@@ -58,12 +64,15 @@ struct Sg_mtree {
       return;
     }
     int mid = (l + r) >> 1;
-    if (mul[x] != 1 || tag[x])
+    if (mul[x] != 1 || tag[x]) {
       pushdown(l, r, x);
-    if (a <= mid)
+    }
+    if (a <= mid) {
       add(a, b, v, l, mid, lc);
-    if (mid < b)
+    }
+    if (mid < b) {
       add(a, b, v, mid + 1, r, rc);
+    }
     update(x);
   }
   void mullall(int a, int b, int v, int l, int r, int x) {
@@ -74,12 +83,15 @@ struct Sg_mtree {
       return;
     }
     int mid = (l + r) >> 1;
-    if (mul[x] != 1 || tag[x])
+    if (mul[x] != 1 || tag[x]) {
       pushdown(l, r, x);
-    if (a <= mid)
+    }
+    if (a <= mid) {
       mullall(a, b, v, l, mid, lc);
-    if (b < mid)
+    }
+    if (b < mid) {
       mullall(a, b, v, mid + 1, r, rc);
+    }
     update(x);
   }
 } tree;
@@ -87,18 +99,21 @@ struct Sg_mtree {
 int read() {
   int ret, flag = 1;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (flag = -1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return ret * flag;
 }
 
 void print(int x) {
-  if (x < 0)
+  if (x < 0) {
     putchar('-'), x = -x;
-  if (x > 9)
+  }
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
@@ -115,17 +130,20 @@ void writespace(int x) {
 signed main() {
   int n = read(), m = read();
   mod = read();
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     tree.a[i] = read();
+  }
   tree.build(1, n, 1);
   while (m--) {
     int opt = read(), l = read(), r = read();
-    if (opt == 1)
+    if (opt == 1) {
       tree.mullall(l, r, read(), 1, n, 1);
-    if (opt == 2)
+    }
+    if (opt == 2) {
       tree.add(l, r, read(), 1, n, 1);
-    else
+    } else {
       print(tree.query(l, r, 1, n, 1)), putchar('\n');
+    }
   }
   return 0;
 }

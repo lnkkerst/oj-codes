@@ -5,16 +5,18 @@ bool pd(int x, int y) {
       b[3] = {y % 10, y / 10 % 10, y / 100};
   for (int i = 0; i < 3; i++) {
     for (int j = 0; j < 3; j++) {
-      if (a[i] == b[j])
+      if (a[i] == b[j]) {
         return 0;
+      }
     }
   }
   return 1;
 }
 bool pd2(int x) {
   int a = x % 10, b = x / 10 % 10, c = x / 100;
-  if (a = b && a != c && b != c)
+  if (a = b && a != c && b != c) {
     return 1;
+  }
   return 0;
 }
 int main() {
@@ -24,9 +26,10 @@ int main() {
     x = i;
     y = i / a * b;
     z = i / a * c;
-    if (pd(x, y) == 1 && pd(x, z) == 1 && pd(y, z) == 1 && pd2(x) == 1 &&
-        pd2(y) == 1 && pd2(z) == 1)
+    if (pd(x, y) == 1 && pd(x, z) == 1 && pd(y, z) == 1 && pd2(x) == 1
+        && pd2(y) == 1 && pd2(z) == 1) {
       printf("%ld %ld %ld\n", x, y, z);
+    }
   }
   return 0;
 }

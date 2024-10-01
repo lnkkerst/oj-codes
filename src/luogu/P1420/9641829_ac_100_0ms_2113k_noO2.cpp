@@ -5,15 +5,18 @@ int main() {
   cin >> n;
   const int N = n;
   int a[N];
-  for (int i = 0; i < n; i++)
+  for (int i = 0; i < n; i++) {
     cin >> a[i];
+  }
   for (int i = 1; i < n; i++) {
-    if (a[i] == a[i - 1] + 1)
+    if (a[i] == a[i - 1] + 1) {
       s++;
-    else
+    } else {
       s = 1;
-    if (s > max)
+    }
+    if (s > max) {
       max = s;
+    }
   }
   cout << max;
   return 0;

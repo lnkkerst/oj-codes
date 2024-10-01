@@ -22,8 +22,9 @@ signed main() {
     for (auto i : a) {
       sort(a1.begin(), a1.end());
       sort(a2.begin(), a2.end(), greater<int>());
-      for (int j = 0; j < i - 1; ++j)
+      for (int j = 0; j < i - 1; ++j) {
         a1[j] += INF + 1, a2[j] += INF + 1;
+      }
       tmp += i - 1;
     }
     sort(a1.begin(), a1.end());
@@ -37,10 +38,11 @@ signed main() {
     // }
     // cout << endl;
     auto al = upper_bound(a1.begin(), a1.end(), INF * n);
-    if (al == a1.end())
+    if (al == a1.end()) {
       cout << 1 << ' ';
-    else
+    } else {
       cout << a1.size() - (al - a1.begin()) + 1 << ' ';
+    }
     cout << min(m, tmp + 1) << endl;
     // al = upper_bound(a2.begin(), a2.end(), n);
     // if(al == a2.end()) cout << 1 << endl;

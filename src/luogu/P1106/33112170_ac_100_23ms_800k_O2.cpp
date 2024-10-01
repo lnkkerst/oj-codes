@@ -14,15 +14,17 @@ int main() {
         break;
       }
     }
-    if (fl)
+    if (fl) {
       s.pop_back();
+    }
   }
   int i = 0;
   for (; i < (int)s.length() && s[i] == '0'; ++i)
     ;
-  if (i == (int)s.length())
+  if (i == (int)s.length()) {
     puts("0");
-  else
+  } else {
     cout << s.substr(i) << endl;
+  }
   return 0;
 }

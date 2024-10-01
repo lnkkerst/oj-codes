@@ -8,7 +8,9 @@ using namespace std;
 
 #define int long long
 
-int gcd(int a, int b) { return !b ? a : gcd(b, a % b); }
+int gcd(int a, int b) {
+  return !b ? a : gcd(b, a % b);
+}
 
 set<int> book;
 int ans;

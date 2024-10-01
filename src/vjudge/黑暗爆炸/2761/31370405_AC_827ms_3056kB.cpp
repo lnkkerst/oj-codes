@@ -19,8 +19,9 @@ int main() {
         b.insert(x);
       }
     }
-    for (auto i : ans)
+    for (auto i : ans) {
       cout << i << ' ';
+    }
     cout << endl;
   }
   return 0;

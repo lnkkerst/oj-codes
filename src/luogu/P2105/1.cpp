@@ -18,12 +18,11 @@ void solve() {
   int n, k;
   cin >> n >> k;
   vector<vector<vector<int>>> dp(
-      n + 1, vector<vector<int>>((1 << n) + 1, vector<int>(k + 1)));
+    n + 1, vector<vector<int>>((1 << n) + 1, vector<int>(k + 1)));
   auto check = [&](int x, int y) {
     return !(x & y || x & (y << 1) || (x << 1) & y);
   };
-  for (int i = 1; i <= n; ++i) {
-  }
+  for (int i = 1; i <= n; ++i) {}
 }
 
 signed main() {

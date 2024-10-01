@@ -4,10 +4,12 @@ int a[100010] = {0, 2, 7};
 int n = 2;
 
 int calc(int x) {
-  if (x <= n)
+  if (x <= n) {
     return a[x];
-  for (int i = n + 1; i <= x; ++i)
+  }
+  for (int i = n + 1; i <= x; ++i) {
     a[i] = a[i - 1] + 4 * i - 2;
+  }
   return a[x];
 }
 

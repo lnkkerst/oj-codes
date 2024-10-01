@@ -2,14 +2,22 @@ class MyHashSet {
 public:
   /** Initialize your data structure here. */
   map<int, bool> b;
-  MyHashSet() { b.clear(); }
+  MyHashSet() {
+    b.clear();
+  }
 
-  void add(int key) { b[key] = 1; }
+  void add(int key) {
+    b[key] = 1;
+  }
 
-  void remove(int key) { b[key] = 0; }
+  void remove(int key) {
+    b[key] = 0;
+  }
 
   /** Returns true if this set contains the specified element */
-  bool contains(int key) { return b[key]; }
+  bool contains(int key) {
+    return b[key];
+  }
 };
 
 /**

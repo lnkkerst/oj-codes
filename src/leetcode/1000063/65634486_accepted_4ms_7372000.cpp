@@ -2,8 +2,9 @@ class Solution {
 public:
   void dfs(int n, vector<vector<int>> &a, int now, int dep, int k, int &ans) {
     if (dep == k) {
-      if (now == n - 1)
+      if (now == n - 1) {
         ++ans;
+      }
       return;
     }
     for (auto i : a[now]) {

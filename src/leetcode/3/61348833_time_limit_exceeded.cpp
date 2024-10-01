@@ -13,8 +13,9 @@ public:
           }
           b[s[k]] = 1;
         }
-        if (fl)
+        if (fl) {
           ret = max(ret, j);
+        }
       }
     }
     return ret;

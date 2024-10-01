@@ -13,8 +13,9 @@ bool pd(int x, int b) {
     x /= b;
   }
   reverse(s.begin(), s.end());
-  while (!s.back())
+  while (!s.back()) {
     s.pop_back();
+  }
   string re = s;
   reverse(re.begin(), re.end());
   return re == s;
@@ -23,8 +24,10 @@ bool pd(int x, int b) {
 int main() {
   int x;
   cin >> x;
-  for (int i = 1; i <= 300; ++i)
-    if (pd(i * i, x))
+  for (int i = 1; i <= 300; ++i) {
+    if (pd(i * i, x)) {
       cout << i << ' ' << i * i << endl;
+    }
+  }
   return 0;
 }

@@ -8,8 +8,9 @@ using namespace std;
 int read() {
   int ret, fl = 1;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (fl = -1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return ret * fl;
@@ -38,8 +39,9 @@ void insert(char *str) {
   int x = 0;
   for (int i = 0; i < l; i++) {
     int k = str[i] - 'a';
-    if (!trie[x].go[k])
+    if (!trie[x].go[k]) {
       trie[x].go[k] = ++cnt;
+    }
     x = trie[x].go[k];
   }
   ++trie[x].end;
@@ -48,11 +50,12 @@ void insert(char *str) {
 void init_fail() {
   trie[0].fail = 0;
   queue<int> q;
-  for (int i = 0; i < 26; ++i)
+  for (int i = 0; i < 26; ++i) {
     if (trie[0].go[i]) {
       trie[trie[0].go[i]].fail = 0;
       q.push(trie[0].go[i]);
     }
+  }
   while (!q.empty()) {
     int u = q.front();
     q.pop();
@@ -60,8 +63,9 @@ void init_fail() {
       if (trie[u].go[i]) {
         trie[trie[u].go[i]].fail = trie[trie[u].fail].go[i];
         q.push(trie[u].go[i]);
-      } else
+      } else {
         trie[u].go[i] = trie[trie[u].fail].go[i];
+      }
     }
   }
 }
@@ -91,7 +95,8 @@ int solve() {
 
 int main() {
   int t = read();
-  while (t--)
+  while (t--) {
     solve();
+  }
   return 0;
 }

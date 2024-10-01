@@ -4,10 +4,11 @@ int check(int a, int n) {
   int mid, b = n;
   while (a < b) {
     mid = (a + b) / 2;
-    if (mid * (mid + 1) / 2 < n)
+    if (mid * (mid + 1) / 2 < n) {
       a = mid + 1;
-    else
+    } else {
       b = mid;
+    }
   }
   return a;
 }
@@ -16,9 +17,10 @@ int main() {
   scanf("%ld", &n);
   l = check(l, n);
   s = n - l * (l - 1) / 2;
-  if (l % 2 == 0)
+  if (l % 2 == 0) {
     printf("%ld/%ld", s, l + 1 - s);
-  else
+  } else {
     printf("%ld/%ld", l + 1 - s, s);
+  }
   return 0;
 }

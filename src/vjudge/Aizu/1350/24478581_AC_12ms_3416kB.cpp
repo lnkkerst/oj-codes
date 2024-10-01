@@ -14,40 +14,51 @@ bool fl = 1;
 int read() {
   int ret, fl = 1;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (fl = -1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return ret * fl;
 }
 
 void print(int x) {
-  if (x < 0)
+  if (x < 0) {
     putchar('-'), x = -x;
-  if (x > 9)
+  }
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
-bool cmp(Edge a, Edge b) { return a.w < b.w; }
+bool cmp(Edge a, Edge b) {
+  return a.w < b.w;
+}
 
-int find(int x) { return x == fa[x] ? x : fa[x] = find(fa[x]); }
+int find(int x) {
+  return x == fa[x] ? x : fa[x] = find(fa[x]);
+}
 
 int kru(int del) {
   int ret = 0;
-  for (int i = 1; i <= m; ++i)
-    fa[i] = i;
   for (int i = 1; i <= m; ++i) {
-    if (i == del)
+    fa[i] = i;
+  }
+  for (int i = 1; i <= m; ++i) {
+    if (i == del) {
       continue;
+    }
     int f1 = find(edges[i].u);
     int f2 = find(edges[i].v);
-    if (f1 == f2)
+    if (f1 == f2) {
       continue;
+    }
     fa[f1] = f2;
     ret += edges[i].w;
-    if (fl)
+    if (fl) {
       sta[++top] = i;
+    }
   }
   fl = 0;
   return ret;
@@ -55,13 +66,16 @@ int kru(int del) {
 
 int main() {
   n = read(), m = read();
-  for (int i = 1; i <= m; ++i)
+  for (int i = 1; i <= m; ++i) {
     edges[i].u = read(), edges[i].v = read(), edges[i].w = read();
+  }
   std::sort(edges + 1, edges + m + 1, cmp);
   int full = kru(0), ans1 = 0, ans2 = 0;
-  for (int i = 1; i <= top; ++i)
-    if (kru(sta[i]) != full)
+  for (int i = 1; i <= top; ++i) {
+    if (kru(sta[i]) != full) {
       ++ans1, ans2 += edges[sta[i]].w;
+    }
+  }
   print(ans1), putchar(' '), print(ans2), putchar('\n');
   return 0;
 }

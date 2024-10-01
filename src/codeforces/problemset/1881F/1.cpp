@@ -30,8 +30,12 @@ struct Node {
     }
     return *it;
   }
-  auto insert(int x) { return data.insert(x); }
-  auto erase(int x) { return data.erase(x); }
+  auto insert(int x) {
+    return data.insert(x);
+  }
+  auto erase(int x) {
+    return data.erase(x);
+  }
 };
 
 void solve() {

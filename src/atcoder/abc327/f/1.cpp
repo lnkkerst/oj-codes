@@ -31,7 +31,9 @@ private:
     tag[u] = 0;
   }
 
-  void pushup(int u) { ma[u] = max(ma[ls], ma[rs]); }
+  void pushup(int u) {
+    ma[u] = max(ma[ls], ma[rs]);
+  }
 
   void add(int l, int r, int L, int R, int x, int u) {
     int len = r - l + 1;
@@ -72,11 +74,15 @@ private:
   }
 
 public:
-  Tree(int _n) : n(_n), tag((_n + 2) * 4), ma((_n + 2) * 4) {}
+  Tree(int _n): n(_n), tag((_n + 2) * 4), ma((_n + 2) * 4) {}
 
-  void add(int l, int r, int x) { return add(1, n, l, r, x, 1); }
+  void add(int l, int r, int x) {
+    return add(1, n, l, r, x, 1);
+  }
 
-  int query(int l, int r) { return query(1, n, l, r, 1); }
+  int query(int l, int r) {
+    return query(1, n, l, r, 1);
+  }
 
 #undef ls
 #undef rs

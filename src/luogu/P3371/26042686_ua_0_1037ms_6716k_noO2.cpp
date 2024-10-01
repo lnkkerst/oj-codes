@@ -21,8 +21,9 @@ void addedge(int u, int v, int w) {
 }
 
 void spfa(int start) {
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     nodes[i].dis = 2147483647;
+  }
   nodes[start].dis = 0, nodes[start].inq = 1;
   for (int u = 1; u <= n; ++u) {
     for (int i = nodes[u].h; i; i = edges[i].nex) {
@@ -42,7 +43,8 @@ int main() {
     addedge(u, v, w);
   }
   spfa(s);
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     cout << nodes[i].dis << ' ';
+  }
   return 0;
 }

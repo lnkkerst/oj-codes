@@ -21,8 +21,9 @@ int main() {
       sum += l[j];
       cj *= l[j];
     }
-    if (sum == 45 && cj == 362880)
+    if (sum == 45 && cj == 362880) {
       printf("%ld %ld %ld\n", x, y, z);
+    }
   }
   return 0;
 }

@@ -24,7 +24,7 @@ struct Treap {
   int tot = 0, rt = 0;
   int notFound;
 
-  Treap(int _n, int _notFound = (1u << 31) - 1) : notFound(_notFound) {
+  Treap(int _n, int _notFound = (1u << 31) - 1): notFound(_notFound) {
     ls = rs = a = p = sz = cnt = vector<int>(_n + 10);
   }
 
@@ -195,7 +195,7 @@ struct Treap {
 struct Fenwick {
   int n;
   vector<int> a;
-  Fenwick(int _n) : n(_n), a(_n + 10){};
+  Fenwick(int _n): n(_n), a(_n + 10) {};
   void add(int k, int x) {
     while (k <= n) {
       a[k] += x;

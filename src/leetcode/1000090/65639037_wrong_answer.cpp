@@ -6,12 +6,14 @@ public:
       return;
     }
     // cout << now << ' ' << dep << ' ' << now + b[now] << endl;
-    if (dep > a[now])
+    if (dep > a[now]) {
       return;
+    }
     a[now] = min(a[now], dep);
     dfs(a, now + b[now], dep + 1, b, ans);
-    if (now > 0)
+    if (now > 0) {
       dfs(a, now - 1, dep + 1, b, ans);
+    }
   }
   int minJump(vector<int> &jump) {
     int ret = 0x7fffffff;

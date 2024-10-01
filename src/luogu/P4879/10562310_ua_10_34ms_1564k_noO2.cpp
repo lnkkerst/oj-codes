@@ -7,15 +7,17 @@ int main() {
   ll ans;
   char event;
   cin >> n >> m;
-  for (i = 1; i <= n; i++)
+  for (i = 1; i <= n; i++) {
     cin >> a[i];
+  }
   for (i = 1; i <= m; i++) {
     cin >> event;
     switch (event) {
     case 'Q':
       ans = 0;
-      for (j = 1; j <= n; j++)
+      for (j = 1; j <= n; j++) {
         ans += a[j];
+      }
       cout << ans << endl;
       break;
     case 'D':
@@ -29,8 +31,9 @@ int main() {
     case 'I':
       cin >> x >> y;
       a[x] = y;
-      if (x > n)
+      if (x > n) {
         n = x;
+      }
       break;
     }
   }

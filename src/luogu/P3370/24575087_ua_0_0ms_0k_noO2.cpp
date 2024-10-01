@@ -11,8 +11,9 @@ int read() {
   int ret;
   char ch;
   bool f;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (f = 1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return f ? -ret : ret;
@@ -21,8 +22,9 @@ int read() {
 int bkdrhs(string s) {
   int l = s.length();
   int ret = 0;
-  for (int i = 0; i < l; ++i)
+  for (int i = 0; i < l; ++i) {
     ret = (1ll * ret * k + s[i]) % MOD;
+  }
   return ret;
 }
 
@@ -35,9 +37,11 @@ int main() {
   }
   sort(a + 1, a + n + 1);
   int ans = 0;
-  for (int i = 2; i <= n; ++i)
-    if (a[i] != a[i - 1])
+  for (int i = 2; i <= n; ++i) {
+    if (a[i] != a[i - 1]) {
       ans++;
+    }
+  }
   cout << ans + 1 << endl;
   return 0;
 }

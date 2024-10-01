@@ -18,8 +18,9 @@ int main() {
     sort(a.begin(), a.end(), greater<int>());
     int ans = 0;
     for (int i = 0; i < (int)a.size(); ++i) {
-      if (i % 3 == 2)
+      if (i % 3 == 2) {
         continue;
+      }
       ans += a[i];
     }
     printf("Case #%d: %d\n", k, ans);

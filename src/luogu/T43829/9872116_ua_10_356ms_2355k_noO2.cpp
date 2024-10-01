@@ -32,9 +32,11 @@ void opt3() {
 void opt4() {
   long long l, r, max = 0;
   scanf("%lld%lld", &l, &r);
-  for (long long i = l - 1; i < r; i++)
-    if (a[i] > max)
+  for (long long i = l - 1; i < r; i++) {
+    if (a[i] > max) {
       max = a[i];
+    }
+  }
   a[l - 1] = max;
   for (long long i = l; i < t; i++) {
     a[i] = a[i + r - l];
@@ -54,18 +56,20 @@ int main() {
   scanf("%lld", &m);
   for (long long i = 0; i < m; i++) {
     scanf("%lld", &n);
-    if (n == 1)
+    if (n == 1) {
       opt1();
-    else if (n == 2)
+    } else if (n == 2) {
       opt2();
-    else if (n == 3)
+    } else if (n == 3) {
       opt3();
-    else if (n == 4)
+    } else if (n == 4) {
       opt4();
-    else if (n == 5)
+    } else if (n == 5) {
       opt5();
+    }
   }
-  for (long long i = 0; i < t; i++)
+  for (long long i = 0; i < t; i++) {
     printf("%lld ", a[i]);
+  }
   return 0;
 }

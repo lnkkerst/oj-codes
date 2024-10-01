@@ -18,8 +18,9 @@ signed main() {
     }
     int tmp = 0;
     for (auto i : s) {
-      if (i != d)
+      if (i != d) {
         break;
+      }
       ++tmp;
     }
     if (tmp > ansx) {

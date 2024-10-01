@@ -2,17 +2,21 @@
 
 int n, m, tree[500010] = {0};
 
-int lowbit(int x) { return x & -x; }
+int lowbit(int x) {
+  return x & -x;
+}
 
 void add(int x, int y) {
-  for (; x <= n; x += lowbit(x))
+  for (; x <= n; x += lowbit(x)) {
     tree[x] += y;
+  }
 }
 
 int find(int x) {
   int res = 0;
-  for (; x; x -= lowbit(x))
+  for (; x; x -= lowbit(x)) {
     res += tree[x];
+  }
   return res;
 }
 

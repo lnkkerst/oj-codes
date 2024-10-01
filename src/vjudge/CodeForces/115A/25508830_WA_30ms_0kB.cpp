@@ -8,7 +8,9 @@
 #include <vector>
 using namespace std;
 
-int find(vector<int> &a, int x) { return x == a[x] ? x : a[x] = find(a, a[x]); }
+int find(vector<int> &a, int x) {
+  return x == a[x] ? x : a[x] = find(a, a[x]);
+}
 
 int main() {
   int n;

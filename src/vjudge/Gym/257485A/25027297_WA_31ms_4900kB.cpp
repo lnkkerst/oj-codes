@@ -11,18 +11,21 @@ int main() {
   for (int i = n; i >= 1; --i) {
     a[i] -= '0';
     b[i] = last;
-    if (b[i] != 1)
+    if (b[i] != 1) {
       last = i;
+    }
   }
   int mx = log2(n * 2 - 1), ans = 0;
   for (int i = 1; i <= n; ++i) {
     int mul = 1, pos = i;
     for (int j = 1; pos <= n && j <= mx; ++j) {
       mul *= a[pos];
-      if (mul > n)
+      if (mul > n) {
         break;
-      if (mul >= pos - i + 1 && mul <= b[pos] - i)
+      }
+      if (mul >= pos - i + 1 && mul <= b[pos] - i) {
         ++ans;
+      }
       pos = b[pos];
     }
   }

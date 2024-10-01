@@ -32,8 +32,9 @@ void add(int u, int v, int w) {
 }
 
 void dijkstra(int start) {
-  for (int i = 1; i <= n; i++)
+  for (int i = 1; i <= n; i++) {
     nodes[i].dist = __INT_MAX__;
+  }
 
   std::priority_queue<std::pair<int, Node *>> q;
 
@@ -44,8 +45,9 @@ void dijkstra(int start) {
     std::pair<int, Node *> p = q.top();
     q.pop();
 
-    if (-p.first != p.second->dist)
+    if (-p.first != p.second->dist) {
       continue;
+    }
     Node *v = p.second;
 
     for (int i = 0; i < (int)v->edges.size(); i++) {
@@ -66,7 +68,8 @@ int main() {
     add(t1, t2, t3);
   }
   dijkstra(s);
-  for (int i = 1; i <= n; i++)
+  for (int i = 1; i <= n; i++) {
     printf("%d ", nodes[i].dist);
+  }
   return 0;
 }

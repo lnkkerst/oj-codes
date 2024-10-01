@@ -6,10 +6,12 @@ int f[20000001];
 int main() {
   for (int i = 2; i <= 20000000; ++i) {
     f[i] = f[i - 1] + 1;
-    if (!(i & 1))
+    if (!(i & 1)) {
       f[i] = min(f[i], f[i >> 1] + 1);
-    if (!(i % 3))
+    }
+    if (!(i % 3)) {
       f[i] = min(f[i], f[i / 3] + 1);
+    }
   }
   int t;
   cin >> t;

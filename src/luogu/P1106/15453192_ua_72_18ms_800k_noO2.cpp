@@ -14,8 +14,9 @@ int main() {
     for (int j = 0; j < l - 1; j++) {
       int t = j + 1;
 
-      while (b[t])
+      while (b[t]) {
         t++;
+      }
 
       if (n[j] > n[t] && !b[j]) {
         b[j] = 1;
@@ -40,11 +41,13 @@ int main() {
   for (i = 0; ans[i] == '0'; i++)
     ;
 
-  if (i == at)
+  if (i == at) {
     printf("0");
-  else
-    for (i = 0; i < at; i++)
+  } else {
+    for (i = 0; i < at; i++) {
       printf("%c", ans[i]);
+    }
+  }
 
   return 0;
 }

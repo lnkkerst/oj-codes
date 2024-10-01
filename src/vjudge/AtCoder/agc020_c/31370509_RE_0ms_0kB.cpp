@@ -13,8 +13,9 @@ int main() {
     tot += x;
   }
   int ans = (tot + 1) >> 1;
-  while (!b[ans])
+  while (!b[ans]) {
     ++ans;
+  }
   cout << ans;
   return 0;
 }

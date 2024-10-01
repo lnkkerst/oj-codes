@@ -38,8 +38,8 @@ void solve() {
   for (int i = 1; i <= r; ++i) {
     for (int j = 1; j <= r; ++j) {
       for (int k = 1; k <= r; ++k) {
-        if (i * j * k >= l && i * j * k <= r && pd(i) && pd(j) && pd(k) &&
-            i != j && j != k && i != k) {
+        if (i * j * k >= l && i * j * k <= r && pd(i) && pd(j) && pd(k)
+            && i != j && j != k && i != k) {
           cout << i * j * k << endl;
           return;
         }

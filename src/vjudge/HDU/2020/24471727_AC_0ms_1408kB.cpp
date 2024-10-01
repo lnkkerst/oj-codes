@@ -8,8 +8,9 @@ int main() {
   while (233) {
     int n;
     cin >> n;
-    if (!n)
+    if (!n) {
       return 0;
+    }
     vector<pair<int, int>> a;
     for (int i = 1; i <= n; ++i) {
       int x;
@@ -19,8 +20,9 @@ int main() {
     sort(a.begin(), a.end(), greater<pair<int, int>>());
     for (auto i = a.begin(); i != a.end(); ++i) {
       cout << i->second;
-      if (i == a.end() - 1)
+      if (i == a.end() - 1) {
         continue;
+      }
       cout << ' ';
     }
     cout << endl;

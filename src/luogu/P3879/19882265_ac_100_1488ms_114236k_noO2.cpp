@@ -8,8 +8,9 @@ int read() {
   int res;
   bool flag = 0;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (flag = 1);
+  }
   for (res = ch - '0'; isdigit(ch = getchar()); res *= 10, res += ch - '0')
     ;
   (flag == 1) && (res *= -1);
@@ -41,8 +42,9 @@ void insert(char *str, int j) {
   int x = root;
   for (int i = 0; str[i]; i++) {
     int k = str[i] - 'a';
-    if (!trie[x].go[k])
+    if (!trie[x].go[k]) {
       trie[x].go[k] = ++tot;
+    }
     x = trie[x].go[k];
   }
   trie[x].book[j] = 1;
@@ -60,9 +62,11 @@ void search(char *str) {
     x = trie[x].go[k];
   }
   if (flag) {
-    for (int i = 1; i <= n; ++i)
-      if (trie[x].book[i])
+    for (int i = 1; i <= n; ++i) {
+      if (trie[x].book[i]) {
         printf("%d ", i);
+      }
+    }
   }
   putchar('\n');
 }

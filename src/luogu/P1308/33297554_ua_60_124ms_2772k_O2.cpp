@@ -8,44 +8,52 @@ using std::string;
 using std::unordered_map;
 
 void cvt(string &s) {
-  for (size_t i = 0; i < s.size(); ++i)
+  for (size_t i = 0; i < s.size(); ++i) {
     s[i] = tolower(s[i]);
+  }
 }
 
 int strMatch(const char ori[], const char str[], int pos[],
-             int *tot) { //文本串、模式串、保存出现下标的数组、出现的次数
+             int *tot) { // 文本串、模式串、保存出现下标的数组、出现的次数
   int l1 = 0, l2 = 0, j = 0, ret = 0;
-  while (ori[l1])
+  while (ori[l1]) {
     ++l1;
-  while (str[l2])
+  }
+  while (str[l2]) {
     ++l2;
+  }
   if (l2 > l1) {
-    if (tot != NULL)
+    if (tot != NULL) {
       *tot = 0;
+    }
     return 0;
   }
   int *nex = (int *)malloc(sizeof(int) * l2);
   nex[0] = nex[1] = 0;
   for (int i = 1; i < l2; ++i) {
-    while (j && str[i] != str[j])
+    while (j && str[i] != str[j]) {
       j = nex[j];
+    }
     nex[i + 1] = str[i] == str[j] ? ++j : 0;
   }
   j = 0;
   for (int i = 0; i < l1; ++i) {
-    while (j && str[j] != ori[i])
+    while (j && str[j] != ori[i]) {
       j = nex[j];
+    }
     j += ori[i] == str[j];
     if (j == l2) {
-      if (pos)
+      if (pos) {
         pos[ret++] = i - l2 + 1;
-      else
+      } else {
         ++ret;
+      }
       j = nex[j];
     }
   }
-  if (tot != NULL)
+  if (tot != NULL) {
     *tot = ret;
+  }
   free(nex);
   return ret;
 }

@@ -5,14 +5,14 @@ public:
   struct Node {
     int dis, h;
     bool inq;
-    Node() : dis(0), inq(0), h(0) {}
+    Node(): dis(0), inq(0), h(0) {}
   } nodes[201000];
   struct Edge {
     int to, nex, w;
-    Edge() : to(0), nex(0), w(0) {}
+    Edge(): to(0), nex(0), w(0) {}
   } edges[501000];
   int n, m, cnt;
-  Solution() : cnt(0) {}
+  Solution(): cnt(0) {}
   void addEdge(int u, int v, int w) {
     edges[++cnt].nex = nodes[u].h;
     edges[cnt].to = v;
@@ -43,8 +43,9 @@ public:
   // }
   void spfa(int start) {
     queue<int> q;
-    for (int i = 1; i <= n; ++i)
+    for (int i = 1; i <= n; ++i) {
       nodes[i].dis = -1;
+    }
     nodes[start].dis = 0, nodes[start].inq = 1;
     q.push(start);
     while (!q.empty()) {
@@ -77,15 +78,17 @@ public:
     }
     n = a1.size() + a2.size();
     for (int i = 0; i < a1.size(); ++i) {
-      if (i != a1.size() - 1)
+      if (i != a1.size() - 1) {
         addEdge(i + 1, i + 2, a1[i + 1]);
+      }
       if (b2.find(a1[i]) != b2.end()) {
         addEdge(i + 1, a1.size() + b2[a1[i]], 0);
       }
     }
     for (int i = 0; i < a2.size(); ++i) {
-      if (i != a2.size() - 1)
+      if (i != a2.size() - 1) {
         addEdge(i + a1.size() + 1, i + a1.size() + 2, a2[i + 1]);
+      }
       if (b1.find(a2[i]) != b1.end()) {
         addEdge(i + a1.size() + 1, b1[a2[i]], 0);
       }

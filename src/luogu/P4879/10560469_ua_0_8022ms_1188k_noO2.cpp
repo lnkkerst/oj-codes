@@ -7,14 +7,16 @@ int main() {
   long long ans;
   char event;
   scanf("%d%d", &n, &m);
-  for (i = 1; i <= n; i++)
+  for (i = 1; i <= n; i++) {
     scanf("%d", &a[i]);
+  }
   for (i = 1; i <= 2 * m; i++) {
     scanf("%c", &event);
     if (event == 'Q') {
       ans = 0;
-      for (j = 1; j <= n; j++)
+      for (j = 1; j <= n; j++) {
         ans += a[j];
+      }
       printf("%lld\n", ans);
       continue;
     }
@@ -31,8 +33,9 @@ int main() {
     if (event == 'I') {
       scanf("%d%d", &x, &y);
       a[x] = y;
-      if (x > n)
+      if (x > n) {
         n = x;
+      }
       continue;
     }
   }

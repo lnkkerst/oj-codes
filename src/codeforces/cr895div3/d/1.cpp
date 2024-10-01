@@ -13,7 +13,9 @@ using namespace std;
 
 #define int long long
 
-int gcd(int x, int y) { return !y ? x : gcd(y, x % y); }
+int gcd(int x, int y) {
+  return !y ? x : gcd(y, x % y);
+}
 
 void solve() {
   int n, x, y;

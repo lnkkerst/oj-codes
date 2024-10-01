@@ -10,22 +10,27 @@ struct Heap {
     int f, s;
   } mem[400086];
   int cnt;
-  Heap() { cnt = 0; }
+  Heap() {
+    cnt = 0;
+  }
   void swap(int x, int y) {
     int t = mem[x].f;
     mem[x].f = mem[y].f, mem[y].f = t;
     t = mem[x].s, mem[x].s = mem[y].s, mem[y].s = t;
   }
   void update(int x) {
-    while (mem[x].f < mem[x >> 1].f)
+    while (mem[x].f < mem[x >> 1].f) {
       swap(x, x >> 1), x >>= 1;
+    }
   }
   void pushdown(int i) {
-    if (i << 1 > cnt)
+    if (i << 1 > cnt) {
       return;
+    }
     int t = i << 1;
-    if (t < cnt && mem[t | 1].f > mem[t].f)
+    if (t < cnt && mem[t | 1].f > mem[t].f) {
       t |= 1;
+    }
     if (mem[t].f < mem[i].f) {
       swap(t, i);
       pushdown(t);
@@ -33,8 +38,9 @@ struct Heap {
   }
   void insert(int x, int y) {
     mem[++cnt] = (Mem){x, y};
-    if (cnt != 1)
+    if (cnt != 1) {
       update(cnt);
+    }
   }
   void pop() {
     mem[1].f = mem[cnt].f, mem[1].s = mem[cnt].s;
@@ -46,14 +52,17 @@ struct Heap {
 int n, m, s, dis[10086], h[10086], cnt;
 bool vis[10086];
 
-bool isdigit(char ch) { return (ch <= '9' && ch >= '0'); }
+bool isdigit(char ch) {
+  return (ch <= '9' && ch >= '0');
+}
 
 int read() {
   int ret;
   bool flag = 0;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (flag = 1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return flag ? -ret : ret;
@@ -68,8 +77,9 @@ void addedge(int u, int v, int w) {
 }
 
 void dij(int s) {
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     dis[i] = (int)1e9;
+  }
   dis[s] = 0;
   std::priority_queue<std::pair<int, int>> heap;
   // Heap heap;
@@ -83,15 +93,18 @@ void dij(int s) {
     // int u = heap.mem[1].s;
     int u = heap.top().second;
     heap.pop();
-    if (vis[u])
+    if (vis[u]) {
       continue;
+    }
     vis[u] = 1;
-    for (int i = h[u]; i; i = edges[i].nex)
+    for (int i = h[u]; i; i = edges[i].nex) {
       if (dis[edges[i].v] > dis[u] + edges[i].w) {
         dis[edges[i].v] = dis[u] + edges[i].w;
-        if (!edges[i].v)
+        if (!edges[i].v) {
           heap.push(std::make_pair(dis[edges[i].v], edges[i].v));
+        }
       }
+    }
   }
 }
 
@@ -102,7 +115,8 @@ int main() {
     addedge(u, v, w);
   }
   dij(s);
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     printf("%d ", dis[i]);
+  }
   return 0;
 }

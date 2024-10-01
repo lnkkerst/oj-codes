@@ -15,13 +15,16 @@ int main() {
   cin >> n >> t >> h >> r;
   for (int i = 1; i <= r; ++i) {
     scanf("%d %d", &a, &b);
-    if (a > b)
+    if (a > b) {
       swap(a, b);
-    if (vis[a][b])
+    }
+    if (vis[a][b]) {
       continue;
+    }
     vis[a][b] = true, --c[a + 1], ++c[b];
   }
   c[0] = h;
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     c[i] += c[i - 1], printf("%d\n", c[i]);
+  }
 }

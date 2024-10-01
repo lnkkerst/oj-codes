@@ -10,8 +10,9 @@ void swap(int &x, int &y) {
 }
 
 void pushup(int i) {
-  if (i == 1)
+  if (i == 1) {
     return;
+  }
   if (h[i] < h[i >> 1]) {
     swap(h[i], h[i >> 1]);
     pushup(i >> 1);
@@ -19,11 +20,13 @@ void pushup(int i) {
 }
 
 void pushdown(int i) {
-  if (i << 1 > n)
+  if (i << 1 > n) {
     return;
+  }
   int t = i << 1;
-  if (t < n && h[t | 1] > h[t])
+  if (t < n && h[t | 1] > h[t]) {
     t |= 1;
+  }
   if (h[t] < h[i]) {
     swap(h[t], h[i]);
     pushdown(t);
@@ -38,7 +41,9 @@ void add() {
   pushup(n);
 }
 
-void printf() { printf("%d\n", h[1]); }
+void printf() {
+  printf("%d\n", h[1]);
+}
 
 void del() {
   h[1] = h[n];
@@ -52,12 +57,13 @@ int main() {
   for (int i = 1; i <= q; i++) {
     int e;
     scanf("%d", &e);
-    if (e == 1)
+    if (e == 1) {
       add();
-    else if (e == 2)
+    } else if (e == 2) {
       printf();
-    else if (e == 3)
+    } else if (e == 3) {
       del();
+    }
   }
   return 0;
 }

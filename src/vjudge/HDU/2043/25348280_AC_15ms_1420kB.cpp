@@ -17,19 +17,24 @@ int main() {
     }
     bool f1 = 0, f2 = 0, f3 = 0, f4 = 0;
     for (string::iterator i = s.begin(); i != s.end(); ++i) {
-      if (isupper(*i))
+      if (isupper(*i)) {
         f1 = 1;
-      if (islower(*i))
+      }
+      if (islower(*i)) {
         f2 = 1;
-      if (isdigit(*i))
+      }
+      if (isdigit(*i)) {
         f3 = 1;
-      if (b[*i])
+      }
+      if (b[*i]) {
         f4 = 1;
+      }
     }
-    if (f1 + f2 + f3 + f4 >= 3)
+    if (f1 + f2 + f3 + f4 >= 3) {
       puts("YES");
-    else
+    } else {
       puts("NO");
+    }
   }
   return 0;
 }

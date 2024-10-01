@@ -30,18 +30,21 @@ void addedge(int u, int v) {
 int read() {
   int ret, f = 1;
   char ch;
-  while (!isdigit(ch = getchar()))
+  while (!isdigit(ch = getchar())) {
     (ch == '-') && (f = -1);
+  }
   for (ret = ch - '0'; isdigit(ch = getchar()); ret *= 10, ret += ch - '0')
     ;
   return ret * f;
 }
 
 void print(int x) {
-  if (x < 0)
+  if (x < 0) {
     putchar('-'), x = -x;
-  if (x > 9)
+  }
+  if (x > 9) {
     print(x / 10);
+  }
   putchar(x % 10 + '0');
 }
 
@@ -50,10 +53,11 @@ void tarjan(int u) {
   tj.push(u);
   for (int i = nodes[u].h; i; i = edges[i].nex) {
     int v = edges[i].to;
-    if (!nodes[v].dfn)
+    if (!nodes[v].dfn) {
       tarjan(v), nodes[u].low = min(nodes[u].low, nodes[v].low);
-    else if (nodes[v].inq)
+    } else if (nodes[v].inq) {
       nodes[u].low = min(nodes[u].low, nodes[v].low);
+    }
   }
   if (nodes[u].low == nodes[u].dfn) {
     ++cnt_tj;
@@ -74,23 +78,27 @@ int main() {
     int u = read(), v = read();
     addedge(u, v);
   }
-  for (int i = 1; i <= n; ++i)
-    if (!nodes[i].dfn)
+  for (int i = 1; i <= n; ++i) {
+    if (!nodes[i].dfn) {
       tarjan(i);
+    }
+  }
   for (int i = 1; i <= n; ++i) {
     for (int j = 1; j <= n; ++j) {
       int u = edges[i].to;
-      if (nodes[i].col != nodes[u].col)
+      if (nodes[i].col != nodes[u].col) {
         ++nodes[nodes[i].col].du;
+      }
     }
   }
   int ans = 0;
   for (int i = 1; i <= cnt_tj; ++i) {
-    if (!nodes[i].du)
+    if (!nodes[i].du) {
       if (ans) {
         puts("0");
         return 0;
       }
+    }
     ans = i;
   }
   print(nodes[ans].all);

@@ -11,8 +11,9 @@ int main() {
     int s, e;
     cin >> s >> e;
     for (int j = s; j <= e; j++) {
-      if (a[i] == 0)
+      if (a[i] == 0) {
         a[j] = 1;
+      }
     }
   }
   for (int i = 0; i <= l; i++) {

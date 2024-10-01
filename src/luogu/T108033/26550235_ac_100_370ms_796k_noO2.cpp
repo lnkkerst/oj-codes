@@ -12,8 +12,9 @@ inline int get() {
   while (ch = getchar(), !isdigit(ch) && ch != '-')
     ;
   (ch == '-' ? flag = true : res = ch ^ 48);
-  while (ch = getchar(), isdigit(ch))
+  while (ch = getchar(), isdigit(ch)) {
     res = res * 10 + ch - 48;
+  }
   return flag ? -res : res;
 }
 
@@ -25,13 +26,16 @@ struct point {
     w = get();
   }
 
-  inline bool operator<(const point &a) const { return w > a.w; }
+  inline bool operator<(const point &a) const {
+    return w > a.w;
+  }
 } p[N];
 
 int n, f[N], Ans;
 inline void CkMax(int &x, int y) {
-  if (x < y)
+  if (x < y) {
     x = y;
+  }
 }
 
 int main() {
@@ -39,17 +43,22 @@ int main() {
   //	freopen("wizard.out", "w", stdout);
 
   n = get();
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     p[i].scan();
+  }
   sort(p + 1, p + n + 1);
-  for (int i = 0; i <= n; ++i)
+  for (int i = 0; i <= n; ++i) {
     f[i] = -1e9;
+  }
   f[0] = 0;
-  for (int i = 1; i <= n; ++i)
-    for (int j = i; j >= 1; --j)
+  for (int i = 1; i <= n; ++i) {
+    for (int j = i; j >= 1; --j) {
       CkMax(f[j], f[j - 1] + p[i].v - (j - 1) * p[i].w);
-  for (int j = 1; j <= n; ++j)
+    }
+  }
+  for (int j = 1; j <= n; ++j) {
     CkMax(Ans, f[j]);
+  }
   printf("%d\n", Ans);
 
   //	fclose(stdin); fclose(stdout);

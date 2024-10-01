@@ -10,10 +10,12 @@ int n, ans;
 void dfs(int pos) {
   if (pos == n + 1) {
     int num = 0, tot = 0;
-    for (int i = 1; i <= n; ++i)
+    for (int i = 1; i <= n; ++i) {
       num *= 10, num += a[i], tot += f[a[i]];
-    if (num == tot)
+    }
+    if (num == tot) {
       ++ans;
+    }
     return;
   }
   for (int i = 1; i <= 9; ++i) {
@@ -23,8 +25,9 @@ void dfs(int pos) {
 }
 
 signed main() {
-  for (int i = 2; i <= 9; ++i)
+  for (int i = 2; i <= 9; ++i) {
     f[i] = f[i - 1] * i;
+  }
   while (cin >> n) {
     dfs(1);
     cout << ans << endl;

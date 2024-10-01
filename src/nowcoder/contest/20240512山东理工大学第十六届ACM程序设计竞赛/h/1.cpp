@@ -20,8 +20,7 @@ using namespace std;
 struct Tree {
   vector<int> a;
   int n;
-  Tree(int _n) : n(_n), a(_n + 10) {
-  }
+  Tree(int _n): n(_n), a(_n + 10) {}
   static int lowbit(int x) {
     return x & -x;
   }
@@ -61,7 +60,9 @@ void solve() {
     vector<vector<pair<int, int>>> bk;
     vector<int> p;
 
-    bk.push_back({{-1, a[0]}});
+    bk.push_back({
+      {-1, a[0]}
+    });
     p.push_back(a[0]);
 
     auto push = [&](int k, int num) {

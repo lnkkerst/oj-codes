@@ -35,8 +35,8 @@ void solve() {
       int l = i;
       int r = i + k - 1;
       for (int j = l + 1; j <= r; ++j) {
-        dp[l][r] =
-            max(dp[l][r], dp[l][j - 1] + dp[j][r] + a[l] * a[j] * a[r % n + 1]);
+        dp[l][r]
+          = max(dp[l][r], dp[l][j - 1] + dp[j][r] + a[l] * a[j] * a[r % n + 1]);
       }
     }
   }

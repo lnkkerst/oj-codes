@@ -10,14 +10,16 @@ double w, h, ans;
 int main() {
   while (233) {
     cin >> w >> h;
-    if (w == 0 && h == 0)
+    if (w == 0 && h == 0) {
       return 0;
-    if (w > h)
+    }
+    if (w > h) {
       swap(w, h);
+    }
     ans = 0;
-    if (h >= w * PI + w)
+    if (h >= w * PI + w) {
       ans = max(ans, PI * pow(w / 2.0, 2) * w);
-    else {
+    } else {
       double r = h / (2.0 + 2.0 * PI);
       ans = max(ans, PI * r * r * w);
     }

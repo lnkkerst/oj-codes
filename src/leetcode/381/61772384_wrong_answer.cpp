@@ -10,8 +10,9 @@ public:
   /** Inserts a value to the collection. Returns true if the collection did
    * not already contain the specified element. */
   bool insert(int val) {
-    if (b.find(val) != b.end())
+    if (b.find(val) != b.end()) {
       return 0;
+    }
     b.insert(val);
     return 1;
   }
@@ -19,16 +20,18 @@ public:
   /** Removes a value from the collection. Returns true if the collection
    * contained the specified element. */
   bool remove(int val) {
-    if (b.find(val) == b.end())
+    if (b.find(val) == b.end()) {
       return 0;
+    }
     b.erase(b.find(val));
     return 1;
   }
 
   /** Get a random element from the collection. */
   int getRandom() {
-    if (!b.size())
+    if (!b.size()) {
       return 1;
+    }
     return *b.begin();
   }
 };

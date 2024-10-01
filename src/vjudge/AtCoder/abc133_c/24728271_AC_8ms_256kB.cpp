@@ -6,8 +6,9 @@ int l, r;
 
 signed main() {
   cin >> l >> r;
-  if (l > r)
+  if (l > r) {
     swap(l, r);
+  }
   if (r - l > 2019) {
     cout << 0;
     return 0;

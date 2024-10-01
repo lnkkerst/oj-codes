@@ -28,13 +28,15 @@ int main() {
   int n, a[2000];
   scanf("%d", &n);
 
-  for (int i = 1; i <= n; i++)
+  for (int i = 1; i <= n; i++) {
     scanf("%d", &a[i]);
+  }
 
   std::sort(a + 1, a + n + 1);
 
-  for (int i = 1; i <= *(std::unique(a, a + n + 1) - (a[1])); i++)
+  for (int i = 1; i <= *(std::unique(a, a + n + 1) - (a[1])); i++) {
     printf("%d ", a[i]);
+  }
 
   return 0;
 }

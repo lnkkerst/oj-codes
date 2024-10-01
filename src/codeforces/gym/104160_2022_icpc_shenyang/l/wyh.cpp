@@ -35,8 +35,9 @@ ll read() {
   char ch = getchar();
   ll xx = 0, ff = 1;
   while (ch < '0' || ch > '9') {
-    if (ch == '-')
+    if (ch == '-') {
       ff = -1;
+    }
     ch = getchar();
   }
   while (ch >= '0' && ch <= '9') {
@@ -414,7 +415,9 @@ void dfs(ll n, ll m, ll fz, ll fm, ll z, double num) {
   }
 }
 
-bool cmp(P x, P y) { return x.ach < y.ach; }
+bool cmp(P x, P y) {
+  return x.ach < y.ach;
+}
 
 int main() {
   nn = read();

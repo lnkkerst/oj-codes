@@ -2,15 +2,17 @@ class Solution {
 public:
   int longestAwesome(string s) {
     vector<int> a(s.begin(), s.end());
-    for (auto &i : a)
+    for (auto &i : a) {
       i -= '0' - 1;
+    }
     bool bb[11] = {0};
     for (auto &i : a) {
       int t = 1;
-      if (bb[i])
+      if (bb[i]) {
         bb[i] = 0, t = -1;
-      else
+      } else {
         bb[i] = 1;
+      }
       i = (1 << i) * t;
     }
     int ans = 0;

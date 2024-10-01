@@ -5,10 +5,12 @@ public:
     map<long long, bool> b;
     for (int i = 0; i < s.size(); ++i) {
       a[i] = t[i] - s[i];
-      while (a[i] < 0)
+      while (a[i] < 0) {
         a[i] += 26;
-      if (!a[i])
+      }
+      if (!a[i]) {
         continue;
+      }
       // cout << a[i] << endl;
       while (b[a[i]]) {
         a[i] += 26;

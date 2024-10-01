@@ -13,10 +13,12 @@ signed main() {
     for (int i = 10 > sqrt(n) ? 10 : sqrt(n); i >= 2; --i) {
       int t = i * (i - 1) / 2;
       if (t * (n / t) == n) {
-        for (int j = 1; j <= n / t; ++j)
+        for (int j = 1; j <= n / t; ++j) {
           cout << 1;
-        for (int j = 1; j <= i; ++j)
+        }
+        for (int j = 1; j <= i; ++j) {
           cout << 3;
+        }
         cout << 7 << endl;
         break;
       }

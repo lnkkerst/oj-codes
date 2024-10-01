@@ -26,7 +26,7 @@ void solve() {
   s = " " + s;
   t = " " + t;
   vector<vector<vector<int>>> dp(
-      n + 10, vector<vector<int>>(m + 10, vector<int>(m + 10)));
+    n + 10, vector<vector<int>>(m + 10, vector<int>(m + 10)));
   for (int i = 1; i <= n; ++i) {
     for (int j = 1; j <= m; ++j) {
       for (int k = j; k <= m; ++k) {

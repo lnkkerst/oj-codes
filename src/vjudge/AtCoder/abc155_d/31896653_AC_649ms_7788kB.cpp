@@ -8,8 +8,9 @@ int n, k;
 vector<int> a[3];
 
 int crank(int x) {
-  if (!x)
+  if (!x) {
     return a[0].size() * a[2].size() + 1;
+  }
   int ret = 1;
   vector<int> tmp;
   if (x > 0) {
@@ -21,13 +22,15 @@ int crank(int x) {
       }
       tmp.clear();
     }
-    ret += (a[1].size() * (a[1].size() - 1)) / 2 + a[0].size() * a[2].size() +
-           a[1].size() * (a[0].size() + a[2].size());
-  } else
-    for (auto i : a[0])
-      ret +=
-          a[2].size() -
-          distance(a[2].begin(), upper_bound(a[2].begin(), a[2].end(), -x / i));
+    ret += (a[1].size() * (a[1].size() - 1)) / 2 + a[0].size() * a[2].size()
+           + a[1].size() * (a[0].size() + a[2].size());
+  } else {
+    for (auto i : a[0]) {
+      ret += a[2].size()
+             - distance(a[2].begin(),
+                        upper_bound(a[2].begin(), a[2].end(), -x / i));
+    }
+  }
   return ret;
 }
 
@@ -36,23 +39,26 @@ signed main() {
   for (int i = 1; i <= n; ++i) {
     int x;
     cin >> x;
-    if (x > 0)
+    if (x > 0) {
       a[0].push_back(x);
-    else if (!x)
+    } else if (!x) {
       a[1].push_back(x);
-    else
+    } else {
       a[2].push_back(-x);
+    }
   }
-  for (int i = 0; i < 3; ++i)
+  for (int i = 0; i < 3; ++i) {
     sort(a[i].begin(), a[i].end());
+  }
   int l = -1e18, r = 1e18, ans;
   while (l <= r) {
     int mid = (l + r) >> 1;
     int rk = crank(mid);
-    if (rk <= k)
+    if (rk <= k) {
       ans = mid, l = mid + 1;
-    else
+    } else {
       r = mid - 1;
+    }
   }
   cout << ans << endl;
   return 0;

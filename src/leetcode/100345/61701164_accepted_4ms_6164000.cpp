@@ -6,5 +6,7 @@ public:
     (x == 1) || (dfs(x - 1));
     return ans;
   }
-  int sumNums(int n) { return dfs(n); }
+  int sumNums(int n) {
+    return dfs(n);
+  }
 };

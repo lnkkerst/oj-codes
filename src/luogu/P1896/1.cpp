@@ -26,7 +26,7 @@ void solve() {
     }
   }
   vector<vector<vector<int>>> dp(
-      n + 1, vector<vector<int>>(s.size() + 1, vector<int>(n * n + 1)));
+    n + 1, vector<vector<int>>(s.size() + 1, vector<int>(n * n + 1)));
   auto check = [](int x, int y) {
     return (!(x & y) && !(x & (y << 1)) && !((x << 1) & y));
   };

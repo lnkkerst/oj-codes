@@ -4,10 +4,14 @@ using namespace std;
 
 struct Node {
   int x, pos;
-  bool operator<(const Node &b) const { return this->x < b.x; }
+  bool operator<(const Node &b) const {
+    return this->x < b.x;
+  }
 } a[10001];
 
-int mabs(int x) { return x > 0 ? x : -x; }
+int mabs(int x) {
+  return x > 0 ? x : -x;
+}
 
 int main() {
   int n;
@@ -18,8 +22,9 @@ int main() {
   }
   stable_sort(a + 1, a + n + 1);
   int ans = 0;
-  for (int i = 1; i <= n; ++i)
+  for (int i = 1; i <= n; ++i) {
     ans += mabs(a[i].pos - i);
+  }
   cout << ans;
   return 0;
 }

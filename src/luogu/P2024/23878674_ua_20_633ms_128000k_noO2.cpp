@@ -2,14 +2,19 @@
 
 int f[30010], n, m, ans = 0;
 
-int find(int x) { return f[x] == x ? x : f[x] = find(f[x]); }
-
-void init(int x) {
-  for (int i = 1; i <= x; ++i)
-    f[i] = i;
+int find(int x) {
+  return f[x] == x ? x : f[x] = find(f[x]);
 }
 
-void merge(int x, int y) { f[find(x)] = f[y]; }
+void init(int x) {
+  for (int i = 1; i <= x; ++i) {
+    f[i] = i;
+  }
+}
+
+void merge(int x, int y) {
+  f[find(x)] = f[y];
+}
 
 int main() {
   scanf("%d%d", &n, &m);

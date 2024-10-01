@@ -10,18 +10,22 @@ int main() {
   cin >> n >> k >> r >> s >> p >> ma;
   sc['r'] = r, sc['s'] = s, sc['p'] = p;
   for (auto i : ma) {
-    if (i == 'r')
+    if (i == 'r') {
       pe.push_back('p');
-    else if (i == 's')
+    } else if (i == 's') {
       pe.push_back('r');
-    else
+    } else {
       pe.push_back('s');
+    }
   }
-  for (int i = k; i < (int)pe.size(); ++i)
-    if (pe[i] == pe[i - k])
+  for (int i = k; i < (int)pe.size(); ++i) {
+    if (pe[i] == pe[i - k]) {
       pe[i] = 'f';
-  for (auto i : pe)
+    }
+  }
+  for (auto i : pe) {
     ans += sc[i];
+  }
   cout << ans;
   return 0;
 }

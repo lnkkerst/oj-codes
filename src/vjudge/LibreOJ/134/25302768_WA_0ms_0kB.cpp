@@ -5,7 +5,9 @@ using namespace std;
 int a[10000][10000];
 int n, m;
 
-int lb(int x) { return x & -x; }
+int lb(int x) {
+  return x & -x;
+}
 
 void add(int x, int y, int v) {
   while (x <= m) {

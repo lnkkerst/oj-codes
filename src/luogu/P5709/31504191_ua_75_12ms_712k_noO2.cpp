@@ -6,9 +6,10 @@ using namespace std;
 int main() {
   int a, b, c;
   cin >> a >> b >> c;
-  if (!b)
+  if (!b) {
     cout << a;
-  else
+  } else {
     cout << a - min(int(a), int(ceil(c / b)));
+  }
   return 0;
 }

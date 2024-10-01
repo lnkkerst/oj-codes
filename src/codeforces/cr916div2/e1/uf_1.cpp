@@ -30,11 +30,11 @@ void solve() {
     cin >> i;
   }
   vector<int> ans;
-  function<pair<int, int>(int, vector<int>, vector<int>)> dfs =
-      [&](int cur, vector<int> a, vector<int> b) -> pair<int, int> {
+  function<pair<int, int>(int, vector<int>, vector<int>)> dfs
+    = [&](int cur, vector<int> a, vector<int> b) -> pair<int, int> {
     if (cur == n) {
-      int t = (accumulate(a.begin(), a.end(), 0ll) -
-               accumulate(b.begin(), b.end(), 0ll));
+      int t = (accumulate(a.begin(), a.end(), 0ll)
+               - accumulate(b.begin(), b.end(), 0ll));
       return {t, t};
     }
     int ma = -1e18, mi = 1e18;
@@ -125,8 +125,8 @@ void solve() {
       }
     }
   }
-  cout << accumulate(a.begin(), a.end(), 0ll) -
-              accumulate(b.begin(), b.end(), 0ll)
+  cout << accumulate(a.begin(), a.end(), 0ll)
+            - accumulate(b.begin(), b.end(), 0ll)
        << endl;
 }
 

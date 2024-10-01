@@ -4,9 +4,13 @@ using namespace std;
 int n, m;
 int fa[2010];
 
-int find(int x) { return fa[x] == x ? x : fa[x] = find(fa[x]); }
+int find(int x) {
+  return fa[x] == x ? x : fa[x] = find(fa[x]);
+}
 
-void merge(int x, int y) { fa[find(x)] = find(y); }
+void merge(int x, int y) {
+  fa[find(x)] = find(y);
+}
 
 int main() {
   cin >> n >> m;

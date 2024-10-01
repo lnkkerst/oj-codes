@@ -46,8 +46,8 @@ ll qp(ll x, ll y) {
 int main() {
   ll tmp1 = 25 * qp(2, mod - 2);
   cout << tmp1 << endl;
-  ll tmp2 =
-      16 % mod + (qp(4 + 1, k) - qp(4, k) + mod) % mod * qp(2, mod - 2) % mod;
+  ll tmp2
+    = 16 % mod + (qp(4 + 1, k) - qp(4, k) + mod) % mod * qp(2, mod - 2) % mod;
   cout << tmp2 << endl;
 
   ios::sync_with_stdio(0);
@@ -66,8 +66,8 @@ int main() {
       len++;
       break;
     case '?':
-      f[i] = f[i - 1] % mod +
-             (qp(len + 1, k) - qp(len, k) + mod) % mod * qp(2, mod - 2) % mod;
+      f[i] = f[i - 1] % mod
+             + (qp(len + 1, k) - qp(len, k) + mod) % mod * qp(2, mod - 2) % mod;
       f[i] %= mod;
       len = (len + 1) % mod * qp(2, mod - 2) % mod;
       len %= mod;
