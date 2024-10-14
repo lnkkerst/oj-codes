@@ -59,11 +59,11 @@ void solve() {
   for (int i = 0; i < d.size() - 1; ++i) {
     if (d[i] > d[i + 1]) {
       ++cnt;
-      if (cnt >= 20) {
+      if (cnt >= 5) {
         cout << "NO" << endl;
         return;
       }
-      for (int j = max(0, i - 5); j < min((int)a.size(), i + 5); ++j) {
+      for (int j = max(0, i - 3); j < min((int)a.size(), i + 3); ++j) {
         if (delete_and_check(a, j)) {
           cout << "YES" << endl;
           return;
